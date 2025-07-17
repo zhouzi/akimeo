@@ -1,0 +1,40 @@
+{
+  "private": true,
+  "name": "@akimeo/fiscal",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.build.json",
+    "dev": "tsc -w",
+    "test": "vitest",
+    "format": "eslint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/modele": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "playwright": "catalog:",
+    "prettier": "catalog:",
+    "type-fest": "catalog:",
+    "typescript": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
+  },
+  "dependencies": {
+    "@akimeo/donnees-reglementaires": "workspace:*",
+    "date-fns": "catalog:"
+  },
+  "prettier": "@akimeo/prettier-config"
+}

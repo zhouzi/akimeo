@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "@akimeo/donnees-reglementaires",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.build.json",
+    "dev": "tsc -w",
+    "format": "eslint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
+    "fetch": "tsx ./bin/fetch.ts",
+    "postfetch": "prettier --write ./src/index.ts && pnpm run build"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "@types/lodash.set": "catalog:",
+    "@types/node": "catalog:",
+    "date-fns": "catalog:",
+    "eslint": "catalog:",
+    "lodash.set": "catalog:",
+    "prettier": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "yaml": "catalog:"
+  },
+  "prettier": "@akimeo/prettier-config"
+}

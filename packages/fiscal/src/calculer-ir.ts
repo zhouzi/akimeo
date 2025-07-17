@@ -1,0 +1,508 @@
+import type { EmploiADomicile, Foyer, Revenu } from "@akimeo/modele";
+import donneesReglementaires from "@akimeo/donnees-reglementaires";
+import {
+  ENVELOPPE_PLACEMENT,
+  IMPOSITION_RCM,
+  isCouple,
+  isRevenuMicroEntreprise,
+  NATURE_REVENU,
+  SCOLARTIE_ENFANT,
+  TYPE_EMPLOI_A_DOMICILE,
+  TYPE_EMPLOI_A_DOMICILE_OPTIONS,
+} from "@akimeo/modele";
+import { NATURE_DON } from "@akimeo/modele/don";
+
+const BAREME_IR =
+  donneesReglementaires.impot_revenu.bareme_ir_depuis_1945.bareme;
+
+function getRevenus(foyer: Foyer) {
+  return [
+    ...foyer.declarant1.revenus,
+    ...(isCouple(foyer) ? foyer.declarant2.revenus : []),
+  ];
+}
+
+export function dedupeRevenus(revenus: Revenu[]) {
+  return Object.values(
+    revenus.reduce(
+      (acc, revenu) =>
+        Object.assign(acc, {
+          [revenu.nature]: {
+            ...revenu,
+            montantAnnuel:
+              // FIXME: un bon type permettrait de ne pas avoir à désactiver les règles
+              // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+              (acc[revenu.nature]?.montantAnnuel ?? 0) + revenu.montantAnnuel,
+          },
+        }),
+      {} as Record<Revenu["nature"], Revenu>,
+    ),
+  );
+}
+
+function calculerRevenuBrutGlobal(foyer: Foyer) {
+  return dedupeRevenus(getRevenus(foyer)).reduce((acc, revenu) => {
+    switch (revenu.nature) {
+      case NATURE_REVENU.salaire.value:
+      case NATURE_REVENU.remuneration.value:
+      case NATURE_REVENU.pensionRetraite.value:
+      case NATURE_REVENU.autre.value: {
+        const abattementForfaitaire = Math.min(
+          donneesReglementaires.impot_revenu.calcul_revenus_imposables
+            .deductions.abatpro.max,
+          Math.max(
+            donneesReglementaires.impot_revenu.calcul_revenus_imposables
+              .deductions.abatpro.min,
+            revenu.montantAnnuel *
+              donneesReglementaires.impot_revenu.calcul_revenus_imposables
+                .deductions.abatpro.taux,
+          ),
+        );
+        const montantImposable = Math.max(
+          0,
+          revenu.montantAnnuel - abattementForfaitaire,
+        );
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.microBNC.value: {
+        const montantImposable =
+          revenu.montantAnnuel -
+          revenu.montantAnnuel *
+            donneesReglementaires.impot_revenu.calcul_revenus_imposables.rpns
+              .micro.microentreprise.regime_micro_bnc.taux;
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.microBICServices.value: {
+        const montantImposable =
+          revenu.montantAnnuel -
+          revenu.montantAnnuel *
+            donneesReglementaires.impot_revenu.calcul_revenus_imposables.rpns
+              .micro.microentreprise.regime_micro_bic.services.taux;
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.microBICMarchandises.value: {
+        const montantImposable =
+          revenu.montantAnnuel -
+          revenu.montantAnnuel *
+            donneesReglementaires.impot_revenu.calcul_revenus_imposables.rpns
+              .micro.microentreprise.regime_micro_bic.marchandises.taux;
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.microFoncier.value: {
+        const montantImposable =
+          revenu.montantAnnuel -
+          revenu.montantAnnuel *
+            donneesReglementaires.impot_revenu.calcul_revenus_imposables.rpns
+              .micro.microfoncier.taux;
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.foncier.value: {
+        const montantImposable =
+          revenu.montantAnnuel < 0
+            ? -Math.min(
+                Math.abs(revenu.montantAnnuel),
+                donneesReglementaires.impot_revenu.calcul_revenus_imposables
+                  .foncier_deduc.plafond,
+              )
+            : revenu.montantAnnuel;
+        return acc + montantImposable;
+      }
+      case NATURE_REVENU.bnc.value:
+      case NATURE_REVENU.bic.value:
+        return acc + revenu.montantAnnuel;
+      case NATURE_REVENU.rcm.value: {
+        if (foyer.impositionRCM === IMPOSITION_RCM.bareme.value) {
+          const montantImposable =
+            revenu.montantAnnuel -
+            revenu.montantAnnuel *
+              donneesReglementaires.impot_revenu.calcul_revenus_imposables.rvcm
+                .revenus_capitaux_mobiliers_dividendes.taux_abattement;
+          return acc + montantImposable;
+        }
+        return acc;
+      }
+      default:
+        // @ts-expect-error garde-fou pour gérer tous les cas
+        throw new Error(`Cas non géré : ${revenu.nature}`);
+    }
+  }, 0);
+}
+
+function getPlacements(foyer: Foyer) {
+  return [
+    ...foyer.declarant1.placements,
+    ...(isCouple(foyer) ? foyer.declarant2.placements : []),
+  ];
+}
+
+function calculerRevenuNetGlobal(foyer: Foyer) {
+  const revenuBrutGlobal = calculerRevenuBrutGlobal(foyer);
+
+  let revenuNetGlobal = revenuBrutGlobal;
+
+  revenuNetGlobal -= getPlacements(foyer).reduce(
+    (acc, placement) =>
+      placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
+        ? acc + placement.versementsAnnuels
+        : acc,
+    0,
+  );
+
+  return revenuNetGlobal;
+}
+
+function calculerRevenuNetImposable(foyer: Foyer) {
+  const revenuNetGlobal = calculerRevenuNetGlobal(foyer);
+  const revenuNetImposable = revenuNetGlobal;
+
+  return revenuNetImposable;
+}
+
+function calculerPartsFiscales(foyer: Foyer) {
+  let parts =
+    donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+      .quotient_familial.cas_general.conj;
+
+  if (isCouple(foyer)) {
+    parts +=
+      donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+        .quotient_familial.cas_general.conj;
+  }
+
+  for (let i = 0; i < foyer.enfants.length; i++) {
+    if (i === 0) {
+      parts +=
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+          .quotient_familial.cas_general.enf1;
+    }
+    if (i === 1) {
+      parts +=
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+          .quotient_familial.cas_general.enf2;
+    }
+    if (i > 1) {
+      parts +=
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+          .quotient_familial.cas_general.enf3_et_sup;
+    }
+  }
+
+  return parts;
+}
+
+function trancherRevenus(foyer: Foyer) {
+  const revenuNetImposable = calculerRevenuNetImposable(foyer);
+  const partsFiscales = calculerPartsFiscales(foyer);
+
+  return BAREME_IR.map((tranche) => ({
+    ...tranche,
+    threshold: tranche.threshold * partsFiscales,
+  })).map((tranche, index, tranches) => {
+    const trancheSuivante = tranches[index + 1];
+
+    const min = tranche.threshold;
+    const max = trancheSuivante?.threshold ?? Infinity;
+
+    const montantImposableMax = max - min;
+    const revenusImposablesRestants = Math.max(0, revenuNetImposable - min);
+
+    const montantImpose = Math.min(
+      revenusImposablesRestants,
+      montantImposableMax,
+    );
+
+    const impotBrut = montantImpose * tranche.rate;
+
+    return {
+      ...tranche,
+      montantImpose,
+      montantImposableMax,
+      impotBrut,
+    };
+  });
+}
+
+function calculerImpotBrut(foyer: Foyer) {
+  return trancherRevenus(foyer).reduce(
+    (acc, tranche) => acc + tranche.impotBrut,
+    0,
+  );
+}
+
+function withoutVersementLiberatoire(revenus: Revenu[]) {
+  return revenus.filter(
+    (revenu) =>
+      !isRevenuMicroEntreprise(revenu) || !revenu.versementLiberatoire,
+  );
+}
+
+export function getDons(foyer: Foyer) {
+  return [
+    ...foyer.declarant1.dons,
+    ...(isCouple(foyer) ? foyer.declarant2.dons : []),
+  ];
+}
+
+// https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2025/aides/reductions.htm#DF
+export function calculerRemunerationAnnuelleDeductibleEmploiADomicile(
+  foyer: Foyer,
+) {
+  const emploisADomicileGroupes = foyer.emploisADomicile.reduce(
+    (acc, emploiADomicile) =>
+      Object.assign(acc, {
+        [emploiADomicile.type]:
+          acc[emploiADomicile.type] + emploiADomicile.remunerationAnnuelle,
+      }),
+    TYPE_EMPLOI_A_DOMICILE_OPTIONS.reduce(
+      (acc, option) => Object.assign(acc, { [option.value]: 0 }),
+      {},
+    ) as Record<EmploiADomicile["type"], number>,
+  );
+
+  const remunerationAnnuelleMenageDeductible =
+    emploisADomicileGroupes[TYPE_EMPLOI_A_DOMICILE.menage.value];
+  const remunerationAnnuellePetitBricolageDeductible = Math.min(
+    500,
+    emploisADomicileGroupes[TYPE_EMPLOI_A_DOMICILE.petitBricolage.value],
+  );
+  const remunerationAnnuelleJardinageDeductible = Math.min(
+    5000,
+    emploisADomicileGroupes[TYPE_EMPLOI_A_DOMICILE.petitBricolage.value],
+  );
+  const remunerationAnnuelleInformatiqueDeductible = Math.min(
+    3000,
+    emploisADomicileGroupes[TYPE_EMPLOI_A_DOMICILE.petitBricolage.value],
+  );
+
+  const remunerationAnnuelleDeductible =
+    remunerationAnnuelleMenageDeductible +
+    remunerationAnnuellePetitBricolageDeductible +
+    remunerationAnnuelleJardinageDeductible +
+    remunerationAnnuelleInformatiqueDeductible;
+
+  const plafond = Math.min(
+    donneesReglementaires.impot_revenu.credits_impots.emploi_salarie_domicile
+      .plafond +
+      foyer.enfants.length *
+        donneesReglementaires.impot_revenu.credits_impots
+          .emploi_salarie_domicile.increment_plafond,
+    donneesReglementaires.impot_revenu.credits_impots.emploi_salarie_domicile
+      .plafond_maximum,
+  );
+
+  return Math.min(plafond, remunerationAnnuelleDeductible);
+}
+
+function calculerImpotDu(foyer: Foyer) {
+  const impotBrut = calculerImpotBrut(foyer);
+  const revenuNetImposable = Math.max(0, calculerRevenuNetImposable(foyer));
+  const taux = revenuNetImposable > 0 ? impotBrut / revenuNetImposable : 0;
+  const foyerWithoutVersementLiberatoire: Foyer = isCouple(foyer)
+    ? {
+        ...foyer,
+        declarant1: {
+          ...foyer.declarant1,
+          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+        },
+        declarant2: {
+          ...foyer.declarant2,
+          revenus: withoutVersementLiberatoire(foyer.declarant2.revenus),
+        },
+      }
+    : {
+        ...foyer,
+        declarant1: {
+          ...foyer.declarant1,
+          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+        },
+      };
+  const revenuNetImposableSansRevenusImposes = calculerRevenuNetImposable(
+    foyerWithoutVersementLiberatoire,
+  );
+
+  let impotDu = revenuNetImposableSansRevenusImposes * taux;
+
+  if (foyer.impositionRCM === IMPOSITION_RCM.pfu.value) {
+    const rcm = dedupeRevenus(getRevenus(foyer)).reduce(
+      (acc, revenu) =>
+        revenu.nature === NATURE_REVENU.rcm.value
+          ? acc + revenu.montantAnnuel
+          : acc,
+      0,
+    );
+    impotDu +=
+      rcm *
+      donneesReglementaires.taxation_capital.prelevement_forfaitaire.partir_2018
+        .taux_prelevement_forfaitaire_rev_capital_eligibles_pfu_interets_dividendes_etc;
+  }
+
+  if (
+    impotDu > 0 &&
+    impotDu <
+      donneesReglementaires.impot_revenu.calcul_impot_revenu.recouvrement
+        .min_avant_credits_impots
+  ) {
+    impotDu = 0;
+  }
+
+  if (isCouple(foyer)) {
+    if (impotDu < 3249) {
+      const décote =
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf.decote
+          .seuil_couple -
+        impotDu *
+          donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf.decote
+            .taux;
+      impotDu = Math.max(0, impotDu - décote);
+    }
+  } else {
+    if (impotDu < 1964) {
+      const décote =
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf.decote
+          .seuil_celib -
+        impotDu *
+          donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf.decote
+            .taux;
+      impotDu = Math.max(0, impotDu - décote);
+    }
+  }
+
+  // Dons
+  // https://www.economie.gouv.fr/cedef/fiches-pratiques/les-reductions-dimpots-pour-les-dons-aux-associations
+  // https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2025/aides/reductions_s.htm#UF
+  const sommesDons = getDons(foyer).reduce(
+    (acc, don) => {
+      switch (don.nature) {
+        case NATURE_DON.partisPolitiques.value:
+        case NATURE_DON.utilitePublique.value: {
+          const plafond = isCouple(foyer)
+            ? donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+                .dons_aux_partis_politiques.plafond_foyer
+            : donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+                .dons_aux_partis_politiques.plafond_seul;
+          const montantAnnuel = Math.min(
+            plafond - acc.utilitePubliqueEtPartisPolitiques,
+            don.montantAnnuel,
+          );
+
+          acc.utilitePubliqueEtPartisPolitiques += montantAnnuel;
+
+          // L'excédent des dons qui dépassent le plafond sont automatiquement catégorisés comme "autres dons"
+          acc.autresDons += don.montantAnnuel - montantAnnuel;
+          break;
+        }
+        case NATURE_DON.personnesEnDifficulte.value: {
+          const montantAnnuel = Math.min(
+            donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+              .dons_coluche.plafond - acc.personnesEnDifficulte,
+            don.montantAnnuel,
+          );
+
+          acc.personnesEnDifficulte += montantAnnuel;
+
+          // L'excédent des dons qui dépassent le plafond sont automatiquement catégorisés comme "autres dons"
+          acc.autresDons += don.montantAnnuel - montantAnnuel;
+          break;
+        }
+      }
+      return acc;
+    },
+    {
+      personnesEnDifficulte: 0,
+      utilitePubliqueEtPartisPolitiques: 0,
+      autresDons: 0,
+    },
+  );
+
+  const donsPersonnesEnDifficulte = sommesDons.personnesEnDifficulte;
+  const reductionDonsPersonnesEnDifficulte =
+    donsPersonnesEnDifficulte *
+    donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+      .dons_coluche.taux;
+
+  const plafondAutresDons =
+    revenuNetImposable *
+    donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+      .plafond_dons;
+  const autresDons = Math.min(
+    plafondAutresDons,
+    sommesDons.utilitePubliqueEtPartisPolitiques + sommesDons.autresDons,
+  );
+
+  const reductionAutresDons =
+    autresDons *
+    donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
+      .taux_reduction;
+
+  const reductionDons =
+    reductionDonsPersonnesEnDifficulte + reductionAutresDons;
+
+  impotDu -= Math.min(reductionDons, Math.max(0, impotDu));
+
+  // Emploi à domicile
+  const remunerationAnnuelleDeductible =
+    calculerRemunerationAnnuelleDeductibleEmploiADomicile(foyer);
+
+  impotDu -=
+    remunerationAnnuelleDeductible *
+    donneesReglementaires.impot_revenu.credits_impots.emploi_salarie_domicile
+      .taux;
+
+  // Enfants scolarisés
+  // https://www.service-public.fr/particuliers/vosdroits/F9/personnalisation/resultat?lang=&quest0=0&quest=
+  const reductionEnfantsScolarises = foyer.enfants.reduce((acc, enfant) => {
+    switch (enfant.scolarite) {
+      case SCOLARTIE_ENFANT.collegien.value:
+        return (
+          acc +
+          donneesReglementaires.impot_revenu.calcul_reductions_impots
+            .enfants_scolarises.college
+        );
+      case SCOLARTIE_ENFANT.lyceen.value:
+        return (
+          acc +
+          donneesReglementaires.impot_revenu.calcul_reductions_impots
+            .enfants_scolarises.lycee
+        );
+      case SCOLARTIE_ENFANT.etudiant.value:
+        return (
+          acc +
+          donneesReglementaires.impot_revenu.calcul_reductions_impots
+            .enfants_scolarises.universite
+        );
+      case null:
+        return acc;
+    }
+  }, 0);
+  impotDu -= Math.min(reductionEnfantsScolarises, Math.max(0, impotDu));
+
+  return impotDu;
+}
+
+export function calculerIR(foyer: Foyer) {
+  const impotDu = calculerImpotDu(foyer);
+
+  if (impotDu <= 0) {
+    return Math.round(impotDu);
+  }
+
+  const foyerSansEnfants = {
+    ...foyer,
+    enfants: [],
+  };
+  const impotDuSansEnfants = calculerImpotDu(foyerSansEnfants);
+
+  const partsFiscalesAvecEnfants = calculerPartsFiscales(foyer);
+  const partsFiscalesSansEnfants = calculerPartsFiscales(foyerSansEnfants);
+  const partsFiscalesEnfants =
+    partsFiscalesAvecEnfants - partsFiscalesSansEnfants;
+
+  const reductionParPart =
+    donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+      .plafond_avantages_procures_par_demi_part.general / 0.5;
+  const reductionMax = reductionParPart * partsFiscalesEnfants;
+
+  return Math.round(
+    Math.max(impotDu, Math.max(0, impotDuSansEnfants - reductionMax)),
+  );
+}

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@akimeo/prettier-config",
+  "version": "0.1.0",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-tailwindcss": "catalog:"
+  }
+}
