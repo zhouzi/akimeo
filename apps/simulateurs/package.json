@@ -24,6 +24,7 @@
     "tailwindcss": "catalog:"
   },
   "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
     "@testing-library/dom": "catalog:",
