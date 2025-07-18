@@ -13,9 +13,18 @@ catalog:
   '@fontsource-variable/saira': ^5.2.8
   '@ianvs/prettier-plugin-sort-imports': ^4.5.1
   '@mdx-js/react': ^3.1.0
+  '@tailwindcss/vite': ^4.1.11
+  '@tanstack/react-router': ^1.128.3
+  '@tanstack/react-router-devtools': ^1.128.3
+  '@tanstack/router-plugin': ^1.128.3
+  '@testing-library/dom': ^10.4.0
+  '@testing-library/react': ^16.3.0
   '@types/lodash.defaultsdeep': ^4.6.9
   '@types/lodash.set': ^4.3.9
   '@types/node': 24.0.13
+  '@types/react': ^19.1.8
+  '@types/react-dom': ^19.1.6
+  '@vitejs/plugin-react': ^4.7.0
   '@vitest/browser': ^3.2.4
   clsx: ^2.1.1
   date-fns: 4.1.0
@@ -26,20 +35,24 @@ catalog:
   eslint-plugin-turbo: ^2.5.4
   eslint-plugin-unused-imports: ^4.1.4
   globals: ^16.3.0
+  jsdom: ^26.1.0
   lodash.defaultsdeep: ^4.6.1
   lodash.set: ^4.3.2
   playwright: ^1.54.1
   prettier: 3.6.2
   prettier-plugin-tailwindcss: ^0.6.14
   prism-react-renderer: ^2.4.1
-  react: ^19.1.0
-  react-dom: ^19.1.0
+  react: 19.1.0
+  react-dom: 19.1.0
+  tailwindcss: ^4.1.11
   tsx: ^4.20.3
   type-fest: 4.41.0
   typescript: 5.8.3
   typescript-eslint: ^8.36.0
-  vite-tsconfig-paths: ^5.1.4
-  vitest: ^3.2.4
+  vite: ^7.0.5
+  vite-tsconfig-paths: 5.1.4
+  vitest: 3.2.4
+  web-vitals: ^5.0.3
   yaml: ^2.8.0
   zod: ^4.0.5
 

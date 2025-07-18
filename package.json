@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev:docs": "turbo run dev --filter=docs...",
+    "dev:simulateurs": "turbo run dev --filter=simulateurs...",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "turbo test",
