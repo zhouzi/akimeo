@@ -1,0 +1,28 @@
+@import "@fontsource-variable/saira";
+@import "@fontsource-variable/rethink-sans";
+
+:root {
+  --ifm-heading-font-family: "Saira Variable", sans-serif;
+  --ifm-color-primary: #001feb;
+  --ifm-color-primary-dark: #001cd3;
+  --ifm-color-primary-darker: #001ac8;
+  --ifm-color-primary-darkest: #0016a5;
+  --ifm-color-primary-light: #0325ff;
+  --ifm-color-primary-lighter: #0f2fff;
+  --ifm-color-primary-lightest: #324dff;
+
+  --ifm-font-color-base: #0a165c;
+}
+
+html {
+  font-family: "Rethink Sans Variable", sans-serif;
+}
+
+.navbar__title {
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 900;
+  letter-spacing: 0.025rem;
+  font-style: italic;
+  text-transform: lowercase;
+  padding-right: 0.1rem;
+}

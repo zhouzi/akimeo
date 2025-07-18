@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "name": "docs",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "docusaurus start",
+    "build": "docusaurus build"
+  },
+  "dependencies": {
+    "@docusaurus/core": "catalog:",
+    "@docusaurus/preset-classic": "catalog:",
+    "@fontsource-variable/rethink-sans": "catalog:",
+    "@fontsource-variable/saira": "catalog:",
+    "@mdx-js/react": "catalog:",
+    "clsx": "catalog:",
+    "prism-react-renderer": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "catalog:",
+    "@docusaurus/tsconfig": "catalog:",
+    "@docusaurus/types": "catalog:",
+    "typescript": "catalog:"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  }
+}

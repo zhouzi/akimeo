@@ -2,6 +2,7 @@
   "name": "akimeo",
   "private": true,
   "scripts": {
+    "dev:docs": "turbo run dev --filter=docs...",
     "build": "turbo build",
     "lint": "turbo lint",
     "test": "turbo test",
