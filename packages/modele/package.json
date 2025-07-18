@@ -4,7 +4,8 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
     "dev": "tsc -w",
-    "format": "eslint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
+    "lint": "eslint",
+    "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
   "exports": {
     ".": {
