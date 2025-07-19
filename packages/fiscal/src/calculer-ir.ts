@@ -7,10 +7,13 @@ import {
   isRevenuMicroEntreprise,
   NATURE_REVENU,
   SCOLARTIE_ENFANT,
+  SITUATION_FAMILIALE,
   TYPE_EMPLOI_A_DOMICILE,
   TYPE_EMPLOI_A_DOMICILE_OPTIONS,
 } from "@akimeo/modele";
 import { NATURE_DON } from "@akimeo/modele/don";
+
+import { calculerPartsFiscales } from "./calculer-parts-fiscales";
 
 const BAREME_IR =
   donneesReglementaires.impot_revenu.bareme_ir_depuis_1945.bareme;
@@ -156,38 +159,6 @@ function calculerRevenuNetImposable(foyer: Foyer) {
   const revenuNetImposable = revenuNetGlobal;
 
   return revenuNetImposable;
-}
-
-function calculerPartsFiscales(foyer: Foyer) {
-  let parts =
-    donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
-      .quotient_familial.cas_general.conj;
-
-  if (isCouple(foyer)) {
-    parts +=
-      donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
-        .quotient_familial.cas_general.conj;
-  }
-
-  for (let i = 0; i < foyer.enfants.length; i++) {
-    if (i === 0) {
-      parts +=
-        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
-          .quotient_familial.cas_general.enf1;
-    }
-    if (i === 1) {
-      parts +=
-        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
-          .quotient_familial.cas_general.enf2;
-    }
-    if (i > 1) {
-      parts +=
-        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
-          .quotient_familial.cas_general.enf3_et_sup;
-    }
-  }
-
-  return parts;
 }
 
 function trancherRevenus(foyer: Foyer) {
@@ -501,8 +472,26 @@ export function calculerIR(foyer: Foyer) {
     donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
       .plafond_avantages_procures_par_demi_part.general / 0.5;
   const reductionMax = reductionParPart * partsFiscalesEnfants;
+  const impotDuMin = Math.max(0, impotDuSansEnfants - reductionMax);
 
-  return Math.round(
-    Math.max(impotDu, Math.max(0, impotDuSansEnfants - reductionMax)),
-  );
+  if (impotDuMin > impotDu) {
+    let reductionSpeciale = 0;
+
+    // https://www.impots.gouv.fr/sites/default/files/media/3_Documentation/depliants/nid_4001_gp_110.pdf#:~:text=Si%20vous%20%C3%AAtes%20veuf%20avec,1%20993%20%E2%82%AC%20est%20appliqu%C3%A9e.
+    if (foyer.situationFamiliale === SITUATION_FAMILIALE.veuf.value) {
+      reductionSpeciale +=
+        donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
+          .plafond_avantages_procures_par_demi_part.reduc_postplafond_veuf;
+    }
+
+    const reductionSpecialeMax = Math.min(
+      // https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000051212954#:~:text=du%20pr%C3%A9sent%202.-,Cette%20r%C3%A9duction%20d%27imp%C3%B4t%20ne%20peut%20toutefois%20exc%C3%A9der%20l%27augmentation%20de%20la%20cotisation%20d%27imp%C3%B4t%20r%C3%A9sultant%20du%20plafonnement.,-3.%20Le%20montant
+      impotDuMin - impotDu,
+      Math.min(reductionSpeciale, impotDuMin),
+    );
+
+    return Math.round(impotDuMin - reductionSpecialeMax);
+  }
+
+  return Math.round(impotDu);
 }

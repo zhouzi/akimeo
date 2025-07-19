@@ -1,3 +1,4 @@
+import { startOfYear } from "date-fns/startOfYear";
 import defaultsDeep from "lodash.defaultsdeep";
 import { type PartialDeep } from "type-fest";
 import z from "zod";
@@ -55,6 +56,7 @@ interface BaseFoyer<
     | typeof SITUATION_FAMILIALE.pacse.value,
 > {
   situationFamiliale: SituationFamiliale;
+  dateChangementSituationFamiliale: Date;
   declarant1: Adulte;
   enfants: Enfant[];
   impositionRCM:
@@ -71,6 +73,7 @@ const baseFoyerSchema = z.object({
     SITUATION_FAMILIALE.marie.value,
     SITUATION_FAMILIALE.pacse.value,
   ]),
+  dateChangementSituationFamiliale: z.date(),
   declarant1: adulteSchema,
   enfants: z.array(enfantSchema),
   impositionRCM: z.enum([
@@ -169,6 +172,7 @@ export function creerFoyer(
       return foyerSchema.parse(
         defaultsDeep({}, foyer, {
           situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+          dateChangementSituationFamiliale: startOfYear(new Date()),
           declarant1: creerAdulte(foyer.declarant1 ?? {}),
           enfants: [],
           impositionRCM: IMPOSITION_RCM.pfu.value,

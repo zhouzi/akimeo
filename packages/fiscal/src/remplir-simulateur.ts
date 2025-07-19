@@ -9,6 +9,7 @@ import {
   SCOLARTIE_ENFANT,
   SITUATION_FAMILIALE,
 } from "@akimeo/modele";
+import { isSameYear } from "date-fns";
 
 import {
   calculerRemunerationAnnuelleDeductibleEmploiADomicile,
@@ -83,9 +84,21 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
     await driver.fill("#B0DB", foyer.declarant2.dateNaissance.getFullYear());
   }
 
+  if (
+    (
+      [
+        SITUATION_FAMILIALE.divorce.value,
+        SITUATION_FAMILIALE.veuf.value,
+      ] as string[]
+    ).includes(foyer.situationFamiliale) &&
+    isSameYear(new Date(), foyer.dateChangementSituationFamiliale)
+  ) {
+    await driver.click("#B0AN");
+  }
+
   await driver.fill("#B0CF", foyer.enfants.length);
 
-  for (let i = 0; i < Math.min(foyer.enfants.length - 1, 6); i++) {
+  for (let i = 0; i < Math.min(foyer.enfants.length, 6); i++) {
     const enfant = foyer.enfants[i]!;
     await driver.fill(`#B0F${i}`, enfant.dateNaissance.getFullYear());
   }

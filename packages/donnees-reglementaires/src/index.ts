@@ -53,6 +53,12 @@ export default {
              * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/quotient_familial/cas_general/enf3_et_sup.yaml Source}
              */
             enf3_et_sup: 1,
+
+            /**
+             * @description Part supplémentaire de quotient familial (IR) pour une personne veuve ayant des personnes à charge
+             * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/quotient_familial/cas_general/veuf.yaml Source}
+             */
+            veuf: 1,
           },
         },
         plafond_avantages_procures_par_demi_part: {
@@ -61,6 +67,12 @@ export default {
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/general.yaml Source}
            */
           general: 1791,
+
+          /**
+           * @description Réduction d'impôt complémentaire pour les veufs ayant des enfants à charge, si le plafond général de leur demi-part supplémentaire a été atteint.
+           * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/reduc_postplafond_veuf.yaml Source}
+           */
+          reduc_postplafond_veuf: 1993,
         },
       },
     },

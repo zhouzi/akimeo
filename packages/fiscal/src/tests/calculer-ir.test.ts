@@ -12,6 +12,8 @@ import {
   SITUATION_FAMILIALE,
   TYPE_EMPLOI_A_DOMICILE,
 } from "@akimeo/modele";
+import { startOfYear } from "date-fns/startOfYear";
+import { subYears } from "date-fns/subYears";
 import playwright from "playwright";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
@@ -19,8 +21,8 @@ import type { Driver } from "~/remplir-simulateur";
 import { calculerIR } from "~/calculer-ir";
 import { remplirSimulateur } from "~/remplir-simulateur";
 
-const HEADLESS = true as boolean;
-const HEADFULL_TIMEOUT_BETWEEN_INTERACTIONS = 1000;
+const HEADLESS = JSON.parse(process.env.HEADLESS ?? "true") as boolean;
+const HEADFULL_TIMEOUT_BETWEEN_INTERACTIONS = 5000;
 
 describe("calculerIR", () => {
   let browser: playwright.Browser;
@@ -441,6 +443,220 @@ describe("calculerIR", () => {
         ],
       },
       impositionRCM: IMPOSITION_RCM.pfu.value,
+    }),
+
+    // veuf cette année
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({}), creerEnfant({})],
+    }),
+
+    // veuf depuis plus d'1 an
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.veuf.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({}), creerEnfant({})],
+    }),
+
+    // divorcé cette année
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: startOfYear(new Date()),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({}), creerEnfant({})],
+    }),
+
+    // divorcé depuis plus d'1 an
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({})],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.divorce.value,
+      dateChangementSituationFamiliale: subYears(new Date(), 1),
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 80000,
+          },
+        ],
+      },
+      enfants: [creerEnfant({}), creerEnfant({}), creerEnfant({})],
     }),
   ])(
     "scénario %$",
