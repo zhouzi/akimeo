@@ -4,7 +4,12 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "build/**"]
+      "outputs": ["dist/**"]
+    },
+    "docs#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["build/**"],
+      "env": ["SIMULATEURS_HOSTNAME"]
     },
     "dev": {
       "persistent": true,
