@@ -27,7 +27,7 @@ jobs:
       - name: Build website
         run: pnpm turbo run build --filter=docs...
         env:
-          SIMULATEURS_HOSTNAME: ${{ secrets.SIMULATEURS_HOSTNAME }}
+          SIMULATEURS_HOSTNAME: ${{ vars.SIMULATEURS_HOSTNAME }}
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
