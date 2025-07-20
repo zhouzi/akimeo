@@ -1,0 +1,18 @@
+.simulateurContainer {
+  box-shadow:
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.1) 0px 4px 6px -4px;
+  border: 1px solid oklch(0.8872 0.036 278.7);
+  border-radius: 13.5px;
+  padding: 27px;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  margin-top: 16px;
+  color: var(--ifm-color-emphasis-700);
+}

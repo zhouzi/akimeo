@@ -9,8 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ConcubinageVsPacsRouteImport } from './routes/concubinage-vs-pacs'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ConcubinageVsPacsRoute = ConcubinageVsPacsRouteImport.update({
+  id: '/concubinage-vs-pacs',
+  path: '/concubinage-vs-pacs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +25,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/concubinage-vs-pacs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/concubinage-vs-pacs'
+  id: '__root__' | '/' | '/concubinage-vs-pacs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConcubinageVsPacsRoute: typeof ConcubinageVsPacsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/concubinage-vs-pacs': {
+      id: '/concubinage-vs-pacs'
+      path: '/concubinage-vs-pacs'
+      fullPath: '/concubinage-vs-pacs'
+      preLoaderRoute: typeof ConcubinageVsPacsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConcubinageVsPacsRoute: ConcubinageVsPacsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

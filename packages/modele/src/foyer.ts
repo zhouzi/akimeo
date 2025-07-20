@@ -177,3 +177,14 @@ export function creerFoyer(
       );
   }
 }
+
+export function pacser(foyer1: Foyer, foyer2: Foyer): Foyer {
+  return {
+    declarant1: foyer1.declarant1,
+    declarant2: foyer2.declarant1,
+    situationFamiliale: SITUATION_FAMILIALE.pacse.value,
+    emploisADomicile: foyer1.emploisADomicile.concat(foyer2.emploisADomicile),
+    enfants: foyer1.enfants.concat(foyer2.enfants),
+    impositionRCM: foyer1.impositionRCM,
+  };
+}

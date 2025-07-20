@@ -1,15 +1,45 @@
 @import "tailwindcss";
+@plugin "tailwindcss-react-aria-components";
 
-body {
-  @apply m-0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "@fontsource-variable/saira";
+@import "@fontsource-variable/rethink-sans";
+
+@source "../index.html";
+@source "../../../packages/ui/src";
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --font-sans: var(--font-sans);
+
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-input: var(--input);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+:root {
+  --font-heading: "Saira Variable", sans-serif;
+  --font-sans: "Rethink Sans Variable", sans-serif;
+  --foreground: oklch(25.12% 0.12 267.33);
+  --background: oklch(100% 0 0);
+  --border: oklch(88.72% 0.036 278.7);
+  --primary: oklch(44.09% 0.284 264.21);
+  --primary-foreground: oklch(100% 0 0);
+  --input: oklch(100% 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply text-foreground overscroll-none font-sans antialiased;
+  }
+  @media (min-width: 640px) {
+    html {
+      font-size: 18px;
+    }
+  }
 }

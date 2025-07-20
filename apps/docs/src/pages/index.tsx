@@ -16,7 +16,10 @@ export default function Home(): ReactNode {
           </Heading>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div>
-            <Link className="button button--secondary button--lg" to="/docs/">
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/simulateurs/"
+            >
               Découvrir les simulateurs
             </Link>
           </div>

@@ -1,4 +1,4 @@
-micro-entreprise:
-  label: Micro-Entreprise
-  permalink: /micro-entreprise
-  description: Tous les articles liés à la Micro-Entreprise
+journal:
+  label: Journal
+  permalink: /journal
+  description: Articles qui partagent l'envers du décors de Akimeo.

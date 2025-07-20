@@ -79,3 +79,19 @@ export function creerAdulte(adulte: PartialDeep<Adulte>): Adulte {
     } satisfies Adulte),
   );
 }
+
+export function setNombreEnfants(enfants: Enfant[], nombre: number) {
+  const difference = nombre - enfants.length;
+
+  if (difference > 0) {
+    return enfants.concat(
+      Array.from({ length: difference }).map(() => creerEnfant({})),
+    );
+  }
+
+  if (difference < 0) {
+    return enfants.slice(0, enfants.length + difference);
+  }
+
+  return enfants;
+}

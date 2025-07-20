@@ -4,24 +4,34 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3001",
     "start": "vite",
     "typecheck": "tsc",
     "prebuild": "pnpm run typecheck",
     "build": "vite build",
     "serve": "vite preview",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "lint": "eslint",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@akimeo/fiscal": "workspace:*",
+    "@akimeo/modele": "workspace:*",
+    "@akimeo/ui": "workspace:*",
+    "@fontsource-variable/rethink-sans": "catalog:",
+    "@fontsource-variable/saira": "catalog:",
     "@tailwindcss/vite": "catalog:",
+    "@tanstack/react-form": "catalog:",
     "@tanstack/react-router": "catalog:",
     "@tanstack/react-router-devtools": "catalog:",
     "@tanstack/router-plugin": "catalog:",
+    "lucide-react": "catalog:",
     "react": "catalog:",
+    "react-aria-components": "catalog:",
     "react-dom": "catalog:",
-    "tailwindcss": "catalog:"
+    "tailwindcss": "catalog:",
+    "tailwindcss-react-aria-components": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@akimeo/eslint-config": "workspace:*",

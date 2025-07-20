@@ -12,10 +12,18 @@
   --ifm-color-primary-lightest: #324dff;
 
   --ifm-font-color-base: #0a165c;
+  --ifm-color-emphasis-700: #3d498f;
 }
 
 html {
   font-family: "Rethink Sans Variable", sans-serif;
+}
+
+h1,
+h2[class^="title"] {
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  line-height: 1.15;
 }
 
 .navbar__title {

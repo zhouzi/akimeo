@@ -3,7 +3,7 @@
   "name": "docs",
   "version": "0.1.0",
   "scripts": {
-    "dev": "docusaurus start",
+    "dev": "docusaurus start --no-open",
     "build": "docusaurus build"
   },
   "dependencies": {

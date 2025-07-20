@@ -207,3 +207,48 @@ export function isRevenuMicroEntreprise(
     revenu.nature === NATURE_REVENU.microBNC.value
   );
 }
+
+export function calculerSommeRevenus(revenus: Revenu[]) {
+  return revenus.reduce((acc, revenu) => acc + revenu.montantAnnuel, 0);
+}
+
+export function setMontantRevenus(revenus: Revenu[], montantAnnuel: number) {
+  const sommeRevenus = calculerSommeRevenus(revenus);
+  let difference = montantAnnuel - sommeRevenus;
+
+  if (revenus.length === 0) {
+    revenus = [
+      {
+        nature: NATURE_REVENU.salaire.value,
+        montantAnnuel: 0,
+      },
+    ];
+  }
+
+  if (difference > 0) {
+    const augmentationParRevenu = difference / revenus.length;
+    return revenus.map((revenu) => ({
+      ...revenu,
+      montantAnnuel: revenu.montantAnnuel + augmentationParRevenu,
+    }));
+  }
+
+  return revenus
+    .slice()
+    .reverse()
+    .map((revenu) => {
+      if (difference >= 0) {
+        return revenu;
+      }
+
+      if (revenu.montantAnnuel < 0) {
+        difference = 0;
+        return { ...revenu, montantAnnuel: revenu.montantAnnuel + difference };
+      }
+
+      const montantAnnuel = Math.max(0, revenu.montantAnnuel + difference);
+      difference += revenu.montantAnnuel - montantAnnuel;
+      return { ...revenu, montantAnnuel };
+    })
+    .reverse();
+}

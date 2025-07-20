@@ -13,6 +13,9 @@ const config: Config = {
   baseUrl: "/",
   organizationName: "zhouzi",
   projectName: "akimeo",
+  customFields: {
+    simulateursHostname: process.env.SIMULATEURS_HOSTNAME,
+  },
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: {
@@ -28,6 +31,7 @@ const config: Config = {
           editUrl: "https://github.com/zhouzi/akimeo/tree/main/apps/docs/",
         },
         blog: {
+          blogSidebarTitle: "Les derniers articles",
           showReadingTime: true,
           feedOptions: {
             type: ["rss", "atom"],
@@ -55,9 +59,9 @@ const config: Config = {
       items: [
         {
           type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          sidebarId: "simulateurs",
           position: "left",
-          label: "Documentation",
+          label: "Simulateurs",
         },
         {
           to: "/blog",
@@ -75,11 +79,11 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Documentation",
+          title: "Simulateurs",
           items: [
             {
-              label: "Intro",
-              to: "/docs/",
+              label: "Concubinage vs PACS",
+              to: "/docs/simulateurs/concubinage-vs-pacs",
             },
           ],
         },

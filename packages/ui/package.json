@@ -1,0 +1,33 @@
+{
+  "name": "@akimeo/ui",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.build.json",
+    "dev": "tsc -w",
+    "lint": "eslint",
+    "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:"
+  },
+  "dependencies": {
+    "react-aria-components": "catalog:",
+    "tailwind-merge": "catalog:",
+    "tailwind-variants": "catalog:"
+  },
+  "prettier": "@akimeo/prettier-config"
+}
