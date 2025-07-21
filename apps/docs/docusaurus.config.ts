@@ -120,7 +120,7 @@ const config: Config = {
           items: [
             {
               label: "Concubinage vs PACS",
-              to: "/docs/simulateurs/concubinage-vs-pacs",
+              to: "/docs/simulateurs/simulateurs/concubinage-vs-pacs",
             },
             {
               label: "Tous les simulateurs",
