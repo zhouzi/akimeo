@@ -3,8 +3,6 @@ import {
   setNombreEnfants,
   SITUATION_FAMILIALE,
 } from "@akimeo/modele";
-import { startOfYear } from "date-fns/startOfYear";
-import { subYears } from "date-fns/subYears";
 import { describe, expect, it } from "vitest";
 
 import { calculerPartsFiscales } from "~/calculer-parts-fiscales";
@@ -15,7 +13,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
-        dateChangementSituationFamiliale: startOfYear(new Date()),
       }),
       1,
       1.5,
@@ -26,7 +23,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.concubinage.value,
-        dateChangementSituationFamiliale: startOfYear(new Date()),
       }),
       1,
       1.5,
@@ -37,7 +33,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.divorce.value,
-        dateChangementSituationFamiliale: startOfYear(new Date()),
       }),
       1,
       1.5,
@@ -48,7 +43,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.divorce.value,
-        dateChangementSituationFamiliale: subYears(new Date(), 1),
       }),
       1,
       1.5,
@@ -59,7 +53,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.veuf.value,
-        dateChangementSituationFamiliale: startOfYear(new Date()),
       }),
       1,
       2.5,
@@ -70,7 +63,6 @@ describe("calculerPartsFiscales", () => {
     [
       creerFoyer({
         situationFamiliale: SITUATION_FAMILIALE.veuf.value,
-        dateChangementSituationFamiliale: subYears(new Date(), 1),
       }),
       1,
       2.5,
@@ -79,7 +71,7 @@ describe("calculerPartsFiscales", () => {
       5,
     ],
   ])(
-    "pour un $situationFamiliale depuis le $dateChangementSituationFamiliale",
+    "pour un $situationFamiliale",
     (foyer, noChildren, oneChild, twoChildren, threeChildren, fourChildren) => {
       expect(
         calculerPartsFiscales({
