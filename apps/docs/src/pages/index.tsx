@@ -1,31 +1,34 @@
-import type { ReactNode } from "react";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import Heading from "@theme/Heading";
+import styles from "./index.module.css";
 
-export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
-
+export default function Page() {
   return (
     <Layout>
-      <header className="hero hero--primary">
-        <div className="container">
-          <Heading as="h1" className="hero__title">
-            {siteConfig.title}
-          </Heading>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div>
-            <Link
-              className="button button--secondary button--lg"
-              to="/docs/simulateurs/"
-            >
-              Découvrir les simulateurs
-            </Link>
-          </div>
+      <section
+        className={styles.outerContainer}
+        style={{
+          backgroundImage: `url("/assets/texture-background.png"), linear-gradient(0deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 1) 100%), url("/assets/gradient-background.svg")`,
+          backgroundSize: "400px, cover, cover",
+          backgroundRepeat: "repeat, no-repeat, no-repeat",
+          backgroundBlendMode: "soft-light, normal, normal",
+        }}
+      >
+        <div className={styles.container}>
+          <h1>Pilotez plus efficacement votre activité</h1>
+          <p>
+            Akimeo est une suite d'outils permettant aux indépendants de mieux
+            comprendre les enjeux juridiques, comptables, fiscaux et financiers
+            de leur situation.
+          </p>
+          <Link
+            className="button button--primary button--lg"
+            to="/docs/simulateurs/"
+          >
+            Découvrir les simulateurs
+          </Link>
         </div>
-      </header>
-      <main></main>
+      </section>
     </Layout>
   );
 }

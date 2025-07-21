@@ -10,9 +10,11 @@
   --ifm-color-primary-light: #0325ff;
   --ifm-color-primary-lighter: #0f2fff;
   --ifm-color-primary-lightest: #324dff;
-
   --ifm-font-color-base: #0a165c;
   --ifm-color-emphasis-700: #3d498f;
+  --ifm-global-radius: 0.6rem;
+  --ifm-button-padding-vertical: 0.5rem;
+  --ifm-button-padding-horizontal: 1.8rem;
 }
 
 html {
@@ -33,4 +35,8 @@ h2[class^="title"] {
   font-style: italic;
   text-transform: lowercase;
   padding-right: 0.1rem;
+}
+
+.button {
+  font-weight: 500;
 }
