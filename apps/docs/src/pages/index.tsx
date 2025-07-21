@@ -15,7 +15,7 @@ export default function Page() {
         }}
       >
         <div className={styles.container}>
-          <h1>Pilotez plus efficacement votre activité</h1>
+          <h1>Pilotez votre activité plus efficacement</h1>
           <p>
             Akimeo est une suite d'outils permettant aux indépendants de mieux
             comprendre les enjeux juridiques, comptables, fiscaux et financiers

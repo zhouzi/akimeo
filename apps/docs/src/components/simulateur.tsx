@@ -41,11 +41,7 @@ export function Simulateur({ path }: SimulateurProps) {
 
   return (
     <div>
-      <div
-        ref={simulateurContainerRef}
-        data-simulateur={path}
-        className={styles.simulateurContainer}
-      />
+      <div ref={simulateurContainerRef} data-simulateur={path} />
       <p className={styles.disclaimer}>
         Ce simulateur est là pour t'aider à mieux comprendre, mais il ne
         remplace pas une analyse complète de ta situation. Chaque cas est
