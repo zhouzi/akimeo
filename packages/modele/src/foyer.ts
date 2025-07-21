@@ -90,7 +90,7 @@ const baseFoyerSchema = z.object({
 >;
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-interface Celibataire
+export interface Celibataire
   extends BaseFoyer<
     | typeof SITUATION_FAMILIALE.celibataire.value
     | typeof SITUATION_FAMILIALE.divorce.value
@@ -104,7 +104,7 @@ const celibataireSchema = baseFoyerSchema.extend({
   ]),
 }) satisfies z.ZodType<Celibataire>;
 
-interface Concubinage
+export interface Concubinage
   extends BaseFoyer<typeof SITUATION_FAMILIALE.concubinage.value> {
   declarant2: Adulte;
 }
@@ -113,7 +113,7 @@ const concubinageSchema = baseFoyerSchema.extend({
   declarant2: adulteSchema,
 }) satisfies z.ZodType<Concubinage>;
 
-interface Couple
+export interface Couple
   extends BaseFoyer<
     | typeof SITUATION_FAMILIALE.marie.value
     | typeof SITUATION_FAMILIALE.pacse.value

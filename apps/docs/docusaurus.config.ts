@@ -2,6 +2,8 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
+const LIBRAIRIES = ["modele", "fiscal"];
+
 const config: Config = {
   title: "Akimeo",
   tagline: "Des réponses simples à des questions compliquées.",
@@ -48,6 +50,22 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  plugins: [
+    ...LIBRAIRIES.map((librairie) => [
+      "docusaurus-plugin-typedoc",
+      {
+        id: librairie,
+        entryPoints: [`../../packages/${librairie}/src/index.ts`],
+        tsconfig: `../../packages/${librairie}/tsconfig.build.json`,
+        out: `docs/librairies/api/${librairie}`,
+        pageTitleTemplates: {
+          index: "{projectName} {version}",
+          member: "{name}",
+          module: "{name}",
+        },
+      },
+    ]),
+  ],
   themeConfig: {
     // image: "img/docusaurus-social-card.jpg",
     navbar: {
@@ -57,6 +75,12 @@ const config: Config = {
         src: "img/logo.svg",
       },
       items: [
+        {
+          type: "docSidebar",
+          sidebarId: "librairies",
+          position: "left",
+          label: "Librairies",
+        },
         {
           type: "docSidebar",
           sidebarId: "simulateurs",
@@ -79,11 +103,28 @@ const config: Config = {
       style: "dark",
       links: [
         {
+          title: "Librairies",
+          items: [
+            ...LIBRAIRIES.slice(0, 5).map((librairie) => ({
+              label: `@akimeo/${librairie}`,
+              to: `/docs/librairies/api/${librairie}/`,
+            })),
+            {
+              label: "Toutes les librairies",
+              to: "/docs/librairies/",
+            },
+          ],
+        },
+        {
           title: "Simulateurs",
           items: [
             {
               label: "Concubinage vs PACS",
               to: "/docs/simulateurs/concubinage-vs-pacs",
+            },
+            {
+              label: "Tous les simulateurs",
+              to: "/docs/simulateurs/",
             },
           ],
         },
