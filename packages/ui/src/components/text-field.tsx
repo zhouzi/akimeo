@@ -5,12 +5,12 @@ import type {
 import { TextField as AriaTextField } from "react-aria-components";
 import { tv } from "tailwind-variants";
 
+import { composeTailwindRenderProps, focusRing } from "../lib/utils";
 import { Description } from "./description";
 import { FieldError } from "./field-error";
 import { fieldBorderStyles } from "./field-group";
 import { Input } from "./input";
 import { Label } from "./label";
-import { composeTailwindRenderProps, focusRing } from "./utils";
 
 const inputStyles = tv({
   extend: focusRing,

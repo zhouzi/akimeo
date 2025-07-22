@@ -1,7 +1,7 @@
 import type { InputProps } from "react-aria-components";
 import { Input as RACInput } from "react-aria-components";
 
-import { composeTailwindRenderProps } from "./utils";
+import { composeTailwindRenderProps } from "../lib/utils";
 
 export function Input(props: InputProps) {
   return (

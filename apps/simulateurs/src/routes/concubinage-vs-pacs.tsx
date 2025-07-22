@@ -3,7 +3,7 @@ import { FORMAT_EUROS_OPTIONS, formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
 import { calculerSommeRevenus, setMontantRevenus } from "@akimeo/modele/revenu";
-import { SliderField } from "@akimeo/ui/slider";
+import { SliderField } from "@akimeo/ui/components/slider";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
 import {
@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { useAppForm } from "@akimeo/ui/form";
+import { useAppForm } from "@akimeo/ui/components/form";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({

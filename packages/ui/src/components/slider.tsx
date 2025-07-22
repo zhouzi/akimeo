@@ -10,9 +10,9 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 
+import { composeTailwindRenderProps } from "../lib/utils";
 import { Description } from "./description";
 import { Label } from "./label";
-import { composeTailwindRenderProps } from "./utils";
 
 export interface SliderFieldProps<T = number> extends SliderProps<T> {
   label?: string;

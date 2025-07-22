@@ -1,7 +1,7 @@
 import type { FieldErrorProps } from "react-aria-components";
 import { FieldError as RACFieldError } from "react-aria-components";
 
-import { composeTailwindRenderProps } from "./utils";
+import { composeTailwindRenderProps } from "../lib/utils";
 
 export function FieldError(props: FieldErrorProps) {
   return (

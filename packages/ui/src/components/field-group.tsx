@@ -2,7 +2,7 @@ import type { GroupProps } from "react-aria-components";
 import { composeRenderProps, Group } from "react-aria-components";
 import { tv } from "tailwind-variants";
 
-import { focusRing } from "./utils";
+import { focusRing } from "../lib/utils";
 
 export const fieldBorderStyles = tv({
   variants: {

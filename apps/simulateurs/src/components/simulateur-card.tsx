@@ -1,6 +1,6 @@
-import type { CardProps } from "@akimeo/ui/card";
+import type { CardProps } from "@akimeo/ui/components/card";
 import { useEffect, useState } from "react";
-import { buttonStyles } from "@akimeo/ui/button";
+import { buttonStyles } from "@akimeo/ui/components/button";
 import {
   Card,
   CardContent,
@@ -8,7 +8,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@akimeo/ui/card";
+} from "@akimeo/ui/components/card";
 import { Link } from "react-aria-components";
 
 interface SimulateurCardProps extends CardProps {
