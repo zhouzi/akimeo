@@ -46,6 +46,7 @@
     "prettier": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
+    "vite-plugin-checker": "catalog:",
     "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:",
     "web-vitals": "catalog:"
