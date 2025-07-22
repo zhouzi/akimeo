@@ -18,6 +18,9 @@
       "default": "./dist/*.js"
     }
   },
+  "dependencies": {
+    "@akimeo/donnees-reglementaires": "workspace:*"
+  },
   "devDependencies": {
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/modele": "workspace:*",
@@ -27,14 +30,9 @@
     "eslint": "catalog:",
     "playwright": "catalog:",
     "prettier": "catalog:",
-    "type-fest": "catalog:",
     "typescript": "catalog:",
     "vite-tsconfig-paths": "catalog:",
     "vitest": "catalog:"
-  },
-  "dependencies": {
-    "@akimeo/donnees-reglementaires": "workspace:*",
-    "date-fns": "catalog:"
   },
   "prettier": "@akimeo/prettier-config"
 }

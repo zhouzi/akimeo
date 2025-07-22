@@ -17,21 +17,20 @@
       "default": "./dist/*.js"
     }
   },
+  "dependencies": {
+    "date-fns": "catalog:",
+    "lodash.defaultsdeep": "catalog:",
+    "zod": "catalog:"
+  },
   "devDependencies": {
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
     "@types/lodash.defaultsdeep": "catalog:",
-    "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "type-fest": "catalog:",
     "typescript": "catalog:"
-  },
-  "dependencies": {
-    "date-fns": "catalog:",
-    "lodash.defaultsdeep": "catalog:",
-    "zod": "catalog:"
   },
   "prettier": "@akimeo/prettier-config"
 }

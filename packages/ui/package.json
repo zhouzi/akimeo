@@ -17,16 +17,6 @@
       "default": "./dist/*.js"
     }
   },
-  "devDependencies": {
-    "@akimeo/eslint-config": "workspace:*",
-    "@akimeo/prettier-config": "workspace:*",
-    "@akimeo/typescript-config": "workspace:*",
-    "concurrently": "catalog:",
-    "eslint": "catalog:",
-    "prettier": "catalog:",
-    "tsc-alias": "catalog:",
-    "typescript": "catalog:"
-  },
   "dependencies": {
     "@radix-ui/react-label": "catalog:",
     "@radix-ui/react-slider": "catalog:",
@@ -35,6 +25,22 @@
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "tailwind-merge": "catalog:"
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "concurrently": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "react": "catalog:",
+    "tsc-alias": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "@types/react": "catalog:",
+    "react": "catalog:"
   },
   "prettier": "@akimeo/prettier-config"
 }
