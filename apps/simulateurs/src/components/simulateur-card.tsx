@@ -25,7 +25,9 @@ export function SimulateurCard({
   const [url, setUrl] = useState("https://akimeo.xyz/docs/simulateurs");
 
   useEffect(() => {
-    setUrl(`https://akimeo.xyz/docs/simulateurs/${window.location.pathname}`);
+    setUrl(
+      `https://akimeo.xyz/docs/simulateurs/simulateurs/${window.location.pathname.slice(1)}`,
+    );
   }, []);
 
   return (
