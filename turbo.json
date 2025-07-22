@@ -7,7 +7,7 @@
       "outputs": ["dist/**"]
     },
     "docs#build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "@akimeo/fiscal#build"],
       "outputs": ["build/**"],
       "env": ["SIMULATEURS_HOSTNAME"]
     },
