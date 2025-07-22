@@ -13,6 +13,7 @@ export interface SliderFieldProps
   description?: string;
   errorMessage?: string;
   onChange?: SliderProps["onValueChange"];
+  formatValue?: (value: number) => React.ReactNode;
 }
 
 export function SliderField({
@@ -20,12 +21,17 @@ export function SliderField({
   description,
   errorMessage,
   onChange,
+  value,
+  formatValue = (value) => value,
   ...props
 }: SliderFieldProps) {
   return (
     <FormItem>
-      {label && <Label>{label}</Label>}
-      <Slider {...props} onValueChange={onChange} />
+      <div className="flex items-center justify-between gap-2">
+        {label && <Label>{label}</Label>}
+        <p className="text-sm">{value?.map(formatValue)}</p>
+      </div>
+      <Slider {...props} onValueChange={onChange} value={value} />
       {description && <FormDescription>{description}</FormDescription>}
       {errorMessage && <FormMessage>{errorMessage}</FormMessage>}
     </FormItem>

@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@akimeo/ui/components/card";
+import { cn } from "@akimeo/ui/lib/utils";
 
 interface SimulateurCardProps extends CardProps {
   title: string;
@@ -19,6 +20,7 @@ export function SimulateurCard({
   title,
   description,
   children,
+  className,
   ...props
 }: SimulateurCardProps) {
   const [url, setUrl] = useState("https://akimeo.xyz/docs/simulateurs");
@@ -30,13 +32,13 @@ export function SimulateurCard({
   }, []);
 
   return (
-    <Card {...props}>
+    <Card {...props} className={cn("shadow-none", className)}>
       <CardHeader>
         <CardTitle>{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>{children}</CardContent>
-      <CardFooter>
+      <CardFooter className="gap-2 border-t p-2!">
         <Button variant="outline" size="sm" asChild>
           <a href={url} target="_blank">
             <span className="font-heading font-black tracking-wide italic">
@@ -44,7 +46,9 @@ export function SimulateurCard({
             </span>
           </a>
         </Button>
-        <p>Pilotez votre activité plus efficacement.</p>
+        <p className="text-muted-foreground text-sm">
+          Les simulateurs qui parlent le langage des indépendants.
+        </p>
       </CardFooter>
     </Card>
   );

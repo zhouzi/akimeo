@@ -3,7 +3,7 @@ import { formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
 import { calculerSommeRevenus, setMontantRevenus } from "@akimeo/modele/revenu";
-import { useAppForm } from "@akimeo/ui/components/form";
+import { useAppForm, withForm } from "@akimeo/ui/components/form";
 import { SliderField } from "@akimeo/ui/components/slider";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
@@ -36,6 +36,59 @@ const formOpts = formOptions({
   defaultValues,
 });
 
+const PersonneForm = withForm({
+  ...formOpts,
+  props: {
+    name: "foyer1" as "foyer1" | "foyer2",
+  },
+  render: ({ form, name }) => {
+    return (
+      <>
+        <form.AppField
+          name={`${name}.declarant1.revenus`}
+          children={(field) => (
+            <SliderField
+              label="Revenus"
+              onChange={([montant]) =>
+                field.setValue(setMontantRevenus(field.state.value, montant!))
+              }
+              value={[calculerSommeRevenus(field.state.value)]}
+              min={0}
+              max={200000}
+              step={500}
+              formatValue={formatEuros}
+            />
+          )}
+        />
+        <form.AppField
+          name={`${name}.enfants`}
+          children={(field) => (
+            <SliderField
+              label="Enfants"
+              onChange={([nombre]) =>
+                field.setValue(setNombreEnfants(field.state.value, nombre!))
+              }
+              value={[field.state.value.length]}
+              min={0}
+              max={10}
+              step={1}
+            />
+          )}
+        />
+        <form.Subscribe
+          selector={(state) => calculerIR(state.values[name])}
+          children={(ir) => (
+            <div className="flex items-center gap-2">
+              <Landmark className="text-primary size-5" />{" "}
+              <p>IR : {formatEuros(ir)}</p>
+            </div>
+          )}
+        />
+      </>
+    );
+  },
+});
+
 export const Route = createFileRoute("/concubinage-vs-pacs")({
   component: RouteComponent,
 });
@@ -58,93 +111,13 @@ function RouteComponent() {
         className="@container"
       >
         <div className="grid gap-4 @lg:grid-cols-2">
-          <div className="bg-primary/10 space-y-4 rounded-md p-4">
-            <p className="text-lg font-medium">Personne 1</p>
-            <form.AppField
-              name="foyer1.declarant1.revenus"
-              children={(field) => (
-                <SliderField
-                  label="Revenus"
-                  onChange={([montant]) =>
-                    field.setValue(
-                      setMontantRevenus(field.state.value, montant!),
-                    )
-                  }
-                  value={[calculerSommeRevenus(field.state.value)]}
-                  min={0}
-                  max={200000}
-                  step={500}
-                />
-              )}
-            />
-            <form.AppField
-              name="foyer1.enfants"
-              children={(field) => (
-                <SliderField
-                  label="Enfants"
-                  onChange={([nombre]) =>
-                    field.setValue(setNombreEnfants(field.state.value, nombre!))
-                  }
-                  value={[field.state.value.length]}
-                  min={0}
-                  max={10}
-                  step={1}
-                />
-              )}
-            />
-            <form.Subscribe
-              selector={(state) => calculerIR(state.values.foyer1)}
-              children={(ir) => (
-                <div className="flex items-center gap-2">
-                  <Landmark className="text-primary size-5" />{" "}
-                  <p>IR : {formatEuros(ir)}</p>
-                </div>
-              )}
-            />
+          <div className="space-y-4 rounded-md border p-4">
+            <p className="font-heading text-lg font-medium">Personne 1</p>
+            <PersonneForm form={form} name="foyer1" />
           </div>
-          <div className="bg-primary/10 space-y-4 rounded-md p-4">
-            <p className="text-lg font-medium">Personne 2</p>
-            <form.AppField
-              name="foyer2.declarant1.revenus"
-              children={(field) => (
-                <SliderField
-                  label="Revenus"
-                  onChange={([montant]) =>
-                    field.setValue(
-                      setMontantRevenus(field.state.value, montant!),
-                    )
-                  }
-                  value={[calculerSommeRevenus(field.state.value)]}
-                  min={0}
-                  max={200000}
-                  step={500}
-                />
-              )}
-            />
-            <form.AppField
-              name="foyer2.enfants"
-              children={(field) => (
-                <SliderField
-                  label="Enfants"
-                  onChange={([nombre]) =>
-                    field.setValue(setNombreEnfants(field.state.value, nombre!))
-                  }
-                  value={[field.state.value.length]}
-                  min={0}
-                  max={10}
-                  step={1}
-                />
-              )}
-            />
-            <form.Subscribe
-              selector={(state) => calculerIR(state.values.foyer2)}
-              children={(ir) => (
-                <div className="flex items-center gap-2">
-                  <Landmark className="text-primary size-5" />{" "}
-                  <p>IR : {formatEuros(ir)}</p>
-                </div>
-              )}
-            />
+          <div className="space-y-4 rounded-md border p-4">
+            <p className="font-heading text-lg font-medium">Personne 2</p>
+            <PersonneForm form={form} name="foyer2" />
           </div>
         </div>
         <form.Subscribe
@@ -162,7 +135,7 @@ function RouteComponent() {
             };
           }}
           children={({ celibataires, couple, difference }) => (
-            <div className="grid gap-8 @md:grid-cols-3">
+            <div className="mt-6 grid gap-8 @md:grid-cols-3">
               <div className="flex gap-2">
                 <div className="bg-primary/10 text-primary flex size-9 items-center justify-center rounded-full [&>svg]:size-5">
                   <Armchair />
