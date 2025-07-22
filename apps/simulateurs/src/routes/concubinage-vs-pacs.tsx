@@ -1,8 +1,9 @@
 import { calculerIR } from "@akimeo/fiscal/calculer-ir";
-import { FORMAT_EUROS_OPTIONS, formatEuros } from "@akimeo/modele/format";
+import { formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
 import { calculerSommeRevenus, setMontantRevenus } from "@akimeo/modele/revenu";
+import { useAppForm } from "@akimeo/ui/components/form";
 import { SliderField } from "@akimeo/ui/components/slider";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
@@ -16,7 +17,6 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { useAppForm } from "@akimeo/ui/components/form";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({
@@ -65,16 +65,15 @@ function RouteComponent() {
               children={(field) => (
                 <SliderField
                   label="Revenus"
-                  onChange={(montant) =>
+                  onChange={([montant]) =>
                     field.setValue(
-                      setMontantRevenus(field.state.value, montant),
+                      setMontantRevenus(field.state.value, montant!),
                     )
                   }
-                  value={calculerSommeRevenus(field.state.value)}
-                  minValue={0}
-                  maxValue={200000}
+                  value={[calculerSommeRevenus(field.state.value)]}
+                  min={0}
+                  max={200000}
                   step={500}
-                  formatOptions={FORMAT_EUROS_OPTIONS}
                 />
               )}
             />
@@ -83,12 +82,12 @@ function RouteComponent() {
               children={(field) => (
                 <SliderField
                   label="Enfants"
-                  onChange={(nombre) =>
-                    field.setValue(setNombreEnfants(field.state.value, nombre))
+                  onChange={([nombre]) =>
+                    field.setValue(setNombreEnfants(field.state.value, nombre!))
                   }
-                  value={field.state.value.length}
-                  minValue={0}
-                  maxValue={10}
+                  value={[field.state.value.length]}
+                  min={0}
+                  max={10}
                   step={1}
                 />
               )}
@@ -110,16 +109,15 @@ function RouteComponent() {
               children={(field) => (
                 <SliderField
                   label="Revenus"
-                  onChange={(montant) =>
+                  onChange={([montant]) =>
                     field.setValue(
-                      setMontantRevenus(field.state.value, montant),
+                      setMontantRevenus(field.state.value, montant!),
                     )
                   }
-                  value={calculerSommeRevenus(field.state.value)}
-                  minValue={0}
-                  maxValue={200000}
+                  value={[calculerSommeRevenus(field.state.value)]}
+                  min={0}
+                  max={200000}
                   step={500}
-                  formatOptions={FORMAT_EUROS_OPTIONS}
                 />
               )}
             />
@@ -128,13 +126,13 @@ function RouteComponent() {
               children={(field) => (
                 <SliderField
                   label="Enfants"
-                  onChange={(nombre) =>
-                    field.setValue(setNombreEnfants(field.state.value, nombre))
+                  onChange={([nombre]) =>
+                    field.setValue(setNombreEnfants(field.state.value, nombre!))
                   }
-                  value={field.state.value.length}
-                  minValue={0}
+                  value={[field.state.value.length]}
+                  min={0}
+                  max={10}
                   step={1}
-                  maxValue={10}
                 />
               )}
             />

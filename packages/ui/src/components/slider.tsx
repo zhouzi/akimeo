@@ -1,111 +1,92 @@
-import type {
-  SliderTrackProps as RACSliderTrackProps,
-  SliderProps,
-} from "react-aria-components";
-import {
-  Slider as RACSlider,
-  SliderTrack as RACSliderTrack,
-  SliderOutput,
-  SliderThumb,
-} from "react-aria-components";
-import { tv } from "tailwind-variants";
+import * as React from "react";
+import * as SliderPrimitive from "@radix-ui/react-slider";
 
-import { composeTailwindRenderProps } from "~/lib/utils";
-import { Description } from "./description";
+import { cn } from "~/lib/utils";
+import { FormDescription } from "./form-description";
+import { FormItem } from "./form-item";
+import { FormMessage } from "./form-message";
 import { Label } from "./label";
 
-export interface SliderFieldProps<T = number> extends SliderProps<T> {
+export interface SliderFieldProps
+  extends Omit<SliderProps, "onChange" | "onValueChange"> {
   label?: string;
   description?: string;
-  thumbLabels?: string[];
+  errorMessage?: string;
+  onChange?: SliderProps["onValueChange"];
 }
 
-export function SliderField<T extends number | number[]>({
+export function SliderField({
   label,
   description,
-  thumbLabels,
+  errorMessage,
+  onChange,
   ...props
-}: SliderFieldProps<T>) {
+}: SliderFieldProps) {
   return (
-    <Slider
-      {...props}
-      className={composeTailwindRenderProps(
-        props.className,
-        "orientation-horizontal:grid orientation-vertical:flex grid-cols-[1fr_auto] flex-col items-center",
-      )}
-    >
-      <Label>{label}</Label>
-      <SliderOutput className="orientation-vertical:hidden text-lg leading-tight font-medium">
-        {({ state }) =>
-          state.values.map((_, i) => state.getThumbValueLabel(i)).join(" - ")
-        }
-      </SliderOutput>
-      <SliderTrack thumbLabels={thumbLabels} />
-      {description && <Description>{description}</Description>}
-    </Slider>
+    <FormItem>
+      {label && <Label>{label}</Label>}
+      <Slider {...props} onValueChange={onChange} />
+      {description && <FormDescription>{description}</FormDescription>}
+      {errorMessage && <FormMessage>{errorMessage}</FormMessage>}
+    </FormItem>
   );
 }
 
-export const Slider = RACSlider;
+type SliderProps = React.ComponentProps<typeof SliderPrimitive.Root>;
 
-const trackStyles = tv({
-  base: "rounded-full bg-primary/20",
-  variants: {
-    orientation: {
-      horizontal: "h-[6px] w-full",
-      vertical: "ml-[50%] h-full w-[6px] -translate-x-[50%]",
-    },
-    isDisabled: {
-      false: "",
-      true: "",
-    },
-  },
-});
+function Slider({
+  className,
+  defaultValue,
+  value,
+  min = 0,
+  max = 100,
+  ...props
+}: SliderProps) {
+  const _values = React.useMemo(
+    () =>
+      Array.isArray(value)
+        ? value
+        : Array.isArray(defaultValue)
+          ? defaultValue
+          : [min, max],
+    [value, defaultValue, min, max],
+  );
 
-const thumbStyles = tv({
-  base: "group-orientation-horizontal:mt-6 group-orientation-vertical:ml-3 relative h-6 w-3 cursor-pointer rounded-sm border bg-input shadow-sm hover:border-foreground/30 hover:shadow-md",
-  variants: {
-    isDragging: {
-      true: "",
-    },
-    isDisabled: {
-      true: "",
-    },
-  },
-});
-
-export interface SliderTrackProps extends RACSliderTrackProps {
-  thumbLabels?: string[];
-}
-
-export function SliderTrack({ thumbLabels, ...props }: SliderTrackProps) {
   return (
-    <RACSliderTrack
-      {...props}
-      className="orientation-horizontal:h-6 orientation-vertical:w-6 orientation-vertical:h-64 group col-span-2 flex items-center"
-    >
-      {({ state, ...renderProps }) => (
-        <>
-          <div
-            className="bg-primary absolute top-1/2 left-0 h-[6px] -translate-y-1/2 rounded-full"
-            style={{ width: state.getThumbPercent(0) * 100 + "%" }}
-          />
-          <div className={trackStyles(renderProps)} />
-          {state.values.map((_, i) => (
-            <SliderThumb
-              key={i}
-              index={i}
-              aria-label={thumbLabels?.[i]}
-              className={thumbStyles}
-            >
-              <div className="absolute top-1/2 left-1/2 flex w-1/3 -translate-x-1/2 -translate-y-1/2 flex-col gap-1">
-                <div className="bg-border h-px w-full" />
-                <div className="bg-border h-px w-full" />
-              </div>
-            </SliderThumb>
-          ))}
-        </>
+    <SliderPrimitive.Root
+      data-slot="slider"
+      defaultValue={defaultValue}
+      value={value}
+      min={min}
+      max={max}
+      className={cn(
+        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
+        className,
       )}
-    </RACSliderTrack>
+      {...props}
+    >
+      <SliderPrimitive.Track
+        data-slot="slider-track"
+        className={cn(
+          "bg-muted relative grow overflow-hidden rounded-full data-[orientation=horizontal]:h-1.5 data-[orientation=horizontal]:w-full data-[orientation=vertical]:h-full data-[orientation=vertical]:w-1.5",
+        )}
+      >
+        <SliderPrimitive.Range
+          data-slot="slider-range"
+          className={cn(
+            "bg-primary absolute data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full",
+          )}
+        />
+      </SliderPrimitive.Track>
+      {Array.from({ length: _values.length }, (_, index) => (
+        <SliderPrimitive.Thumb
+          data-slot="slider-thumb"
+          key={index}
+          className="border-primary bg-background ring-ring/50 block size-4 shrink-0 rounded-full border shadow-sm transition-[color,box-shadow] hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50"
+        />
+      ))}
+    </SliderPrimitive.Root>
   );
 }
+
+export { Slider };
