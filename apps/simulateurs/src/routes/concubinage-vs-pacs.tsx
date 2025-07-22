@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { useAppForm } from "~/components/form";
+import { useAppForm } from "@akimeo/ui/form";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({

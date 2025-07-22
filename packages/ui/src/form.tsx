@@ -1,7 +1,5 @@
-import type { SliderFieldProps } from "@akimeo/ui/slider";
-import type { TextFieldProps } from "@akimeo/ui/text-field";
-import { SliderField } from "@akimeo/ui/slider";
-import { TextField } from "@akimeo/ui/text-field";
+import type { SliderFieldProps } from "./slider";
+import { SliderField } from "./slider";
 import {
   createFormHook,
   createFormHookContexts,
@@ -35,10 +33,6 @@ function useFieldProps<TData>() {
 
 export const { useAppForm, withForm } = createFormHook({
   fieldComponents: {
-    TextField: (props: TextFieldProps) => {
-      const fieldProps = useFieldProps<string>();
-      return <TextField {...props} {...fieldProps} />;
-    },
     SliderField: (props: SliderFieldProps) => {
       const fieldProps = useFieldProps<number>();
       return <SliderField {...props} {...fieldProps} />;

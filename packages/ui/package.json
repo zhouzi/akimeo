@@ -25,6 +25,7 @@
     "prettier": "catalog:"
   },
   "dependencies": {
+    "@tanstack/react-form": "catalog:",
     "react-aria-components": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwind-variants": "catalog:"
