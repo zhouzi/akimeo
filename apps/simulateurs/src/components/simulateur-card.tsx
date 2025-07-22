@@ -1,6 +1,6 @@
 import type { CardProps } from "@akimeo/ui/components/card";
 import { useEffect, useState } from "react";
-import { buttonStyles } from "@akimeo/ui/components/button";
+import { Button } from "@akimeo/ui/components/button";
 import {
   Card,
   CardContent,
@@ -9,7 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@akimeo/ui/components/card";
-import { Link } from "react-aria-components";
 
 interface SimulateurCardProps extends CardProps {
   title: string;
@@ -38,18 +37,13 @@ export function SimulateurCard({
       </CardHeader>
       <CardContent>{children}</CardContent>
       <CardFooter>
-        <Link
-          href={url}
-          target="_blank"
-          className={buttonStyles({
-            variant: "outline",
-            size: "sm",
-          })}
-        >
-          <span className="font-heading font-black tracking-wide italic">
-            akimeo
-          </span>
-        </Link>
+        <Button variant="outline" size="sm" asChild>
+          <a href={url} target="_blank">
+            <span className="font-heading font-black tracking-wide italic">
+              akimeo
+            </span>
+          </a>
+        </Button>
         <p>Pilotez votre activité plus efficacement.</p>
       </CardFooter>
     </Card>

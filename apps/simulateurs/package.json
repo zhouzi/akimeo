@@ -27,7 +27,6 @@
     "@tanstack/router-plugin": "catalog:",
     "lucide-react": "catalog:",
     "react": "catalog:",
-    "react-aria-components": "catalog:",
     "react-dom": "catalog:",
     "tailwindcss": "catalog:",
     "tailwindcss-react-aria-components": "catalog:",

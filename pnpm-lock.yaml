@@ -36,6 +36,9 @@ catalogs:
     '@mdx-js/react':
       specifier: ^3.1.0
       version: 3.1.0
+    '@radix-ui/react-slot':
+      specifier: 1.2.3
+      version: 1.2.3
     '@tailwindcss/vite':
       specifier: ^4.1.11
       version: 4.1.11
@@ -297,9 +300,6 @@ importers:
       react:
         specifier: 'catalog:'
         version: 19.1.0
-      react-aria-components:
-        specifier: 'catalog:'
-        version: 1.10.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       react-dom:
         specifier: 'catalog:'
         version: 19.1.0(react@19.1.0)
@@ -536,6 +536,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@radix-ui/react-slot':
+        specifier: 'catalog:'
+        version: 1.2.3(@types/react@19.1.8)(react@19.1.0)
       '@tanstack/react-form':
         specifier: 'catalog:'
         version: 1.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -2036,6 +2039,24 @@ packages:
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
+
+  '@radix-ui/react-compose-refs@1.1.2':
+    resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@radix-ui/react-slot@1.2.3':
+    resolution: {integrity: sha512-aeNmHnBxbi2St0au6VBVC7JXFlhLlOnvIIlePNniyUNAClzmtAUEY8/pBiK3iHjufOlwA+c20/8jngo7xcrg8A==}
+    peerDependencies:
+      '@types/react': '*'
+      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
 
   '@react-aria/autocomplete@3.0.0-beta.5':
     resolution: {integrity: sha512-zYiVeKGYHStpBXS0mf51k14xkVunU/dFqxumfYXDiiyknxIDE4L1kN7XKo16nus3TkTmJtqBHJrWmzCfNkRd9g==}
@@ -10184,6 +10205,19 @@ snapshots:
       config-chain: 1.1.13
 
   '@polka/url@1.0.0-next.29': {}
+
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.8)(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+    optionalDependencies:
+      '@types/react': 19.1.8
+
+  '@radix-ui/react-slot@1.2.3(@types/react@19.1.8)(react@19.1.0)':
+    dependencies:
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.8)(react@19.1.0)
+      react: 19.1.0
+    optionalDependencies:
+      '@types/react': 19.1.8
 
   '@react-aria/autocomplete@3.0.0-beta.5(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:

@@ -28,6 +28,7 @@
     "typescript": "catalog:"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "catalog:",
     "@tanstack/react-form": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
