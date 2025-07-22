@@ -1,60 +1,94 @@
-import type { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
+import * as React from "react";
 
-export type CardProps = HTMLAttributes<HTMLDivElement>;
+import { cn } from "~/lib/utils";
 
-export function Card(props: CardProps) {
-  return (
-    <article
-      {...props}
-      className={twMerge(
-        "overflow-hidden rounded-lg border shadow-md",
-        props.className,
-      )}
-    />
-  );
-}
+export type CardProps = React.ComponentProps<"div">;
 
-export function CardHeader(props: HTMLAttributes<HTMLDivElement>) {
-  return <div {...props} className={twMerge("p-6", props.className)} />;
-}
-
-export function CardTitle(props: HTMLAttributes<HTMLHeadingElement>) {
-  return (
-    <h3
-      {...props}
-      className={twMerge(
-        "font-heading scroll-m-20 text-2xl font-semibold tracking-tight",
-        props.className,
-      )}
-    />
-  );
-}
-
-export function CardDescription(props: HTMLAttributes<HTMLParagraphElement>) {
-  return <p {...props} className={twMerge("", props.className)} />;
-}
-
-export function CardContent(props: HTMLAttributes<HTMLDivElement>) {
+function Card({ className, ...props }: CardProps) {
   return (
     <div
-      {...props}
-      className={twMerge(
-        "space-y-4 p-6 [&:not(:first-child)]:pt-0",
-        props.className,
+      data-slot="card"
+      className={cn(
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm",
+        className,
       )}
+      {...props}
     />
   );
 }
 
-export function CardFooter(props: HTMLAttributes<HTMLDivElement>) {
+function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      {...props}
-      className={twMerge(
-        "bg-border/40 flex items-center gap-2 p-2 text-sm",
-        props.className,
+      data-slot="card-header"
+      className={cn(
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        className,
       )}
+      {...props}
     />
   );
 }
+
+function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-title"
+      className={cn("leading-none font-semibold", className)}
+      {...props}
+    />
+  );
+}
+
+function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-description"
+      className={cn("text-muted-foreground text-sm", className)}
+      {...props}
+    />
+  );
+}
+
+function CardAction({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-action"
+      className={cn(
+        "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+function CardContent({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-content"
+      className={cn("px-6", className)}
+      {...props}
+    />
+  );
+}
+
+function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <div
+      data-slot="card-footer"
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
+      {...props}
+    />
+  );
+}
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+};
