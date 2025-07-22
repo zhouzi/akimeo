@@ -29,7 +29,6 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "tailwindcss": "catalog:",
-    "tailwindcss-react-aria-components": "catalog:",
     "tw-animate-css": "catalog:",
     "zod": "catalog:"
   },

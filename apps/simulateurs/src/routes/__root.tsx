@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import { I18nProvider } from "react-aria-components";
 
 export const Route = createRootRoute({
   component: () => {
@@ -49,10 +48,6 @@ export const Route = createRootRoute({
       return () => observer.disconnect();
     }, []);
 
-    return (
-      <I18nProvider locale="fr-FR">
-        <Outlet />
-      </I18nProvider>
-    );
+    return <Outlet />;
   },
 });
