@@ -1,4 +1,12 @@
 journal:
   label: Journal
   permalink: /journal
-  description: Articles qui partagent l'envers du décors de Akimeo.
+  description: Articles qui partagent l'envers du décors.
+fiscalite:
+  label: Fiscalité
+  permalink: /fiscalite
+  description: Articles qui parlent de fiscalité.
+personnelle:
+  label: Situation personnelle
+  permalink: /situation-personnelle
+  description: Articles qui parlent de la situation personnelle du dirigeant.

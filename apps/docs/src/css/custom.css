@@ -20,6 +20,11 @@
 html {
   font-family: "Rethink Sans Variable", sans-serif;
 }
+@media (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+}
 
 h1,
 h2[class^="title"] {
