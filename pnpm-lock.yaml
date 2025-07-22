@@ -75,8 +75,11 @@ catalogs:
     '@vitejs/plugin-react':
       specifier: ^4.7.0
       version: 4.7.0
+    class-variance-authority:
+      specifier: ^0.7.1
+      version: 0.7.1
     clsx:
-      specifier: ^2.1.1
+      specifier: 2.1.1
       version: 2.1.1
     concurrently:
       specifier: ^9.2.0
@@ -118,7 +121,7 @@ catalogs:
       specifier: ^4.3.2
       version: 4.3.2
     lucide-react:
-      specifier: ^0.525.0
+      specifier: 0.525.0
       version: 0.525.0
     playwright:
       specifier: ^1.54.1
@@ -142,7 +145,7 @@ catalogs:
       specifier: 19.1.0
       version: 19.1.0
     tailwind-merge:
-      specifier: ^3.3.1
+      specifier: 3.3.1
       version: 3.3.1
     tailwind-variants:
       specifier: ^1.0.0
@@ -159,6 +162,9 @@ catalogs:
     tsx:
       specifier: ^4.20.3
       version: 4.20.3
+    tw-animate-css:
+      specifier: ^1.3.5
+      version: 1.3.5
     type-fest:
       specifier: 4.41.0
       version: 4.41.0
@@ -303,6 +309,9 @@ importers:
       tailwindcss-react-aria-components:
         specifier: 'catalog:'
         version: 2.0.0(tailwindcss@4.1.11)
+      tw-animate-css:
+        specifier: 'catalog:'
+        version: 1.3.5
       zod:
         specifier: 'catalog:'
         version: 4.0.5
@@ -530,6 +539,12 @@ importers:
       '@tanstack/react-form':
         specifier: 'catalog:'
         version: 1.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      class-variance-authority:
+        specifier: 'catalog:'
+        version: 0.7.1
+      clsx:
+        specifier: 'catalog:'
+        version: 2.1.1
       react-aria-components:
         specifier: 'catalog:'
         version: 1.10.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3766,6 +3781,9 @@ packages:
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
     engines: {node: '>=8'}
+
+  class-variance-authority@0.7.1:
+    resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
   clean-css@5.3.3:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
@@ -7405,6 +7423,9 @@ packages:
   turbo@2.5.4:
     resolution: {integrity: sha512-kc8ZibdRcuWUG1pbYSBFWqmIjynlD8Lp7IB6U3vIzvOv9VG+6Sp8bzyeBWE3Oi8XV5KsQrznyRTBPvrf99E4mA==}
     hasBin: true
+
+  tw-animate-css@1.3.5:
+    resolution: {integrity: sha512-t3u+0YNoloIhj1mMXs779P6MO9q3p3mvGn4k1n3nJPqJw/glZcuijG2qTSN4z4mgNRfW5ZC3aXJFLwDtiipZXA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -12547,6 +12568,10 @@ snapshots:
 
   ci-info@3.9.0: {}
 
+  class-variance-authority@0.7.1:
+    dependencies:
+      clsx: 2.1.1
+
   clean-css@5.3.3:
     dependencies:
       source-map: 0.6.1
@@ -16876,6 +16901,8 @@ snapshots:
       turbo-linux-arm64: 2.5.4
       turbo-windows-64: 2.5.4
       turbo-windows-arm64: 2.5.4
+
+  tw-animate-css@1.3.5: {}
 
   type-check@0.4.0:
     dependencies:

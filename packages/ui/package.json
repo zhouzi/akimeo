@@ -29,6 +29,8 @@
   },
   "dependencies": {
     "@tanstack/react-form": "catalog:",
+    "class-variance-authority": "catalog:",
+    "clsx": "catalog:",
     "react-aria-components": "catalog:",
     "tailwind-merge": "catalog:",
     "tailwind-variants": "catalog:"
