@@ -1,10 +1,11 @@
-import type { SliderFieldProps } from "./slider";
-import { SliderField } from "./slider";
 import {
   createFormHook,
   createFormHookContexts,
   useStore,
 } from "@tanstack/react-form";
+
+import type { SliderFieldProps } from "./slider";
+import { SliderField } from "./slider";
 
 export const { fieldContext, useFieldContext, formContext, useFormContext } =
   createFormHookContexts();
@@ -34,7 +35,7 @@ function useFieldProps<TData>() {
 export const { useAppForm, withForm } = createFormHook({
   fieldComponents: {
     SliderField: (props: SliderFieldProps) => {
-      const fieldProps = useFieldProps<number>();
+      const fieldProps = useFieldProps<number[]>();
       return <SliderField {...props} {...fieldProps} />;
     },
   },
