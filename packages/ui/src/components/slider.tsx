@@ -10,7 +10,7 @@ import {
 } from "react-aria-components";
 import { tv } from "tailwind-variants";
 
-import { composeTailwindRenderProps } from "../lib/utils";
+import { composeTailwindRenderProps } from "~/lib/utils";
 import { Description } from "./description";
 import { Label } from "./label";
 

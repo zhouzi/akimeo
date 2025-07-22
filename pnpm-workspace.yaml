@@ -28,6 +28,7 @@ catalog:
   '@vitejs/plugin-react': ^4.7.0
   '@vitest/browser': ^3.2.4
   clsx: ^2.1.1
+  concurrently: ^9.2.0
   date-fns: 4.1.0
   docusaurus-plugin-typedoc: ^1.4.0
   eslint: 9.31.0
@@ -52,6 +53,7 @@ catalog:
   tailwind-variants: ^1.0.0
   tailwindcss: ^4.1.11
   tailwindcss-react-aria-components: ^2.0.0
+  tsc-alias: ^1.8.16
   tsx: ^4.20.3
   type-fest: 4.41.0
   typedoc: ^0.28.7

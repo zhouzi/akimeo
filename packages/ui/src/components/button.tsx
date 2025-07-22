@@ -3,7 +3,7 @@ import type { VariantProps } from "tailwind-variants";
 import { composeRenderProps, Button as RACButton } from "react-aria-components";
 import { tv } from "tailwind-variants";
 
-import { focusRing } from "../lib/utils";
+import { focusRing } from "~/lib/utils";
 
 export const buttonStyles = tv({
   extend: focusRing,
