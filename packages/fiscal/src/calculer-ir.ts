@@ -18,7 +18,7 @@ import { calculerPartsFiscales } from "./calculer-parts-fiscales";
 const BAREME_IR =
   donneesReglementaires.impot_revenu.bareme_ir_depuis_1945.bareme;
 
-function getRevenus(foyer: Foyer) {
+export function getRevenus(foyer: Foyer) {
   return [
     ...foyer.declarant1.revenus,
     ...(isCouple(foyer) ? foyer.declarant2.revenus : []),

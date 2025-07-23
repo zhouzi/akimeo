@@ -18,9 +18,11 @@
     }
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-label": "catalog:",
     "@radix-ui/react-slider": "catalog:",
     "@radix-ui/react-slot": "catalog:",
+    "@radix-ui/react-switch": "catalog:",
     "@tanstack/react-form": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",

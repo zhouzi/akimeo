@@ -1,10 +1,24 @@
-import { calculerIR } from "@akimeo/fiscal/calculer-ir";
+import { calculerIRComplet } from "@akimeo/fiscal/calculer-ir-complet";
 import { formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
-import { calculerSommeRevenus, setMontantRevenus } from "@akimeo/modele/revenu";
+import {
+  isNatureRevenuMicroEntreprise,
+  isRevenuMicroEntreprise,
+  NATURE_REVENU,
+  NATURE_REVENU_OPTIONS,
+} from "@akimeo/modele/revenu";
+import { Button } from "@akimeo/ui/components/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withForm } from "@akimeo/ui/components/form";
-import { SliderField } from "@akimeo/ui/components/slider";
+import { FormItem } from "@akimeo/ui/components/form-item";
+import { Label } from "@akimeo/ui/components/label";
+import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
   TableBody,
@@ -15,6 +29,7 @@ import {
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
+import { Armchair, BedDouble, ChevronDown, Sofa } from "lucide-react";
 import z from "zod";
 
 import { SimulateurCard } from "~/components/simulateur-card";
@@ -25,8 +40,26 @@ const formSchema = z.object({
 });
 
 const defaultValues: z.infer<typeof formSchema> = {
-  foyer1: creerFoyer({}),
-  foyer2: creerFoyer({}),
+  foyer1: creerFoyer({
+    declarant1: {
+      revenus: [
+        {
+          nature: NATURE_REVENU.salaire.value,
+          montantAnnuel: 0,
+        },
+      ],
+    },
+  }),
+  foyer2: creerFoyer({
+    declarant1: {
+      revenus: [
+        {
+          nature: NATURE_REVENU.salaire.value,
+          montantAnnuel: 0,
+        },
+      ],
+    },
+  }),
 };
 
 const formOpts = formOptions({
@@ -45,19 +78,91 @@ const PersonneForm = withForm({
     return (
       <>
         <form.AppField
-          name={`${name}.declarant1.revenus`}
-          children={(field) => (
-            <SliderField
-              label="Revenus"
-              onChange={([montant]) =>
-                field.setValue(setMontantRevenus(field.state.value, montant!))
-              }
-              value={[calculerSommeRevenus(field.state.value)]}
-              min={0}
-              max={200000}
-              step={500}
-              formatValue={formatEuros}
-            />
+          name={`${name}.declarant1.revenus[0]`}
+          children={(fieldRevenu) => (
+            <>
+              <form.AppField
+                name={`${name}.declarant1.revenus[0].montantAnnuel`}
+                children={(fieldMontantAnnuel) => (
+                  <FormItem>
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="relative pr-2">
+                        <Label>
+                          {
+                            NATURE_REVENU_OPTIONS.find(
+                              (option) =>
+                                option.value === fieldRevenu.state.value.nature,
+                            )!.label
+                          }
+                        </Label>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="absolute top-1/2 left-full size-6 -translate-y-1/2"
+                            >
+                              <ChevronDown />
+                            </Button>
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent>
+                            {[
+                              NATURE_REVENU.salaire,
+                              NATURE_REVENU.remuneration,
+                              NATURE_REVENU.microBICMarchandises,
+                              NATURE_REVENU.microBICServices,
+                              NATURE_REVENU.microBNC,
+                            ].map((option) => (
+                              <DropdownMenuItem
+                                key={option.value}
+                                onClick={() =>
+                                  fieldRevenu.setValue(
+                                    isNatureRevenuMicroEntreprise(option.value)
+                                      ? {
+                                          versementLiberatoire: false,
+                                          ...fieldRevenu.state.value,
+                                          nature: option.value,
+                                        }
+                                      : {
+                                          nature: option.value,
+                                          montantAnnuel:
+                                            fieldRevenu.state.value
+                                              .montantAnnuel,
+                                        },
+                                  )
+                                }
+                              >
+                                {option.label}
+                              </DropdownMenuItem>
+                            ))}
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                      <p className="text-sm">
+                        {formatEuros(fieldMontantAnnuel.state.value)}
+                      </p>
+                    </div>
+                    <Slider
+                      onValueChange={([montant]) =>
+                        fieldMontantAnnuel.setValue(montant!)
+                      }
+                      value={[fieldMontantAnnuel.state.value]}
+                      min={0}
+                      max={200000}
+                      step={500}
+                    />
+                  </FormItem>
+                )}
+              />
+              {isRevenuMicroEntreprise(fieldRevenu.state.value) && (
+                <form.AppField
+                  name={`${name}.declarant1.revenus[0].versementLiberatoire`}
+                  children={(field) => (
+                    <field.SwitchField label="Versement libératoire" />
+                  )}
+                />
+              )}
+            </>
           )}
         />
         <form.AppField
@@ -113,10 +218,10 @@ function RouteComponent() {
         </div>
         <form.Subscribe
           selector={(state) => {
-            const foyer1 = calculerIR(state.values.foyer1);
-            const foyer2 = calculerIR(state.values.foyer2);
+            const foyer1 = calculerIRComplet(state.values.foyer1);
+            const foyer2 = calculerIRComplet(state.values.foyer2);
             const concubinage = foyer1 + foyer2;
-            const pacs = calculerIR(
+            const pacs = calculerIRComplet(
               pacser(state.values.foyer1, state.values.foyer2),
             );
 
@@ -138,34 +243,32 @@ function RouteComponent() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">Personne 1</TableCell>
-                  <TableCell className="text-right">
-                    {formatEuros(foyer1)}
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">Personne 2</TableCell>
-                  <TableCell className="text-right">
-                    {formatEuros(foyer2)}
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
-                    Personne 1 + Personne 2, en concubinage
-                  </TableCell>
-                  <TableCell className="text-right">
-                    {formatEuros(concubinage)}
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">
-                    Personne 1 + Personne 2, en Pacs
-                  </TableCell>
-                  <TableCell className="text-right">
-                    {formatEuros(pacs)}
-                  </TableCell>
-                </TableRow>
+                {[
+                  { icon: Armchair, label: "Personne 1", ir: foyer1 },
+                  { icon: Armchair, label: "Personne 2", ir: foyer2 },
+                  {
+                    icon: Sofa,
+                    label: "Personne 1 + Personne 2, en concubinage",
+                    ir: concubinage,
+                  },
+                  {
+                    icon: BedDouble,
+                    label: "Personne 1 + Personne 2, en Pacs",
+                    ir: pacs,
+                  },
+                ].map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell className="font-medium">
+                      <div className="flex items-center gap-2">
+                        <row.icon className="text-primary" />
+                        <span>{row.label}</span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-right">
+                      {formatEuros(row.ir)}
+                    </TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           )}

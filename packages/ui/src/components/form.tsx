@@ -5,7 +5,9 @@ import {
 } from "@tanstack/react-form";
 
 import type { SliderFieldProps } from "./slider";
+import type { SwitchFieldProps } from "./switch";
 import { SliderField } from "./slider";
+import { SwitchField } from "./switch";
 
 export const { fieldContext, useFieldContext, formContext, useFormContext } =
   createFormHookContexts();
@@ -37,6 +39,10 @@ export const { useAppForm, withForm } = createFormHook({
     SliderField: (props: SliderFieldProps) => {
       const fieldProps = useFieldProps<number[]>();
       return <SliderField {...props} {...fieldProps} />;
+    },
+    SwitchField: (props: SwitchFieldProps) => {
+      const fieldProps = useFieldProps<boolean>();
+      return <SwitchField {...props} {...fieldProps} />;
     },
   },
   formComponents: {},

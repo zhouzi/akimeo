@@ -42,6 +42,9 @@ const regles = [
   "impot_revenu/credits_impots/emploi_salarie_domicile/plafond_maximum",
   "impot_revenu/calcul_impot_revenu/plaf_qf/quotient_familial/cas_general/veuf",
   "impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/reduc_postplafond_veuf",
+  "impot_revenu/calcul_revenus_imposables/rpns/microsocial/servi",
+  "impot_revenu/calcul_revenus_imposables/rpns/microsocial/vente",
+  "impot_revenu/calcul_revenus_imposables/rpns/microsocial/bnc",
 ];
 
 type LeafValue = number | null;
