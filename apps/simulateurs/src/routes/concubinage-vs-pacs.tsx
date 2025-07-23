@@ -148,7 +148,7 @@ const PersonneForm = withForm({
                             className="-mr-2"
                           >
                             <span>{formatEuros(value)}</span>
-                            <span className="text-muted-foreground font-normal">
+                            <span className="font-normal text-muted-foreground">
                               {label}
                             </span>
                             <CalendarSync className="text-muted-foreground" />

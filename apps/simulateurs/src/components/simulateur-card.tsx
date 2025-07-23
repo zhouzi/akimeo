@@ -46,7 +46,7 @@ export function SimulateurCard({
             </span>
           </a>
         </Button>
-        <p className="text-muted-foreground text-sm">
+        <p className="text-sm text-muted-foreground">
           Les simulateurs qui parlent le langage des indépendants.
         </p>
       </CardFooter>
