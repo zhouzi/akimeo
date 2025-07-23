@@ -17,7 +17,6 @@ import {
 } from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withForm } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
-import { Label } from "@akimeo/ui/components/label";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -29,9 +28,16 @@ import {
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
-import { Armchair, BedDouble, ChevronDown, Sofa } from "lucide-react";
+import {
+  Armchair,
+  BedDouble,
+  CalendarSync,
+  ChevronDown,
+  Sofa,
+} from "lucide-react";
 import z from "zod";
 
+import { FrequenceToggle } from "~/components/frequence-toggle";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({
@@ -86,61 +92,69 @@ const PersonneForm = withForm({
                 children={(fieldMontantAnnuel) => (
                   <FormItem>
                     <div className="flex items-center justify-between gap-2">
-                      <div className="relative pr-2">
-                        <Label>
-                          {
-                            NATURE_REVENU_OPTIONS.find(
-                              (option) =>
-                                option.value === fieldRevenu.state.value.nature,
-                            )!.label
-                          }
-                        </Label>
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
-                            <Button
-                              variant="ghost"
-                              size="icon"
-                              className="absolute top-1/2 left-full size-6 -translate-y-1/2"
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" size="xs" className="-ml-2">
+                            <span>
+                              {
+                                NATURE_REVENU_OPTIONS.find(
+                                  (option) =>
+                                    option.value ===
+                                    fieldRevenu.state.value.nature,
+                                )!.label
+                              }
+                            </span>
+                            <ChevronDown />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                          {[
+                            NATURE_REVENU.salaire,
+                            NATURE_REVENU.remuneration,
+                            NATURE_REVENU.microBICMarchandises,
+                            NATURE_REVENU.microBICServices,
+                            NATURE_REVENU.microBNC,
+                          ].map((option) => (
+                            <DropdownMenuItem
+                              key={option.value}
+                              onClick={() =>
+                                fieldRevenu.setValue(
+                                  isNatureRevenuMicroEntreprise(option.value)
+                                    ? {
+                                        versementLiberatoire: false,
+                                        ...fieldRevenu.state.value,
+                                        nature: option.value,
+                                      }
+                                    : {
+                                        nature: option.value,
+                                        montantAnnuel:
+                                          fieldRevenu.state.value.montantAnnuel,
+                                      },
+                                )
+                              }
                             >
-                              <ChevronDown />
-                            </Button>
-                          </DropdownMenuTrigger>
-                          <DropdownMenuContent>
-                            {[
-                              NATURE_REVENU.salaire,
-                              NATURE_REVENU.remuneration,
-                              NATURE_REVENU.microBICMarchandises,
-                              NATURE_REVENU.microBICServices,
-                              NATURE_REVENU.microBNC,
-                            ].map((option) => (
-                              <DropdownMenuItem
-                                key={option.value}
-                                onClick={() =>
-                                  fieldRevenu.setValue(
-                                    isNatureRevenuMicroEntreprise(option.value)
-                                      ? {
-                                          versementLiberatoire: false,
-                                          ...fieldRevenu.state.value,
-                                          nature: option.value,
-                                        }
-                                      : {
-                                          nature: option.value,
-                                          montantAnnuel:
-                                            fieldRevenu.state.value
-                                              .montantAnnuel,
-                                        },
-                                  )
-                                }
-                              >
-                                {option.label}
-                              </DropdownMenuItem>
-                            ))}
-                          </DropdownMenuContent>
-                        </DropdownMenu>
-                      </div>
-                      <p className="text-sm">
-                        {formatEuros(fieldMontantAnnuel.state.value)}
-                      </p>
+                              {option.label}
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                      <FrequenceToggle
+                        value={fieldMontantAnnuel.state.value}
+                        children={({ value, label, toggleFrequence }) => (
+                          <Button
+                            variant="ghost"
+                            size="xs"
+                            onClick={toggleFrequence}
+                            className="-mr-2"
+                          >
+                            <span>{formatEuros(value)}</span>
+                            <span className="text-muted-foreground font-normal">
+                              {label}
+                            </span>
+                            <CalendarSync className="text-muted-foreground" />
+                          </Button>
+                        )}
+                      />
                     </div>
                     <Slider
                       onValueChange={([montant]) =>
@@ -149,7 +163,7 @@ const PersonneForm = withForm({
                       value={[fieldMontantAnnuel.state.value]}
                       min={0}
                       max={200000}
-                      step={500}
+                      step={100}
                     />
                   </FormItem>
                 )}
