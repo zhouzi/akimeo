@@ -1,6 +1,6 @@
 (function () {
   if (!window.createAkimeoEmbed) {
-    const style = document.createElement("style");
+    const style = window.document.createElement("style");
     style.innerHTML = `.akimeo-simulateur {
   position: relative;
   display: block;
@@ -42,7 +42,7 @@
   opacity: 0;
 }`;
 
-    document.head.appendChild(style);
+    window.document.head.appendChild(style);
 
     window.addEventListener("message", (event) => {
       if (
@@ -122,7 +122,7 @@
     };
   }
 
-  const script = document.currentScript;
+  const script = window.document.currentScript;
 
   if (!script) {
     throw new Error(
@@ -133,10 +133,10 @@
   const origin = new URL(script.getAttribute("src")).origin;
 
   if (script.dataset.simulateur) {
-    const container = document.createElement("div");
+    const container = window.document.createElement("div");
 
     if (script.parentElement?.tagName === "HEAD") {
-      document.body.appendChild(container);
+      window.document.body.appendChild(container);
     } else {
       script.before(container);
     }

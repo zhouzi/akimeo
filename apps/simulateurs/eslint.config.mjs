@@ -4,13 +4,17 @@ import { config } from "@akimeo/eslint-config/base";
 export default [
   ...config,
   {
-    ignores: ["dist/**"],
+    ignores: ["dist/**", "public/**"],
   },
   {
     languageOptions: {
       parserOptions: {
         projectService: {
-          allowDefaultProject: ["*.mjs", "*.mts"],
+          allowDefaultProject: [
+            "reportWebVitals.ts",
+            "vite.config.ts",
+            "eslint.config.mjs",
+          ],
           defaultProject: "./tsconfig.json",
         },
         tsconfigRootDir: import.meta.dirname,
