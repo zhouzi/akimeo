@@ -2,7 +2,7 @@
   "name": "@akimeo/eslint-config",
   "version": "0.1.0",
   "exports": {
-    "./base": "./base.mjs"
+    "./*": "./*.mjs"
   },
   "dependencies": {
     "@eslint/js": "catalog:",

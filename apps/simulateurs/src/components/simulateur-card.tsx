@@ -40,7 +40,7 @@ export function SimulateurCard({
       <CardContent>{children}</CardContent>
       <CardFooter className="gap-2 border-t p-2!">
         <Button variant="outline" size="sm" asChild>
-          <a href={url} target="_blank">
+          <a href={url} target="_blank" rel="noreferrer">
             <span className="font-heading font-black tracking-wide italic">
               akimeo
             </span>
