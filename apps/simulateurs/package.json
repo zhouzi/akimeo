@@ -25,6 +25,7 @@
     "@tanstack/react-router": "catalog:",
     "@tanstack/router-plugin": "catalog:",
     "lucide-react": "catalog:",
+    "plausible-tracker": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "tailwindcss": "catalog:",

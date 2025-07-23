@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
+import Plausible from "plausible-tracker";
 
 export const Route = createRootRoute({
   component: () => {
@@ -46,6 +47,25 @@ export const Route = createRootRoute({
       observer.observe(window.document.body);
 
       return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      const { hostname } = window.location;
+
+      if (hostname.includes("localhost")) {
+        return;
+      }
+
+      const plausible = Plausible({
+        domain: hostname,
+        apiHost: "https://stats.gabin.app",
+      });
+
+      plausible.enableAutoPageviews();
+
+      // This should not be necessary, but there's a bug in plausible-tracker
+      // https://github.com/plausible/plausible-tracker/issues/71
+      window.plausible = plausible.trackEvent;
     }, []);
 
     return <Outlet />;

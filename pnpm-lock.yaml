@@ -129,6 +129,9 @@ catalogs:
     lucide-react:
       specifier: 0.525.0
       version: 0.525.0
+    plausible-tracker:
+      specifier: ^0.3.9
+      version: 0.3.9
     playwright:
       specifier: ^1.54.1
       version: 1.54.1
@@ -288,6 +291,9 @@ importers:
       lucide-react:
         specifier: 'catalog:'
         version: 0.525.0(react@19.1.0)
+      plausible-tracker:
+        specifier: 'catalog:'
+        version: 0.3.9
       react:
         specifier: 'catalog:'
         version: 19.1.0
@@ -5578,6 +5584,10 @@ packages:
   pkg-dir@7.0.0:
     resolution: {integrity: sha512-Ie9z/WINcxxLp27BKOCHGde4ITq9UklYKDzVo1nhk5sqGEXU3FpkwP5GM2voTGJkGd9B3Otl+Q4uwSOeSUtOBA==}
     engines: {node: '>=14.16'}
+
+  plausible-tracker@0.3.9:
+    resolution: {integrity: sha512-hMhneYm3GCPyQon88SZrVJx+LlqhM1kZFQbuAgXPoh/Az2YvO1B6bitT9qlhpiTdJlsT5lsr3gPmzoVjb5CDXA==}
+    engines: {node: '>=10'}
 
   playwright-core@1.54.1:
     resolution: {integrity: sha512-Nbjs2zjj0htNhzgiy5wu+3w09YetDx5pkrpI/kZotDlDUaYk0HVA5xrBVPdow4SAUIlhgKcJeJg4GRKW6xHusA==}
@@ -13835,6 +13845,8 @@ snapshots:
   pkg-dir@7.0.0:
     dependencies:
       find-up: 6.3.0
+
+  plausible-tracker@0.3.9: {}
 
   playwright-core@1.54.1: {}
 

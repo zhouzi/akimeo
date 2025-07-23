@@ -13,6 +13,13 @@ const config: Config = {
   },
   url: "https://akimeo.xyz",
   baseUrl: "/",
+  scripts: [
+    {
+      src: "https://stats.gabin.app/js/script.js",
+      defer: true,
+      "data-domain": "akimeo.xyz",
+    },
+  ],
   organizationName: "zhouzi",
   projectName: "akimeo",
   customFields: {
