@@ -4,7 +4,7 @@ authors:
   - gabinaureche
 tags:
   - fiscalite
-  - personnelle
+  - situation-personnelle
 ---
 
 import { Simulateur } from "@site/src/components/simulateur";
