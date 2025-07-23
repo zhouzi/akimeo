@@ -1,7 +1,6 @@
 {
-  "extends": "@akimeo/typescript-config/base.json",
+  "extends": "@akimeo/typescript-config/react.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
