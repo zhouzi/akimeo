@@ -5,16 +5,16 @@ import { setNombreEnfants } from "@akimeo/modele/personne";
 import { calculerSommeRevenus, setMontantRevenus } from "@akimeo/modele/revenu";
 import { useAppForm, withForm } from "@akimeo/ui/components/form";
 import { SliderField } from "@akimeo/ui/components/slider";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Armchair,
-  Equal,
-  Landmark,
-  Sofa,
-  TrendingDown,
-  TrendingUp,
-} from "lucide-react";
 import z from "zod";
 
 import { SimulateurCard } from "~/components/simulateur-card";
@@ -75,15 +75,6 @@ const PersonneForm = withForm({
             />
           )}
         />
-        <form.Subscribe
-          selector={(state) => calculerIR(state.values[name])}
-          children={(ir) => (
-            <div className="flex items-center gap-2">
-              <Landmark className="text-primary size-5" />{" "}
-              <p>IR : {formatEuros(ir)}</p>
-            </div>
-          )}
-        />
       </>
     );
   },
@@ -122,58 +113,61 @@ function RouteComponent() {
         </div>
         <form.Subscribe
           selector={(state) => {
-            const celibataires =
-              calculerIR(state.values.foyer1) + calculerIR(state.values.foyer2);
-            const couple = calculerIR(
+            const foyer1 = calculerIR(state.values.foyer1);
+            const foyer2 = calculerIR(state.values.foyer2);
+            const concubinage = foyer1 + foyer2;
+            const pacs = calculerIR(
               pacser(state.values.foyer1, state.values.foyer2),
             );
 
             return {
-              celibataires,
-              couple,
-              difference: couple - celibataires,
+              foyer1,
+              foyer2,
+              concubinage,
+              pacs,
             };
           }}
-          children={({ celibataires, couple, difference }) => (
-            <div className="mt-6 grid gap-8 @md:grid-cols-3">
-              <div className="flex gap-2">
-                <div className="bg-primary/10 text-primary flex size-9 items-center justify-center rounded-full [&>svg]:size-5">
-                  <Armchair />
-                </div>
-                <div className="pt-1">
-                  <p className="text-xl font-medium">
-                    {formatEuros(celibataires)}
-                  </p>
-                  <p className="text-sm">Concubinage</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <div className="bg-primary/10 text-primary flex size-9 items-center justify-center rounded-full [&>svg]:size-5">
-                  <Sofa />
-                </div>
-                <div className="pt-1">
-                  <p className="text-xl font-medium">{formatEuros(couple)}</p>
-                  <p className="text-sm">PACS</p>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <div className="bg-primary/10 text-primary flex size-9 items-center justify-center rounded-full [&>svg]:size-5">
-                  {difference === 0 ? (
-                    <Equal />
-                  ) : difference > 0 ? (
-                    <TrendingUp />
-                  ) : (
-                    <TrendingDown />
-                  )}
-                </div>
-                <div className="pt-1">
-                  <p className="text-xl font-medium">
-                    {formatEuros(difference, { signDisplay: "exceptZero" })}
-                  </p>
-                  <p className="text-sm">Différence</p>
-                </div>
-              </div>
-            </div>
+          children={({ foyer1, foyer2, concubinage, pacs }) => (
+            <Table className="mt-6">
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Situation</TableHead>
+                  <TableHead className="text-right">
+                    Impôt sur le revenu
+                  </TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">Personne 1</TableCell>
+                  <TableCell className="text-right">
+                    {formatEuros(foyer1)}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">Personne 2</TableCell>
+                  <TableCell className="text-right">
+                    {formatEuros(foyer2)}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    Personne 1 + Personne 2, en concubinage
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {formatEuros(concubinage)}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    Personne 1 + Personne 2, en Pacs
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {formatEuros(pacs)}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           )}
         />
       </SimulateurCard>
