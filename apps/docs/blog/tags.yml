@@ -10,3 +10,7 @@ situation-personnelle:
   label: Situation personnelle
   permalink: /situation-personnelle
   description: Articles qui parlent de la situation personnelle du dirigeant.
+etude-de-cas:
+  label: Étude de cas
+  permalink: /etude-de-cas
+  description: Études de cas clients.
