@@ -21,4 +21,5 @@
 }
 .container h1 ~ p {
   font-size: 1.125rem;
+  max-width: 800px;
 }

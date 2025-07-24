@@ -15,11 +15,10 @@ export default function Page() {
         }}
       >
         <div className={styles.container}>
-          <h1>Pilotez votre activité plus efficacement</h1>
+          <h1>Ne vendez pas, éduquez</h1>
           <p>
-            Akimeo est une suite d'outils permettant aux indépendants de mieux
-            comprendre les enjeux juridiques, comptables, fiscaux et financiers
-            de leur situation.
+            Permettez à vos prospects de mesurer les bénéfices concrets de vos
+            services avec des simulateurs faciles à utiliser.
           </p>
           <Link
             className="button button--primary button--lg"
@@ -28,6 +27,15 @@ export default function Page() {
             Découvrir les simulateurs
           </Link>
         </div>
+      </section>
+      <section style={{ textAlign: "center", padding: "32px 0" }}>
+        <p>
+          Cette page est en cours de re-construction. En attendant,{" "}
+          <a href="https://go.gabin.app/linkedin" target="_blank">
+            retrouvez-moi sur LinkedIn
+          </a>
+          .
+        </p>
       </section>
     </Layout>
   );
