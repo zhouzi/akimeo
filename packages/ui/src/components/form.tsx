@@ -4,8 +4,10 @@ import {
   useStore,
 } from "@tanstack/react-form";
 
+import type { SelectFieldProps } from "./select";
 import type { SliderFieldProps } from "./slider";
 import type { SwitchFieldProps } from "./switch";
+import { SelectField } from "./select";
 import { SliderField } from "./slider";
 import { SwitchField } from "./switch";
 
@@ -43,6 +45,10 @@ export const { useAppForm, withForm } = createFormHook({
     SwitchField: (props: SwitchFieldProps) => {
       const fieldProps = useFieldProps<boolean>();
       return <SwitchField {...props} {...fieldProps} />;
+    },
+    SelectField: <T extends string>(props: SelectFieldProps<T>) => {
+      const fieldProps = useFieldProps<T>();
+      return <SelectField {...props} {...fieldProps} />;
     },
   },
   formComponents: {},
