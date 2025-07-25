@@ -4,7 +4,6 @@ import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
 import {
   isNatureRevenuMicroEntreprise,
-  isRevenuMicroEntreprise,
   NATURE_REVENU,
   NATURE_REVENU_OPTIONS,
 } from "@akimeo/modele/revenu";
@@ -118,19 +117,11 @@ const PersonneForm = withForm({
                             <DropdownMenuItem
                               key={option.value}
                               onClick={() =>
-                                fieldRevenu.setValue(
-                                  isNatureRevenuMicroEntreprise(option.value)
-                                    ? {
-                                        versementLiberatoire: false,
-                                        ...fieldRevenu.state.value,
-                                        nature: option.value,
-                                      }
-                                    : {
-                                        nature: option.value,
-                                        montantAnnuel:
-                                          fieldRevenu.state.value.montantAnnuel,
-                                      },
-                                )
+                                fieldRevenu.setValue({
+                                  nature: option.value,
+                                  montantAnnuel:
+                                    fieldRevenu.state.value.montantAnnuel,
+                                })
                               }
                             >
                               {option.label}
@@ -168,9 +159,11 @@ const PersonneForm = withForm({
                   </FormItem>
                 )}
               />
-              {isRevenuMicroEntreprise(fieldRevenu.state.value) && (
+              {isNatureRevenuMicroEntreprise(
+                fieldRevenu.state.value.nature,
+              ) && (
                 <form.AppField
-                  name={`${name}.declarant1.revenus[0].versementLiberatoire`}
+                  name={`${name}.declarant1.versementLiberatoire`}
                   children={(field) => (
                     <field.SwitchField label="Versement libératoire" />
                   )}

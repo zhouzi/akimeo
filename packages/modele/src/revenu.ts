@@ -52,152 +52,40 @@ export const NATURE_REVENU = {
 };
 export const NATURE_REVENU_OPTIONS = Object.values(NATURE_REVENU);
 
-interface RevenuSalaire {
-  nature: typeof NATURE_REVENU.salaire.value;
+export interface Revenu {
+  nature:
+    | typeof NATURE_REVENU.salaire.value
+    | typeof NATURE_REVENU.remuneration.value
+    | typeof NATURE_REVENU.pensionRetraite.value
+    | typeof NATURE_REVENU.autre.value
+    | typeof NATURE_REVENU.bnc.value
+    | typeof NATURE_REVENU.microBNC.value
+    | typeof NATURE_REVENU.bic.value
+    | typeof NATURE_REVENU.microBICServices.value
+    | typeof NATURE_REVENU.microBICMarchandises.value
+    | typeof NATURE_REVENU.foncier.value
+    | typeof NATURE_REVENU.microFoncier.value
+    | typeof NATURE_REVENU.rcm.value;
   montantAnnuel: number;
 }
-const revenuSalaireSchema = z.object({
-  nature: z.literal(NATURE_REVENU.salaire.value),
+
+export const revenuSchema = z.object({
+  nature: z.enum([
+    NATURE_REVENU.salaire.value,
+    NATURE_REVENU.remuneration.value,
+    NATURE_REVENU.pensionRetraite.value,
+    NATURE_REVENU.autre.value,
+    NATURE_REVENU.bnc.value,
+    NATURE_REVENU.microBNC.value,
+    NATURE_REVENU.bic.value,
+    NATURE_REVENU.microBICServices.value,
+    NATURE_REVENU.microBICMarchandises.value,
+    NATURE_REVENU.foncier.value,
+    NATURE_REVENU.microFoncier.value,
+    NATURE_REVENU.rcm.value,
+  ]),
   montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuSalaire>;
-
-interface RevenuRemuneration {
-  nature: typeof NATURE_REVENU.remuneration.value;
-  montantAnnuel: number;
-}
-const revenuRemunerationSchema = z.object({
-  nature: z.literal(NATURE_REVENU.remuneration.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuRemuneration>;
-
-interface RevenuPensionRetraite {
-  nature: typeof NATURE_REVENU.pensionRetraite.value;
-  montantAnnuel: number;
-}
-const revenuPensionRetraiteSchema = z.object({
-  nature: z.literal(NATURE_REVENU.pensionRetraite.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuPensionRetraite>;
-
-interface RevenuAutre {
-  nature: typeof NATURE_REVENU.autre.value;
-  montantAnnuel: number;
-}
-const revenuAutreSchema = z.object({
-  nature: z.literal(NATURE_REVENU.autre.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuAutre>;
-
-interface RevenuBNC {
-  nature: typeof NATURE_REVENU.bnc.value;
-  montantAnnuel: number;
-}
-const revenuBNCSchema = z.object({
-  nature: z.literal(NATURE_REVENU.bnc.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuBNC>;
-
-interface RevenuMicroBNC {
-  nature: typeof NATURE_REVENU.microBNC.value;
-  montantAnnuel: number;
-  versementLiberatoire: boolean;
-}
-const revenuMicroBNCSchema = z.object({
-  nature: z.literal(NATURE_REVENU.microBNC.value),
-  montantAnnuel: z.number(),
-  versementLiberatoire: z.boolean(),
-}) satisfies z.ZodType<RevenuMicroBNC>;
-
-interface RevenuBIC {
-  nature: typeof NATURE_REVENU.bic.value;
-  montantAnnuel: number;
-}
-const revenuBICSchema = z.object({
-  nature: z.literal(NATURE_REVENU.bic.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuBIC>;
-
-interface RevenuMicroBICServices {
-  nature: typeof NATURE_REVENU.microBICServices.value;
-  montantAnnuel: number;
-  versementLiberatoire: boolean;
-}
-const revenuMicroBICServicesSchema = z.object({
-  nature: z.literal(NATURE_REVENU.microBICServices.value),
-  montantAnnuel: z.number(),
-  versementLiberatoire: z.boolean(),
-}) satisfies z.ZodType<RevenuMicroBICServices>;
-
-interface RevenuMicroBICMarchandises {
-  nature: typeof NATURE_REVENU.microBICMarchandises.value;
-  montantAnnuel: number;
-  versementLiberatoire: boolean;
-}
-const revenuMicroBICMarchandisesSchema = z.object({
-  nature: z.literal(NATURE_REVENU.microBICMarchandises.value),
-  montantAnnuel: z.number(),
-  versementLiberatoire: z.boolean(),
-}) satisfies z.ZodType<RevenuMicroBICMarchandises>;
-
-export type RevenuMicroEntreprise =
-  | RevenuMicroBICMarchandises
-  | RevenuMicroBICServices
-  | RevenuMicroBNC;
-
-interface RevenuFoncier {
-  nature: typeof NATURE_REVENU.foncier.value;
-  montantAnnuel: number;
-}
-const revenuFoncierSchema = z.object({
-  nature: z.literal(NATURE_REVENU.foncier.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuFoncier>;
-
-interface RevenuMicroFoncier {
-  nature: typeof NATURE_REVENU.microFoncier.value;
-  montantAnnuel: number;
-}
-const revenuMicroFoncierSchema = z.object({
-  nature: z.literal(NATURE_REVENU.microFoncier.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuMicroFoncier>;
-
-interface RevenuRCM {
-  nature: typeof NATURE_REVENU.rcm.value;
-  montantAnnuel: number;
-}
-const revenuRCMSchema = z.object({
-  nature: z.literal(NATURE_REVENU.rcm.value),
-  montantAnnuel: z.number(),
-}) satisfies z.ZodType<RevenuRCM>;
-
-export type Revenu =
-  | RevenuSalaire
-  | RevenuRemuneration
-  | RevenuPensionRetraite
-  | RevenuAutre
-  | RevenuBNC
-  | RevenuMicroBNC
-  | RevenuBIC
-  | RevenuMicroBICServices
-  | RevenuMicroBICMarchandises
-  | RevenuFoncier
-  | RevenuMicroFoncier
-  | RevenuRCM;
-export const revenuSchema = z.union([
-  revenuSalaireSchema,
-  revenuRemunerationSchema,
-  revenuPensionRetraiteSchema,
-  revenuAutreSchema,
-  revenuBNCSchema,
-  revenuMicroBNCSchema,
-  revenuBICSchema,
-  revenuMicroBICServicesSchema,
-  revenuMicroBICMarchandisesSchema,
-  revenuFoncierSchema,
-  revenuMicroFoncierSchema,
-  revenuRCMSchema,
-]) satisfies z.ZodType<Revenu>;
+}) satisfies z.ZodType<Revenu>;
 
 export function isNatureRevenuMicroEntreprise(nature: Revenu["nature"]) {
   return (
@@ -205,10 +93,4 @@ export function isNatureRevenuMicroEntreprise(nature: Revenu["nature"]) {
     nature === NATURE_REVENU.microBICServices.value ||
     nature === NATURE_REVENU.microBNC.value
   );
-}
-
-export function isRevenuMicroEntreprise(
-  revenu: Revenu,
-): revenu is RevenuMicroEntreprise {
-  return isNatureRevenuMicroEntreprise(revenu.nature);
 }

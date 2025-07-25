@@ -54,11 +54,13 @@ export interface Adulte extends Personne {
   revenus: Revenu[];
   placements: Placement[];
   dons: Don[];
+  versementLiberatoire: boolean;
 }
 export const adulteSchema = personneSchema.extend({
   revenus: z.array(revenuSchema),
   placements: z.array(placementSchema),
   dons: z.array(donSchema),
+  versementLiberatoire: z.boolean(),
 }) satisfies z.ZodType<Adulte>;
 
 export function creerEnfant(enfant: PartialDeep<Enfant>): Enfant {
@@ -77,6 +79,7 @@ export function creerAdulte(adulte: PartialDeep<Adulte>): Adulte {
       revenus: [],
       placements: [],
       dons: [],
+      versementLiberatoire: false,
     } satisfies Adulte),
   );
 }

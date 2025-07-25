@@ -1,12 +1,21 @@
 import type { Foyer } from "@akimeo/modele";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import { isRevenuMicroEntreprise, NATURE_REVENU } from "@akimeo/modele";
+import {
+  isFoyerCouple,
+  isNatureRevenuMicroEntreprise,
+  NATURE_REVENU,
+} from "@akimeo/modele";
 
-import { dedupeRevenus, getRevenus } from "./calculer-ir";
+import { dedupeRevenus } from "./calculer-ir";
 
 export function calculerVersementLiberatoire(foyer: Foyer) {
-  return dedupeRevenus(getRevenus(foyer)).reduce((acc, revenu) => {
-    if (isRevenuMicroEntreprise(revenu) && revenu.versementLiberatoire) {
+  return dedupeRevenus([
+    ...(foyer.declarant1.versementLiberatoire ? foyer.declarant1.revenus : []),
+    ...(isFoyerCouple(foyer) && foyer.declarant2.versementLiberatoire
+      ? foyer.declarant2.revenus
+      : []),
+  ]).reduce((acc, revenu) => {
+    if (isNatureRevenuMicroEntreprise(revenu.nature)) {
       switch (revenu.nature) {
         case NATURE_REVENU.microBICMarchandises.value:
           return (

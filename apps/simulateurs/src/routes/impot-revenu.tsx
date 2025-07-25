@@ -26,11 +26,7 @@ import {
   setNombreEnfants,
 } from "@akimeo/modele/personne";
 import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement";
-import {
-  isNatureRevenuMicroEntreprise,
-  NATURE_REVENU,
-  NATURE_REVENU_OPTIONS,
-} from "@akimeo/modele/revenu";
+import { NATURE_REVENU, NATURE_REVENU_OPTIONS } from "@akimeo/modele/revenu";
 import { Button } from "@akimeo/ui/components/button";
 import { Checkbox } from "@akimeo/ui/components/checkbox";
 import {
@@ -156,18 +152,10 @@ const AdulteForm = withForm({
                     <DropdownMenuItem
                       key={option.value}
                       onClick={() =>
-                        fieldRevenus.pushValue(
-                          isNatureRevenuMicroEntreprise(option.value)
-                            ? {
-                                nature: option.value,
-                                montantAnnuel: 0,
-                                versementLiberatoire: false,
-                              }
-                            : {
-                                nature: option.value,
-                                montantAnnuel: 0,
-                              },
-                        )
+                        fieldRevenus.pushValue({
+                          nature: option.value,
+                          montantAnnuel: 0,
+                        })
                       }
                     >
                       {option.label}

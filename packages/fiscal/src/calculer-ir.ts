@@ -4,7 +4,7 @@ import {
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
   isFoyerCouple,
-  isRevenuMicroEntreprise,
+  isNatureRevenuMicroEntreprise,
   NATURE_REVENU,
   SCOLARTIE_ENFANT,
   SITUATION_FAMILIALE,
@@ -125,7 +125,7 @@ function calculerRevenuBrutGlobal(foyer: Foyer) {
         return acc;
       }
       default:
-        // @ts-expect-error garde-fou pour gérer tous les cas
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`Cas non géré : ${revenu.nature}`);
     }
   }, 0);
@@ -200,14 +200,13 @@ function calculerImpotBrut(foyer: Foyer) {
   );
 }
 
-function withoutVersementLiberatoire(revenus: Revenu[]) {
+function withoutRevenusMicroEntreprise(revenus: Revenu[]) {
   return revenus.filter(
-    (revenu) =>
-      !isRevenuMicroEntreprise(revenu) || !revenu.versementLiberatoire,
+    (revenu) => !isNatureRevenuMicroEntreprise(revenu.nature),
   );
 }
 
-export function getDons(foyer: Foyer) {
+function getDons(foyer: Foyer) {
   return [
     ...foyer.declarant1.dons,
     ...(isFoyerCouple(foyer) ? foyer.declarant2.dons : []),
@@ -273,18 +272,24 @@ function calculerImpotDu(foyer: Foyer) {
         ...foyer,
         declarant1: {
           ...foyer.declarant1,
-          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+          revenus: foyer.declarant1.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant1.revenus)
+            : foyer.declarant1.revenus,
         },
         declarant2: {
           ...foyer.declarant2,
-          revenus: withoutVersementLiberatoire(foyer.declarant2.revenus),
+          revenus: foyer.declarant2.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant2.revenus)
+            : foyer.declarant2.revenus,
         },
       }
     : {
         ...foyer,
         declarant1: {
           ...foyer.declarant1,
-          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+          revenus: foyer.declarant1.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant1.revenus)
+            : foyer.declarant1.revenus,
         },
       };
   const revenuNetImposableSansRevenusImposes = calculerRevenuNetImposable(
