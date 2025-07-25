@@ -33,6 +33,7 @@ export const SITUATION_FAMILIALE = {
     value: "pacse" as const,
   },
 };
+export const SITUATION_FAMILIALE_OPTIONS = Object.values(SITUATION_FAMILIALE);
 
 export const IMPOSITION_RCM = {
   bareme: {
@@ -135,6 +136,10 @@ export const foyerSchema = z.union([
   concubinageSchema,
   coupleSchema,
 ]) satisfies z.ZodType<Foyer>;
+
+export function isConcubinage(foyer: Foyer): foyer is Concubinage {
+  return foyer.situationFamiliale === SITUATION_FAMILIALE.concubinage.value;
+}
 
 export function isCouple(foyer: Foyer): foyer is Couple {
   return (

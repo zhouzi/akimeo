@@ -4,9 +4,14 @@ import {
   useStore,
 } from "@tanstack/react-form";
 
+import type {
+  NumberFrequcenceInputFieldProps,
+  NumberInputFieldProps,
+} from "./number-input";
 import type { SelectFieldProps } from "./select";
 import type { SliderFieldProps } from "./slider";
 import type { SwitchFieldProps } from "./switch";
+import { NumberFrequenceInputField, NumberInputField } from "./number-input";
 import { SelectField } from "./select";
 import { SliderField } from "./slider";
 import { SwitchField } from "./switch";
@@ -49,6 +54,14 @@ export const { useAppForm, withForm } = createFormHook({
     SelectField: <T extends string>(props: SelectFieldProps<T>) => {
       const fieldProps = useFieldProps<T>();
       return <SelectField {...props} {...fieldProps} />;
+    },
+    NumberInputField: (props: NumberInputFieldProps) => {
+      const fieldProps = useFieldProps<number>();
+      return <NumberInputField {...props} {...fieldProps} />;
+    },
+    NumberFrequenceInputField: (props: NumberFrequcenceInputFieldProps) => {
+      const fieldProps = useFieldProps<number>();
+      return <NumberFrequenceInputField {...props} {...fieldProps} />;
     },
   },
   formComponents: {},

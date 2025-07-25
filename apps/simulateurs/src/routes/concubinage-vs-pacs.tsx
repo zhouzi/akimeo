@@ -17,6 +17,7 @@ import {
 } from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withForm } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
+import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -37,7 +38,6 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { FrequenceToggle } from "~/components/frequence-toggle";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({
@@ -151,7 +151,7 @@ const PersonneForm = withForm({
                             <span className="font-normal text-muted-foreground">
                               {label}
                             </span>
-                            <CalendarSync className="text-muted-foreground" />
+                            <CalendarSync />
                           </Button>
                         )}
                       />
@@ -218,9 +218,8 @@ function RouteComponent() {
       <SimulateurCard
         title="Concubinage vs PACS"
         description="Aperçu de l'impact du PACS sur l'impôt sur le revenu d'un couple."
-        className="@container"
       >
-        <div className="grid gap-4 @lg:grid-cols-2">
+        <div className="grid gap-4 @lg/card:grid-cols-2">
           <div className="space-y-4 rounded-md border p-4">
             <p className="font-heading text-lg font-medium">Personne 1</p>
             <PersonneForm form={form} name="foyer1" />

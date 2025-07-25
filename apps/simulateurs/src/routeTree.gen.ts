@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ImpotRevenuRouteImport } from './routes/impot-revenu'
 import { Route as ConcubinageVsPacsRouteImport } from './routes/concubinage-vs-pacs'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ImpotRevenuRoute = ImpotRevenuRouteImport.update({
+  id: '/impot-revenu',
+  path: '/impot-revenu',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConcubinageVsPacsRoute = ConcubinageVsPacsRouteImport.update({
   id: '/concubinage-vs-pacs',
   path: '/concubinage-vs-pacs',
@@ -26,31 +32,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
+  '/impot-revenu': typeof ImpotRevenuRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
+  '/impot-revenu': typeof ImpotRevenuRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
+  '/impot-revenu': typeof ImpotRevenuRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/concubinage-vs-pacs'
+  fullPaths: '/' | '/concubinage-vs-pacs' | '/impot-revenu'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/concubinage-vs-pacs'
-  id: '__root__' | '/' | '/concubinage-vs-pacs'
+  to: '/' | '/concubinage-vs-pacs' | '/impot-revenu'
+  id: '__root__' | '/' | '/concubinage-vs-pacs' | '/impot-revenu'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConcubinageVsPacsRoute: typeof ConcubinageVsPacsRoute
+  ImpotRevenuRoute: typeof ImpotRevenuRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/impot-revenu': {
+      id: '/impot-revenu'
+      path: '/impot-revenu'
+      fullPath: '/impot-revenu'
+      preLoaderRoute: typeof ImpotRevenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/concubinage-vs-pacs': {
       id: '/concubinage-vs-pacs'
       path: '/concubinage-vs-pacs'
@@ -71,6 +88,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConcubinageVsPacsRoute: ConcubinageVsPacsRoute,
+  ImpotRevenuRoute: ImpotRevenuRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

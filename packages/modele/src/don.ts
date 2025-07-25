@@ -16,6 +16,7 @@ export const NATURE_DON = {
     value: "partis-politiques" as const,
   },
 };
+export const NATURE_DON_OPTIONS = Object.values(NATURE_DON);
 
 export interface Don {
   nature:

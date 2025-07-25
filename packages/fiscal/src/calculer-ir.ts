@@ -161,7 +161,7 @@ function calculerRevenuNetImposable(foyer: Foyer) {
   return revenuNetImposable;
 }
 
-function trancherRevenus(foyer: Foyer) {
+export function trancherRevenus(foyer: Foyer) {
   const revenuNetImposable = calculerRevenuNetImposable(foyer);
   const partsFiscales = calculerPartsFiscales(foyer);
 

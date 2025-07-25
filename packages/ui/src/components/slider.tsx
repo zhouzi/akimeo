@@ -3,7 +3,7 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 
 import { cn } from "~/lib/utils";
 import { FormDescription } from "./form-description";
-import { FormItem } from "./form-item";
+import { FormControl, FormItem, FormLabel } from "./form-item";
 import { FormMessage } from "./form-message";
 import { Label } from "./label";
 
@@ -28,10 +28,16 @@ export function SliderField({
   return (
     <FormItem>
       <div className="flex items-center justify-between gap-2">
-        {label && <Label>{label}</Label>}
+        {label && (
+          <FormLabel>
+            <Label>{label}</Label>
+          </FormLabel>
+        )}
         <p className="text-sm">{value?.map(formatValue)}</p>
       </div>
-      <Slider {...props} onValueChange={onChange} value={value} />
+      <FormControl>
+        <Slider {...props} onValueChange={onChange} value={value} />
+      </FormControl>
       {description && <FormDescription>{description}</FormDescription>}
       {errorMessage && <FormMessage>{errorMessage}</FormMessage>}
     </FormItem>

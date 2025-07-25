@@ -31,6 +31,7 @@ export const SCOLARTIE_ENFANT = {
     value: "etudiant" as const,
   },
 };
+export const SCOLARTIE_ENFANT_OPTIONS = Object.values(SCOLARTIE_ENFANT);
 
 export interface Enfant extends Personne {
   scolarite:

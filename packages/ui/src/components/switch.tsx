@@ -2,6 +2,7 @@ import * as React from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 import { cn } from "~/lib/utils";
+import { FormControl, FormItem, FormLabel } from "./form-item";
 import { Label } from "./label";
 
 export interface SwitchFieldProps
@@ -20,13 +21,17 @@ export function SwitchField({
   value,
   ...props
 }: SwitchFieldProps) {
-  const id = React.useId();
-
   return (
-    <div className="flex items-center space-x-2">
-      <Switch {...props} id={id} onCheckedChange={onChange} checked={value} />
-      {label && <Label htmlFor={id}>{label}</Label>}
-    </div>
+    <FormItem className="flex items-center">
+      <FormControl>
+        <Switch {...props} onCheckedChange={onChange} checked={value} />
+      </FormControl>
+      {label && (
+        <FormLabel>
+          <Label>{label}</Label>
+        </FormLabel>
+      )}
+    </FormItem>
   );
 }
 
