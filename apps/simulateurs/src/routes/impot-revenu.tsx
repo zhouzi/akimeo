@@ -15,6 +15,7 @@ import {
 import {
   creerFoyer,
   foyerSchema,
+  IMPOSITION_RCM,
   SITUATION_FAMILIALE,
   SITUATION_FAMILIALE_OPTIONS,
 } from "@akimeo/modele/foyer";
@@ -26,7 +27,11 @@ import {
   setNombreEnfants,
 } from "@akimeo/modele/personne";
 import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement";
-import { NATURE_REVENU, NATURE_REVENU_OPTIONS } from "@akimeo/modele/revenu";
+import {
+  isNatureRevenuMicroEntreprise,
+  NATURE_REVENU,
+  NATURE_REVENU_OPTIONS,
+} from "@akimeo/modele/revenu";
 import { Button } from "@akimeo/ui/components/button";
 import { Checkbox } from "@akimeo/ui/components/checkbox";
 import {
@@ -54,6 +59,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@akimeo/ui/components/select";
+import { SwitchField } from "@akimeo/ui/components/switch";
 import { formOptions } from "@tanstack/react-form";
 import { createFileRoute } from "@tanstack/react-router";
 import {
@@ -163,6 +169,23 @@ const AdulteForm = withForm({
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
+              <form.Subscribe
+                selector={(state) =>
+                  state.values.foyer[name]!.revenus.some((revenu) =>
+                    isNatureRevenuMicroEntreprise(revenu.nature),
+                  )
+                }
+                children={(hasMicroEntreprise) =>
+                  hasMicroEntreprise && (
+                    <form.AppField
+                      name={`foyer.${name}.versementLiberatoire`}
+                      children={(field) => (
+                        <field.SwitchField label="Versement libératoire" />
+                      )}
+                    />
+                  )
+                }
+              />
             </>
           )}
         />
@@ -306,6 +329,33 @@ function RouteComponent() {
                       </p>
                       <AdulteForm form={form} name="declarant2" />
                     </div>
+                  )
+                }
+              />
+              <form.Subscribe
+                selector={(state) =>
+                  state.values.foyer.declarant1.revenus.some(
+                    (revenu) => revenu.nature === NATURE_REVENU.rcm.value,
+                  )
+                }
+                children={(hasRCM) =>
+                  hasRCM && (
+                    <form.AppField
+                      name="foyer.impositionRCM"
+                      children={(field) => (
+                        <SwitchField
+                          label="Flat tax"
+                          onChange={(checked) =>
+                            field.setValue(
+                              checked
+                                ? IMPOSITION_RCM.pfu.value
+                                : IMPOSITION_RCM.bareme.value,
+                            )
+                          }
+                          value={field.state.value === IMPOSITION_RCM.pfu.value}
+                        />
+                      )}
+                    />
                   )
                 }
               />
