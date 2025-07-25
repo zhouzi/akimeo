@@ -15,8 +15,6 @@ import {
 import {
   creerFoyer,
   foyerSchema,
-  isConcubinage,
-  isCouple,
   SITUATION_FAMILIALE,
   SITUATION_FAMILIALE_OPTIONS,
 } from "@akimeo/modele/foyer";
@@ -280,10 +278,7 @@ function RouteComponent() {
                                 ...currentFoyer,
                                 situationFamiliale: value,
                                 declarant2:
-                                  isCouple(currentFoyer) ||
-                                  isConcubinage(currentFoyer)
-                                    ? currentFoyer.declarant2
-                                    : creerAdulte({}),
+                                  currentFoyer.declarant2 ?? creerAdulte({}),
                               };
                           }
                         });
@@ -314,10 +309,7 @@ function RouteComponent() {
                 <AdulteForm form={form} name="declarant1" />
               </div>
               <form.Subscribe
-                selector={(state) =>
-                  isCouple(state.values.foyer) ||
-                  isConcubinage(state.values.foyer)
-                }
+                selector={(state) => !!state.values.foyer.declarant2}
                 children={(hasDeclarant2) =>
                   hasDeclarant2 && (
                     <div className="space-y-4 rounded-md border p-4">

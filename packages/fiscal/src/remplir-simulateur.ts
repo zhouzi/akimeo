@@ -2,7 +2,7 @@ import type { Don, Foyer, Placement } from "@akimeo/modele";
 import {
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
-  isCouple,
+  isFoyerCouple,
   isRevenuMicroEntreprise,
   NATURE_DON,
   NATURE_REVENU,
@@ -41,11 +41,11 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
 
   const revenus = [
     dedupeRevenus(foyer.declarant1.revenus),
-    isCouple(foyer) ? dedupeRevenus(foyer.declarant2.revenus) : [],
+    isFoyerCouple(foyer) ? dedupeRevenus(foyer.declarant2.revenus) : [],
   ];
   const versementsAnnuelsPER = [
     sommeVersementsAnnuelsPER(foyer.declarant1.placements),
-    isCouple(foyer)
+    isFoyerCouple(foyer)
       ? sommeVersementsAnnuelsPER(foyer.declarant2.placements)
       : 0,
   ];
@@ -79,7 +79,7 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
 
   await driver.fill("#B0DA", foyer.declarant1.dateNaissance.getFullYear());
 
-  if (isCouple(foyer)) {
+  if (isFoyerCouple(foyer)) {
     await driver.fill("#B0DB", foyer.declarant2.dateNaissance.getFullYear());
   }
 

@@ -1,13 +1,13 @@
 import type { Foyer } from "@akimeo/modele";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import { isCouple, SITUATION_FAMILIALE } from "@akimeo/modele";
+import { isFoyerCouple, SITUATION_FAMILIALE } from "@akimeo/modele";
 
 export function calculerPartsFiscales(foyer: Foyer) {
   let parts =
     donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
       .quotient_familial.cas_general.conj;
 
-  if (isCouple(foyer)) {
+  if (isFoyerCouple(foyer)) {
     parts +=
       donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf
         .quotient_familial.cas_general.conj;
