@@ -4,7 +4,6 @@ import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
 import {
   isNatureRevenuMicroEntreprise,
-  isRevenuMicroEntreprise,
   NATURE_REVENU,
   NATURE_REVENU_OPTIONS,
 } from "@akimeo/modele/revenu";
@@ -17,6 +16,7 @@ import {
 } from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withForm } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
+import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -37,7 +37,6 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { FrequenceToggle } from "~/components/frequence-toggle";
 import { SimulateurCard } from "~/components/simulateur-card";
 
 const formSchema = z.object({
@@ -118,19 +117,11 @@ const PersonneForm = withForm({
                             <DropdownMenuItem
                               key={option.value}
                               onClick={() =>
-                                fieldRevenu.setValue(
-                                  isNatureRevenuMicroEntreprise(option.value)
-                                    ? {
-                                        versementLiberatoire: false,
-                                        ...fieldRevenu.state.value,
-                                        nature: option.value,
-                                      }
-                                    : {
-                                        nature: option.value,
-                                        montantAnnuel:
-                                          fieldRevenu.state.value.montantAnnuel,
-                                      },
-                                )
+                                fieldRevenu.setValue({
+                                  nature: option.value,
+                                  montantAnnuel:
+                                    fieldRevenu.state.value.montantAnnuel,
+                                })
                               }
                             >
                               {option.label}
@@ -151,7 +142,7 @@ const PersonneForm = withForm({
                             <span className="font-normal text-muted-foreground">
                               {label}
                             </span>
-                            <CalendarSync className="text-muted-foreground" />
+                            <CalendarSync />
                           </Button>
                         )}
                       />
@@ -168,9 +159,11 @@ const PersonneForm = withForm({
                   </FormItem>
                 )}
               />
-              {isRevenuMicroEntreprise(fieldRevenu.state.value) && (
+              {isNatureRevenuMicroEntreprise(
+                fieldRevenu.state.value.nature,
+              ) && (
                 <form.AppField
-                  name={`${name}.declarant1.revenus[0].versementLiberatoire`}
+                  name={`${name}.declarant1.versementLiberatoire`}
                   children={(field) => (
                     <field.SwitchField label="Versement libératoire" />
                   )}
@@ -218,9 +211,8 @@ function RouteComponent() {
       <SimulateurCard
         title="Concubinage vs PACS"
         description="Aperçu de l'impact du PACS sur l'impôt sur le revenu d'un couple."
-        className="@container"
       >
-        <div className="grid gap-4 @lg:grid-cols-2">
+        <div className="grid gap-4 @2xl/card:grid-cols-2">
           <div className="space-y-4 rounded-md border p-4">
             <p className="font-heading text-lg font-medium">Personne 1</p>
             <PersonneForm form={form} name="foyer1" />

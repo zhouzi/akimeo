@@ -1,9 +1,9 @@
-import type { Don, Foyer, Placement } from "@akimeo/modele";
+import type { Adulte, Don, Foyer } from "@akimeo/modele";
 import {
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
-  isCouple,
-  isRevenuMicroEntreprise,
+  isFoyerCouple,
+  isNatureRevenuMicroEntreprise,
   NATURE_DON,
   NATURE_REVENU,
   SCOLARTIE_ENFANT,
@@ -13,7 +13,6 @@ import {
 import {
   calculerRemunerationAnnuelleDeductibleEmploiADomicile,
   dedupeRevenus,
-  getDons,
 } from "./calculer-ir";
 
 export interface Driver {
@@ -23,33 +22,18 @@ export interface Driver {
   isVisible(selector: string): Promise<boolean>;
 }
 
-function sommeVersementsAnnuelsPER(placements: Placement[]) {
-  return placements.reduce(
-    (acc, placement) =>
-      placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
-        ? acc + placement.versementsAnnuels
-        : acc,
-    0,
-  );
-}
-
 export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   async function getNumberValue(selector: string) {
     const value = await driver.getValue(selector);
     return value == null ? null : Number(value.replace(/\s+/, ""));
   }
 
-  const revenus = [
-    dedupeRevenus(foyer.declarant1.revenus),
-    isCouple(foyer) ? dedupeRevenus(foyer.declarant2.revenus) : [],
-  ];
-  const versementsAnnuelsPER = [
-    sommeVersementsAnnuelsPER(foyer.declarant1.placements),
-    isCouple(foyer)
-      ? sommeVersementsAnnuelsPER(foyer.declarant2.placements)
-      : 0,
-  ];
-  const dons = getDons(foyer);
+  const declarants = [
+    foyer.declarant1,
+    ...(isFoyerCouple(foyer) ? [foyer.declarant2] : []),
+  ] as [Adulte] | [Adulte, Adulte];
+
+  const dons = declarants.flatMap((declarant) => declarant.dons);
 
   // p01
 
@@ -79,7 +63,7 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
 
   await driver.fill("#B0DA", foyer.declarant1.dateNaissance.getFullYear());
 
-  if (isCouple(foyer)) {
+  if (isFoyerCouple(foyer)) {
     await driver.fill("#B0DB", foyer.declarant2.dateNaissance.getFullYear());
   }
 
@@ -95,8 +79,8 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p02
 
   if (
-    revenus
-      .flat()
+    declarants
+      .flatMap((declarant) => declarant.revenus)
       .some((revenu) =>
         (
           [
@@ -110,14 +94,16 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   }
 
   if (
-    revenus.flat().some((revenu) => revenu.nature === NATURE_REVENU.rcm.value)
+    declarants
+      .flatMap((declarant) => declarant.revenus)
+      .some((revenu) => revenu.nature === NATURE_REVENU.rcm.value)
   ) {
     await driver.click("#revenu4");
   }
 
   if (
-    revenus
-      .flat()
+    declarants
+      .flatMap((declarant) => declarant.revenus)
       .some((revenu) =>
         (
           [
@@ -131,48 +117,59 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   }
 
   if (
-    revenus
-      .flat()
-      .some(
-        (revenu) =>
-          isRevenuMicroEntreprise(revenu) && revenu.versementLiberatoire,
-      )
+    declarants.some(
+      (declarant) =>
+        declarant.versementLiberatoire &&
+        declarant.revenus.some((revenu) =>
+          isNatureRevenuMicroEntreprise(revenu.nature),
+        ),
+    )
   ) {
     await driver.click("#revenu14");
   }
 
   if (
-    revenus
-      .flat()
-      .some(
-        (revenu) =>
-          isRevenuMicroEntreprise(revenu) &&
-          !revenu.versementLiberatoire &&
+    declarants.some(
+      (declarant) =>
+        !declarant.versementLiberatoire &&
+        declarant.revenus.some((revenu) =>
           (
             [
               NATURE_REVENU.microBICMarchandises.value,
               NATURE_REVENU.microBICServices.value,
             ] as string[]
           ).includes(revenu.nature),
-      )
+        ),
+    )
   ) {
     await driver.click("#revenu9");
   }
 
   if (
-    revenus
-      .flat()
-      .some(
-        (revenu) =>
-          isRevenuMicroEntreprise(revenu) &&
-          !revenu.versementLiberatoire &&
-          revenu.nature === NATURE_REVENU.microBNC.value,
-      )
+    declarants.some(
+      (declarant) =>
+        !declarant.versementLiberatoire &&
+        declarant.revenus.some(
+          (revenu) => revenu.nature === NATURE_REVENU.microBNC.value,
+        ),
+    )
   ) {
     await driver.click("#revenu11");
   }
 
-  if (versementsAnnuelsPER.some((versementsAnnuels) => versementsAnnuels > 0)) {
+  if (
+    declarants
+      .flatMap((declarant) =>
+        declarant.placements.reduce(
+          (acc, placement) =>
+            placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
+              ? acc + placement.versementsAnnuels
+              : acc,
+          0,
+        ),
+      )
+      .some((versementsAnnuels) => versementsAnnuels > 0)
+  ) {
     await driver.click("#charge1");
   }
 
@@ -191,8 +188,8 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p03
 
   if (await driver.isVisible("#p03")) {
-    for (let i = 0; i < revenus.length; i++) {
-      for (const revenu of revenus[i]!) {
+    for (let i = 0; i < declarants.length; i++) {
+      for (const revenu of dedupeRevenus(declarants[i]!.revenus)) {
         switch (revenu.nature) {
           case NATURE_REVENU.salaire.value:
             await driver.fill(["#B1AJ", "#B1BJ"][i]!, revenu.montantAnnuel);
@@ -210,8 +207,8 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p04
 
   if (await driver.isVisible("#p04")) {
-    for (let i = 0; i < revenus.length; i++) {
-      for (const revenu of revenus[i]!) {
+    for (let i = 0; i < declarants.length; i++) {
+      for (const revenu of dedupeRevenus(declarants[i]!.revenus)) {
         switch (revenu.nature) {
           case NATURE_REVENU.pensionRetraite.value:
             await driver.fill(["#B1AS", "#B1BS"][i]!, revenu.montantAnnuel);
@@ -228,7 +225,9 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p06
 
   if (await driver.isVisible("#p06")) {
-    for (const revenu of dedupeRevenus(revenus.flat())) {
+    for (const revenu of dedupeRevenus(
+      declarants.flatMap((declarant) => declarant.revenus),
+    )) {
       switch (revenu.nature) {
         case NATURE_REVENU.rcm.value:
           await driver.fill("#B2DC", revenu.montantAnnuel);
@@ -248,7 +247,9 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p08
 
   if (await driver.isVisible("#p08")) {
-    for (const revenu of dedupeRevenus(revenus.flat())) {
+    for (const revenu of dedupeRevenus(
+      declarants.flatMap((declarant) => declarant.revenus),
+    )) {
       switch (revenu.nature) {
         case NATURE_REVENU.microFoncier.value:
           await driver.fill("#B4BE", revenu.montantAnnuel);
@@ -268,9 +269,15 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p09
 
   if (await driver.isVisible("#p09")) {
-    for (let i = 0; i < revenus.length; i++) {
-      for (const revenu of revenus[i]!) {
-        if (!isRevenuMicroEntreprise(revenu) || !revenu.versementLiberatoire) {
+    for (let i = 0; i < declarants.length; i++) {
+      const declarant = declarants[i]!;
+
+      if (!declarant.versementLiberatoire) {
+        continue;
+      }
+
+      for (const revenu of dedupeRevenus(declarant.revenus)) {
+        if (!isNatureRevenuMicroEntreprise(revenu.nature)) {
           continue;
         }
 
@@ -296,9 +303,15 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p11
 
   if (await driver.isVisible("#p11")) {
-    for (let i = 0; i < revenus.length; i++) {
-      for (const revenu of revenus[i]!) {
-        if (!isRevenuMicroEntreprise(revenu) || revenu.versementLiberatoire) {
+    for (let i = 0; i < declarants.length; i++) {
+      const declarant = declarants[i]!;
+
+      if (declarant.versementLiberatoire) {
+        continue;
+      }
+
+      for (const revenu of dedupeRevenus(declarant.revenus)) {
+        if (!isNatureRevenuMicroEntreprise(revenu.nature)) {
           continue;
         }
 
@@ -321,9 +334,15 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p13
 
   if (await driver.isVisible("#p13")) {
-    for (let i = 0; i < revenus.length; i++) {
-      for (const revenu of revenus[i]!) {
-        if (!isRevenuMicroEntreprise(revenu) || revenu.versementLiberatoire) {
+    for (let i = 0; i < declarants.length; i++) {
+      const declarant = declarants[i]!;
+
+      if (declarant.versementLiberatoire) {
+        continue;
+      }
+
+      for (const revenu of dedupeRevenus(declarant.revenus)) {
+        if (!isNatureRevenuMicroEntreprise(revenu.nature)) {
           continue;
         }
 
@@ -345,8 +364,14 @@ export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
   // p16
 
   if (await driver.isVisible("#p16")) {
-    for (let i = 0; i < versementsAnnuelsPER.length; i++) {
-      const versementAnnuelPER = versementsAnnuelsPER[i]!;
+    for (let i = 0; i < declarants.length; i++) {
+      const versementAnnuelPER = declarants[i]!.placements.reduce(
+        (acc, placement) =>
+          placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
+            ? acc + placement.versementsAnnuels
+            : acc,
+        0,
+      );
 
       if (versementAnnuelPER > 0) {
         await driver.fill(["#B6RS", "#B6RT"][i]!, versementAnnuelPER);

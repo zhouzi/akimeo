@@ -18,8 +18,9 @@ type Frequence = (typeof FREQUENCE)[keyof typeof FREQUENCE]["value"];
 interface FrequenceToggleProps {
   value: number;
   children: (props: {
-    value: number;
     label: string;
+    value: number;
+    toAnnuelle: (value: number) => number;
     frequence: Frequence;
     setFrequence: Dispatch<SetStateAction<Frequence>>;
     toggleFrequence: () => void;
@@ -35,6 +36,8 @@ export function FrequenceToggle({ value, children }: FrequenceToggleProps) {
     label: FREQUENCE_OPTIONS.find((option) => option.value === frequence)!
       .label,
     value: frequence === FREQUENCE.annuelle.value ? value : value / 12,
+    toAnnuelle: (value) =>
+      frequence === FREQUENCE.annuelle.value ? value : value * 12,
     frequence,
     setFrequence,
     toggleFrequence: () =>

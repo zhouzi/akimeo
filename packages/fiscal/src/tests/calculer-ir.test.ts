@@ -247,7 +247,6 @@ describe("calculerIR", () => {
           {
             nature: NATURE_REVENU.microBNC.value,
             montantAnnuel: 40000,
-            versementLiberatoire: false,
           },
         ],
       },
@@ -259,12 +258,10 @@ describe("calculerIR", () => {
           {
             nature: NATURE_REVENU.microBNC.value,
             montantAnnuel: 40000,
-            versementLiberatoire: false,
           },
           {
             nature: NATURE_REVENU.microBICServices.value,
             montantAnnuel: 20000,
-            versementLiberatoire: false,
           },
         ],
       },
@@ -276,7 +273,6 @@ describe("calculerIR", () => {
           {
             nature: NATURE_REVENU.microBICMarchandises.value,
             montantAnnuel: 100000,
-            versementLiberatoire: false,
           },
         ],
       },
@@ -288,9 +284,9 @@ describe("calculerIR", () => {
           {
             nature: NATURE_REVENU.microBNC.value,
             montantAnnuel: 60000,
-            versementLiberatoire: true,
           },
         ],
+        versementLiberatoire: true,
       },
       declarant2: {
         revenus: [
@@ -341,18 +337,18 @@ describe("calculerIR", () => {
           {
             nature: NATURE_REVENU.microBNC.value,
             montantAnnuel: 60000,
-            versementLiberatoire: true,
           },
         ],
+        versementLiberatoire: true,
       },
       declarant2: {
         revenus: [
           {
             nature: NATURE_REVENU.microBICMarchandises.value,
             montantAnnuel: 80000,
-            versementLiberatoire: true,
           },
         ],
+        versementLiberatoire: true,
       },
     }),
     creerFoyer({

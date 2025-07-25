@@ -44,8 +44,8 @@ export function Simulateur({ path }: SimulateurProps) {
       <div ref={simulateurContainerRef} data-simulateur={path} />
       <p className={styles.disclaimer}>
         Ce simulateur est là pour t'aider à mieux comprendre, mais il ne
-        remplace pas une analyse complète de ta situation. Chaque cas est
-        unique, alors n'hésite pas à creuser ou à demander conseil si besoin.
+        remplace pas une analyse complète de ta situation. N'hésite pas à
+        creuser ou à demander conseil si besoin.
       </p>
     </div>
   );

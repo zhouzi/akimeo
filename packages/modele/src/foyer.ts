@@ -33,6 +33,7 @@ export const SITUATION_FAMILIALE = {
     value: "pacse" as const,
   },
 };
+export const SITUATION_FAMILIALE_OPTIONS = Object.values(SITUATION_FAMILIALE);
 
 export const IMPOSITION_RCM = {
   bareme: {
@@ -72,6 +73,7 @@ const baseFoyerSchema = z.object({
     SITUATION_FAMILIALE.pacse.value,
   ]),
   declarant1: adulteSchema,
+  declarant2: z.literal(undefined),
   enfants: z.array(enfantSchema),
   impositionRCM: z.enum([
     IMPOSITION_RCM.bareme.value,
@@ -89,54 +91,56 @@ const baseFoyerSchema = z.object({
   >
 >;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export interface Celibataire
+export interface FoyerCelibataire
   extends BaseFoyer<
     | typeof SITUATION_FAMILIALE.celibataire.value
     | typeof SITUATION_FAMILIALE.divorce.value
     | typeof SITUATION_FAMILIALE.veuf.value
-  > {}
-const celibataireSchema = baseFoyerSchema.extend({
+  > {
+  declarant2: undefined;
+}
+const foyerCelibataireSchema = baseFoyerSchema.extend({
   situationFamiliale: z.enum([
     SITUATION_FAMILIALE.celibataire.value,
     SITUATION_FAMILIALE.divorce.value,
     SITUATION_FAMILIALE.veuf.value,
   ]),
-}) satisfies z.ZodType<Celibataire>;
+  declarant2: z.literal(undefined),
+}) satisfies z.ZodType<FoyerCelibataire>;
 
-export interface Concubinage
+export interface FoyerConcubinage
   extends BaseFoyer<typeof SITUATION_FAMILIALE.concubinage.value> {
   declarant2: Adulte;
 }
-const concubinageSchema = baseFoyerSchema.extend({
+const foyerConcubinageSchema = baseFoyerSchema.extend({
   situationFamiliale: z.literal(SITUATION_FAMILIALE.concubinage.value),
   declarant2: adulteSchema,
-}) satisfies z.ZodType<Concubinage>;
+}) satisfies z.ZodType<FoyerConcubinage>;
 
-export interface Couple
+export interface FoyerCouple
   extends BaseFoyer<
     | typeof SITUATION_FAMILIALE.marie.value
     | typeof SITUATION_FAMILIALE.pacse.value
   > {
   declarant2: Adulte;
 }
-const coupleSchema = baseFoyerSchema.extend({
+const foyerCoupleSchema = baseFoyerSchema.extend({
   situationFamiliale: z.enum([
     SITUATION_FAMILIALE.marie.value,
     SITUATION_FAMILIALE.pacse.value,
   ]),
   declarant2: adulteSchema,
-}) satisfies z.ZodType<Couple>;
+}) satisfies z.ZodType<FoyerCouple>;
 
-export type Foyer = Celibataire | Concubinage | Couple;
+export type Foyer = FoyerCelibataire | FoyerConcubinage | FoyerCouple;
 
 export const foyerSchema = z.union([
-  celibataireSchema,
-  concubinageSchema,
-  coupleSchema,
+  foyerCelibataireSchema,
+  foyerConcubinageSchema,
+  foyerCoupleSchema,
 ]) satisfies z.ZodType<Foyer>;
 
-export function isCouple(foyer: Foyer): foyer is Couple {
+export function isFoyerCouple(foyer: Foyer): foyer is FoyerCouple {
   return (
     foyer.situationFamiliale === SITUATION_FAMILIALE.marie.value ||
     foyer.situationFamiliale === SITUATION_FAMILIALE.pacse.value
@@ -145,9 +149,9 @@ export function isCouple(foyer: Foyer): foyer is Couple {
 
 export function creerFoyer(
   foyer:
-    | PartialDeep<Celibataire>
-    | PartialDeep<Concubinage>
-    | PartialDeep<Couple>,
+    | PartialDeep<FoyerCelibataire>
+    | PartialDeep<FoyerConcubinage>
+    | PartialDeep<FoyerCouple>,
 ): Foyer {
   switch (foyer.situationFamiliale) {
     case SITUATION_FAMILIALE.concubinage.value:
@@ -160,7 +164,7 @@ export function creerFoyer(
           }),
           situationFamiliale: foyer.situationFamiliale,
           declarant2: creerAdulte(foyer.declarant2 ?? {}),
-        } satisfies Concubinage | Couple),
+        } satisfies FoyerConcubinage | FoyerCouple),
       );
     case SITUATION_FAMILIALE.celibataire.value:
     case SITUATION_FAMILIALE.divorce.value:
@@ -170,10 +174,11 @@ export function creerFoyer(
         defaultsDeep({}, foyer, {
           situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
           declarant1: creerAdulte(foyer.declarant1 ?? {}),
+          declarant2: undefined,
           enfants: [],
           impositionRCM: IMPOSITION_RCM.pfu.value,
           emploisADomicile: [],
-        } satisfies Celibataire),
+        } satisfies FoyerCelibataire),
       );
   }
 }

@@ -3,8 +3,8 @@ import donneesReglementaires from "@akimeo/donnees-reglementaires";
 import {
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
-  isCouple,
-  isRevenuMicroEntreprise,
+  isFoyerCouple,
+  isNatureRevenuMicroEntreprise,
   NATURE_REVENU,
   SCOLARTIE_ENFANT,
   SITUATION_FAMILIALE,
@@ -21,7 +21,7 @@ const BAREME_IR =
 export function getRevenus(foyer: Foyer) {
   return [
     ...foyer.declarant1.revenus,
-    ...(isCouple(foyer) ? foyer.declarant2.revenus : []),
+    ...(isFoyerCouple(foyer) ? foyer.declarant2.revenus : []),
   ];
 }
 
@@ -125,7 +125,7 @@ function calculerRevenuBrutGlobal(foyer: Foyer) {
         return acc;
       }
       default:
-        // @ts-expect-error garde-fou pour gérer tous les cas
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`Cas non géré : ${revenu.nature}`);
     }
   }, 0);
@@ -134,7 +134,7 @@ function calculerRevenuBrutGlobal(foyer: Foyer) {
 function getPlacements(foyer: Foyer) {
   return [
     ...foyer.declarant1.placements,
-    ...(isCouple(foyer) ? foyer.declarant2.placements : []),
+    ...(isFoyerCouple(foyer) ? foyer.declarant2.placements : []),
   ];
 }
 
@@ -161,7 +161,7 @@ function calculerRevenuNetImposable(foyer: Foyer) {
   return revenuNetImposable;
 }
 
-function trancherRevenus(foyer: Foyer) {
+export function trancherRevenus(foyer: Foyer) {
   const revenuNetImposable = calculerRevenuNetImposable(foyer);
   const partsFiscales = calculerPartsFiscales(foyer);
 
@@ -200,17 +200,16 @@ function calculerImpotBrut(foyer: Foyer) {
   );
 }
 
-function withoutVersementLiberatoire(revenus: Revenu[]) {
+function withoutRevenusMicroEntreprise(revenus: Revenu[]) {
   return revenus.filter(
-    (revenu) =>
-      !isRevenuMicroEntreprise(revenu) || !revenu.versementLiberatoire,
+    (revenu) => !isNatureRevenuMicroEntreprise(revenu.nature),
   );
 }
 
-export function getDons(foyer: Foyer) {
+function getDons(foyer: Foyer) {
   return [
     ...foyer.declarant1.dons,
-    ...(isCouple(foyer) ? foyer.declarant2.dons : []),
+    ...(isFoyerCouple(foyer) ? foyer.declarant2.dons : []),
   ];
 }
 
@@ -268,23 +267,29 @@ function calculerImpotDu(foyer: Foyer) {
   const impotBrut = calculerImpotBrut(foyer);
   const revenuNetImposable = Math.max(0, calculerRevenuNetImposable(foyer));
   const taux = revenuNetImposable > 0 ? impotBrut / revenuNetImposable : 0;
-  const foyerWithoutVersementLiberatoire: Foyer = isCouple(foyer)
+  const foyerWithoutVersementLiberatoire: Foyer = isFoyerCouple(foyer)
     ? {
         ...foyer,
         declarant1: {
           ...foyer.declarant1,
-          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+          revenus: foyer.declarant1.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant1.revenus)
+            : foyer.declarant1.revenus,
         },
         declarant2: {
           ...foyer.declarant2,
-          revenus: withoutVersementLiberatoire(foyer.declarant2.revenus),
+          revenus: foyer.declarant2.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant2.revenus)
+            : foyer.declarant2.revenus,
         },
       }
     : {
         ...foyer,
         declarant1: {
           ...foyer.declarant1,
-          revenus: withoutVersementLiberatoire(foyer.declarant1.revenus),
+          revenus: foyer.declarant1.versementLiberatoire
+            ? withoutRevenusMicroEntreprise(foyer.declarant1.revenus)
+            : foyer.declarant1.revenus,
         },
       };
   const revenuNetImposableSansRevenusImposes = calculerRevenuNetImposable(
@@ -316,7 +321,7 @@ function calculerImpotDu(foyer: Foyer) {
     impotDu = 0;
   }
 
-  if (isCouple(foyer)) {
+  if (isFoyerCouple(foyer)) {
     if (impotDu < 3249) {
       const décote =
         donneesReglementaires.impot_revenu.calcul_impot_revenu.plaf_qf.decote
@@ -346,7 +351,7 @@ function calculerImpotDu(foyer: Foyer) {
       switch (don.nature) {
         case NATURE_DON.partisPolitiques.value:
         case NATURE_DON.utilitePublique.value: {
-          const plafond = isCouple(foyer)
+          const plafond = isFoyerCouple(foyer)
             ? donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
                 .dons_aux_partis_politiques.plafond_foyer
             : donneesReglementaires.impot_revenu.calcul_reductions_impots.dons
