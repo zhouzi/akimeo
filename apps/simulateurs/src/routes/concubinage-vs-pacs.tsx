@@ -212,7 +212,7 @@ function RouteComponent() {
         title="Concubinage vs PACS"
         description="Aperçu de l'impact du PACS sur l'impôt sur le revenu d'un couple."
       >
-        <div className="grid gap-4 @lg/card:grid-cols-2">
+        <div className="grid gap-4 @2xl/card:grid-cols-2">
           <div className="space-y-4 rounded-md border p-4">
             <p className="font-heading text-lg font-medium">Personne 1</p>
             <PersonneForm form={form} name="foyer1" />
