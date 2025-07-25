@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-form";
 
 import type {
-  NumberFrequcenceInputFieldProps,
+  NumberFrequenceInputFieldProps,
   NumberInputFieldProps,
 } from "./number-input";
 import type { SelectFieldProps } from "./select";
@@ -59,7 +59,7 @@ export const { useAppForm, withForm } = createFormHook({
       const fieldProps = useFieldProps<number>();
       return <NumberInputField {...props} {...fieldProps} />;
     },
-    NumberFrequenceInputField: (props: NumberFrequcenceInputFieldProps) => {
+    NumberFrequenceInputField: (props: NumberFrequenceInputFieldProps) => {
       const fieldProps = useFieldProps<number>();
       return <NumberFrequenceInputField {...props} {...fieldProps} />;
     },

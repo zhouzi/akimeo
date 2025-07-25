@@ -18,6 +18,7 @@
     }
   },
   "dependencies": {
+    "@base-ui-components/react": "catalog:",
     "@radix-ui/react-checkbox": "catalog:",
     "@radix-ui/react-dropdown-menu": "catalog:",
     "@radix-ui/react-label": "catalog:",

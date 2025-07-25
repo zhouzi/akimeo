@@ -1,20 +1,20 @@
-import { CalendarSync } from "lucide-react";
+import type { ComponentProps } from "react";
+import { NumberField as BaseUINumberField } from "@base-ui-components/react/number-field";
+import { CalendarSync, MinusIcon, PlusIcon } from "lucide-react";
 
-import type { InputProps } from "./input";
 import { Button } from "./button";
 import { FormDescription } from "./form-description";
 import { FormControl, FormItem, FormLabel } from "./form-item";
 import { FormMessage } from "./form-message";
 import { FrequenceToggle } from "./frequence-toggle";
-import { Input } from "./input";
+import { inputVariants } from "./input";
 import { Label } from "./label";
 
-export interface NumberFrequcenceInputFieldProps
-  extends Omit<NumberFrequenceInputProps, "onChange" | "onValueChange"> {
+export interface NumberFrequenceInputFieldProps
+  extends NumberFrequenceInputProps {
   label?: string;
   description?: string;
   errorMessage?: string;
-  onChange?: (value: number) => void;
 }
 
 export function NumberFrequenceInputField({
@@ -48,7 +48,7 @@ export function NumberFrequenceInput({
     <FrequenceToggle
       value={props.value ?? 0}
       children={({ value, toAnnuelle, label, toggleFrequence }) => (
-        <div className="flex [&>*:first-child]:rounded-r-none [&>*:first-child]:border-r-0 [&>*:last-child]:rounded-l-none">
+        <div className="flex [&>*:first-child]:flex-1 [&>*:first-child>*>*:last-child>*]:rounded-r-none [&>*:first-child>*>*:last-child>*]:border-r-0 [&>*:last-child]:rounded-l-none">
           <FormControl>
             <NumberInput
               {...props}
@@ -66,8 +66,7 @@ export function NumberFrequenceInput({
   );
 }
 
-export interface NumberInputFieldProps
-  extends Omit<NumberInputProps, "onChange" | "onValueChange"> {
+export interface NumberInputFieldProps extends NumberInputProps {
   label?: string;
   description?: string;
   errorMessage?: string;
@@ -97,24 +96,45 @@ export function NumberInputField({
   );
 }
 
-interface NumberInputProps extends InputProps {
+interface NumberInputProps
+  extends Omit<ComponentProps<typeof BaseUINumberField.Root>, "onValueChange"> {
   onValueChange?: (value: number) => void;
-  value?: number;
+  placeholder?: string;
 }
 
 export function NumberInput({
-  onChange,
   onValueChange,
+  placeholder,
   ...props
 }: NumberInputProps) {
   return (
-    <Input
+    <BaseUINumberField.Root
+      locale="fr"
       {...props}
-      type="number"
-      onChange={(event) => {
-        onChange?.(event);
-        onValueChange?.(Number(event.target.value));
+      onValueChange={(value) => {
+        if (typeof value === "number") {
+          onValueChange?.(value);
+        }
       }}
-    />
+    >
+      <BaseUINumberField.Group className="flex [&>*:first-child]:rounded-r-none [&>*:first-child]:border-r-0">
+        <BaseUINumberField.Input
+          className={inputVariants()}
+          placeholder={placeholder}
+        />
+        <div className="grid [&>*]:h-auto [&>*]:rounded-l-none [&>*]:px-1! [&>*]:py-1! [&>*:first-child]:rounded-b-none [&>*:first-child]:border-b-0 [&>*:last-child]:rounded-t-none [&>*>svg]:size-2!">
+          <Button variant="outline" asChild>
+            <BaseUINumberField.Increment>
+              <PlusIcon />
+            </BaseUINumberField.Increment>
+          </Button>
+          <Button variant="outline" asChild>
+            <BaseUINumberField.Decrement>
+              <MinusIcon />
+            </BaseUINumberField.Decrement>
+          </Button>
+        </div>
+      </BaseUINumberField.Group>
+    </BaseUINumberField.Root>
   );
 }

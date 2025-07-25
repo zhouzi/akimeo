@@ -7,7 +7,11 @@ import {
   TYPE_EMPLOI_A_DOMICILE,
   TYPE_EMPLOI_A_DOMICILE_OPTIONS,
 } from "@akimeo/modele/emploi-a-domicile";
-import { formatEuros, formatPercentage } from "@akimeo/modele/format";
+import {
+  FORMAT_EUROS_OPTIONS,
+  formatEuros,
+  formatPercentage,
+} from "@akimeo/modele/format";
 import {
   creerFoyer,
   foyerSchema,
@@ -134,6 +138,9 @@ const AdulteForm = withForm({
                       <NumberFrequenceInput
                         onValueChange={field.setValue}
                         value={field.state.value}
+                        min={0}
+                        format={FORMAT_EUROS_OPTIONS}
+                        placeholder={formatEuros(0)}
                       />
                     </FormItem>
                   )}
@@ -296,6 +303,8 @@ function RouteComponent() {
                         )
                       }
                       value={field.state.value.length}
+                      min={0}
+                      placeholder="0"
                     />
                   )}
                 />
@@ -351,12 +360,14 @@ function RouteComponent() {
                         {fieldPlacements.state.value.map((_, index) => (
                           <form.AppField
                             key={index}
-                            name={`foyer.declarant1.placements[${index}]`}
+                            name={`foyer.declarant1.placements[${index}].versementsAnnuels`}
                             children={(field) => (
                               <field.NumberFrequenceInputField
                                 label="Montant des versements"
-                                placeholder={formatEuros(0)}
                                 description="Dans la limite du plafond de déduction disponible."
+                                min={0}
+                                format={FORMAT_EUROS_OPTIONS}
+                                placeholder={formatEuros(0)}
                               />
                             )}
                           />
@@ -418,6 +429,9 @@ function RouteComponent() {
                                 <NumberFrequenceInput
                                   onValueChange={field.setValue}
                                   value={field.state.value}
+                                  min={0}
+                                  format={FORMAT_EUROS_OPTIONS}
+                                  placeholder={formatEuros(0)}
                                 />
                               </FormItem>
                             )}
@@ -638,6 +652,9 @@ function RouteComponent() {
                                   <NumberFrequenceInput
                                     onValueChange={field.setValue}
                                     value={field.state.value}
+                                    min={0}
+                                    format={FORMAT_EUROS_OPTIONS}
+                                    placeholder={formatEuros(0)}
                                   />
                                 </FormItem>
                               )}
@@ -647,7 +664,7 @@ function RouteComponent() {
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="w-full">
-                              <span>Ajouter un emploi à domicile</span>
+                              <span>Ajouter un employé</span>
                               <Plus />
                             </Button>
                           </DropdownMenuTrigger>
