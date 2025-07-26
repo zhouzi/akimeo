@@ -13,6 +13,7 @@ export default [
           allowDefaultProject: [
             "reportWebVitals.ts",
             "vite.config.ts",
+            "vite.iframe.config.ts",
             "eslint.config.mjs",
           ],
           defaultProject: "./tsconfig.json",

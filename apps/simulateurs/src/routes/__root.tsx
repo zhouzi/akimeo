@@ -2,6 +2,9 @@ import { useEffect, useRef } from "react";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import Plausible from "plausible-tracker";
 
+import type { ResizeEvent } from "~/lib/iframe.constants";
+import { RESIZE_EVENT_TYPE } from "~/lib/iframe.constants";
+
 export const Route = createRootRoute({
   component: RouteComponent,
 });
@@ -35,8 +38,8 @@ function RouteComponent() {
         return;
       }
 
-      const event = {
-        type: "akimeo:resize-height",
+      const event: ResizeEvent = {
+        type: RESIZE_EVENT_TYPE,
         payload: {
           height: entry.contentRect.height,
           scrollIntoView: interactedRef.current,
