@@ -61,7 +61,6 @@ import {
 } from "@akimeo/ui/components/select";
 import { SwitchField } from "@akimeo/ui/components/switch";
 import { formOptions } from "@tanstack/react-form";
-import { createFileRoute } from "@tanstack/react-router";
 import {
   ChartNoAxesColumnIncreasing,
   Landmark,
@@ -194,11 +193,7 @@ const AdulteForm = withForm({
   },
 });
 
-export const Route = createFileRoute("/impot-revenu")({
-  component: RouteComponent,
-});
-
-function RouteComponent() {
+export function ImpotRevenu() {
   const form = useAppForm({
     ...formOpts,
   });

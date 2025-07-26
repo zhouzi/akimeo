@@ -51,7 +51,7 @@ Parce que c'est vrai, le Pacs peut avoir un impact non négligeable sur vos fina
 
 Comme le montre ce simulateur, qui compare votre impôt en concubinage et en Pacs :
 
-<Simulateur path="concubinage-vs-pacs" />
+<Simulateur path="/o/akimeo/s/concubinage-vs-pacs" />
 
 Attention : l'impôt sur le revenu n'est pas le seul critère à prendre en compte.
 

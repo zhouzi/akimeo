@@ -9,72 +9,48 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ImpotRevenuRouteImport } from './routes/impot-revenu'
-import { Route as ConcubinageVsPacsRouteImport } from './routes/concubinage-vs-pacs'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OAkimeoSSlugRouteImport } from './routes/o/akimeo/s/$slug'
 
-const ImpotRevenuRoute = ImpotRevenuRouteImport.update({
-  id: '/impot-revenu',
-  path: '/impot-revenu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConcubinageVsPacsRoute = ConcubinageVsPacsRouteImport.update({
-  id: '/concubinage-vs-pacs',
-  path: '/concubinage-vs-pacs',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OAkimeoSSlugRoute = OAkimeoSSlugRouteImport.update({
+  id: '/o/akimeo/s/$slug',
+  path: '/o/akimeo/s/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
-  '/impot-revenu': typeof ImpotRevenuRoute
+  '/o/akimeo/s/$slug': typeof OAkimeoSSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
-  '/impot-revenu': typeof ImpotRevenuRoute
+  '/o/akimeo/s/$slug': typeof OAkimeoSSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/concubinage-vs-pacs': typeof ConcubinageVsPacsRoute
-  '/impot-revenu': typeof ImpotRevenuRoute
+  '/o/akimeo/s/$slug': typeof OAkimeoSSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/concubinage-vs-pacs' | '/impot-revenu'
+  fullPaths: '/' | '/o/akimeo/s/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/concubinage-vs-pacs' | '/impot-revenu'
-  id: '__root__' | '/' | '/concubinage-vs-pacs' | '/impot-revenu'
+  to: '/' | '/o/akimeo/s/$slug'
+  id: '__root__' | '/' | '/o/akimeo/s/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ConcubinageVsPacsRoute: typeof ConcubinageVsPacsRoute
-  ImpotRevenuRoute: typeof ImpotRevenuRoute
+  OAkimeoSSlugRoute: typeof OAkimeoSSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/impot-revenu': {
-      id: '/impot-revenu'
-      path: '/impot-revenu'
-      fullPath: '/impot-revenu'
-      preLoaderRoute: typeof ImpotRevenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/concubinage-vs-pacs': {
-      id: '/concubinage-vs-pacs'
-      path: '/concubinage-vs-pacs'
-      fullPath: '/concubinage-vs-pacs'
-      preLoaderRoute: typeof ConcubinageVsPacsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -82,13 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/o/akimeo/s/$slug': {
+      id: '/o/akimeo/s/$slug'
+      path: '/o/akimeo/s/$slug'
+      fullPath: '/o/akimeo/s/$slug'
+      preLoaderRoute: typeof OAkimeoSSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ConcubinageVsPacsRoute: ConcubinageVsPacsRoute,
-  ImpotRevenuRoute: ImpotRevenuRoute,
+  OAkimeoSSlugRoute: OAkimeoSSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -27,7 +27,6 @@ import {
   TableRow,
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
-import { createFileRoute } from "@tanstack/react-router";
 import {
   Armchair,
   BedDouble,
@@ -192,11 +191,7 @@ const PersonneForm = withForm({
   },
 });
 
-export const Route = createFileRoute("/concubinage-vs-pacs")({
-  component: RouteComponent,
-});
-
-function RouteComponent() {
+export function ConcubinageVSPacs() {
   const form = useAppForm({
     ...formOpts,
   });
