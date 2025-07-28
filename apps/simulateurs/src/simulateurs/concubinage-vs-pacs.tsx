@@ -1,4 +1,4 @@
-import { calculerIRComplet } from "@akimeo/fiscal/calculer-ir-complet";
+import { calculerIR } from "@akimeo/fiscal/calculer-ir";
 import { formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
@@ -219,10 +219,10 @@ export function ConcubinageVSPacs() {
         </div>
         <form.Subscribe
           selector={(state) => {
-            const foyer1 = calculerIRComplet(state.values.foyer1);
-            const foyer2 = calculerIRComplet(state.values.foyer2);
+            const foyer1 = calculerIR(state.values.foyer1);
+            const foyer2 = calculerIR(state.values.foyer2);
             const concubinage = foyer1 + foyer2;
-            const pacs = calculerIRComplet(
+            const pacs = calculerIR(
               pacser(state.values.foyer1, state.values.foyer2),
             );
 

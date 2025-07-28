@@ -13,7 +13,7 @@ import {
 import {
   calculerRemunerationAnnuelleDeductibleEmploiADomicile,
   dedupeRevenus,
-} from "./calculer-ir";
+} from "./calculer-ir-du";
 
 export interface Driver {
   click(selector: string): Promise<void>;

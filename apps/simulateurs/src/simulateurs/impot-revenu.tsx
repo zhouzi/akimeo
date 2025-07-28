@@ -1,5 +1,5 @@
 import type { Enfant } from "@akimeo/modele/personne";
-import { calculerIRComplet } from "@akimeo/fiscal/calculer-ir-complet";
+import { calculerIR } from "@akimeo/fiscal/calculer-ir";
 import { calculerTauxIR } from "@akimeo/fiscal/calculer-taux-ir";
 import { calculerTMI } from "@akimeo/fiscal/calculer-tmi";
 import { NATURE_DON, NATURE_DON_OPTIONS } from "@akimeo/modele/don";
@@ -212,7 +212,7 @@ export function ImpotRevenu() {
         <div className="space-y-6">
           <form.Subscribe
             selector={(state) => {
-              const ir = calculerIRComplet(state.values.foyer);
+              const ir = calculerIR(state.values.foyer);
               const tmi = calculerTMI(state.values.foyer);
               const tauxIR = calculerTauxIR(state.values.foyer);
 

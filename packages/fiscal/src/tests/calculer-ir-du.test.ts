@@ -16,13 +16,13 @@ import playwright from "playwright";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import type { Driver } from "~/remplir-simulateur";
-import { calculerIR } from "~/calculer-ir";
+import { calculerIRDu } from "~/calculer-ir-du";
 import { remplirSimulateur } from "~/remplir-simulateur";
 
 const HEADLESS = JSON.parse(process.env.HEADLESS ?? "true") as boolean;
 const HEADFULL_TIMEOUT_BETWEEN_INTERACTIONS = 5000;
 
-describe("calculerIR", () => {
+describe("calculerIRDu", () => {
   let browser: playwright.Browser;
   let page: playwright.Page;
   let driver: Driver;
@@ -541,7 +541,7 @@ describe("calculerIR", () => {
     "scénario %$",
     async (foyer) => {
       const expected = await remplirSimulateur(driver, foyer);
-      const actual = { ir: calculerIR(foyer) };
+      const actual = { ir: calculerIRDu(foyer) };
 
       expect(actual.ir).toBeOneOf([
         expected.ir - 1,

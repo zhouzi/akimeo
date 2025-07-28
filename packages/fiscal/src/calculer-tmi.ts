@@ -1,6 +1,6 @@
 import type { Foyer } from "@akimeo/modele";
 
-import { trancherRevenus } from "./calculer-ir";
+import { trancherRevenus } from "./calculer-ir-du";
 
 export function calculerTMI(foyer: Foyer) {
   const tranches = trancherRevenus(foyer);
