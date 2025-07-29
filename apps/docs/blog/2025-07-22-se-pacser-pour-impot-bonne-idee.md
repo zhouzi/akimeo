@@ -64,3 +64,17 @@ Refuser le PACS "juste pour l'impôt", c'est souvent une façon de dire :
 Mais quand l'engagement est déjà là, se priver volontairement de protections et d’avantages, c'est peut-être se maintenir inutilement dans une situation désavantageuse.
 
 Et dans ce cas, l'impôt n'est pas une mauvaise raison. C'est peut-être la bonne excuse pour formaliser ce qui existe déjà.
+
+:::warning
+
+## Et la mariage dans tout ça ?
+
+Si je ne parle pas de mariage ici, c’est parce qu’il fait moins débat. Un couple hésite rarement entre concubinage et mariage : c’est une démarche claire, souvent portée par un projet de vie plus global.
+
+Le PACS, lui, est souvent mal compris ou sous-estimé. Perçu comme une demi-mesure, il reste flou dans l’esprit de beaucoup... alors qu’il a un vrai rôle à jouer.
+
+Évidemment, il faut le dire : le mariage offre une protection plus étendue, notamment quand des enfants entrent en jeu. Mais c’est aussi un engagement plus lourd, aux implications juridiques et patrimoniales plus fortes.
+
+Ici, on parle du PACS justement parce qu’il mérite d’être mieux compris, en tant que choix intermédiaire légitime, et souvent pertinent.
+
+:::
