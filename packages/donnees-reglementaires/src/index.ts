@@ -14,7 +14,7 @@ export default {
            * @description Plafond de la décote de l'impôt sur le revenu (IR) pour les contribuables célibataires, divorcés ou veufs
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/decote/seuil_celib.yaml Source}
            */
-          seuil_celib: 873,
+          seuil_celib: 889,
 
           /**
            * @description Taux de la décote de l'impôt sur le revenu
