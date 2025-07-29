@@ -102,11 +102,17 @@ function listenToResizeEvents() {
             iframe.style.height = `${Math.ceil(event.data.payload.height)}px`;
 
             if (event.data.payload.scrollIntoView) {
-              const top = iframe.getBoundingClientRect().top;
+              const offset = 100;
+              const { top, bottom } = iframe.getBoundingClientRect();
 
-              if (top < 100) {
-                window.scroll({
-                  top: Math.max(0, top + window.scrollY - 100),
+              if (bottom < 0 + offset) {
+                window.scrollTo({
+                  top: window.scrollY + bottom - window.innerHeight + offset,
+                  behavior: "smooth",
+                });
+              } else if (top > window.innerHeight - offset) {
+                window.scrollTo({
+                  top: window.scrollY + top - offset,
                   behavior: "smooth",
                 });
               }
