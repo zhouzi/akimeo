@@ -25,3 +25,6 @@ jobs:
         run: pnpm --filter=@akimeo/donnees-reglementaires run fetch
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
+        with:
+          title: Mise à jour des données réglementaires
+          body: Cette PR a été créé automatiquement après avoir détecté un changement des données réglementaires depuis OpenFisca.
