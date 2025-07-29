@@ -1,0 +1,33 @@
+name: Fetch donnees reglementaires
+
+on:
+  schedule:
+    - cron: "0 0 */15 * *"
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    name: Fetch donnees reglementaires
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: "npm"
+          cache-dependency-path: pnpm-lock.yaml
+      - name: Install dependencies
+        run: pnpm install
+      - name: Fetch
+        run: pnpm --filter=@akimeo/donnees-reglementaires run fetch
+
+  create-pr:
+    name: Create pull request
+    needs: fetch
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
