@@ -67,14 +67,12 @@ Et dans ce cas, l'impôt n'est pas une mauvaise raison. C'est peut-être la bonn
 
 :::warning
 
-## Et la mariage dans tout ça ?
+## Et le mariage dans tout ça ?
 
-Si je ne parle pas de mariage ici, c’est parce qu’il fait moins débat. Un couple hésite rarement entre concubinage et mariage : c’est une démarche claire, souvent portée par un projet de vie plus global.
+Si je ne parle pas de mariage ici, c’est parce qu’il fait moins débat. Un couple hésite rarement entre concubinage et mariage. Alors que le PACS est souvent réduit à une simple formalité administrative, à tort.
 
-Le PACS, lui, est souvent mal compris ou sous-estimé. Perçu comme une demi-mesure, il reste flou dans l’esprit de beaucoup... alors qu’il a un vrai rôle à jouer.
+Évidemment, il faut le dire : le mariage reste la forme de protection la plus complète pour un couple, notamment quand des enfants sont en jeu. Mais c’est aussi un engagement plus lourd, avec des implications juridiques et patrimoniales plus fortes.
 
-Évidemment, il faut le dire : le mariage offre une protection plus étendue, notamment quand des enfants entrent en jeu. Mais c’est aussi un engagement plus lourd, aux implications juridiques et patrimoniales plus fortes.
-
-Ici, on parle du PACS justement parce qu’il mérite d’être mieux compris, en tant que choix intermédiaire légitime, et souvent pertinent.
+Ici, je parle du PACS justement parce que c'est un entre deux intéressant qui est trop souvent écarté rapidement.
 
 :::
