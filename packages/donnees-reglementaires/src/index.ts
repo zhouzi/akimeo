@@ -285,6 +285,19 @@ export default {
          */
         plafond_maximum: 15000,
       },
+      gardenf: {
+        /**
+         * @description Taux du crédit d'impôt pour frais de garde d'enfants à charge âgés de moins de six ans
+         * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/credits_impots/gardenf/taux.yaml Source}
+         */
+        taux: 0.5,
+
+        /**
+         * @description Plafond des dépenses effectivement supportées pour la garde des enfants âgés de moins de six ans qu'ils ont à leur charge pour le calcul du crédit d’impôt
+         * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/credits_impots/gardenf/plafond.yaml Source}
+         */
+        plafond: 3500,
+      },
     },
   },
   taxation_capital: {

@@ -454,6 +454,9 @@ importers:
       '@akimeo/donnees-reglementaires':
         specifier: workspace:*
         version: link:../donnees-reglementaires
+      date-fns:
+        specifier: 'catalog:'
+        version: 4.1.0
     devDependencies:
       '@akimeo/eslint-config':
         specifier: workspace:*

@@ -45,6 +45,8 @@ const regles = [
   "impot_revenu/calcul_revenus_imposables/rpns/microsocial/servi",
   "impot_revenu/calcul_revenus_imposables/rpns/microsocial/vente",
   "impot_revenu/calcul_revenus_imposables/rpns/microsocial/bnc",
+  "impot_revenu/credits_impots/gardenf/taux",
+  "impot_revenu/credits_impots/gardenf/plafond",
 ];
 
 type LeafValue = number | null;

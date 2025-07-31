@@ -19,7 +19,8 @@
     }
   },
   "dependencies": {
-    "@akimeo/donnees-reglementaires": "workspace:*"
+    "@akimeo/donnees-reglementaires": "workspace:*",
+    "date-fns": "catalog:"
   },
   "devDependencies": {
     "@akimeo/eslint-config": "workspace:*",

@@ -12,6 +12,7 @@ import {
   SITUATION_FAMILIALE,
   TYPE_EMPLOI_A_DOMICILE,
 } from "@akimeo/modele";
+import { subYears } from "date-fns";
 import playwright from "playwright";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
@@ -536,6 +537,100 @@ describe("calculerIRDu", () => {
         ],
       },
       enfants: [creerEnfant({}), creerEnfant({}), creerEnfant({})],
+    }),
+
+    // Frais de garde d'enfants
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 36000,
+          },
+        ],
+      },
+      enfants: [
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 4),
+          fraisDeGarde: 2000,
+        }),
+      ],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.marie.value,
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 45000,
+          },
+        ],
+      },
+      declarant2: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 30000,
+          },
+        ],
+      },
+      enfants: [
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 4),
+          fraisDeGarde: 3500,
+        }),
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 4),
+          fraisDeGarde: 1500,
+        }),
+      ],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.pacse.value,
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 60000,
+          },
+        ],
+      },
+      declarant2: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 40000,
+          },
+        ],
+      },
+      enfants: [
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 4),
+          fraisDeGarde: 8000, // Au-dessus du plafond
+        }),
+      ],
+    }),
+    creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 25000,
+          },
+        ],
+      },
+      enfants: [
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 10), // Trop agé
+          fraisDeGarde: 3500,
+        }),
+        creerEnfant({
+          dateNaissance: subYears(new Date(), 4),
+          fraisDeGarde: null, // Pas de frais de garde
+        }),
+      ],
     }),
   ])(
     "scénario %$",

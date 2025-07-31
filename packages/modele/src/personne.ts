@@ -39,6 +39,7 @@ export interface Enfant extends Personne {
     | typeof SCOLARTIE_ENFANT.collegien.value
     | typeof SCOLARTIE_ENFANT.lyceen.value
     | typeof SCOLARTIE_ENFANT.etudiant.value;
+  fraisDeGarde: number | null;
 }
 export const enfantSchema = personneSchema.extend({
   scolarite: z
@@ -48,6 +49,7 @@ export const enfantSchema = personneSchema.extend({
       SCOLARTIE_ENFANT.etudiant.value,
     ])
     .nullable(),
+  fraisDeGarde: z.number().nullable(),
 }) satisfies z.ZodType<Enfant>;
 
 export interface Adulte extends Personne {
@@ -68,6 +70,7 @@ export function creerEnfant(enfant: PartialDeep<Enfant>): Enfant {
     defaultsDeep({}, enfant, {
       dateNaissance: subYears(new Date(), 12),
       scolarite: null,
+      fraisDeGarde: null,
     } satisfies Enfant),
   );
 }

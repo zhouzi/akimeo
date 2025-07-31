@@ -12,6 +12,7 @@ import {
   TYPE_EMPLOI_A_DOMICILE_OPTIONS,
 } from "@akimeo/modele";
 import { NATURE_DON } from "@akimeo/modele/don";
+import { differenceInYears } from "date-fns/differenceInYears";
 
 import { calculerPartsFiscales } from "./calculer-parts-fiscales";
 
@@ -161,9 +162,11 @@ function calculerRevenuNetImposable(foyer: Foyer) {
   return revenuNetImposable;
 }
 
-export function trancherRevenus(foyer: Foyer) {
+export function trancherRevenus(foyer: Foyer, qf = false) {
   const revenuNetImposable = calculerRevenuNetImposable(foyer);
-  const partsFiscales = calculerPartsFiscales(foyer);
+  const partsFiscales = calculerPartsFiscales(
+    qf ? { ...foyer, enfants: [] } : foyer,
+  );
 
   return BAREME_IR.map((tranche) => ({
     ...tranche,
@@ -193,8 +196,8 @@ export function trancherRevenus(foyer: Foyer) {
   });
 }
 
-function calculerImpotBrut(foyer: Foyer) {
-  return trancherRevenus(foyer).reduce(
+function calculerImpotBrut(foyer: Foyer, qf: boolean) {
+  return trancherRevenus(foyer, qf).reduce(
     (acc, tranche) => acc + tranche.impotBrut,
     0,
   );
@@ -263,8 +266,8 @@ export function calculerRemunerationAnnuelleDeductibleEmploiADomicile(
   return Math.min(plafond, remunerationAnnuelleDeductible);
 }
 
-function calculerImpotDu(foyer: Foyer) {
-  const impotBrut = calculerImpotBrut(foyer);
+function calculerImpotDu(foyer: Foyer, qf: boolean) {
+  const impotBrut = calculerImpotBrut(foyer, qf);
   const revenuNetImposable = Math.max(0, calculerRevenuNetImposable(foyer));
   const taux = revenuNetImposable > 0 ? impotBrut / revenuNetImposable : 0;
   const foyerWithoutVersementLiberatoire: Foyer = isFoyerCouple(foyer)
@@ -342,6 +345,27 @@ function calculerImpotDu(foyer: Foyer) {
       impotDu = Math.max(0, impotDu - décote);
     }
   }
+
+  // Frais de garde
+  // https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2025/aides/reductions.htm#GA
+  const fraisDeGardeDeductibles = foyer.enfants.reduce((acc, enfant) => {
+    if (
+      typeof enfant.fraisDeGarde === "number" &&
+      differenceInYears(new Date(), enfant.dateNaissance) <= 6
+    ) {
+      return (
+        acc +
+        Math.min(
+          enfant.fraisDeGarde,
+          donneesReglementaires.impot_revenu.credits_impots.gardenf.plafond,
+        )
+      );
+    }
+    return acc;
+  }, 0);
+  impotDu -=
+    fraisDeGardeDeductibles *
+    donneesReglementaires.impot_revenu.credits_impots.gardenf.taux;
 
   // Dons
   // https://www.economie.gouv.fr/cedef/fiches-pratiques/les-reductions-dimpots-pour-les-dons-aux-associations
@@ -456,20 +480,19 @@ function calculerImpotDu(foyer: Foyer) {
 }
 
 export function calculerIRDu(foyer: Foyer) {
-  const impotDu = calculerImpotDu(foyer);
+  const impotDu = calculerImpotDu(foyer, false);
 
   if (impotDu <= 0) {
     return Math.round(impotDu);
   }
 
-  const foyerSansEnfants = {
-    ...foyer,
-    enfants: [],
-  };
-  const impotDuSansEnfants = calculerImpotDu(foyerSansEnfants);
+  const impotDuSansEnfants = calculerImpotDu(foyer, true);
 
   const partsFiscalesAvecEnfants = calculerPartsFiscales(foyer);
-  const partsFiscalesSansEnfants = calculerPartsFiscales(foyerSansEnfants);
+  const partsFiscalesSansEnfants = calculerPartsFiscales({
+    ...foyer,
+    enfants: [],
+  });
   const partsFiscalesEnfants =
     partsFiscalesAvecEnfants - partsFiscalesSansEnfants;
 
