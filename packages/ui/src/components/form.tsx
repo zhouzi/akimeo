@@ -45,23 +45,23 @@ export const { useAppForm, withForm } = createFormHook({
   fieldComponents: {
     SliderField: (props: SliderFieldProps) => {
       const fieldProps = useFieldProps<number[]>();
-      return <SliderField {...props} {...fieldProps} />;
+      return <SliderField {...fieldProps} {...props} />;
     },
     SwitchField: (props: SwitchFieldProps) => {
       const fieldProps = useFieldProps<boolean>();
-      return <SwitchField {...props} {...fieldProps} />;
+      return <SwitchField {...fieldProps} {...props} />;
     },
     SelectField: <T extends string>(props: SelectFieldProps<T>) => {
       const fieldProps = useFieldProps<T>();
-      return <SelectField {...props} {...fieldProps} />;
+      return <SelectField {...fieldProps} {...props} />;
     },
     NumberInputField: (props: NumberInputFieldProps) => {
       const fieldProps = useFieldProps<number>();
-      return <NumberInputField {...props} {...fieldProps} />;
+      return <NumberInputField {...fieldProps} {...props} />;
     },
     NumberFrequenceInputField: (props: NumberFrequenceInputFieldProps) => {
       const fieldProps = useFieldProps<number>();
-      return <NumberFrequenceInputField {...props} {...fieldProps} />;
+      return <NumberFrequenceInputField {...fieldProps} {...props} />;
     },
   },
   formComponents: {},
