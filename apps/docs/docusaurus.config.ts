@@ -100,6 +100,11 @@ const config: Config = {
           position: "left",
         },
         {
+          href: "https://go.gabin.app/linkedin",
+          label: "Contact",
+          position: "right",
+        },
+        {
           href: "https://github.com/zhouzi/akimeo",
           label: "GitHub",
           position: "right",
