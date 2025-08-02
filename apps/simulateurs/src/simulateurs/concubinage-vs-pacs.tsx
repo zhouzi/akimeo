@@ -8,7 +8,6 @@ import {
   pacser,
   setNombreEnfants,
 } from "@akimeo/modele";
-import { formatEuros } from "@akimeo/modele/format";
 import { Button } from "@akimeo/ui/components/button";
 import {
   DropdownMenu,
@@ -39,6 +38,7 @@ import {
 import z from "zod";
 
 import { SimulateurCard } from "~/components/simulateur-card";
+import { formatEuros } from "~/lib/format";
 
 const formSchema = z.object({
   foyer1: foyerSchema,

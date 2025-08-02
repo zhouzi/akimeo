@@ -22,11 +22,6 @@ import {
   TYPE_EMPLOI_A_DOMICILE,
   TYPE_EMPLOI_A_DOMICILE_OPTIONS,
 } from "@akimeo/modele";
-import {
-  FORMAT_EUROS_OPTIONS,
-  formatEuros,
-  formatPercentage,
-} from "@akimeo/modele/format";
 import { Button } from "@akimeo/ui/components/button";
 import { Checkbox } from "@akimeo/ui/components/checkbox";
 import {
@@ -66,6 +61,11 @@ import {
 import z from "zod";
 
 import { SimulateurCard } from "~/components/simulateur-card";
+import {
+  FORMAT_EUROS_OPTIONS,
+  formatEuros,
+  formatPercentage,
+} from "~/lib/format";
 
 const formSchema = z.object({
   foyer: foyerSchema,
