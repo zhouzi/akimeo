@@ -1,6 +1,7 @@
 import type { Foyer } from "@akimeo/modele";
 
-import { calculerIRDu, getRevenus } from "./calculer-ir-du";
+import { calculerIRDu } from "./calculer-ir-du";
+import { getRevenus } from "./get-revenus";
 
 export function calculerTauxIR(foyer: Foyer) {
   const sommeRevenus = getRevenus(foyer).reduce(

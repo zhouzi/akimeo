@@ -11,10 +11,8 @@ import {
 } from "@akimeo/modele";
 import { differenceInYears } from "date-fns/differenceInYears";
 
-import {
-  calculerRemunerationAnnuelleDeductibleEmploiADomicile,
-  dedupeRevenus,
-} from "./calculer-ir-du";
+import { calculerRemunerationAnnuelleDeductibleEmploiADomicile } from "./calculer-remuneration-annuelle-deductible-emploi-a-domicile";
+import { dedupeRevenus } from "./dedupe-revenus";
 
 type CaseARemplir =
   | {
@@ -381,7 +379,7 @@ function listerCasesARemplir(foyer: Foyer) {
   return casesARemplir;
 }
 
-export interface Driver {
+export interface DriverRemplisseur {
   click(selector: string): Promise<void>;
   fill(selector: string, value: string | number): Promise<void>;
   getValue(selector: string): Promise<string | null>;
@@ -392,7 +390,10 @@ function parseNumberValue(value: string | null) {
   return value == null ? null : Number(value.replace(/\s+/, ""));
 }
 
-export async function remplirSimulateur(driver: Driver, foyer: Foyer) {
+export async function remplirSimulateur(
+  driver: DriverRemplisseur,
+  foyer: Foyer,
+) {
   const casesARemplir = listerCasesARemplir(foyer);
 
   // p01

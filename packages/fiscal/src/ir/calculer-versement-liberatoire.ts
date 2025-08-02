@@ -6,7 +6,7 @@ import {
   NATURE_REVENU,
 } from "@akimeo/modele";
 
-import { dedupeRevenus } from "./calculer-ir-du";
+import { dedupeRevenus } from "./dedupe-revenus";
 
 export function calculerVersementLiberatoire(foyer: Foyer) {
   return dedupeRevenus([

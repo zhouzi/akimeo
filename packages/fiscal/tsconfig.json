@@ -1,6 +1,7 @@
 {
   "extends": "@akimeo/typescript-config/base.json",
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {

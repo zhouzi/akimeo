@@ -16,9 +16,9 @@ import { subYears } from "date-fns";
 import playwright from "playwright";
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
-import type { Driver } from "~/remplir-simulateur";
-import { calculerIRDu } from "~/calculer-ir-du";
-import { remplirSimulateur } from "~/remplir-simulateur";
+import type { DriverRemplisseur } from "~/ir/remplir-simulateur";
+import { calculerIRDu } from "~/ir/calculer-ir-du";
+import { remplirSimulateur } from "~/ir/remplir-simulateur";
 
 const HEADLESS = JSON.parse(process.env.HEADLESS ?? "true") as boolean;
 const HEADFULL_TIMEOUT_BETWEEN_INTERACTIONS = 5000;
@@ -26,7 +26,7 @@ const HEADFULL_TIMEOUT_BETWEEN_INTERACTIONS = 5000;
 describe("calculerIRDu", () => {
   let browser: playwright.Browser;
   let page: playwright.Page;
-  let driver: Driver;
+  let driver: DriverRemplisseur;
 
   beforeAll(async () => {
     browser = await playwright.chromium.launch({ headless: HEADLESS });

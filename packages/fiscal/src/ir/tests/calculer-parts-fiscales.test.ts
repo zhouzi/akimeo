@@ -5,7 +5,7 @@ import {
 } from "@akimeo/modele";
 import { describe, expect, it } from "vitest";
 
-import { calculerPartsFiscales } from "~/calculer-parts-fiscales";
+import { calculerPartsFiscales } from "~/ir/calculer-parts-fiscales";
 
 describe("calculerPartsFiscales", () => {
   // https://www.economie.gouv.fr/particuliers/quotient-familial

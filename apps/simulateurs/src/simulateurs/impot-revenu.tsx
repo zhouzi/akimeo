@@ -1,7 +1,7 @@
 import type { Enfant } from "@akimeo/modele/personne";
 import { calculerIR } from "@akimeo/fiscal/calculer-ir";
-import { calculerTauxIR } from "@akimeo/fiscal/calculer-taux-ir";
-import { calculerTMI } from "@akimeo/fiscal/calculer-tmi";
+import { calculerTauxIR } from "@akimeo/fiscal/ir/calculer-taux-ir";
+import { calculerTMI } from "@akimeo/fiscal/ir/calculer-tmi";
 import { NATURE_DON, NATURE_DON_OPTIONS } from "@akimeo/modele/don";
 import {
   TYPE_EMPLOI_A_DOMICILE,

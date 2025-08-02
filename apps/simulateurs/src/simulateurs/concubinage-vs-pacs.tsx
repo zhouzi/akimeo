@@ -1,4 +1,4 @@
-import { calculerIR } from "@akimeo/fiscal/calculer-ir";
+import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { formatEuros } from "@akimeo/modele/format";
 import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
 import { setNombreEnfants } from "@akimeo/modele/personne";
