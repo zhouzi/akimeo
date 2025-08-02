@@ -1,4 +1,4 @@
-import type { Foyer } from "@akimeo/modele/foyer";
+import type { Foyer } from "@akimeo/modele";
 
 import { calculerIRDu } from "./calculer-ir-du";
 import { calculerVersementLiberatoire } from "./calculer-versement-liberatoire";

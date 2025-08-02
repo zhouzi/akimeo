@@ -4,11 +4,11 @@ import {
   IMPOSITION_RCM,
   isFoyerCouple,
   isNatureRevenuMicroEntreprise,
+  NATURE_DON,
   NATURE_REVENU,
   SCOLARTIE_ENFANT,
   SITUATION_FAMILIALE,
 } from "@akimeo/modele";
-import { NATURE_DON } from "@akimeo/modele/don";
 import { differenceInYears } from "date-fns/differenceInYears";
 
 import { calculerPartsFiscales } from "./calculer-parts-fiscales";

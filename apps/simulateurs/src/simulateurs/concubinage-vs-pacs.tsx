@@ -1,12 +1,14 @@
 import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
-import { formatEuros } from "@akimeo/modele/format";
-import { creerFoyer, foyerSchema, pacser } from "@akimeo/modele/foyer";
-import { setNombreEnfants } from "@akimeo/modele/personne";
 import {
+  creerFoyer,
+  foyerSchema,
   isNatureRevenuMicroEntreprise,
   NATURE_REVENU,
   NATURE_REVENU_OPTIONS,
-} from "@akimeo/modele/revenu";
+  pacser,
+  setNombreEnfants,
+} from "@akimeo/modele";
+import { formatEuros } from "@akimeo/modele/format";
 import { Button } from "@akimeo/ui/components/button";
 import {
   DropdownMenu,

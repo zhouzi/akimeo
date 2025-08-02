@@ -1,37 +1,32 @@
-import type { Enfant } from "@akimeo/modele/personne";
+import type { Enfant } from "@akimeo/modele";
 import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { calculerTauxIR } from "@akimeo/fiscal/ir/calculer-taux-ir";
 import { calculerTMI } from "@akimeo/fiscal/ir/calculer-tmi";
-import { NATURE_DON, NATURE_DON_OPTIONS } from "@akimeo/modele/don";
 import {
+  creerAdulte,
+  creerEnfant,
+  creerFoyer,
+  ENVELOPPE_PLACEMENT,
+  foyerSchema,
+  IMPOSITION_RCM,
+  isNatureRevenuMicroEntreprise,
+  NATURE_DON,
+  NATURE_DON_OPTIONS,
+  NATURE_REVENU,
+  NATURE_REVENU_OPTIONS,
+  SCOLARTIE_ENFANT,
+  SCOLARTIE_ENFANT_OPTIONS,
+  setNombreEnfants,
+  SITUATION_FAMILIALE,
+  SITUATION_FAMILIALE_OPTIONS,
   TYPE_EMPLOI_A_DOMICILE,
   TYPE_EMPLOI_A_DOMICILE_OPTIONS,
-} from "@akimeo/modele/emploi-a-domicile";
+} from "@akimeo/modele";
 import {
   FORMAT_EUROS_OPTIONS,
   formatEuros,
   formatPercentage,
 } from "@akimeo/modele/format";
-import {
-  creerFoyer,
-  foyerSchema,
-  IMPOSITION_RCM,
-  SITUATION_FAMILIALE,
-  SITUATION_FAMILIALE_OPTIONS,
-} from "@akimeo/modele/foyer";
-import {
-  creerAdulte,
-  creerEnfant,
-  SCOLARTIE_ENFANT,
-  SCOLARTIE_ENFANT_OPTIONS,
-  setNombreEnfants,
-} from "@akimeo/modele/personne";
-import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement";
-import {
-  isNatureRevenuMicroEntreprise,
-  NATURE_REVENU,
-  NATURE_REVENU_OPTIONS,
-} from "@akimeo/modele/revenu";
 import { Button } from "@akimeo/ui/components/button";
 import { Checkbox } from "@akimeo/ui/components/checkbox";
 import {
