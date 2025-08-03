@@ -90,13 +90,19 @@ const EMBED_CHOICES = [
           </ol>
           <div className="space-y-2">
             <p className="text-lg font-medium">Guides d'intégration</p>
-            <div className="grid gap-2">
+            <div className="grid gap-2 @sm/dialog-content:grid-cols-2">
               {[
                 {
                   label: "WordPress",
+                  logo: "/assets/logo-wordpress.webp",
                   href: "https://akimeo.xyz/docs/simulateurs/integrations/wordpress",
                 },
-              ].map(({ label, href }) => (
+                {
+                  label: "Circle",
+                  logo: "/assets/logo-circle.webp",
+                  href: "https://akimeo.xyz/docs/simulateurs/integrations/circle",
+                },
+              ].map(({ label, logo, href }) => (
                 <Button
                   key={label}
                   variant="outline"
@@ -105,7 +111,7 @@ const EMBED_CHOICES = [
                 >
                   <a href={href} target="_blank" rel="noreferrer">
                     <span className="flex size-[80px] items-center justify-center">
-                      <img src="/assets/logo-wordpress.webp" alt="" />
+                      <img src={logo} alt="" />
                     </span>
                     <span>{label}</span>
                   </a>
