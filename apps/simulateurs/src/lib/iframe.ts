@@ -160,6 +160,7 @@ function createAkimeoEmbed(container: HTMLElement, simulateurPath: string) {
   iframe.style.border = "none";
   iframe.style.overflow = "hidden";
   iframe.setAttribute("scrolling", "no");
+  iframe.setAttribute("allow", "clipboard-write");
 
   iframe.setAttribute("src", new URL(simulateurPath, origin).toString());
 
