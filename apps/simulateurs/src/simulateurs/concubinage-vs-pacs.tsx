@@ -37,7 +37,6 @@ import {
 } from "lucide-react";
 import z from "zod";
 
-import { SimulateurCard } from "~/components/simulateur-card";
 import { formatEuros } from "~/lib/format";
 
 const formSchema = z.object({
@@ -205,78 +204,73 @@ export function ConcubinageVSPacs() {
         await form.handleSubmit();
       }}
     >
-      <SimulateurCard
-        title="Concubinage vs PACS"
-        description="Aperçu de l'impact du PACS sur l'impôt sur le revenu d'un couple."
-      >
-        <div className="grid gap-4 @2xl/card:grid-cols-2">
-          <div className="space-y-4 rounded-md border p-4">
-            <p className="font-heading text-lg font-medium">Personne 1</p>
-            <PersonneForm form={form} name="foyer1" />
-          </div>
-          <div className="space-y-4 rounded-md border p-4">
-            <p className="font-heading text-lg font-medium">Personne 2</p>
-            <PersonneForm form={form} name="foyer2" />
-          </div>
+      <div className="grid gap-4 @2xl/card:grid-cols-2">
+        <div className="space-y-4 rounded-md border p-4">
+          <p className="font-heading text-lg font-medium">Personne 1</p>
+          <PersonneForm form={form} name="foyer1" />
         </div>
-        <form.Subscribe
-          selector={(state) => {
-            const foyer1 = calculerIR(state.values.foyer1);
-            const foyer2 = calculerIR(state.values.foyer2);
-            const concubinage = foyer1 + foyer2;
-            const pacs = calculerIR(
-              pacser(state.values.foyer1, state.values.foyer2),
-            );
+        <div className="space-y-4 rounded-md border p-4">
+          <p className="font-heading text-lg font-medium">Personne 2</p>
+          <PersonneForm form={form} name="foyer2" />
+        </div>
+      </div>
+      <form.Subscribe
+        selector={(state) => {
+          const foyer1 = calculerIR(state.values.foyer1);
+          const foyer2 = calculerIR(state.values.foyer2);
+          const concubinage = foyer1 + foyer2;
+          const pacs = calculerIR(
+            pacser(state.values.foyer1, state.values.foyer2),
+          );
 
-            return {
-              foyer1,
-              foyer2,
-              concubinage,
-              pacs,
-            };
-          }}
-          children={({ foyer1, foyer2, concubinage, pacs }) => (
-            <Table className="mt-6">
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Situation</TableHead>
-                  <TableHead className="text-right">
-                    Impôt sur le revenu
-                  </TableHead>
+          return {
+            foyer1,
+            foyer2,
+            concubinage,
+            pacs,
+          };
+        }}
+        children={({ foyer1, foyer2, concubinage, pacs }) => (
+          <Table className="mt-6">
+            <TableHeader>
+              <TableRow>
+                <TableHead>Situation</TableHead>
+                <TableHead className="text-right">
+                  Impôt sur le revenu
+                </TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {[
+                { icon: Armchair, label: "Personne 1", ir: foyer1 },
+                { icon: Armchair, label: "Personne 2", ir: foyer2 },
+                {
+                  icon: Sofa,
+                  label: "Personne 1 + Personne 2, en concubinage",
+                  ir: concubinage,
+                },
+                {
+                  icon: BedDouble,
+                  label: "Personne 1 + Personne 2, en Pacs",
+                  ir: pacs,
+                },
+              ].map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <row.icon className="text-primary" />
+                      <span>{row.label}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-right">
+                    {formatEuros(row.ir)}
+                  </TableCell>
                 </TableRow>
-              </TableHeader>
-              <TableBody>
-                {[
-                  { icon: Armchair, label: "Personne 1", ir: foyer1 },
-                  { icon: Armchair, label: "Personne 2", ir: foyer2 },
-                  {
-                    icon: Sofa,
-                    label: "Personne 1 + Personne 2, en concubinage",
-                    ir: concubinage,
-                  },
-                  {
-                    icon: BedDouble,
-                    label: "Personne 1 + Personne 2, en Pacs",
-                    ir: pacs,
-                  },
-                ].map((row, index) => (
-                  <TableRow key={index}>
-                    <TableCell className="font-medium">
-                      <div className="flex items-center gap-2">
-                        <row.icon className="text-primary" />
-                        <span>{row.label}</span>
-                      </div>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {formatEuros(row.ir)}
-                    </TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        />
-      </SimulateurCard>
+              ))}
+            </TableBody>
+          </Table>
+        )}
+      />
     </form>
   );
 }
