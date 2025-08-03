@@ -170,7 +170,7 @@ function RouteComponent() {
       <CardContent>
         <simulateur.simulateur />
       </CardContent>
-      <CardFooter className="justify-between border-t p-2!">
+      <CardFooter className="@container/footer justify-between border-t p-2!">
         <div className="flex items-center gap-2">
           <Button variant="outline" size="sm" asChild>
             <a
@@ -183,7 +183,7 @@ function RouteComponent() {
               </span>
             </a>
           </Button>
-          <p className="text-sm text-muted-foreground">
+          <p className="hidden text-sm text-muted-foreground @lg/footer:block">
             Les simulateurs qui parlent le langage des indépendants.
           </p>
         </div>
