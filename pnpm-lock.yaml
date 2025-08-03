@@ -172,7 +172,7 @@ catalogs:
       specifier: ^4.1.11
       version: 4.1.11
     tsc-alias:
-      specifier: ^1.8.16
+      specifier: 1.8.16
       version: 1.8.16
     tsx:
       specifier: ^4.20.3
@@ -516,12 +516,18 @@ importers:
       '@types/lodash.defaultsdeep':
         specifier: 'catalog:'
         version: 4.6.9
+      concurrently:
+        specifier: 'catalog:'
+        version: 9.2.0
       eslint:
         specifier: 'catalog:'
         version: 9.31.0(jiti@2.4.2)
       prettier:
         specifier: 'catalog:'
         version: 3.6.2
+      tsc-alias:
+        specifier: 'catalog:'
+        version: 1.8.16
       type-fest:
         specifier: 'catalog:'
         version: 4.41.0

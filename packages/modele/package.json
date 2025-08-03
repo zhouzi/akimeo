@@ -2,8 +2,8 @@
   "name": "@akimeo/modele",
   "version": "0.1.0",
   "scripts": {
-    "build": "tsc --project ./tsconfig.build.json",
-    "dev": "tsc -w",
+    "build": "tsc --project ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
+    "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
     "lint": "eslint",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
@@ -27,8 +27,10 @@
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
     "@types/lodash.defaultsdeep": "catalog:",
+    "concurrently": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
+    "tsc-alias": "catalog:",
     "type-fest": "catalog:",
     "typescript": "catalog:"
   },
