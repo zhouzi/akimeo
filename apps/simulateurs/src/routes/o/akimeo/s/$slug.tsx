@@ -88,6 +88,31 @@ const EMBED_CHOICES = [
               Colle le où tu souhaites afficher le simulateur... et c'est tout.
             </li>
           </ol>
+          <div className="space-y-2">
+            <p className="text-lg font-medium">Guides d'intégration</p>
+            <div className="grid gap-2">
+              {[
+                {
+                  label: "WordPress",
+                  href: "https://akimeo.xyz/docs/simulateurs/integrations/wordpress",
+                },
+              ].map(({ label, href }) => (
+                <Button
+                  key={label}
+                  variant="outline"
+                  className="h-auto flex-col"
+                  asChild
+                >
+                  <a href={href} target="_blank" rel="noreferrer">
+                    <span className="flex size-[80px] items-center justify-center">
+                      <img src="/assets/logo-wordpress.webp" alt="" />
+                    </span>
+                    <span>{label}</span>
+                  </a>
+                </Button>
+              ))}
+            </div>
+          </div>
         </div>
       );
     },
