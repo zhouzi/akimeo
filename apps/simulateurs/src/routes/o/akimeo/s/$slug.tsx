@@ -90,12 +90,17 @@ const EMBED_CHOICES = [
           </ol>
           <div className="space-y-2">
             <p className="text-lg font-medium">Guides d'intégration</p>
-            <div className="grid gap-2 @sm/dialog-content:grid-cols-2">
+            <div className="grid gap-2 @sm/dialog-content:grid-cols-3">
               {[
                 {
                   label: "WordPress",
                   logo: "/assets/logo-wordpress.webp",
                   href: "https://akimeo.xyz/docs/simulateurs/integrations/wordpress",
+                },
+                {
+                  label: "Framer",
+                  logo: "/assets/logo-framer.webp",
+                  href: "https://akimeo.xyz/docs/simulateurs/integrations/framer",
                 },
                 {
                   label: "Circle",
