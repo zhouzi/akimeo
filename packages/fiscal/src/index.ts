@@ -1,1 +1,1 @@
-export * from "./ir/calculer-ir-du";
+export * from "./ir/calculer-ir";
