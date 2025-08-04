@@ -228,7 +228,11 @@ function RouteComponent() {
             Les simulateurs qui parlent le langage des indépendants.
           </p>
         </div>
-        <Dialog onOpenChange={setEmbedDialogOpen} open={embedDialogOpen}>
+        <Dialog
+          onOpenChange={setEmbedDialogOpen}
+          open={embedDialogOpen}
+          modal={false}
+        >
           <DialogTrigger asChild>
             <Button variant="outline" size="icon" className="size-8">
               <FileCode />

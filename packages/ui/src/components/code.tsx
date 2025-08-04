@@ -37,7 +37,7 @@ export function Code({ children }: CodeProps) {
         <span className="sr-only">Copier</span>
         {hasCopied ? <CheckIcon /> : <ClipboardIcon />}
       </Button>
-      <code className="block rounded-md bg-muted px-3 py-3 font-mono text-xs outline-none">
+      <code className="block rounded-md bg-muted px-3 py-3 font-mono text-xs break-all whitespace-pre-line outline-none">
         {children}
       </code>
     </div>
