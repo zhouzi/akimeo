@@ -15,7 +15,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@akimeo/ui/components/dropdown-menu";
-import { useAppForm, withForm } from "@akimeo/ui/components/form";
+import { useAppForm, withFieldGroup } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
 import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
@@ -74,20 +74,19 @@ const formOpts = formOptions({
   defaultValues,
 });
 
-const PersonneForm = withForm({
-  ...formOpts,
-  props: {
-    name: "foyer1" as "foyer1" | "foyer2",
+const PersonneForm = withFieldGroup({
+  defaultValues: {
+    foyer: creerFoyer({}),
   },
-  render: ({ form, name }) => {
+  render: ({ group }) => {
     return (
       <>
-        <form.AppField
-          name={`${name}.declarant1.revenus[0]`}
+        <group.AppField
+          name="foyer.declarant1.revenus[0]"
           children={(fieldRevenu) => (
             <>
-              <form.AppField
-                name={`${name}.declarant1.revenus[0].montantAnnuel`}
+              <group.AppField
+                name="foyer.declarant1.revenus[0].montantAnnuel"
                 children={(fieldMontantAnnuel) => (
                   <FormItem>
                     <div className="flex items-center justify-between gap-2">
@@ -162,8 +161,8 @@ const PersonneForm = withForm({
               {isNatureRevenuMicroEntreprise(
                 fieldRevenu.state.value.nature,
               ) && (
-                <form.AppField
-                  name={`${name}.declarant1.versementLiberatoire`}
+                <group.AppField
+                  name="foyer.declarant1.versementLiberatoire"
                   children={(field) => (
                     <field.SwitchField label="Versement libératoire" />
                   )}
@@ -172,8 +171,8 @@ const PersonneForm = withForm({
             </>
           )}
         />
-        <form.AppField
-          name={`${name}.enfants`}
+        <group.AppField
+          name="foyer.enfants"
           children={(field) => (
             <SliderField
               label="Enfants"
@@ -207,11 +206,11 @@ export function ConcubinageVSPacs() {
       <div className="grid gap-4 @2xl/card:grid-cols-2">
         <div className="space-y-4 rounded-md border p-4">
           <p className="font-heading text-lg font-medium">Personne 1</p>
-          <PersonneForm form={form} name="foyer1" />
+          <PersonneForm form={form} fields={{ foyer: "foyer1" }} />
         </div>
         <div className="space-y-4 rounded-md border p-4">
           <p className="font-heading text-lg font-medium">Personne 2</p>
-          <PersonneForm form={form} name="foyer2" />
+          <PersonneForm form={form} fields={{ foyer: "foyer2" }} />
         </div>
       </div>
       <form.Subscribe

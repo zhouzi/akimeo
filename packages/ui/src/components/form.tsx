@@ -41,7 +41,7 @@ function useFieldProps<TData>() {
   };
 }
 
-export const { useAppForm, withForm } = createFormHook({
+export const { useAppForm, withForm, withFieldGroup } = createFormHook({
   fieldComponents: {
     SliderField: (props: SliderFieldProps) => {
       const fieldProps = useFieldProps<number[]>();

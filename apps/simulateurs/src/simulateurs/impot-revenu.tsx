@@ -30,7 +30,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@akimeo/ui/components/dropdown-menu";
-import { useAppForm, withForm } from "@akimeo/ui/components/form";
+import { useAppForm, withFieldGroup } from "@akimeo/ui/components/form";
 import {
   FormControl,
   FormItem,
@@ -90,23 +90,22 @@ const formOpts = formOptions({
   defaultValues,
 });
 
-const AdulteForm = withForm({
-  ...formOpts,
-  props: {
-    name: "declarant1" as "declarant1" | "declarant2",
+const AdulteForm = withFieldGroup({
+  defaultValues: {
+    adulte: creerAdulte({}),
   },
-  render: ({ form, name }) => {
+  render: ({ group }) => {
     return (
       <>
-        <form.AppField
-          name={`foyer.${name}.revenus`}
+        <group.AppField
+          name="adulte.revenus"
           mode="array"
           children={(fieldRevenus) => (
             <>
               {fieldRevenus.state.value.map((revenu, index) => (
-                <form.AppField
+                <group.AppField
                   key={index}
-                  name={`foyer.${name}.revenus[${index}].montantAnnuel`}
+                  name={`adulte.revenus[${index}].montantAnnuel`}
                   children={(field) => (
                     <FormItem>
                       <div className="relative">
@@ -162,16 +161,16 @@ const AdulteForm = withForm({
                   ))}
                 </DropdownMenuContent>
               </DropdownMenu>
-              <form.Subscribe
+              <group.Subscribe
                 selector={(state) =>
-                  state.values.foyer[name]!.revenus.some((revenu) =>
+                  state.values.adulte.revenus.some((revenu) =>
                     isNatureRevenuMicroEntreprise(revenu.nature),
                   )
                 }
                 children={(hasMicroEntreprise) =>
                   hasMicroEntreprise && (
-                    <form.AppField
-                      name={`foyer.${name}.versementLiberatoire`}
+                    <group.AppField
+                      name="adulte.versementLiberatoire"
                       children={(field) => (
                         <field.SwitchField label="Versement libératoire" />
                       )}
@@ -300,7 +299,7 @@ export function ImpotRevenu() {
             </div>
             <div className="space-y-4 rounded-md border p-4">
               <p className="font-heading text-lg font-medium">Tes revenus</p>
-              <AdulteForm form={form} name="declarant1" />
+              <AdulteForm form={form} fields={{ adulte: "foyer.declarant1" }} />
             </div>
             <form.Subscribe
               selector={(state) => !!state.values.foyer.declarant2}
@@ -310,7 +309,10 @@ export function ImpotRevenu() {
                     <p className="font-heading text-lg font-medium">
                       Revenus conjoint(e)
                     </p>
-                    <AdulteForm form={form} name="declarant2" />
+                    <AdulteForm
+                      form={form}
+                      fields={{ adulte: "foyer.declarant2" }}
+                    />
                   </div>
                 )
               }

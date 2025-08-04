@@ -23,7 +23,7 @@ catalog:
   '@radix-ui/react-slot': 1.2.3
   '@radix-ui/react-switch': ^1.2.5
   '@tailwindcss/vite': ^4.1.11
-  '@tanstack/react-form': 1.14.1
+  '@tanstack/react-form': 1.15.3
   '@tanstack/react-router': ^1.128.3
   '@tanstack/react-router-devtools': ^1.128.3
   '@tanstack/router-plugin': ^1.128.3

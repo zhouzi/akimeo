@@ -67,8 +67,8 @@ catalogs:
       specifier: ^4.1.11
       version: 4.1.11
     '@tanstack/react-form':
-      specifier: 1.14.1
-      version: 1.14.1
+      specifier: 1.15.3
+      version: 1.15.3
     '@tanstack/react-router':
       specifier: ^1.128.3
       version: 1.128.3
@@ -299,7 +299,7 @@ importers:
         version: 4.1.11(vite@7.0.5(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0))
       '@tanstack/react-form':
         specifier: 'catalog:'
-        version: 1.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 1.15.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-router':
         specifier: 'catalog:'
         version: 1.128.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -583,7 +583,7 @@ importers:
         version: 1.2.5(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-form':
         specifier: 'catalog:'
-        version: 1.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 1.15.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       class-variance-authority:
         specifier: 'catalog:'
         version: 0.7.1
@@ -2772,15 +2772,15 @@ packages:
     peerDependencies:
       vite: ^5.2.0 || ^6 || ^7
 
-  '@tanstack/form-core@1.14.0':
-    resolution: {integrity: sha512-uAOW3IxkT/Cmy8JlznK8S/LSpvtHjpUQi2wyuPqVfJ04y95WuV90SO+VKtb9TrNp51QLrrTFBR8tMEuzqp5wmA==}
+  '@tanstack/form-core@1.15.1':
+    resolution: {integrity: sha512-Z8+29KhaGko5VSmnt0iUpB7wlFqOsLCSL3EhC2F/xm/qMq6BzR0yJVpeunN8pwfnlVnkUAO7I8yxT9VS/7ncBA==}
 
   '@tanstack/history@1.121.34':
     resolution: {integrity: sha512-YL8dGi5ZU+xvtav2boRlw4zrRghkY6hvdcmHhA0RGSJ/CBgzv+cbADW9eYJLx74XMZvIQ1pp6VMbrpXnnM5gHA==}
     engines: {node: '>=12'}
 
-  '@tanstack/react-form@1.14.1':
-    resolution: {integrity: sha512-Ioja3zcLZj082OdCH6pFNv15fD4UTfnJgKIXxY7Iumio8EcYLXSuxzanqNWewFvftshUFHknSEa7QtyOAkFs0Q==}
+  '@tanstack/react-form@1.15.3':
+    resolution: {integrity: sha512-NXON4JcTrGDnNxZNEbJ07pR1Egd8AFw7HB7I15JsxYGBJAKbWUu5SIiln7BaLHbcbaXtFTu/SlTAZhGM3u38rg==}
     peerDependencies:
       '@tanstack/react-start': ^1.112.0
       react: ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -10709,15 +10709,15 @@ snapshots:
       tailwindcss: 4.1.11
       vite: 7.0.5(@types/node@24.0.13)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)
 
-  '@tanstack/form-core@1.14.0':
+  '@tanstack/form-core@1.15.1':
     dependencies:
       '@tanstack/store': 0.7.2
 
   '@tanstack/history@1.121.34': {}
 
-  '@tanstack/react-form@1.14.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-form@1.15.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@tanstack/form-core': 1.14.0
+      '@tanstack/form-core': 1.15.1
       '@tanstack/react-store': 0.7.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       decode-formdata: 0.9.0
       devalue: 5.1.1
