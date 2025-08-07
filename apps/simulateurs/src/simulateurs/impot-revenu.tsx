@@ -6,6 +6,7 @@ import {
   creerAdulte,
   creerEnfant,
   creerFoyer,
+  creerPlacement,
   ENVELOPPE_PLACEMENT,
   foyerSchema,
   IMPOSITION_RCM,
@@ -362,10 +363,9 @@ export function ImpotRevenu() {
                       onCheckedChange={(checked) =>
                         checked
                           ? fieldPlacements.setValue([
-                              {
+                              creerPlacement({
                                 enveloppe: ENVELOPPE_PLACEMENT.per.value,
-                                versementsAnnuels: 0,
-                              },
+                              }),
                             ])
                           : fieldPlacements.setValue([])
                       }
