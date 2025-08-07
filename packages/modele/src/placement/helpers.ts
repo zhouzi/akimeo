@@ -15,14 +15,20 @@ export function creerPlacement<T extends Placement["enveloppe"]>(
       return placementPEASchema.parse(
         defaultsDeep({}, placement, {
           enveloppe: ENVELOPPE_PLACEMENT.pea.value,
+          valeur: { versements: 0, plusValue: 0 },
           versementsAnnuels: 0,
+          retraitsAnnuels: 0,
+          rendementAnnuel: 0,
         } satisfies PlacementPEA),
       ) as Extract<Placement, { enveloppe: T }>;
     case ENVELOPPE_PLACEMENT.per.value:
       return placementPERSchema.parse(
         defaultsDeep({}, placement, {
           enveloppe: ENVELOPPE_PLACEMENT.per.value,
+          valeur: { versements: 0, plusValue: 0 },
           versementsAnnuels: 0,
+          retraitsAnnuels: 0,
+          rendementAnnuel: 0,
         } satisfies PlacementPER),
       ) as Extract<Placement, { enveloppe: T }>;
   }
