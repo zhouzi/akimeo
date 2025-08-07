@@ -20,7 +20,8 @@ interface FrequenceToggleProps {
   children: (props: {
     label: string;
     value: number;
-    toAnnuelle: (value: number) => number;
+    serialize: (value: number, n?: number) => number;
+    deserialize: (value: number, n?: number) => number;
     frequence: Frequence;
     setFrequence: Dispatch<SetStateAction<Frequence>>;
     toggleFrequence: () => void;
@@ -32,19 +33,26 @@ export function FrequenceToggle({ value, children }: FrequenceToggleProps) {
     FREQUENCE.annuelle.value,
   );
 
+  const toggleFrequence = () =>
+    setFrequence((frequence) =>
+      frequence === FREQUENCE.annuelle.value
+        ? FREQUENCE.mensuelle.value
+        : FREQUENCE.annuelle.value,
+    );
+
+  const serialize = (value: number, n = 12) =>
+    frequence === FREQUENCE.annuelle.value ? value : value / n;
+  const deserialize = (value: number, n = 12) =>
+    frequence === FREQUENCE.annuelle.value ? value : value * n;
+
   return children({
     label: FREQUENCE_OPTIONS.find((option) => option.value === frequence)!
       .label,
-    value: frequence === FREQUENCE.annuelle.value ? value : value / 12,
-    toAnnuelle: (value) =>
-      frequence === FREQUENCE.annuelle.value ? value : value * 12,
+    value: serialize(value),
+    serialize,
+    deserialize,
     frequence,
     setFrequence,
-    toggleFrequence: () =>
-      setFrequence((frequence) =>
-        frequence === FREQUENCE.annuelle.value
-          ? FREQUENCE.mensuelle.value
-          : FREQUENCE.annuelle.value,
-      ),
+    toggleFrequence,
   });
 }

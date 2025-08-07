@@ -5,21 +5,11 @@ import {
   foyerSchema,
   isNatureRevenuMicroEntreprise,
   NATURE_REVENU,
-  NATURE_REVENU_OPTIONS,
   pacser,
   setNombreEnfants,
   SITUATION_FAMILIALE,
 } from "@akimeo/modele";
-import { Button } from "@akimeo/ui/components/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withFieldGroup } from "@akimeo/ui/components/form";
-import { FormItem } from "@akimeo/ui/components/form-item";
-import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -30,16 +20,10 @@ import {
   TableRow,
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
-import {
-  Armchair,
-  BedDouble,
-  CalendarSync,
-  ChevronDown,
-  Sofa,
-} from "lucide-react";
+import { Armchair, BedDouble, Sofa } from "lucide-react";
 import z from "zod";
 
-import { formatEuros } from "~/lib/format";
+import { FORMAT_EUROS_OPTIONS, formatEuros } from "~/lib/format";
 
 const formSchema = z.object({
   foyer1: foyerSchema,
@@ -87,95 +71,63 @@ const FoyerFieldGroup = withFieldGroup({
   render: ({ group }) => {
     return (
       <>
-        <group.AppField
-          name="foyer.declarant1.revenus[0]"
-          children={(fieldRevenu) => (
-            <>
-              <group.AppField
-                name="foyer.declarant1.revenus[0].montantAnnuel"
-                children={(fieldMontantAnnuel) => (
-                  <FormItem>
-                    <div className="flex items-center justify-between gap-2">
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="xs" className="-ml-2">
-                            <span>
-                              {
-                                NATURE_REVENU_OPTIONS.find(
-                                  (option) =>
-                                    option.value ===
-                                    fieldRevenu.state.value.nature,
-                                )!.label
-                              }
-                            </span>
-                            <ChevronDown />
-                          </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent>
-                          {[
-                            NATURE_REVENU.salaire,
-                            NATURE_REVENU.remuneration,
-                            NATURE_REVENU.microBICMarchandises,
-                            NATURE_REVENU.microBICServices,
-                            NATURE_REVENU.microBNC,
-                          ].map((option) => (
-                            <DropdownMenuItem
-                              key={option.value}
-                              onClick={() =>
-                                fieldRevenu.setValue({
-                                  nature: option.value,
-                                  montantAnnuel:
-                                    fieldRevenu.state.value.montantAnnuel,
-                                })
-                              }
-                            >
-                              {option.label}
-                            </DropdownMenuItem>
-                          ))}
-                        </DropdownMenuContent>
-                      </DropdownMenu>
-                      <FrequenceToggle
-                        value={fieldMontantAnnuel.state.value}
-                        children={({ value, label, toggleFrequence }) => (
-                          <Button
-                            variant="ghost"
-                            size="xs"
-                            onClick={toggleFrequence}
-                            className="-mr-2"
-                          >
-                            <span>{formatEuros(value)}</span>
-                            <span className="font-normal text-muted-foreground">
-                              {label}
-                            </span>
-                            <CalendarSync />
-                          </Button>
-                        )}
-                      />
-                    </div>
-                    <Slider
-                      onValueChange={([montant]) =>
-                        fieldMontantAnnuel.setValue(montant!)
-                      }
-                      value={[fieldMontantAnnuel.state.value]}
-                      min={0}
-                      max={200000}
-                      step={100}
-                    />
-                  </FormItem>
-                )}
-              />
-              {isNatureRevenuMicroEntreprise(
-                fieldRevenu.state.value.nature,
-              ) && (
-                <group.AppField
-                  name="foyer.declarant1.versementLiberatoire"
-                  children={(field) => (
-                    <field.SwitchField label="Versement libératoire" />
-                  )}
+        <div className="grid gap-2">
+          <div className="grid grid-cols-2 gap-2">
+            <group.AppField
+              name="foyer.declarant1.revenus[0].nature"
+              children={(field) => (
+                <field.SelectField
+                  options={[
+                    NATURE_REVENU.salaire,
+                    NATURE_REVENU.remuneration,
+                    NATURE_REVENU.microBICMarchandises,
+                    NATURE_REVENU.microBICServices,
+                    NATURE_REVENU.microBNC,
+                  ]}
                 />
               )}
-            </>
-          )}
+            />
+            <group.AppField
+              name="foyer.declarant1.revenus[0].montantAnnuel"
+              children={(field) => (
+                <field.NumberFrequenceInputField
+                  step={1000}
+                  min={0}
+                  placeholder={formatEuros(0)}
+                  format={FORMAT_EUROS_OPTIONS}
+                />
+              )}
+            />
+          </div>
+          <group.AppField
+            name="foyer.declarant1.revenus[0].montantAnnuel"
+            children={(field) => (
+              <Slider
+                onValueChange={([montant]) => field.handleChange(montant!)}
+                value={[field.state.value]}
+                min={0}
+                max={200000}
+                step={1000}
+              />
+            )}
+          />
+        </div>
+        <group.Subscribe
+          selector={(state) =>
+            state.values.foyer.declarant1.revenus.some((revenu) =>
+              isNatureRevenuMicroEntreprise(revenu.nature),
+            )
+          }
+          children={(hasMicroEntrepriseRevenus) =>
+            hasMicroEntrepriseRevenus && (
+              <group.AppField
+                name="foyer.declarant1.versementLiberatoire"
+                children={(field) => (
+                  <field.SwitchField label="Versement libératoire" />
+                )}
+              />
+            )
+          }
         />
         <group.AppField
           name="foyer.enfants"

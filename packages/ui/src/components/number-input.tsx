@@ -42,18 +42,24 @@ type NumberFrequenceInputProps = NumberInputProps;
 
 export function NumberFrequenceInput({
   onValueChange,
+  step,
+  min,
+  max,
   ...props
 }: NumberFrequenceInputProps) {
   return (
     <FrequenceToggle
       value={props.value ?? 0}
-      children={({ value, toAnnuelle, label, toggleFrequence }) => (
+      children={({ value, serialize, deserialize, label, toggleFrequence }) => (
         <div className="flex [&>*:first-child]:flex-1 [&>*:first-child>*>*:last-child>*]:rounded-r-none [&>*:first-child>*>*:last-child>*]:border-r-0 [&>*:last-child]:rounded-l-none">
           <FormControl>
             <NumberInput
               {...props}
-              onValueChange={(value) => onValueChange?.(toAnnuelle(value))}
+              onValueChange={(value) => onValueChange?.(deserialize(value))}
               value={value}
+              min={min == null ? min : serialize(min, 10)}
+              max={max == null ? max : serialize(max, 10)}
+              step={step == null ? step : serialize(step, 10)}
             />
           </FormControl>
           <Button variant="outline" onClick={toggleFrequence}>
