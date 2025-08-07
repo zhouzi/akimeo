@@ -57,5 +57,5 @@ export type Foyer =
   | FoyerDivorce
   | FoyerVeuf
   | FoyerConcubinage
-  | FoyerMarie
-  | FoyerPacse;
+  | FoyerPacse
+  | FoyerMarie;
