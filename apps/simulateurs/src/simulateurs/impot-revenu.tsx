@@ -72,6 +72,7 @@ const formSchema = z.object({
 
 const defaultValues: z.infer<typeof formSchema> = {
   foyer: creerFoyer({
+    situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
     declarant1: {
       revenus: [
         {
@@ -90,22 +91,22 @@ const formOpts = formOptions({
   defaultValues,
 });
 
-const AdulteForm = withFieldGroup({
+const DeclarantFieldGroup = withFieldGroup({
   defaultValues: {
-    adulte: creerAdulte({}),
+    declarant: creerAdulte({}),
   },
   render: ({ group }) => {
     return (
       <>
         <group.AppField
-          name="adulte.revenus"
+          name="declarant.revenus"
           mode="array"
           children={(fieldRevenus) => (
             <>
               {fieldRevenus.state.value.map((revenu, index) => (
                 <group.AppField
                   key={index}
-                  name={`adulte.revenus[${index}].montantAnnuel`}
+                  name={`declarant.revenus[${index}].montantAnnuel`}
                   children={(field) => (
                     <FormItem>
                       <div className="relative">
@@ -163,14 +164,14 @@ const AdulteForm = withFieldGroup({
               </DropdownMenu>
               <group.Subscribe
                 selector={(state) =>
-                  state.values.adulte.revenus.some((revenu) =>
+                  state.values.declarant.revenus.some((revenu) =>
                     isNatureRevenuMicroEntreprise(revenu.nature),
                   )
                 }
                 children={(hasMicroEntreprise) =>
                   hasMicroEntreprise && (
                     <group.AppField
-                      name="adulte.versementLiberatoire"
+                      name="declarant.versementLiberatoire"
                       children={(field) => (
                         <field.SwitchField label="Versement libératoire" />
                       )}
@@ -299,7 +300,10 @@ export function ImpotRevenu() {
             </div>
             <div className="space-y-4 rounded-md border p-4">
               <p className="font-heading text-lg font-medium">Tes revenus</p>
-              <AdulteForm form={form} fields={{ adulte: "foyer.declarant1" }} />
+              <DeclarantFieldGroup
+                form={form}
+                fields={{ declarant: "foyer.declarant1" }}
+              />
             </div>
             <form.Subscribe
               selector={(state) => !!state.values.foyer.declarant2}
@@ -309,9 +313,9 @@ export function ImpotRevenu() {
                     <p className="font-heading text-lg font-medium">
                       Revenus conjoint(e)
                     </p>
-                    <AdulteForm
+                    <DeclarantFieldGroup
                       form={form}
-                      fields={{ adulte: "foyer.declarant2" }}
+                      fields={{ declarant: "foyer.declarant2" }}
                     />
                   </div>
                 )

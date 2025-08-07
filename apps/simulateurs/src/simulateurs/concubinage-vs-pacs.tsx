@@ -1,3 +1,4 @@
+import type { Foyer } from "@akimeo/modele";
 import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import {
   creerFoyer,
@@ -7,6 +8,7 @@ import {
   NATURE_REVENU_OPTIONS,
   pacser,
   setNombreEnfants,
+  SITUATION_FAMILIALE,
 } from "@akimeo/modele";
 import { Button } from "@akimeo/ui/components/button";
 import {
@@ -17,7 +19,6 @@ import {
 } from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withFieldGroup } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
-import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -28,13 +29,7 @@ import {
   TableRow,
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
-import {
-  Armchair,
-  BedDouble,
-  CalendarSync,
-  ChevronDown,
-  Sofa,
-} from "lucide-react";
+import { Armchair, BedDouble, ChevronDown, Sofa } from "lucide-react";
 import z from "zod";
 
 import { formatEuros } from "~/lib/format";
@@ -46,6 +41,7 @@ const formSchema = z.object({
 
 const defaultValues: z.infer<typeof formSchema> = {
   foyer1: creerFoyer({
+    situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
     declarant1: {
       revenus: [
         {
@@ -56,6 +52,7 @@ const defaultValues: z.infer<typeof formSchema> = {
     },
   }),
   foyer2: creerFoyer({
+    situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
     declarant1: {
       revenus: [
         {
@@ -74,9 +71,11 @@ const formOpts = formOptions({
   defaultValues,
 });
 
-const PersonneForm = withFieldGroup({
+const FoyerFieldGroup = withFieldGroup({
   defaultValues: {
-    foyer: creerFoyer({}),
+    foyer: creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+    }) as Foyer,
   },
   render: ({ group }) => {
     return (
@@ -128,23 +127,7 @@ const PersonneForm = withFieldGroup({
                           ))}
                         </DropdownMenuContent>
                       </DropdownMenu>
-                      <FrequenceToggle
-                        value={fieldMontantAnnuel.state.value}
-                        children={({ value, label, toggleFrequence }) => (
-                          <Button
-                            variant="ghost"
-                            size="xs"
-                            onClick={toggleFrequence}
-                            className="-mr-2"
-                          >
-                            <span>{formatEuros(value)}</span>
-                            <span className="font-normal text-muted-foreground">
-                              {label}
-                            </span>
-                            <CalendarSync />
-                          </Button>
-                        )}
-                      />
+                      <fieldMontantAnnuel.NumberFrequenceInputField variant="ghost" />
                     </div>
                     <Slider
                       onValueChange={([montant]) =>
@@ -206,11 +189,11 @@ export function ConcubinageVSPacs() {
       <div className="grid gap-4 @2xl/card:grid-cols-2">
         <div className="space-y-4 rounded-md border p-4">
           <p className="font-heading text-lg font-medium">Personne 1</p>
-          <PersonneForm form={form} fields={{ foyer: "foyer1" }} />
+          <FoyerFieldGroup form={form} fields={{ foyer: "foyer1" }} />
         </div>
         <div className="space-y-4 rounded-md border p-4">
           <p className="font-heading text-lg font-medium">Personne 2</p>
-          <PersonneForm form={form} fields={{ foyer: "foyer2" }} />
+          <FoyerFieldGroup form={form} fields={{ foyer: "foyer2" }} />
         </div>
       </div>
       <form.Subscribe

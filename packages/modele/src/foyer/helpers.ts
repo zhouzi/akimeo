@@ -18,25 +18,35 @@ export function isFoyerCouple(foyer: Foyer): foyer is FoyerCouple {
   );
 }
 
-export function creerFoyer(
-  foyer:
-    | PartialDeep<FoyerCelibataire>
-    | PartialDeep<FoyerConcubinage>
-    | PartialDeep<FoyerCouple>,
-): Foyer {
+export function creerFoyer<T extends Foyer["situationFamiliale"]>(
+  foyer: { situationFamiliale: T } & PartialDeep<
+    Extract<Foyer, { situationFamiliale: T }>
+  >,
+) {
   switch (foyer.situationFamiliale) {
     case SITUATION_FAMILIALE.concubinage.value:
+      return foyerSchema.parse(
+        defaultsDeep({}, foyer, {
+          situationFamiliale: SITUATION_FAMILIALE.concubinage.value,
+          declarant1: creerAdulte(foyer.declarant1 ?? {}),
+          declarant2: creerAdulte(foyer.declarant2 ?? {}),
+          enfants: [],
+          impositionRCM: IMPOSITION_RCM.pfu.value,
+          emploisADomicile: [],
+        } satisfies FoyerConcubinage),
+      ) as Extract<Foyer, { situationFamiliale: T }>;
     case SITUATION_FAMILIALE.marie.value:
     case SITUATION_FAMILIALE.pacse.value:
       return foyerSchema.parse(
         defaultsDeep({}, foyer, {
-          ...creerFoyer({
-            situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
-          }),
-          situationFamiliale: foyer.situationFamiliale,
+          situationFamiliale: SITUATION_FAMILIALE.pacse.value,
+          declarant1: creerAdulte(foyer.declarant1 ?? {}),
           declarant2: creerAdulte(foyer.declarant2 ?? {}),
-        } satisfies FoyerConcubinage | FoyerCouple),
-      );
+          enfants: [],
+          impositionRCM: IMPOSITION_RCM.pfu.value,
+          emploisADomicile: [],
+        } satisfies FoyerCouple),
+      ) as Extract<Foyer, { situationFamiliale: T }>;
     case SITUATION_FAMILIALE.celibataire.value:
     case SITUATION_FAMILIALE.divorce.value:
     case SITUATION_FAMILIALE.veuf.value:
@@ -50,7 +60,7 @@ export function creerFoyer(
           impositionRCM: IMPOSITION_RCM.pfu.value,
           emploisADomicile: [],
         } satisfies FoyerCelibataire),
-      );
+      ) as Extract<Foyer, { situationFamiliale: T }>;
   }
 }
 

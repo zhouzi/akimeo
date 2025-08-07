@@ -21,11 +21,17 @@ export interface BaseFoyer<
 }
 
 export interface FoyerCelibataire
-  extends BaseFoyer<
-    | typeof SITUATION_FAMILIALE.celibataire.value
-    | typeof SITUATION_FAMILIALE.divorce.value
-    | typeof SITUATION_FAMILIALE.veuf.value
-  > {
+  extends BaseFoyer<typeof SITUATION_FAMILIALE.celibataire.value> {
+  declarant2: undefined;
+}
+
+export interface FoyerDivorce
+  extends BaseFoyer<typeof SITUATION_FAMILIALE.divorce.value> {
+  declarant2: undefined;
+}
+
+export interface FoyerVeuf
+  extends BaseFoyer<typeof SITUATION_FAMILIALE.veuf.value> {
   declarant2: undefined;
 }
 
@@ -34,12 +40,22 @@ export interface FoyerConcubinage
   declarant2: Adulte;
 }
 
-export interface FoyerCouple
-  extends BaseFoyer<
-    | typeof SITUATION_FAMILIALE.marie.value
-    | typeof SITUATION_FAMILIALE.pacse.value
-  > {
+export interface FoyerPacse
+  extends BaseFoyer<typeof SITUATION_FAMILIALE.pacse.value> {
   declarant2: Adulte;
 }
 
-export type Foyer = FoyerCelibataire | FoyerConcubinage | FoyerCouple;
+export interface FoyerMarie
+  extends BaseFoyer<typeof SITUATION_FAMILIALE.marie.value> {
+  declarant2: Adulte;
+}
+
+export type FoyerCouple = FoyerPacse | FoyerMarie;
+
+export type Foyer =
+  | FoyerCelibataire
+  | FoyerDivorce
+  | FoyerVeuf
+  | FoyerConcubinage
+  | FoyerMarie
+  | FoyerPacse;
