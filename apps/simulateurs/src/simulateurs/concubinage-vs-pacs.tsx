@@ -19,6 +19,7 @@ import {
 } from "@akimeo/ui/components/dropdown-menu";
 import { useAppForm, withFieldGroup } from "@akimeo/ui/components/form";
 import { FormItem } from "@akimeo/ui/components/form-item";
+import { FrequenceToggle } from "@akimeo/ui/components/frequence-toggle";
 import { Slider, SliderField } from "@akimeo/ui/components/slider";
 import {
   Table,
@@ -29,7 +30,13 @@ import {
   TableRow,
 } from "@akimeo/ui/components/table";
 import { formOptions } from "@tanstack/react-form";
-import { Armchair, BedDouble, ChevronDown, Sofa } from "lucide-react";
+import {
+  Armchair,
+  BedDouble,
+  CalendarSync,
+  ChevronDown,
+  Sofa,
+} from "lucide-react";
 import z from "zod";
 
 import { formatEuros } from "~/lib/format";
@@ -127,7 +134,23 @@ const FoyerFieldGroup = withFieldGroup({
                           ))}
                         </DropdownMenuContent>
                       </DropdownMenu>
-                      <fieldMontantAnnuel.NumberFrequenceInputField variant="ghost" />
+                      <FrequenceToggle
+                        value={fieldMontantAnnuel.state.value}
+                        children={({ value, label, toggleFrequence }) => (
+                          <Button
+                            variant="ghost"
+                            size="xs"
+                            onClick={toggleFrequence}
+                            className="-mr-2"
+                          >
+                            <span>{formatEuros(value)}</span>
+                            <span className="font-normal text-muted-foreground">
+                              {label}
+                            </span>
+                            <CalendarSync />
+                          </Button>
+                        )}
+                      />
                     </div>
                     <Slider
                       onValueChange={([montant]) =>
