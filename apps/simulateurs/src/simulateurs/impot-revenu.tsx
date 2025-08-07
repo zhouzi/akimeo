@@ -255,7 +255,6 @@ export function ImpotRevenu() {
                   <SelectField
                     label="Situation familiale"
                     options={SITUATION_FAMILIALE_OPTIONS}
-                    className="w-full"
                     onChange={(value) => {
                       form.setFieldValue("foyer", (currentFoyer) => {
                         switch (value) {
