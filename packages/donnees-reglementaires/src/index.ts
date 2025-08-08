@@ -75,6 +75,15 @@ export default {
           reduc_postplafond_veuf: 1993,
         },
       },
+      pv: {
+        pea: {
+          /**
+           * @description Plafond des versements sur le PEA
+           * {@link https://www.service-public.fr/particuliers/vosdroits/F2385 Source}
+           */
+          plafond: 150000,
+        },
+      },
     },
     calcul_reductions_impots: {
       enfants_scolarises: {

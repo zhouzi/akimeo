@@ -84,6 +84,9 @@ catalogs:
     '@types/lodash.defaultsdeep':
       specifier: ^4.6.9
       version: 4.6.9
+    '@types/lodash.merge':
+      specifier: ^4.6.9
+      version: 4.6.9
     '@types/lodash.set':
       specifier: ^4.3.9
       version: 4.3.9
@@ -141,6 +144,9 @@ catalogs:
     lodash.defaultsdeep:
       specifier: ^4.6.1
       version: 4.6.1
+    lodash.merge:
+      specifier: ^4.6.2
+      version: 4.6.2
     lodash.set:
       specifier: ^4.3.2
       version: 4.3.2
@@ -391,6 +397,9 @@ importers:
       '@akimeo/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
+      '@types/lodash.merge':
+        specifier: 'catalog:'
+        version: 4.6.9
       '@types/lodash.set':
         specifier: 'catalog:'
         version: 4.3.9
@@ -403,6 +412,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.31.0(jiti@2.4.2)
+      lodash.merge:
+        specifier: 'catalog:'
+        version: 4.6.2
       lodash.set:
         specifier: 'catalog:'
         version: 4.3.2
@@ -2965,6 +2977,9 @@ packages:
 
   '@types/lodash.defaultsdeep@4.6.9':
     resolution: {integrity: sha512-pLtCFK0YkHfGtGLYLNMTbFB5/G5+RsmQCIbbHH8GOAXjv+gDkVilY98kILfe8JH2Kev0OCReYxp1AjxEjP8ixA==}
+
+  '@types/lodash.merge@4.6.9':
+    resolution: {integrity: sha512-23sHDPmzd59kUgWyKGiOMO2Qb9YtqRO/x4IhkgNUiPQ1+5MUVqi6bCZeq9nBJ17msjIMbEIO5u+XW4Kz6aGUhQ==}
 
   '@types/lodash.set@4.3.9':
     resolution: {integrity: sha512-KOxyNkZpbaggVmqbpr82N2tDVTx05/3/j0f50Es1prxrWB0XYf9p3QNxqcbWb7P1Q9wlvsUSlCFnwlPCIJ46PQ==}
@@ -10951,6 +10966,10 @@ snapshots:
   '@types/json-schema@7.0.15': {}
 
   '@types/lodash.defaultsdeep@4.6.9':
+    dependencies:
+      '@types/lodash': 4.17.20
+
+  '@types/lodash.merge@4.6.9':
     dependencies:
       '@types/lodash': 4.17.20
 
