@@ -7,16 +7,17 @@ import { FormControl, FormItem, FormLabel } from "./form-item";
 import { FormMessage } from "./form-message";
 import { Label } from "./label";
 
-export interface SliderFieldProps
-  extends Omit<SliderProps, "onChange" | "onValueChange"> {
+export interface SliderFieldProps<T extends number | number[]>
+  extends Omit<SliderProps, "onChange" | "onValueChange" | "value"> {
   label?: string;
   description?: string;
   errorMessage?: string;
-  onChange?: SliderProps["onValueChange"];
+  value?: T;
+  onChange?: (value: T) => void;
   formatValue?: (value: number) => React.ReactNode;
 }
 
-export function SliderField({
+export function SliderField<T extends number | number[]>({
   label,
   description,
   errorMessage,
@@ -24,7 +25,10 @@ export function SliderField({
   value,
   formatValue = (value) => value,
   ...props
-}: SliderFieldProps) {
+}: SliderFieldProps<T>) {
+  const values: number[] =
+    value == null ? [] : Array.isArray(value) ? value : [value];
+
   return (
     <FormItem>
       <div className="flex items-center justify-between gap-2">
@@ -33,10 +37,22 @@ export function SliderField({
             <Label>{label}</Label>
           </FormLabel>
         )}
-        <p className="text-sm">{value?.map(formatValue)}</p>
+        <p className="text-sm">{values.map(formatValue)}</p>
       </div>
       <FormControl>
-        <Slider {...props} onValueChange={onChange} value={value} />
+        <Slider
+          {...props}
+          onValueChange={(updated) =>
+            onChange?.(
+              (value == null
+                ? updated
+                : Array.isArray(value)
+                  ? updated
+                  : updated[0]!) as T,
+            )
+          }
+          value={values}
+        />
       </FormControl>
       {description && <FormDescription>{description}</FormDescription>}
       {errorMessage && <FormMessage>{errorMessage}</FormMessage>}
