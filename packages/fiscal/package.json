@@ -4,6 +4,7 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json",
     "dev": "tsc -w",
+    "typecheck": "tsc --noEmit",
     "test": "vitest",
     "lint": "eslint",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"

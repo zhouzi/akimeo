@@ -100,6 +100,7 @@ function calculerRevenuBrutGlobal(foyer: Foyer) {
         return acc;
       }
       default:
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         throw new Error(`Cas non géré : ${revenu.nature}`);
     }
   }, 0);

@@ -187,7 +187,6 @@ describe("calculerIRDu", () => {
           creerPlacement({
             enveloppe: ENVELOPPE_PLACEMENT.per.value,
             versementsAnnuels: 4560,
-            plafond: 0,
           }),
         ],
       },
