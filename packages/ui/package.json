@@ -27,10 +27,12 @@
     "@radix-ui/react-slider": "catalog:",
     "@radix-ui/react-slot": "catalog:",
     "@radix-ui/react-switch": "catalog:",
+    "@radix-ui/react-tooltip": "catalog:",
     "@tanstack/react-form": "catalog:",
     "class-variance-authority": "catalog:",
     "clsx": "catalog:",
     "lucide-react": "catalog:",
+    "recharts": "catalog:",
     "tailwind-merge": "catalog:"
   },
   "devDependencies": {
