@@ -175,6 +175,24 @@ describe("calculerIRDu", () => {
       },
     }),
     creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+      declarant1: {
+        revenus: [
+          {
+            nature: NATURE_REVENU.salaire.value,
+            montantAnnuel: 36000,
+          },
+        ],
+        placements: [
+          creerPlacement({
+            enveloppe: ENVELOPPE_PLACEMENT.per.value,
+            versementsAnnuels: 4560,
+            plafond: 0,
+          }),
+        ],
+      },
+    }),
+    creerFoyer({
       situationFamiliale: SITUATION_FAMILIALE.pacse.value,
       declarant1: {
         revenus: [

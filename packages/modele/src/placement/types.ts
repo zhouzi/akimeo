@@ -1,7 +1,12 @@
 import type { ENVELOPPE_PLACEMENT } from "./constants";
 
+export interface ValeurPlacement {
+  versements: number;
+  plusValue: number;
+}
+
 export interface BasePlacement {
-  valeur: { versements: number; plusValue: number };
+  valeur: ValeurPlacement;
   versementsAnnuels: number;
   retraitsAnnuels: number;
 }

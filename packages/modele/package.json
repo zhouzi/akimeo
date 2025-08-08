@@ -4,6 +4,7 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
     "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+    "test": "vitest",
     "lint": "eslint",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
@@ -23,6 +24,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@akimeo/donnees-reglementaires": "workspace:*",
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
@@ -32,7 +34,8 @@
     "prettier": "catalog:",
     "tsc-alias": "catalog:",
     "type-fest": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   },
   "prettier": "@akimeo/prettier-config"
 }

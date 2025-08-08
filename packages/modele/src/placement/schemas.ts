@@ -5,11 +5,17 @@ import type {
   Placement,
   PlacementPEA,
   PlacementPER,
+  ValeurPlacement,
 } from "./types";
 import { ENVELOPPE_PLACEMENT } from "./constants";
 
+const valeurPlacementSchema = z.object({
+  versements: z.number(),
+  plusValue: z.number(),
+}) satisfies z.ZodType<ValeurPlacement>;
+
 export const basePlacementSchema = z.object({
-  valeur: z.object({ versements: z.number(), plusValue: z.number() }),
+  valeur: valeurPlacementSchema,
   versementsAnnuels: z.number(),
   retraitsAnnuels: z.number(),
 }) satisfies z.ZodType<BasePlacement>;

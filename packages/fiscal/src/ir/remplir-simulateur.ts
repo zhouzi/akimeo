@@ -1,5 +1,6 @@
 import type { Adulte, Don, Foyer } from "@akimeo/modele";
 import {
+  calculerContributionPlacement,
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
   isFoyerCouple,
@@ -249,7 +250,7 @@ function listerCasesARemplir(foyer: Foyer) {
     const versementAnnuelPER = declarants[i]!.placements.reduce(
       (acc, placement) =>
         placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
-          ? acc + placement.versementsAnnuels
+          ? acc + calculerContributionPlacement(placement).versements
           : acc,
       0,
     );

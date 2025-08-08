@@ -1,6 +1,7 @@
 import type { Foyer } from "@akimeo/modele";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
 import {
+  calculerContributionPlacement,
   ENVELOPPE_PLACEMENT,
   IMPOSITION_RCM,
   isFoyerCouple,
@@ -112,7 +113,7 @@ function calculerRevenuNetGlobal(foyer: Foyer) {
   revenuNetGlobal -= getPlacements(foyer).reduce(
     (acc, placement) =>
       placement.enveloppe === ENVELOPPE_PLACEMENT.per.value
-        ? acc + placement.versementsAnnuels
+        ? acc + calculerContributionPlacement(placement).versements
         : acc,
     0,
   );
