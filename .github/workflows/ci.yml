@@ -17,5 +17,6 @@ jobs:
           cache: "npm"
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install
+      - run: pnpm build
       - run: pnpm typecheck
       - run: pnpm lint
