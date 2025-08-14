@@ -64,7 +64,7 @@ function RouteComponent() {
 
     const plausible = Plausible({
       domain: hostname,
-      apiHost: "https://stats.gabin.app",
+      apiHost: "/",
     });
 
     plausible.enableAutoPageviews();

@@ -37,6 +37,7 @@
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
+    "@cloudflare/workers-types": "catalog:",
     "@testing-library/dom": "catalog:",
     "@testing-library/react": "catalog:",
     "@types/react": "catalog:",

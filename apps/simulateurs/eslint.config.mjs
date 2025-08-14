@@ -15,6 +15,7 @@ export default [
             "vite.config.ts",
             "vite.iframe.config.ts",
             "eslint.config.mjs",
+            "functions/api/event.ts",
           ],
           defaultProject: "./tsconfig.json",
         },
