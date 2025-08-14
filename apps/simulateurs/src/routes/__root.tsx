@@ -64,7 +64,7 @@ function RouteComponent() {
 
     const plausible = Plausible({
       domain: hostname,
-      apiHost: "/",
+      apiHost: "https://simulateurs.akimeo.xyz",
     });
 
     plausible.enableAutoPageviews();
