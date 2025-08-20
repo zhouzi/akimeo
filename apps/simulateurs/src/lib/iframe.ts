@@ -181,7 +181,7 @@ if (!script || !(script instanceof HTMLScriptElement)) {
   );
 }
 
-const origin = new URL(script.src).origin;
+const origin = script.dataset.origin ?? new URL(script.src).origin;
 
 if (script.dataset.simulateur) {
   const container = window.document.createElement("div");
