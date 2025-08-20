@@ -11,6 +11,14 @@ declare global {
   }
 }
 
+const script = window.document.currentScript;
+
+if (!script || !(script instanceof HTMLScriptElement)) {
+  throw new Error(
+    `Impossible de récupérer les attributs du script d'intégration d'un simulateur Akimeo.`,
+  );
+}
+
 const classes = {
   container: "akimeo-simulateur",
   containerLoading: "akimeo-simulateur--loading",
@@ -18,7 +26,7 @@ const classes = {
   spinner: "akimeo-spinner",
 };
 
-function injectStyles() {
+const injectStyles = function injectStyles() {
   const style = window.document.createElement("style");
 
   style.innerHTML = `.${classes.container} {
@@ -63,9 +71,9 @@ function injectStyles() {
 }`;
 
   window.document.head.appendChild(style);
-}
+};
 
-function isResizeEvent(
+const isResizeEvent = function isResizeEvent(
   event: MessageEvent<unknown>,
 ): event is MessageEvent<ResizeEvent> {
   return (
@@ -81,9 +89,9 @@ function isResizeEvent(
     "scrollIntoView" in event.data.payload &&
     typeof event.data.payload.scrollIntoView === "boolean"
   );
-}
+};
 
-function listenToResizeEvents() {
+const listenToResizeEvents = function listenToResizeEvents() {
   window.addEventListener(
     "message",
     (event: MessageEvent<Record<string, unknown>>) => {
@@ -134,9 +142,13 @@ function listenToResizeEvents() {
       }
     },
   );
-}
+};
 
-function createAkimeoEmbed(container: HTMLElement, simulateurPath: string) {
+const createAkimeoEmbed = function createAkimeoEmbed(
+  container: HTMLElement,
+  simulateurPath: string,
+  base = script.dataset.origin ?? new URL(script.src).origin,
+) {
   container.classList.add(classes.container, classes.containerLoading);
 
   const spinner = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -162,26 +174,16 @@ function createAkimeoEmbed(container: HTMLElement, simulateurPath: string) {
   iframe.setAttribute("scrolling", "no");
   iframe.setAttribute("allow", "clipboard-write");
 
-  iframe.setAttribute("src", new URL(simulateurPath, origin).toString());
+  iframe.setAttribute("src", new URL(simulateurPath, base).toString());
 
   container.appendChild(iframe);
-}
+};
 
 if (window.createAkimeoEmbed == null) {
   injectStyles();
   listenToResizeEvents();
   window.createAkimeoEmbed = createAkimeoEmbed;
 }
-
-const script = window.document.currentScript;
-
-if (!script || !(script instanceof HTMLScriptElement)) {
-  throw new Error(
-    `Impossible de récupérer les attributs du script d'intégration d'un simulateur Akimeo.`,
-  );
-}
-
-const origin = script.dataset.origin ?? new URL(script.src).origin;
 
 if (script.dataset.simulateur) {
   const container = window.document.createElement("div");
@@ -205,7 +207,12 @@ if (script.dataset.simulateur) {
         ) {
           return;
         }
-        createAkimeoEmbed(container, container.dataset.simulateur);
+
+        createAkimeoEmbed(
+          container,
+          container.dataset.simulateur,
+          container.dataset.origin,
+        );
       });
   };
 
