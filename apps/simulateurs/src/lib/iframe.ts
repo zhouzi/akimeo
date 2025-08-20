@@ -2,12 +2,15 @@
 // Il ne faut rien importer ici, pour le garder le plus léger possible
 // À l'exception du fichier de constants
 
-import type { ResizeEvent } from "./iframe.constants";
-import { RESIZE_EVENT_TYPE } from "./iframe.constants";
+import type {
+  AkimeoEmbedResizeHeight,
+  CreateAkimeoEmbed,
+} from "@akimeo/embed/types";
+import { AKIMEO_EMBED_RESIZE_HEIGHT_TYPE } from "@akimeo/embed/constants";
 
 declare global {
   interface Window {
-    createAkimeoEmbed?: typeof createAkimeoEmbed;
+    createAkimeoEmbed?: CreateAkimeoEmbed;
   }
 }
 
@@ -75,12 +78,12 @@ const injectStyles = function injectStyles() {
 
 const isResizeEvent = function isResizeEvent(
   event: MessageEvent<unknown>,
-): event is MessageEvent<ResizeEvent> {
+): event is MessageEvent<AkimeoEmbedResizeHeight> {
   return (
     typeof event.data === "object" &&
     event.data != null &&
     "type" in event.data &&
-    event.data.type === RESIZE_EVENT_TYPE &&
+    event.data.type === AKIMEO_EMBED_RESIZE_HEIGHT_TYPE &&
     "payload" in event.data &&
     typeof event.data.payload === "object" &&
     event.data.payload != null &&

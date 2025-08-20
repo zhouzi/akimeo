@@ -245,6 +245,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@akimeo/embed':
+        specifier: workspace:*
+        version: link:../../packages/embed
       '@docusaurus/core':
         specifier: 'catalog:'
         version: 3.8.1(@mdx-js/react@3.1.0(@types/react@19.1.8)(react@19.1.0))(acorn@8.15.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
@@ -294,6 +297,9 @@ importers:
 
   apps/simulateurs:
     dependencies:
+      '@akimeo/embed':
+        specifier: workspace:*
+        version: link:../../packages/embed
       '@akimeo/fiscal':
         specifier: workspace:*
         version: link:../../packages/fiscal
@@ -442,6 +448,39 @@ importers:
       yaml:
         specifier: 'catalog:'
         version: 2.8.0
+
+  packages/embed:
+    devDependencies:
+      '@akimeo/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@akimeo/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      '@akimeo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.1.8
+      concurrently:
+        specifier: 'catalog:'
+        version: 9.2.0
+      eslint:
+        specifier: 'catalog:'
+        version: 9.31.0(jiti@2.4.2)
+      prettier:
+        specifier: 'catalog:'
+        version: 3.6.2
+      react:
+        specifier: 'catalog:'
+        version: 19.1.0
+      tsc-alias:
+        specifier: 'catalog:'
+        version: 1.8.16
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
 
   packages/eslint-config:
     dependencies:
