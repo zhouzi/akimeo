@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAkimeoEmbedBus } from "@akimeo/embed/use-akimeo-embed-bus";
+import { useEventBusEmitter } from "@akimeo/embed/react/use-event-bus-emitter";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import Plausible from "plausible-tracker";
 
@@ -8,7 +8,7 @@ export const Route = createRootRoute({
 });
 
 function RouteComponent() {
-  useAkimeoEmbedBus();
+  useEventBusEmitter();
 
   useEffect(() => {
     const { hostname } = window.location;

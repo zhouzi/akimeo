@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 
-import type { AkimeoEmbedResizeHeight } from "./types";
-import { AKIMEO_EMBED_RESIZE_HEIGHT_TYPE } from "./constants";
+import type { ResizeHeightEventData } from "~/browser/types";
+import { RESIZE_HEIGHT_EVENT_DATA_TYPE } from "~/browser/resize-height-event";
 
-export function useAkimeoEmbedBus() {
+export function useEventBusEmitter() {
   const interactedRef = useRef(false);
 
   useEffect(() => {
@@ -32,8 +32,8 @@ export function useAkimeoEmbedBus() {
         return;
       }
 
-      const event: AkimeoEmbedResizeHeight = {
-        type: AKIMEO_EMBED_RESIZE_HEIGHT_TYPE,
+      const event: ResizeHeightEventData = {
+        type: RESIZE_HEIGHT_EVENT_DATA_TYPE,
         payload: {
           height: entry.contentRect.height,
           scrollIntoView: interactedRef.current,

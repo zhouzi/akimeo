@@ -47,6 +47,7 @@
     "concurrently": "catalog:",
     "jsdom": "catalog:",
     "prettier": "catalog:",
+    "type-fest": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
     "vite-plugin-checker": "catalog:",

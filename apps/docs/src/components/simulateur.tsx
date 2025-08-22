@@ -1,5 +1,5 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { AkimeoEmbed } from "@akimeo/embed/akimeo-embed";
+import { AkimeoEmbed } from "@akimeo/embed/react/akimeo-embed";
 import styles from "./simulateur.module.css";
 
 interface SimulateurProps {

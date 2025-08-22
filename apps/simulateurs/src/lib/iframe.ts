@@ -1,12 +1,7 @@
-// Ce script est utilisé pour imbriquer un simulateur sur un site tiers
-// Il ne faut rien importer ici, pour le garder le plus léger possible
-// À l'exception du fichier de constants
-
-import type {
-  AkimeoEmbedResizeHeight,
-  CreateAkimeoEmbed,
-} from "@akimeo/embed/types";
-import { AKIMEO_EMBED_RESIZE_HEIGHT_TYPE } from "@akimeo/embed/constants";
+import type { CreateAkimeoEmbed } from "@akimeo/embed/browser/types";
+import type { Entries } from "type-fest";
+import { IFRAME_ATTRIBUTES } from "@akimeo/embed/browser/iframe-attributes";
+import { isResizeHeightEvent } from "@akimeo/embed/browser/resize-height-event";
 
 declare global {
   interface Window {
@@ -76,81 +71,65 @@ const injectStyles = function injectStyles() {
   window.document.head.appendChild(style);
 };
 
-const isResizeEvent = function isResizeEvent(
-  event: MessageEvent<unknown>,
-): event is MessageEvent<AkimeoEmbedResizeHeight> {
-  return (
-    typeof event.data === "object" &&
-    event.data != null &&
-    "type" in event.data &&
-    event.data.type === AKIMEO_EMBED_RESIZE_HEIGHT_TYPE &&
-    "payload" in event.data &&
-    typeof event.data.payload === "object" &&
-    event.data.payload != null &&
-    "height" in event.data.payload &&
-    typeof event.data.payload.height === "number" &&
-    "scrollIntoView" in event.data.payload &&
-    typeof event.data.payload.scrollIntoView === "boolean"
-  );
-};
-
 const listenToResizeEvents = function listenToResizeEvents() {
   window.addEventListener(
     "message",
     (event: MessageEvent<Record<string, unknown>>) => {
-      if (isResizeEvent(event)) {
-        window.document
-          .querySelectorAll(`.${classes.container} iframe`)
-          .forEach((iframe) => {
-            if (!(iframe instanceof HTMLIFrameElement)) {
-              return;
-            }
-
-            if (iframe.contentWindow !== event.source) {
-              return;
-            }
-
-            iframe.style.height = `${Math.ceil(event.data.payload.height)}px`;
-
-            if (event.data.payload.scrollIntoView) {
-              const offset = 100;
-              const { top, bottom } = iframe.getBoundingClientRect();
-
-              if (bottom < 0 + offset) {
-                window.scrollTo({
-                  top: window.scrollY + bottom - window.innerHeight + offset,
-                  behavior: "smooth",
-                });
-              } else if (top > window.innerHeight - offset) {
-                window.scrollTo({
-                  top: window.scrollY + top - offset,
-                  behavior: "smooth",
-                });
-              }
-            }
-
-            const container = iframe.parentElement;
-
-            if (
-              container &&
-              !container.classList.contains(classes.containerLoaded)
-            ) {
-              container.classList.add(classes.containerLoaded);
-
-              setTimeout(() => {
-                container.classList.remove(classes.containerLoading);
-              }, 1000);
-            }
-          });
+      if (!isResizeHeightEvent(event)) {
+        return;
       }
+
+      window.document
+        .querySelectorAll(`.${classes.container} iframe`)
+        .forEach((iframe) => {
+          if (!(iframe instanceof HTMLIFrameElement)) {
+            return;
+          }
+
+          if (iframe.contentWindow !== event.source) {
+            return;
+          }
+
+          iframe.style.height = `${Math.ceil(event.data.payload.height)}px`;
+
+          if (event.data.payload.scrollIntoView) {
+            const offset = 100;
+            const { top, bottom } = iframe.getBoundingClientRect();
+
+            if (bottom < 0 + offset) {
+              window.scrollTo({
+                top: window.scrollY + bottom - window.innerHeight + offset,
+                behavior: "smooth",
+              });
+            } else if (top > window.innerHeight - offset) {
+              window.scrollTo({
+                top: window.scrollY + top - offset,
+                behavior: "smooth",
+              });
+            }
+          }
+
+          const container = iframe.parentElement;
+
+          if (
+            container &&
+            !container.classList.contains(classes.containerLoaded)
+          ) {
+            container.classList.add(classes.containerLoaded);
+
+            setTimeout(() => {
+              container.classList.remove(classes.containerLoading);
+            }, 1000);
+          }
+        });
     },
   );
 };
 
-const createAkimeoEmbed = function createAkimeoEmbed(
+const createAkimeoEmbed: CreateAkimeoEmbed = function createAkimeoEmbed(
   container: HTMLElement,
-  simulateurPath: string,
-  base = script.dataset.origin ?? new URL(script.src).origin,
+  path,
+  origin = script.dataset.origin ?? new URL(script.src).origin,
 ) {
   container.classList.add(classes.container, classes.containerLoading);
 
@@ -169,15 +148,20 @@ const createAkimeoEmbed = function createAkimeoEmbed(
   container.appendChild(spinner);
 
   const iframe = document.createElement("iframe");
-  iframe.style.display = "block";
-  iframe.style.width = "100%";
-  iframe.style.height = "400px";
-  iframe.style.border = "none";
-  iframe.style.overflow = "hidden";
-  iframe.setAttribute("scrolling", "no");
-  iframe.setAttribute("allow", "clipboard-write");
 
-  iframe.setAttribute("src", new URL(simulateurPath, base).toString());
+  const { style, ...attributes } = IFRAME_ATTRIBUTES;
+
+  (Object.entries(style) as Entries<typeof style>).forEach(([key, value]) => {
+    iframe.style[key] = value;
+  });
+
+  (Object.entries(attributes) as Entries<typeof attributes>).forEach(
+    ([key, value]) => {
+      iframe.setAttribute(key, value);
+    },
+  );
+
+  iframe.setAttribute("src", new URL(path, origin).toString());
 
   container.appendChild(iframe);
 };

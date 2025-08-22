@@ -385,6 +385,9 @@ importers:
       prettier:
         specifier: 'catalog:'
         version: 3.6.2
+      type-fest:
+        specifier: 'catalog:'
+        version: 4.41.0
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
