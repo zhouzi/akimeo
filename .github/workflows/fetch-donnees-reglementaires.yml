@@ -28,3 +28,4 @@ jobs:
         with:
           title: Mise à jour des données réglementaires
           body: Cette PR a été créé automatiquement après avoir détecté un changement des données réglementaires depuis OpenFisca.
+          reviewers: zhouzi
