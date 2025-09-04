@@ -205,13 +205,13 @@ export default {
         },
         microsocial: {
           /**
-           * @description Taux du versement libératoire pour les activités de prestations et de services (régime auto-entrepreneur/micro-social)
+           * @description Taux du versement libératoire pour les prestations de services commerciales et artisanales BIC (régime auto-entrepreneur/micro-social)
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_revenus_imposables/rpns/microsocial/servi.yaml Source}
            */
           servi: 0.017,
 
           /**
-           * @description Taux du versement libératoire pour les activités de ventes (régime auto-entrepreneur/micro-social)
+           * @description Taux du versement libératoire pour les activités de ventes (BIC régime auto-entrepreneur/micro-social)
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_revenus_imposables/rpns/microsocial/vente.yaml Source}
            */
           vente: 0.01,
