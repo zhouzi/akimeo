@@ -188,7 +188,7 @@ const DeclarantFieldGroup = withFieldGroup({
   },
 });
 
-export const FoyerFieldGroup = withFieldGroup({
+const FoyerFieldGroup = withFieldGroup({
   defaultValues: {
     foyer: creerFoyer({
       situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
