@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        check: [typecheck, ci:lint, test]
+        check: [typecheck, ci:lint, ci:test]
     steps:
       - uses: actions/checkout@v4
         with:

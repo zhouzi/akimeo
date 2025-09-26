@@ -7,6 +7,7 @@
     "lint": "turbo run lint",
     "ci:lint": "turbo run ci:lint",
     "test": "turbo run test",
+    "ci:test": "turbo run ci:test",
     "typecheck": "turbo run typecheck",
     "format": "turbo run format"
   },

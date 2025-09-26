@@ -12,6 +12,7 @@
     "build:iframe": "vite build --config vite.iframe.config.ts",
     "serve": "vite preview",
     "test": "vitest run --passWithNoTests",
+    "ci:test": "pnpm run test",
     "lint": "eslint",
     "ci:lint": "pnpm run lint --format compact",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"

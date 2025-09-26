@@ -18,6 +18,7 @@
     "lint": {},
     "ci:lint": {},
     "test": {},
+    "ci:test": {},
     "format": {},
     "typecheck": {}
   }
