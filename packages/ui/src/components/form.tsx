@@ -4,6 +4,7 @@ import {
   useStore,
 } from "@tanstack/react-form";
 
+import type { CheckboxFieldProps } from "./checkbox";
 import type {
   NumberFrequenceInputFieldProps,
   NumberInputFieldProps,
@@ -11,6 +12,7 @@ import type {
 import type { SelectFieldProps } from "./select";
 import type { SliderFieldProps } from "./slider";
 import type { SwitchFieldProps } from "./switch";
+import { CheckboxField } from "./checkbox";
 import { NumberFrequenceInputField, NumberInputField } from "./number-input";
 import { SelectField } from "./select";
 import { SliderField } from "./slider";
@@ -62,6 +64,10 @@ export const { useAppForm, withForm, withFieldGroup } = createFormHook({
     NumberFrequenceInputField: (props: NumberFrequenceInputFieldProps) => {
       const fieldProps = useFieldProps<number>();
       return <NumberFrequenceInputField {...fieldProps} {...props} />;
+    },
+    CheckboxField: (props: CheckboxFieldProps) => {
+      const fieldProps = useFieldProps<boolean>();
+      return <CheckboxField {...fieldProps} {...props} />;
     },
   },
   formComponents: {},

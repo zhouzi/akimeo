@@ -3,11 +3,49 @@ import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { CheckIcon } from "lucide-react";
 
 import { cn } from "~/lib/utils";
+import { FormDescription } from "./form-description";
+import { FormControl, FormItem, FormLabel } from "./form-item";
+import { FormMessage } from "./form-message";
+import { Label } from "./label";
 
-function Checkbox({
-  className,
+export interface CheckboxFieldProps
+  extends Omit<CheckboxProps, "value" | "onChange"> {
+  label?: string;
+  description?: string;
+  errorMessage?: string;
+  onChange?: (value: boolean) => void;
+  value?: boolean;
+}
+
+export function CheckboxField({
+  label,
+  description,
+  errorMessage,
+  onChange,
+  value,
   ...props
-}: React.ComponentProps<typeof CheckboxPrimitive.Root>) {
+}: CheckboxFieldProps) {
+  return (
+    <FormItem className="flex items-center">
+      <FormControl>
+        <Checkbox {...props} onCheckedChange={onChange} checked={value} />
+      </FormControl>
+      <div className="grid gap-2">
+        {label && (
+          <FormLabel>
+            <Label>{label}</Label>
+          </FormLabel>
+        )}
+        {description && <FormDescription>{description}</FormDescription>}
+        {errorMessage && <FormMessage>{errorMessage}</FormMessage>}
+      </div>
+    </FormItem>
+  );
+}
+
+type CheckboxProps = React.ComponentProps<typeof CheckboxPrimitive.Root>;
+
+export function Checkbox({ className, ...props }: CheckboxProps) {
   return (
     <CheckboxPrimitive.Root
       data-slot="checkbox"
@@ -26,5 +64,3 @@ function Checkbox({
     </CheckboxPrimitive.Root>
   );
 }
-
-export { Checkbox };
