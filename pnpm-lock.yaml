@@ -129,6 +129,9 @@ catalogs:
     eslint-config-prettier:
       specifier: ^10.1.5
       version: 10.1.5
+    eslint-formatter-compact:
+      specifier: ^8.40.0
+      version: 8.40.0
     eslint-plugin-react:
       specifier: ^7.37.5
       version: 7.37.5
@@ -517,6 +520,10 @@ importers:
       typescript-eslint:
         specifier: 'catalog:'
         version: 8.36.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)
+    devDependencies:
+      eslint-formatter-compact:
+        specifier: 'catalog:'
+        version: 8.40.0
 
   packages/fiscal:
     dependencies:
@@ -4385,6 +4392,10 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-formatter-compact@8.40.0:
+    resolution: {integrity: sha512-cwGUs113TgmTQXecx5kfRjB7m0y2wkDLSadPTE2pK6M/wO4N8PjmUaoWOFNCP9MHgsiZwgqd5bZFnDCnszC56Q==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   eslint-plugin-react-hooks@5.2.0:
     resolution: {integrity: sha512-+f15FfK64YQwZdJNELETdn5ibXEUQmW1DZL6KXhNnc2heoy/sg9VJJeT7n8TlMWouzWqSWavFkIhHyIbIAEapg==}
@@ -12739,6 +12750,8 @@ snapshots:
   eslint-config-prettier@10.1.5(eslint@9.31.0(jiti@2.4.2)):
     dependencies:
       eslint: 9.31.0(jiti@2.4.2)
+
+  eslint-formatter-compact@8.40.0: {}
 
   eslint-plugin-react-hooks@5.2.0(eslint@9.31.0(jiti@2.4.2)):
     dependencies:

@@ -16,6 +16,7 @@
       "cache": false
     },
     "lint": {},
+    "ci:lint": {},
     "test": {},
     "format": {},
     "typecheck": {}

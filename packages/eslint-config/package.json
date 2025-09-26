@@ -15,5 +15,8 @@
     "globals": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:"
+  },
+  "devDependencies": {
+    "eslint-formatter-compact": "catalog:"
   }
 }

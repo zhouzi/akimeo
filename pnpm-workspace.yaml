@@ -46,6 +46,7 @@ catalog:
   docusaurus-plugin-typedoc: ^1.4.0
   eslint: 9.31.0
   eslint-config-prettier: ^10.1.5
+  eslint-formatter-compact: ^8.40.0
   eslint-plugin-react: ^7.37.5
   eslint-plugin-react-hooks: ^5.2.0
   eslint-plugin-turbo: ^2.5.4

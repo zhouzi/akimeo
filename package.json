@@ -3,13 +3,12 @@
   "private": true,
   "scripts": {
     "dev": "turbo run dev",
-    "dev:docs": "turbo run dev --filter=docs...",
-    "dev:simulateurs": "turbo run dev --filter=simulateurs...",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "test": "turbo test",
-    "typecheck": "turbo typecheck",
-    "format": "turbo format"
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "ci:lint": "turbo run ci:lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "format": "turbo run format"
   },
   "devDependencies": {
     "turbo": "^2.5.4"

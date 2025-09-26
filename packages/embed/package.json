@@ -6,6 +6,7 @@
     "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
     "typecheck": "tsc --noEmit",
     "lint": "eslint",
+    "ci:lint": "pnpm run lint --format compact",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
   "exports": {

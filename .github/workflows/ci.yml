@@ -6,6 +6,10 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        check: [typecheck, ci:lint, test]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -16,7 +20,5 @@ jobs:
           node-version-file: ".nvmrc"
           cache: "npm"
           cache-dependency-path: pnpm-lock.yaml
-      - run: pnpm install
-      - run: pnpm build
-      - run: pnpm typecheck
-      - run: pnpm lint
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run {{ matrix.check }}
