@@ -7,7 +7,7 @@
     "dev": "tsc -w",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "preci:test": "pnpx playwright install --with-deps",
+    "preci:test": "pnpm exec playwright install",
     "ci:test": "pnpm run test",
     "lint": "eslint",
     "ci:lint": "pnpm run lint --format compact",
