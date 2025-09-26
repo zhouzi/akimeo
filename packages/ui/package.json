@@ -1,6 +1,7 @@
 {
   "name": "@akimeo/ui",
   "version": "0.1.0",
+  "type": "module",
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
     "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
