@@ -8,12 +8,12 @@ import { FormControl, FormItem, FormLabel } from "./form-item";
 import { FormMessage } from "./form-message";
 import { Label } from "./label";
 
-interface SelectFieldOption<T extends string> {
+interface SelectFieldOption<T> {
   label: string;
   value: T;
 }
 
-export interface SelectFieldProps<T extends string>
+export interface SelectFieldProps<T>
   extends Omit<SelectProps, "value">,
     Pick<
       React.ComponentProps<typeof SelectPrimitive.SelectTrigger>,
@@ -28,7 +28,7 @@ export interface SelectFieldProps<T extends string>
   value?: T;
 }
 
-export function SelectField<T extends string>({
+export function SelectField<T>({
   label,
   description,
   errorMessage,
@@ -46,7 +46,11 @@ export function SelectField<T extends string>({
           <Label>{label}</Label>
         </FormLabel>
       )}
-      <Select {...props} onValueChange={onChange} value={value}>
+      <Select
+        {...props}
+        onValueChange={(value) => onChange?.(JSON.parse(value) as T)}
+        value={JSON.stringify(value)}
+      >
         <FormControl>
           <SelectTrigger>
             <SelectValue placeholder={placeholder} />
@@ -54,7 +58,7 @@ export function SelectField<T extends string>({
         </FormControl>
         <SelectContent>
           {options?.map((option, index) => (
-            <SelectItem key={index} value={option.value}>
+            <SelectItem key={index} value={JSON.stringify(option.value)}>
               {option.label}
             </SelectItem>
           ))}

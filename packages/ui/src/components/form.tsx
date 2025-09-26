@@ -53,7 +53,7 @@ export const { useAppForm, withForm, withFieldGroup } = createFormHook({
       const fieldProps = useFieldProps<boolean>();
       return <SwitchField {...fieldProps} {...props} />;
     },
-    SelectField: <T extends string>(props: SelectFieldProps<T>) => {
+    SelectField: <T,>(props: SelectFieldProps<T>) => {
       const fieldProps = useFieldProps<T>();
       return <SelectField {...fieldProps} {...props} />;
     },
