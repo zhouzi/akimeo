@@ -77,6 +77,9 @@ async function fetchFromOpenFiscaFrance() {
     "impot_revenu/calcul_revenus_imposables/rpns/microsocial/bnc",
     "impot_revenu/credits_impots/gardenf/taux",
     "impot_revenu/credits_impots/gardenf/plafond",
+    "taxation_societes/impot_societe/seuil_superieur_benefices_taux_reduit",
+    "taxation_societes/impot_societe/taux_normal",
+    "taxation_societes/impot_societe/taux_reduit",
   ];
 
   for (const regle of regles) {

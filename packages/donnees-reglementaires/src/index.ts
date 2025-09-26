@@ -320,4 +320,25 @@ export default {
       },
     },
   },
+  taxation_societes: {
+    impot_societe: {
+      /**
+       * @description Seuil supérieur de bénéfices sur lesquels le taux réduit d'IS est applicable (si CAHT < plafond CA)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_societes/impot_societe/seuil_superieur_benefices_taux_reduit.yaml Source}
+       */
+      seuil_superieur_benefices_taux_reduit: 42500,
+
+      /**
+       * @description Taux normal
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_societes/impot_societe/taux_normal.yaml Source}
+       */
+      taux_normal: 0.25,
+
+      /**
+       * @description Taux réduit de l'impôt sur les bénéfices des sociétés et autres personnes morales
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_societes/impot_societe/taux_reduit.yaml Source}
+       */
+      taux_reduit: 0.15,
+    },
+  },
 } as const;
