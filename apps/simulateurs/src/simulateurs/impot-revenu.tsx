@@ -1,4 +1,4 @@
-import type { Enfant } from "@akimeo/modele";
+import type { Enfant, Foyer } from "@akimeo/modele";
 import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { calculerTauxIR } from "@akimeo/fiscal/ir/calculer-taux-ir";
 import { calculerTMI } from "@akimeo/fiscal/ir/calculer-tmi";
@@ -188,6 +188,119 @@ const DeclarantFieldGroup = withFieldGroup({
   },
 });
 
+export const FoyerFieldGroup = withFieldGroup({
+  defaultValues: {
+    foyer: creerFoyer({
+      situationFamiliale: SITUATION_FAMILIALE.celibataire.value,
+    }) as Foyer,
+  },
+  render: ({ group }) => {
+    return (
+      <div className="space-y-4">
+        <div className="grid gap-4 @2xl/card:grid-cols-2">
+          <group.AppField
+            name="foyer.situationFamiliale"
+            children={(field) => (
+              <SelectField
+                label="Situation familiale"
+                options={SITUATION_FAMILIALE_OPTIONS}
+                onChange={(value) => {
+                  group.setFieldValue("foyer", (currentFoyer) => {
+                    switch (value) {
+                      case SITUATION_FAMILIALE.celibataire.value:
+                      case SITUATION_FAMILIALE.veuf.value:
+                      case SITUATION_FAMILIALE.divorce.value:
+                        return {
+                          ...currentFoyer,
+                          situationFamiliale: value,
+                          declarant2: undefined,
+                        };
+                      case SITUATION_FAMILIALE.concubinage.value:
+                      case SITUATION_FAMILIALE.marie.value:
+                      case SITUATION_FAMILIALE.pacse.value:
+                        return {
+                          ...currentFoyer,
+                          situationFamiliale: value,
+                          declarant2:
+                            currentFoyer.declarant2 ?? creerAdulte({}),
+                        };
+                    }
+                  });
+                }}
+                value={field.state.value}
+              />
+            )}
+          />
+          <group.AppField
+            name="foyer.enfants"
+            children={(field) => (
+              <NumberInputField
+                label="Enfants"
+                onChange={(value) =>
+                  field.setValue(setNombreEnfants(field.state.value, value))
+                }
+                value={field.state.value.length}
+                min={0}
+                placeholder="0"
+              />
+            )}
+          />
+        </div>
+        <div className="space-y-4 rounded-md border p-4">
+          <p className="font-heading text-lg font-medium">Tes revenus</p>
+          <DeclarantFieldGroup
+            form={group}
+            fields={{ declarant: "foyer.declarant1" }}
+          />
+        </div>
+        <group.Subscribe
+          selector={(state) => !!state.values.foyer.declarant2}
+          children={(hasDeclarant2) =>
+            hasDeclarant2 && (
+              <div className="space-y-4 rounded-md border p-4">
+                <p className="font-heading text-lg font-medium">
+                  Revenus conjoint(e)
+                </p>
+                <DeclarantFieldGroup
+                  form={group}
+                  fields={{ declarant: "foyer.declarant2" }}
+                />
+              </div>
+            )
+          }
+        />
+        <group.Subscribe
+          selector={(state) =>
+            state.values.foyer.declarant1.revenus.some(
+              (revenu) => revenu.nature === NATURE_REVENU.rcm.value,
+            )
+          }
+          children={(hasRCM) =>
+            hasRCM && (
+              <group.AppField
+                name="foyer.impositionRCM"
+                children={(field) => (
+                  <SwitchField
+                    label="Flat tax"
+                    onChange={(checked) =>
+                      field.setValue(
+                        checked
+                          ? IMPOSITION_RCM.pfu.value
+                          : IMPOSITION_RCM.bareme.value,
+                      )
+                    }
+                    value={field.state.value === IMPOSITION_RCM.pfu.value}
+                  />
+                )}
+              />
+            )
+          }
+        />
+      </div>
+    );
+  },
+});
+
 export function ImpotRevenu() {
   const form = useAppForm({
     ...formOpts,
@@ -248,107 +361,7 @@ export function ImpotRevenu() {
           )}
         />
         <div className="grid items-start gap-4 @lg/card:grid-cols-2">
-          <div className="space-y-4">
-            <div className="grid gap-4 @2xl/card:grid-cols-2">
-              <form.AppField
-                name="foyer.situationFamiliale"
-                children={(field) => (
-                  <SelectField
-                    label="Situation familiale"
-                    options={SITUATION_FAMILIALE_OPTIONS}
-                    onChange={(value) => {
-                      form.setFieldValue("foyer", (currentFoyer) => {
-                        switch (value) {
-                          case SITUATION_FAMILIALE.celibataire.value:
-                          case SITUATION_FAMILIALE.veuf.value:
-                          case SITUATION_FAMILIALE.divorce.value:
-                            return {
-                              ...currentFoyer,
-                              situationFamiliale: value,
-                              declarant2: undefined,
-                            };
-                          case SITUATION_FAMILIALE.concubinage.value:
-                          case SITUATION_FAMILIALE.marie.value:
-                          case SITUATION_FAMILIALE.pacse.value:
-                            return {
-                              ...currentFoyer,
-                              situationFamiliale: value,
-                              declarant2:
-                                currentFoyer.declarant2 ?? creerAdulte({}),
-                            };
-                        }
-                      });
-                    }}
-                    value={field.state.value}
-                  />
-                )}
-              />
-              <form.AppField
-                name="foyer.enfants"
-                children={(field) => (
-                  <NumberInputField
-                    label="Enfants"
-                    onChange={(value) =>
-                      field.setValue(setNombreEnfants(field.state.value, value))
-                    }
-                    value={field.state.value.length}
-                    min={0}
-                    placeholder="0"
-                  />
-                )}
-              />
-            </div>
-            <div className="space-y-4 rounded-md border p-4">
-              <p className="font-heading text-lg font-medium">Tes revenus</p>
-              <DeclarantFieldGroup
-                form={form}
-                fields={{ declarant: "foyer.declarant1" }}
-              />
-            </div>
-            <form.Subscribe
-              selector={(state) => !!state.values.foyer.declarant2}
-              children={(hasDeclarant2) =>
-                hasDeclarant2 && (
-                  <div className="space-y-4 rounded-md border p-4">
-                    <p className="font-heading text-lg font-medium">
-                      Revenus conjoint(e)
-                    </p>
-                    <DeclarantFieldGroup
-                      form={form}
-                      fields={{ declarant: "foyer.declarant2" }}
-                    />
-                  </div>
-                )
-              }
-            />
-            <form.Subscribe
-              selector={(state) =>
-                state.values.foyer.declarant1.revenus.some(
-                  (revenu) => revenu.nature === NATURE_REVENU.rcm.value,
-                )
-              }
-              children={(hasRCM) =>
-                hasRCM && (
-                  <form.AppField
-                    name="foyer.impositionRCM"
-                    children={(field) => (
-                      <SwitchField
-                        label="Flat tax"
-                        onChange={(checked) =>
-                          field.setValue(
-                            checked
-                              ? IMPOSITION_RCM.pfu.value
-                              : IMPOSITION_RCM.bareme.value,
-                          )
-                        }
-                        value={field.state.value === IMPOSITION_RCM.pfu.value}
-                      />
-                    )}
-                  />
-                )
-              }
-            />
-          </div>
+          <FoyerFieldGroup form={form} fields={{ foyer: "foyer" }} />
           <div className="overflow-hidden rounded-md border">
             <p className="p-4 font-heading text-lg font-medium">
               Avantages fiscaux
