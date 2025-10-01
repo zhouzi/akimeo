@@ -1,6 +1,14 @@
 name: CI
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: "0 0 */15 * *" # tous les 15 jours du mois, en UTC
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   ci:
@@ -9,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        check: [typecheck, ci:lint, ci:test]
+        check: ["typecheck", "ci:lint", "ci:test"]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -18,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-          cache: "npm"
+          cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
