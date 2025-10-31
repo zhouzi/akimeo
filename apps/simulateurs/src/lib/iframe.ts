@@ -161,7 +161,16 @@ const createAkimeoEmbed: CreateAkimeoEmbed = function createAkimeoEmbed(
     },
   );
 
-  iframe.setAttribute("src", new URL(path, origin).toString());
+  const currentUrl = new URL(window.location.href);
+  const url = new URL(path, origin);
+
+  currentUrl.searchParams.forEach((value, key) => {
+    if (!url.searchParams.has(key)) {
+      url.searchParams.set(key, value);
+    }
+  });
+
+  iframe.setAttribute("src", url.toString());
 
   container.appendChild(iframe);
 };
