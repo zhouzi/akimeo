@@ -1,6 +1,7 @@
 packages:
   - apps/*
   - packages/*
+  - config/*
 
 catalog:
   '@base-ui-components/react': 1.0.0-beta.1
