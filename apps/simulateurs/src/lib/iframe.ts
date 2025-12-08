@@ -165,9 +165,7 @@ const createAkimeoEmbed: CreateAkimeoEmbed = function createAkimeoEmbed(
 
   Object.entries({
     pageTitle: window.document.title,
-    ...Object.fromEntries(
-      Object.entries(new URL(window.location.href).searchParams),
-    ),
+    ...Object.fromEntries(new URL(window.location.href).searchParams.entries()),
   }).forEach(([key, value]) => {
     if (!url.searchParams.has(key)) {
       url.searchParams.set(key, value);
