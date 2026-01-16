@@ -123,6 +123,9 @@ catalogs:
     docusaurus-plugin-typedoc:
       specifier: ^1.4.0
       version: 1.4.0
+    es-toolkit:
+      specifier: ^1.44.0
+      version: 1.44.0
     eslint:
       specifier: 9.31.0
       version: 9.31.0
@@ -162,6 +165,9 @@ catalogs:
     lucide-react:
       specifier: 0.525.0
       version: 0.525.0
+    modele-social:
+      specifier: ^10.0.0
+      version: 10.0.0
     plausible-tracker:
       specifier: ^0.3.9
       version: 0.3.9
@@ -177,6 +183,9 @@ catalogs:
     prism-react-renderer:
       specifier: ^2.4.1
       version: 2.4.1
+    publicodes:
+      specifier: ^1.9.1
+      version: 1.9.1
     react:
       specifier: 19.1.0
       version: 19.1.0
@@ -630,6 +639,46 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.0.13)(@vitest/browser@3.2.4)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)
+
+  packages/social:
+    dependencies:
+      '@akimeo/modele':
+        specifier: workspace:*
+        version: link:../modele
+      es-toolkit:
+        specifier: 'catalog:'
+        version: 1.44.0
+      modele-social:
+        specifier: 'catalog:'
+        version: 10.0.0(publicodes@1.9.1)
+      publicodes:
+        specifier: 'catalog:'
+        version: 1.9.1
+    devDependencies:
+      '@akimeo/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@akimeo/prettier-config':
+        specifier: workspace:*
+        version: link:../../config/prettier-config
+      '@akimeo/typescript-config':
+        specifier: workspace:*
+        version: link:../../config/typescript-config
+      concurrently:
+        specifier: 'catalog:'
+        version: 9.2.0
+      eslint:
+        specifier: 'catalog:'
+        version: 9.31.0(jiti@2.4.2)
+      prettier:
+        specifier: 'catalog:'
+        version: 3.6.2
+      tsc-alias:
+        specifier: 'catalog:'
+        version: 1.8.16
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
 
   packages/ui:
     dependencies:
@@ -4353,6 +4402,9 @@ packages:
     resolution: {integrity: sha512-w+5mJ3GuFL+NjVtJlvydShqE1eN3h3PbI7/5LAsYJP/2qtuMXjfL2LpHSRqo4b4eSF5K/DH1JXKUAHSB2UW50g==}
     engines: {node: '>= 0.4'}
 
+  es-toolkit@1.44.0:
+    resolution: {integrity: sha512-6penXeZalaV88MM3cGkFZZfOoLGWshWWfdy0tWw/RlVVyhvMaWSBTOvXNeiW3e5FwdS5ePW0LGEu17zT139ktg==}
+
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
 
@@ -5813,6 +5865,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  modele-social@10.0.0:
+    resolution: {integrity: sha512-wwLefaJpFsojFLrfkA5cC6Jg8KUuSGjb3DK2yh5tgni4LVf05oWBOWQa48Y8XymAZSq1GaajMfCpyaNz6vjQZw==}
+    peerDependencies:
+      publicodes: ^1.0.4
+
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
     engines: {node: '>=10'}
@@ -6622,6 +6679,9 @@ packages:
   proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
+
+  publicodes@1.9.1:
+    resolution: {integrity: sha512-sXBgGuAH/bIehF8waXm4Pp/EnqjFmxZJb6FNSAZ9FRO1neACHRYKv34lxFM3qZNyJ2RaI5jwtOupGlozMW0fcA==}
 
   punycode.js@2.3.1:
     resolution: {integrity: sha512-uxFIHU0YlHYhDQtV4R9J6a52SLx28BCjT+4ieh7IGbgwVJWO+km431c4yRlREUAsAmt/uMjQUyQHNEPf0M39CA==}
@@ -7909,6 +7969,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -12693,6 +12754,8 @@ snapshots:
       is-date-object: 1.1.0
       is-symbol: 1.1.1
 
+  es-toolkit@1.44.0: {}
+
   esast-util-from-estree@2.0.0:
     dependencies:
       '@types/estree-jsx': 1.0.5
@@ -14566,6 +14629,10 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
+  modele-social@10.0.0(publicodes@1.9.1):
+    dependencies:
+      publicodes: 1.9.1
+
   mrmime@2.0.1: {}
 
   ms@2.0.0: {}
@@ -15340,6 +15407,8 @@ snapshots:
     dependencies:
       forwarded: 0.2.0
       ipaddr.js: 1.9.1
+
+  publicodes@1.9.1: {}
 
   punycode.js@2.3.1: {}
 
