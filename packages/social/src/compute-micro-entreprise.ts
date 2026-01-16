@@ -100,7 +100,7 @@ type SituationMicroEntreprise = SituationImpot &
     "dirigeant . auto-entrepreneur": "oui";
   };
 
-function creerSituationME(
+function createSituationMicroEntreprise(
   foyer: Foyer,
   microEntreprise: MicroEntreprise,
   input: MicroEntrepriseInput,
@@ -136,7 +136,7 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
   output: Output,
 ) {
   setEngineSituation(engine, {
-    ...creerSituationME(foyer, microEntreprise, input),
+    ...createSituationMicroEntreprise(foyer, microEntreprise, input),
   });
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
