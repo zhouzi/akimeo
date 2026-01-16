@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@akimeo/modele": "workspace:*",
+    "@akimeo/fiscal": "workspace:*",
+    "@akimeo/donnees-reglementaires": "workspace:*",
     "es-toolkit": "catalog:",
     "modele-social": "catalog:",
     "publicodes": "catalog:"
