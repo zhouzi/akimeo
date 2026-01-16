@@ -165,7 +165,7 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
                         ? NATURE_REVENU.microBICMarchandises.value
                         : microEntreprise.natureActivite ===
                             NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value
-                          ? NATURE_REVENU.microBICMarchandises.value
+                          ? NATURE_REVENU.microBICServices.value
                           : NATURE_REVENU.microBNC.value,
                     montantAnnuel: evaluateEngine(
                       engine,
