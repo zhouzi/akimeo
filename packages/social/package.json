@@ -17,9 +17,9 @@
     }
   },
   "dependencies": {
-    "@akimeo/modele": "workspace:*",
-    "@akimeo/fiscal": "workspace:*",
     "@akimeo/donnees-reglementaires": "workspace:*",
+    "@akimeo/fiscal": "workspace:*",
+    "@akimeo/modele": "workspace:*",
     "es-toolkit": "catalog:",
     "modele-social": "catalog:",
     "publicodes": "catalog:"
@@ -32,6 +32,7 @@
     "eslint": "catalog:",
     "prettier": "catalog:",
     "tsc-alias": "catalog:",
+    "type-fest": "catalog:",
     "typescript": "catalog:"
   },
   "prettier": "@akimeo/prettier-config"

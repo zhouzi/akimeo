@@ -642,6 +642,12 @@ importers:
 
   packages/social:
     dependencies:
+      '@akimeo/donnees-reglementaires':
+        specifier: workspace:*
+        version: link:../donnees-reglementaires
+      '@akimeo/fiscal':
+        specifier: workspace:*
+        version: link:../fiscal
       '@akimeo/modele':
         specifier: workspace:*
         version: link:../modele
@@ -676,6 +682,9 @@ importers:
       tsc-alias:
         specifier: 'catalog:'
         version: 1.8.16
+      type-fest:
+        specifier: 'catalog:'
+        version: 4.41.0
       typescript:
         specifier: 'catalog:'
         version: 5.8.3
