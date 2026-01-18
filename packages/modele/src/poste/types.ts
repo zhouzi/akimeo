@@ -28,4 +28,4 @@ export type AnySalarie = Salarie | Apprenti;
 export interface Stagiaire
   extends BasePoste<typeof CONTRAT_POSTE.stage.value> {}
 
-export type AnyPoste = Salarie | Apprenti | Stagiaire;
+export type AnyPoste = AnySalarie | Stagiaire;
