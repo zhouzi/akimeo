@@ -11,6 +11,10 @@ export const STATUT_ENTREPRISE = {
     label: "SARL",
     value: "sarl" as const,
   },
+  sas: {
+    label: "SAS",
+    value: "sas" as const,
+  },
 };
 export const STATUT_ENTREPRISE_OPTIONS = Object.values(STATUT_ENTREPRISE);
 

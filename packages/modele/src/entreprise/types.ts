@@ -7,7 +7,8 @@ import type {
 type AnyStatutEntreprise =
   | typeof STATUT_ENTREPRISE.microEntreprise.value
   | typeof STATUT_ENTREPRISE.ei.value
-  | typeof STATUT_ENTREPRISE.sarl.value;
+  | typeof STATUT_ENTREPRISE.sarl.value
+  | typeof STATUT_ENTREPRISE.sas.value;
 
 type AnyNatureActiviteEntreprise =
   | typeof NATURE_ACTIVITE_ENTREPRISE.agricole.value
@@ -49,4 +50,7 @@ export interface EI
 export interface Sarl
   extends BaseEntreprise<typeof STATUT_ENTREPRISE.sarl.value> {}
 
-export type AnyEntreprise = MicroEntreprise | EI | Sarl;
+export interface SAS
+  extends BaseEntreprise<typeof STATUT_ENTREPRISE.sas.value> {}
+
+export type AnyEntreprise = MicroEntreprise | EI | Sarl | SAS;

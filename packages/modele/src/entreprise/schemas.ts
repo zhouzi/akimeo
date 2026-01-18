@@ -1,6 +1,6 @@
 import z from "zod";
 
-import type { AnyEntreprise, EI, MicroEntreprise, Sarl } from "./types";
+import type { AnyEntreprise, EI, MicroEntreprise, Sarl, SAS } from "./types";
 import { NATURE_ACTIVITE_ENTREPRISE, STATUT_ENTREPRISE } from "./constants";
 
 const baseEntrepriseSchema = z.object({
@@ -44,8 +44,13 @@ export const sarlSchema = baseEntrepriseSchema.extend({
   statut: z.literal(STATUT_ENTREPRISE.sarl.value),
 }) satisfies z.ZodType<Sarl>;
 
+export const sasSchema = baseEntrepriseSchema.extend({
+  statut: z.literal(STATUT_ENTREPRISE.sas.value),
+}) satisfies z.ZodType<SAS>;
+
 export const anyEntrepriseSchema = z.union([
   microEntrepriseSchema,
   eiSchema,
   sarlSchema,
+  sasSchema,
 ]) satisfies z.ZodType<AnyEntreprise>;
