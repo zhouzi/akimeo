@@ -265,7 +265,7 @@ function listerCasesARemplir(foyer: Foyer) {
       const plafondDeduction = versementAnnuelPER;
       casesARemplir.p16.push({
         type: "fill",
-        selector: ["#BAPS", "#BAPT"][i]!,
+        selector: ["#BBPS", "#BBPT"][i]!,
         value: plafondDeduction,
       });
     }

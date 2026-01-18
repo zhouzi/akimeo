@@ -58,7 +58,7 @@ describe("calculerIRDu", () => {
 
   beforeEach(async () => {
     await page.goto(
-      "https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2025/complet/",
+      "https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2026/complet/",
     );
   });
 
