@@ -34,7 +34,7 @@ function isSalarieInputRemunerationNetAvantImpot(
   );
 }
 
-type SalarieInput =
+export type SalarieInput =
   | SalarieInputSalaireBrut
   | SalarieInputRemunerationNetAvantImpot;
 
@@ -110,7 +110,7 @@ function createSituationSalarie(
   };
 }
 
-type SalarieOutput = RegimeGeneralOutput &
+export type SalarieOutput = RegimeGeneralOutput &
   Partial<{
     coutTotalEmployer: true;
   }>;

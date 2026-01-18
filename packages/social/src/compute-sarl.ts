@@ -35,7 +35,7 @@ function isSARLInputRemunerationNetAvantImpot(
   );
 }
 
-type SARLInput =
+export type SARLInput =
   | SARLInputRemunerationTotale
   | SARLInputRemunerationNetAvantImpot;
 
@@ -88,7 +88,7 @@ function createSituationSARL(
   };
 }
 
-type SARLOutput = TNSOutput &
+export type SARLOutput = TNSOutput &
   Partial<{
     cotisations: true;
     ir: true;

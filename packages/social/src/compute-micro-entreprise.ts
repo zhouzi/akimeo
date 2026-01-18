@@ -73,7 +73,7 @@ function createSituationVersementLiberatoire(
   };
 }
 
-interface MicroEntrepriseInput {
+export interface MicroEntrepriseInput {
   chiffreAffaires: number;
 }
 
@@ -131,7 +131,7 @@ function getNatureRevenuFromNatureActivite(microEntreprise: MicroEntreprise) {
   }
 }
 
-type MicroEntrepriseOutput = Partial<{
+export type MicroEntrepriseOutput = Partial<{
   cotisations: true;
   ir: true;
   revenuNetAvantImpot: true;

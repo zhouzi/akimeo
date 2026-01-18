@@ -63,7 +63,7 @@ function isEIInputRemunerationNetAvantImpot(
   );
 }
 
-type EIInput = EIInputChiffreAffaires | EIInputRemunerationNetAvantImpot;
+export type EIInput = EIInputChiffreAffaires | EIInputRemunerationNetAvantImpot;
 
 type SituationEIInput =
   | {
@@ -122,7 +122,7 @@ function getNatureRevenuFromNatureActivite(ei: EI) {
   }
 }
 
-type EIOutput = TNSOutput &
+export type EIOutput = TNSOutput &
   Partial<{
     cotisations: true;
     ir: true;

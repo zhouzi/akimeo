@@ -37,7 +37,9 @@ function isSASInputRemunerationNetAvantImpot(
   );
 }
 
-type SASInput = SASInputRemunerationTotale | SASInputRemunerationNetAvantImpot;
+export type SASInput =
+  | SASInputRemunerationTotale
+  | SASInputRemunerationNetAvantImpot;
 
 type SituationSASInput =
   | {
@@ -83,7 +85,7 @@ function createSituationSAS(
   };
 }
 
-type SASOutput = RegimeGeneralOutput &
+export type SASOutput = RegimeGeneralOutput &
   Partial<{
     cotisations: true;
     ir: true;
