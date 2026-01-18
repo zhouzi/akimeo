@@ -3,6 +3,10 @@ export const STATUT_ENTREPRISE = {
     label: "Micro-Entreprise",
     value: "micro-entreprise" as const,
   },
+  ei: {
+    label: "Entreprise Individuelle",
+    value: "ei" as const,
+  },
   sarl: {
     label: "SARL",
     value: "sarl" as const,

@@ -118,6 +118,19 @@ function createSituationMicroEntreprise(
   };
 }
 
+function getNatureRevenuFromNatureActivite(microEntreprise: MicroEntreprise) {
+  switch (microEntreprise.natureActivite) {
+    case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value:
+      return NATURE_REVENU.microBICMarchandises.value;
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value:
+      return NATURE_REVENU.microBICServices.value;
+    case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
+    default:
+      return NATURE_REVENU.microBNC.value;
+  }
+}
+
 type MicroEntrepriseOutput = Partial<{
   cotisations: true;
   ir: true;
@@ -157,16 +170,7 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
                 revenus: [
                   ...foyer.declarant1.revenus,
                   {
-                    nature:
-                      microEntreprise.natureActivite ===
-                        NATURE_ACTIVITE_ENTREPRISE.artisanale.value ||
-                      microEntreprise.natureActivite ===
-                        NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value
-                        ? NATURE_REVENU.microBICMarchandises.value
-                        : microEntreprise.natureActivite ===
-                            NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value
-                          ? NATURE_REVENU.microBICServices.value
-                          : NATURE_REVENU.microBNC.value,
+                    nature: getNatureRevenuFromNatureActivite(microEntreprise),
                     montantAnnuel: evaluateEngine(
                       engine,
                       "dirigeant . auto-entrepreneur . chiffre d'affaires",
