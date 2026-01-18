@@ -1,6 +1,3 @@
-import type { TNSOutput } from "@akimeo/social/compute-tns";
-import type { SituationAcre } from "@akimeo/social/create-situation-acre";
-import type { SituationImpot } from "@akimeo/social/create-situation-impot";
 import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
@@ -8,11 +5,12 @@ import { calculerIR } from "@akimeo/fiscal";
 import { Foyer, NATURE_REVENU } from "@akimeo/modele";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { EI } from "@akimeo/modele/entreprise/types";
-import { computeTNS } from "@akimeo/social/compute-tns";
-import { createSituationAcre } from "@akimeo/social/create-situation-acre";
-import { createSituationImpot } from "@akimeo/social/create-situation-impot";
-import { evaluateEngine } from "@akimeo/social/evaluate-engine";
-import { setEngineSituation } from "@akimeo/social/set-engine-situation";
+
+import { computeTNS, TNSOutput } from "./compute-tns";
+import { createSituationAcre, SituationAcre } from "./create-situation-acre";
+import { createSituationImpot, SituationImpot } from "./create-situation-impot";
+import { evaluateEngine } from "./evaluate-engine";
+import { setEngineSituation } from "./set-engine-situation";
 
 type SituationActivite =
   | {

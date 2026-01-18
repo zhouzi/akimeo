@@ -1,7 +1,8 @@
 import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
-import { evaluateEngine } from "@akimeo/social/evaluate-engine";
+
+import { evaluateEngine } from "./evaluate-engine";
 
 export type TNSOutput = Partial<{
   trimestresRetraite: true;
