@@ -1,10 +1,10 @@
+import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
 import { Foyer, NATURE_REVENU } from "@akimeo/modele";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { MicroEntreprise } from "@akimeo/modele/entreprise/types";
-import Engine from "publicodes";
 
 import { createSituationAcre, SituationAcre } from "./create-situation-acre";
 import { createSituationImpot, SituationImpot } from "./create-situation-impot";
