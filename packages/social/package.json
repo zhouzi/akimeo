@@ -7,6 +7,7 @@
     "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
     "build": "tsc && tsc-alias",
     "lint": "eslint .",
+    "ci:lint": "pnpm run lint --format compact",
     "typecheck": "tsc --noEmit",
     "format": "prettier . --write"
   },
