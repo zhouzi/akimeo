@@ -341,4 +341,31 @@ export default {
       taux_reduit: 0.15,
     },
   },
+  taxation_indirecte: {
+    tva: {
+      /**
+       * @description Taux réduit de la taxe sur la valeur ajoutée (TVA)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_indirecte/tva/taux_reduit.yaml Source}
+       */
+      taux_reduit: 0.055,
+
+      /**
+       * @description Taux intermédiaire de la taxe sur la valeur ajoutée (TVA)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_indirecte/tva/taux_intermediaire.yaml Source}
+       */
+      taux_intermediaire: 0.1,
+
+      /**
+       * @description Taux normal de la taxe sur la valeur ajoutée (TVA)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_indirecte/tva/taux_normal.yaml Source}
+       */
+      taux_normal: 0.2,
+
+      /**
+       * @description Taux particulier ("super réduit") de la taxe sur la valeur ajoutée (TVA)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_indirecte/tva/taux_particulier_super_reduit.yaml Source}
+       */
+      taux_particulier_super_reduit: 0.021,
+    },
+  },
 } as const;

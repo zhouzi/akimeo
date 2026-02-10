@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { differenceInYears } from "date-fns/differenceInYears";
+import { subYears } from "date-fns/subYears";
 import merge from "lodash.merge";
 import set from "lodash.set";
 import { parse } from "yaml";
@@ -80,6 +81,10 @@ async function fetchFromOpenFiscaFrance() {
     "taxation_societes/impot_societe/seuil_superieur_benefices_taux_reduit",
     "taxation_societes/impot_societe/taux_normal",
     "taxation_societes/impot_societe/taux_reduit",
+    "taxation_indirecte/tva/taux_reduit",
+    "taxation_indirecte/tva/taux_intermediaire",
+    "taxation_indirecte/tva/taux_normal",
+    "taxation_indirecte/tva/taux_particulier_super_reduit",
   ];
 
   for (const regle of regles) {
@@ -104,12 +109,14 @@ async function fetchFromOpenFiscaFrance() {
     ) & {
       description: string;
       metadata: {
-        last_value_still_valid_on: string;
+        last_value_still_valid_on?: string;
       };
     };
 
     const lastValueStillValidOn = new Date(
-      json.metadata.last_value_still_valid_on,
+      json.metadata.last_value_still_valid_on ??
+        // TODO: récupérer la dernière date de mise à jour de la valeur à défaut de "last_value_still_valid_on"
+        subYears(aujourdhui, 30),
     );
     const lastValueInvalidSinceYears = differenceInYears(
       aujourdhui,
@@ -118,31 +125,42 @@ async function fetchFromOpenFiscaFrance() {
 
     if (lastValueInvalidSinceYears >= 1) {
       warnings.push(
-        `⚠️ ${regle} a été vérifiée il y a au moins ${lastValueInvalidSinceYears} an(s)`,
+        `⚠️ ${regle} a été vérifiée pour la dernière fois il y a ${lastValueInvalidSinceYears} an(s)`,
+      );
+    }
+
+    const value =
+      "values" in json
+        ? getLatestValue(json.values)
+        : json.brackets
+            .filter((bracket) =>
+              Object.values(bracket).some(
+                (value) => getLatestValue(value) != null,
+              ),
+            )
+            .map((bracket) =>
+              Object.entries(bracket).reduce<Record<string, LeafValue>>(
+                (acc, [key, value]) =>
+                  Object.assign(acc, {
+                    [key]: getLatestValue(value),
+                  }),
+                {},
+              ),
+            );
+
+    if (
+      (Array.isArray(value) && value.some((value) => value == null)) ||
+      value == null
+    ) {
+      warnings.push(
+        `⚠️ ${regle} a produit des valeurs vides qui suggèrent qu'elle n'est plus applicable`,
       );
     }
 
     set(output, regle.split("/").join("."), {
       url: fileUrl,
       description: json.description,
-      value:
-        "values" in json
-          ? getLatestValue(json.values)
-          : json.brackets
-              .filter((bracket) =>
-                Object.values(bracket).some(
-                  (value) => getLatestValue(value) != null,
-                ),
-              )
-              .map((bracket) =>
-                Object.entries(bracket).reduce(
-                  (acc, [key, value]) =>
-                    Object.assign(acc, {
-                      [key]: getLatestValue(value),
-                    }),
-                  {},
-                ),
-              ),
+      value: value,
     });
 
     await new Promise((resolve) => setTimeout(resolve, 100));
@@ -186,11 +204,11 @@ function stringify(parent: Branch): string {
           `* {@link ${child.url} Source}`,
           `*/`,
           `${key}: ${
-            typeof child.value === "number"
+            child.value == null || typeof child.value === "number"
               ? `${child.value},`
               : [
                   `[`,
-                  ...child.value!.flatMap((value) => [
+                  ...child.value.flatMap((value) => [
                     `{`,
                     ...Object.entries(value).map(
                       ([key, value]) => `${key}: ${value},`,
