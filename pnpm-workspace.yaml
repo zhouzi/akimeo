@@ -26,7 +26,7 @@ catalog:
   '@radix-ui/react-switch': ^1.2.5
   '@radix-ui/react-tooltip': ^1.2.7
   '@tailwindcss/vite': ^4.1.11
-  '@tanstack/react-form': 1.15.3
+  '@tanstack/react-form': 1.28.0
   '@tanstack/react-router': ^1.128.3
   '@tanstack/react-router-devtools': ^1.128.3
   '@tanstack/router-plugin': ^1.128.3
