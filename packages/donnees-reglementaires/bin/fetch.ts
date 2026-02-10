@@ -149,7 +149,10 @@ async function fetchFromOpenFiscaFrance() {
             );
 
     if (
-      (Array.isArray(value) && value.some((value) => value == null)) ||
+      (Array.isArray(value) &&
+        value.some((obj) =>
+          Object.values(obj).some((objValue) => objValue == null),
+        )) ||
       value == null
     ) {
       warnings.push(
