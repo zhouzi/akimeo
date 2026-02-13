@@ -1,6 +1,10 @@
 import type { Foyer } from "@akimeo/modele";
 import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import {
+  FORMAT_EUROS_OPTIONS,
+  formatEuros,
+} from "@akimeo/format-number/format-euros";
+import {
   creerFoyer,
   foyerSchema,
   isNatureRevenuMicroEntreprise,
@@ -22,8 +26,6 @@ import {
 import { formOptions } from "@tanstack/react-form";
 import { Armchair, BedDouble, Sofa } from "lucide-react";
 import z from "zod";
-
-import { FORMAT_EUROS_OPTIONS, formatEuros } from "~/lib/format";
 
 const formSchema = z.object({
   foyer1: foyerSchema,

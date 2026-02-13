@@ -315,6 +315,9 @@ importers:
       '@akimeo/fiscal':
         specifier: workspace:*
         version: link:../../packages/fiscal
+      '@akimeo/format-number':
+        specifier: workspace:*
+        version: link:../../packages/format-number
       '@akimeo/modele':
         specifier: workspace:*
         version: link:../../packages/modele
@@ -590,6 +593,33 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.0.13)(@vitest/browser@3.2.4)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(terser@5.43.1)(tsx@4.20.3)(yaml@2.8.0)
+
+  packages/format-number:
+    devDependencies:
+      '@akimeo/eslint-config':
+        specifier: workspace:*
+        version: link:../../config/eslint-config
+      '@akimeo/prettier-config':
+        specifier: workspace:*
+        version: link:../../config/prettier-config
+      '@akimeo/typescript-config':
+        specifier: workspace:*
+        version: link:../../config/typescript-config
+      concurrently:
+        specifier: 'catalog:'
+        version: 9.2.0
+      eslint:
+        specifier: 'catalog:'
+        version: 9.31.0(jiti@2.4.2)
+      prettier:
+        specifier: 'catalog:'
+        version: 3.6.2
+      tsc-alias:
+        specifier: 'catalog:'
+        version: 1.8.16
+      typescript:
+        specifier: 'catalog:'
+        version: 5.8.3
 
   packages/modele:
     dependencies:

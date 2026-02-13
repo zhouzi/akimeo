@@ -3,6 +3,11 @@ import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { calculerTauxIR } from "@akimeo/fiscal/ir/calculer-taux-ir";
 import { calculerTMI } from "@akimeo/fiscal/ir/calculer-tmi";
 import {
+  FORMAT_EUROS_OPTIONS,
+  formatEuros,
+} from "@akimeo/format-number/format-euros";
+import { formatPercentage } from "@akimeo/format-number/format-percentage";
+import {
   creerAdulte,
   creerEnfant,
   creerFoyer,
@@ -60,12 +65,6 @@ import {
   X,
 } from "lucide-react";
 import z from "zod";
-
-import {
-  FORMAT_EUROS_OPTIONS,
-  formatEuros,
-  formatPercentage,
-} from "~/lib/format";
 
 const formSchema = z.object({
   foyer: foyerSchema,
