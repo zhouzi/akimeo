@@ -14,7 +14,7 @@ function getLatestValue(values: Record<string, { value: LeafValue }>) {
   return value;
 }
 
-export async function fetchFromOpenFiscaFrance() {
+export async function fetchOpenFiscaFrance() {
   const output: Branch = {};
   const warnings: string[] = [];
 
