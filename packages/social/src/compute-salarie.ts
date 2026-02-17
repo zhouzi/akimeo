@@ -1,15 +1,14 @@
 import type { Foyer } from "@akimeo/modele/foyer/types";
+import type { AnyPoste } from "@akimeo/modele/poste/types";
 import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { CONTRAT_POSTE } from "@akimeo/modele/poste/constants";
-import { AnyPoste } from "@akimeo/modele/poste/types";
 
-import {
-  computeRegimeGeneral,
-  RegimeGeneralOutput,
-} from "./compute-regime-general";
-import { createSituationImpot, SituationImpot } from "./create-situation-impot";
+import type { RegimeGeneralOutput } from "./compute-regime-general";
+import type { SituationImpot } from "./create-situation-impot";
+import { computeRegimeGeneral } from "./compute-regime-general";
+import { createSituationImpot } from "./create-situation-impot";
 import { evaluateEngine } from "./evaluate-engine";
 import { setEngineSituation } from "./set-engine-situation";
 

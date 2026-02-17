@@ -1,13 +1,16 @@
+import type { Foyer } from "@akimeo/modele";
+import type { MicroEntreprise } from "@akimeo/modele/entreprise/types";
 import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
-import { Foyer, NATURE_REVENU } from "@akimeo/modele";
+import { NATURE_REVENU } from "@akimeo/modele";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
-import { MicroEntreprise } from "@akimeo/modele/entreprise/types";
 
-import { createSituationAcre, SituationAcre } from "./create-situation-acre";
-import { createSituationImpot, SituationImpot } from "./create-situation-impot";
+import type { SituationAcre } from "./create-situation-acre";
+import type { SituationImpot } from "./create-situation-impot";
+import { createSituationAcre } from "./create-situation-acre";
+import { createSituationImpot } from "./create-situation-impot";
 import { evaluateEngine } from "./evaluate-engine";
 import { setEngineSituation } from "./set-engine-situation";
 
