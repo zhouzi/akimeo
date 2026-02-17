@@ -3,7 +3,7 @@ import { subYears } from "date-fns/subYears";
 import set from "lodash.set";
 import { parse } from "yaml";
 
-import { Branch, LeafValue } from "./types";
+import type { Branch, LeafValue } from "./types";
 
 function getLatestValue(values: Record<string, { value: LeafValue }>) {
   const [latestValue] = Object.entries(values).sort(

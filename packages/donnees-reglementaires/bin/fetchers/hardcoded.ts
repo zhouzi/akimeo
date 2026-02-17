@@ -1,4 +1,4 @@
-import { Branch } from "./types";
+import type { Branch } from "./types";
 
 export function fetchHarcoded() {
   const output: Branch = {

@@ -2,9 +2,10 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import merge from "lodash.merge";
 
+import type { Branch } from "./fetchers/types";
 import { fetchHarcoded } from "./fetchers/hardcoded";
 import { fetchFromOpenFiscaFrance } from "./fetchers/openfisca-france";
-import { Branch, isLeaf } from "./fetchers/types";
+import { isLeaf } from "./fetchers/types";
 
 function stringify(parent: Branch): string {
   return Object.entries(parent)
