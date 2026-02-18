@@ -1,4 +1,4 @@
-import rules from "modele-social";
+import rules from "@akimeo/modele-social";
 import Engine from "publicodes";
 
 export function createEngine(): Engine {

@@ -23,7 +23,7 @@
     "@akimeo/fiscal": "workspace:*",
     "@akimeo/modele": "workspace:*",
     "es-toolkit": "catalog:",
-    "modele-social": "catalog:",
+    "@akimeo/modele-social": "catalog:",
     "publicodes": "catalog:"
   },
   "devDependencies": {
