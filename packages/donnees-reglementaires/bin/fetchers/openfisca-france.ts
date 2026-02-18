@@ -68,6 +68,9 @@ export async function fetchFromOpenFiscaFrance() {
     "taxation_indirecte/tva/taux_intermediaire",
     "taxation_indirecte/tva/taux_normal",
     "taxation_indirecte/tva/taux_particulier_super_reduit",
+    "marche_travail/salaire_minimum/smic/smic_b_mensuel",
+    "prelevements_sociaux/pss/plafond_securite_sociale_annuel",
+    "prelevements_sociaux/pss/plafond_securite_sociale_mensuel",
   ];
 
   for (const regle of regles) {

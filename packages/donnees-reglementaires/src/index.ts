@@ -368,4 +368,30 @@ export default {
       taux_particulier_super_reduit: 0.021,
     },
   },
+  marche_travail: {
+    salaire_minimum: {
+      smic: {
+        /**
+         * @description Smic brut mensuel
+         * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/marche_travail/salaire_minimum/smic/smic_b_mensuel.yaml Source}
+         */
+        smic_b_mensuel: 1823.03,
+      },
+    },
+  },
+  prelevements_sociaux: {
+    pss: {
+      /**
+       * @description Plafond annuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_annuel.yaml Source}
+       */
+      plafond_securite_sociale_annuel: 48060,
+
+      /**
+       * @description Plafond mensuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_mensuel.yaml Source}
+       */
+      plafond_securite_sociale_mensuel: 4005,
+    },
+  },
 } as const;
