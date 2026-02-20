@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "@akimeo/comptable",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+    "test": "vitest",
+    "build": "tsc && tsc-alias",
+    "lint": "eslint .",
+    "ci:lint": "pnpm run lint --format compact",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier . --write"
+  },
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "concurrently": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsc-alias": "catalog:",
+    "typescript": "catalog:",
+    "vite-tsconfig-paths": "catalog:",
+    "vitest": "catalog:"
+  },
+  "prettier": "@akimeo/prettier-config"
+}
