@@ -14,7 +14,7 @@ export default {
            * @description Plafond de la décote de l'impôt sur le revenu (IR) pour les contribuables célibataires, divorcés ou veufs
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/decote/seuil_celib.yaml Source}
            */
-          seuil_celib: 889,
+          seuil_celib: 897,
 
           /**
            * @description Taux de la décote de l'impôt sur le revenu
@@ -26,7 +26,7 @@ export default {
            * @description Plafond de la décote de l'impôt sur le revenu (IR) pour les contribuables en couple à imposition commune
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/decote/seuil_couple.yaml Source}
            */
-          seuil_couple: 1470,
+          seuil_couple: 1483,
         },
         quotient_familial: {
           cas_general: {
@@ -66,13 +66,13 @@ export default {
            * @description Plafond de l'avantage en impôt par demi-part supplémentaire attribuée en raison d'une personne à charge (cas général)
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/general.yaml Source}
            */
-          general: 1791,
+          general: 1807,
 
           /**
            * @description Réduction d'impôt complémentaire pour les veufs ayant des enfants à charge, si le plafond général de leur demi-part supplémentaire a été atteint.
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/reduc_postplafond_veuf.yaml Source}
            */
-          reduc_postplafond_veuf: 1993,
+          reduc_postplafond_veuf: 2011,
         },
       },
       pv: {
@@ -111,7 +111,7 @@ export default {
            * @description Plafond des versements ouvrant droit à la réduction d'impôt sur le revenu (IR) au titre des dons faits aux organismes d'aide aux personnes en difficulté ("Dons Coluche")
            * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_reductions_impots/dons/dons_coluche/plafond.yaml Source}
            */
-          plafond: 1000,
+          plafond: 2000,
 
           /**
            * @description Taux de la réduction d'impôt sur le revenu (IR) au titre des dons faits aux organismes d'aide aux personnes en difficulté ("Dons Coluche")
@@ -251,19 +251,19 @@ export default {
           rate: 0,
         },
         {
-          threshold: 11497,
+          threshold: 11600,
           rate: 0.11,
         },
         {
-          threshold: 29315,
+          threshold: 29579,
           rate: 0.3,
         },
         {
-          threshold: 83823,
+          threshold: 84577,
           rate: 0.41,
         },
         {
-          threshold: 180294,
+          threshold: 181917,
           rate: 0.45,
         },
       ],
