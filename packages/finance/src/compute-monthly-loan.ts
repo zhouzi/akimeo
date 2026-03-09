@@ -1,4 +1,4 @@
-export function computeMonthlyLoanInterests(
+export function computeMonthlyLoan(
   principalAmount: number,
   monthlyInterestRate: number,
   durationInMonths: number,
@@ -10,16 +10,17 @@ export function computeMonthlyLoanInterests(
       : (principalAmount * monthlyInterestRate * compoundFactor) /
         (compoundFactor - 1);
 
-  const monthlyInterests: number[] = [];
+  const result: { interest: number; principalRepayment: number }[] = [];
   let remainingBalance = principalAmount;
 
   for (let month = 0; month < durationInMonths; month++) {
-    const monthlyInterest = remainingBalance * monthlyInterestRate;
-    monthlyInterests.push(monthlyInterest);
+    const interest = remainingBalance * monthlyInterestRate;
+    const principalRepayment = monthlyPayment - interest;
 
-    const principalPaid = monthlyPayment - monthlyInterest;
-    remainingBalance -= principalPaid;
+    result.push({ interest, principalRepayment });
+
+    remainingBalance -= principalRepayment;
   }
 
-  return monthlyInterests;
+  return result;
 }
