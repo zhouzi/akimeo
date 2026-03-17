@@ -26,6 +26,7 @@ interface BaseEntreprise<
   statut: Statut;
   natureActivite: NatureActivite;
   acre: boolean;
+  tva: boolean;
 }
 
 export interface MicroEntreprise

@@ -1,9 +1,23 @@
 import type { PartialDeep } from "type-fest";
 import defaultsDeep from "lodash.defaultsdeep";
 
-import type { Sarl, SAS } from "./types";
+import type { MicroEntreprise, Sarl, SAS } from "./types";
 import { NATURE_ACTIVITE_ENTREPRISE, STATUT_ENTREPRISE } from "./constants";
-import { sarlSchema, sasSchema } from "./schemas";
+import { microEntrepriseSchema, sarlSchema, sasSchema } from "./schemas";
+
+export function creerMicroEntreprise(
+  microEntreprise: PartialDeep<MicroEntreprise>,
+): MicroEntreprise {
+  return microEntrepriseSchema.parse(
+    defaultsDeep({}, microEntreprise, {
+      statut: STATUT_ENTREPRISE.microEntreprise.value,
+      natureActivite: NATURE_ACTIVITE_ENTREPRISE.liberale.value,
+      acre: false,
+      tva: false,
+      versementLiberatoire: false,
+    } satisfies MicroEntreprise),
+  );
+}
 
 export function creerSARL(sarl: PartialDeep<Sarl>): Sarl {
   return sarlSchema.parse(
@@ -11,6 +25,7 @@ export function creerSARL(sarl: PartialDeep<Sarl>): Sarl {
       statut: STATUT_ENTREPRISE.sarl.value,
       natureActivite: NATURE_ACTIVITE_ENTREPRISE.liberale.value,
       acre: false,
+      tva: true,
     } satisfies Sarl),
   );
 }
@@ -21,6 +36,7 @@ export function creerSAS(sas: PartialDeep<SAS>): SAS {
       statut: STATUT_ENTREPRISE.sas.value,
       natureActivite: NATURE_ACTIVITE_ENTREPRISE.liberale.value,
       acre: false,
+      tva: true,
     } satisfies SAS),
   );
 }

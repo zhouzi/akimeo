@@ -18,6 +18,7 @@ const baseEntrepriseSchema = z.object({
     NATURE_ACTIVITE_ENTREPRISE.liberale.value,
   ]),
   acre: z.boolean(),
+  tva: z.boolean(),
 });
 
 export const microEntrepriseSchema = baseEntrepriseSchema.extend({
