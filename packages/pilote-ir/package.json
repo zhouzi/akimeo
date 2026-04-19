@@ -1,0 +1,36 @@
+{
+  "name": "@akimeo/pilote-ir",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "ci:lint": "pnpm run lint --format compact",
+    "format": "prettier --write ."
+  },
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "default": "./dist/*.js"
+    }
+  },
+  "dependencies": {
+    "@orpc/client": "catalog:",
+    "@orpc/contract": "catalog:",
+    "@orpc/openapi-client": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@akimeo/eslint-config": "workspace:*",
+    "@akimeo/prettier-config": "workspace:*",
+    "@akimeo/typescript-config": "workspace:*",
+    "concurrently": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsc-alias": "catalog:",
+    "typescript": "catalog:"
+  },
+  "prettier": "@akimeo/prettier-config"
+}
