@@ -9,7 +9,7 @@ export type PiloteIRClient = JsonifiedClient<
   ContractRouterClient<typeof contract>
 >;
 
-const BASE_URL = "https://pilote-ir.akimeo.xyz";
+const BASE_URL = "https://pilote-ir.akimeo.xyz/api/rpc";
 
 export interface CreateClientOptions {
   apiKey: string;
