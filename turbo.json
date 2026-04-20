@@ -18,7 +18,9 @@
     "lint": {},
     "ci:lint": {},
     "test": {},
-    "ci:test": {},
+    "ci:test": {
+      "env": ["PILOTE_IR_API_KEY"]
+    },
     "format": {},
     "typecheck": {}
   }
