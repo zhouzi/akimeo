@@ -615,7 +615,6 @@ export const aliasSchema = z
                   .partial(),
               })
               .partial(),
-            reportOpcMonetaires: z.number(),
             actifsNumeriques: z
               .object({
                 plusValue: z.number(),
