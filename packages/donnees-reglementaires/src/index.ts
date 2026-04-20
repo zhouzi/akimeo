@@ -151,15 +151,15 @@ export default {
         abatpro: {
           /**
            * @description Montant maximum de la déduction forfaitaire pour frais professionnels
-           * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_revenus_imposables/deductions/abatpro/max.yaml Source}
+           * {@link https://www.impots.gouv.fr/particulier/questions/comment-puis-je-beneficier-de-la-deduction-forfaitaire-de-10 Source}
            */
-          max: 14426,
+          max: 14555,
 
           /**
            * @description Montant minimum (Cas général) de la déduction forfaitaire pour frais professionnels
-           * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/impot_revenu/calcul_revenus_imposables/deductions/abatpro/min.yaml Source}
+           * {@link https://www.impots.gouv.fr/particulier/questions/comment-puis-je-beneficier-de-la-deduction-forfaitaire-de-10 Source}
            */
-          min: 504,
+          min: 509,
 
           /**
            * @description Taux de l'abattement forfaitaire sur les salaires pour frais professionels
