@@ -20,8 +20,7 @@ export const simulationOutputSchema = z.object({
   createdAt: z.coerce.date(),
   declaration: declarationSchema,
   resultat: resultatSchema.nullable(),
+  errors: z.array(z.string()),
   urlPdf: z.url(),
   urlResultat: z.url(),
 });
-
-export type SimulationOutput = z.infer<typeof simulationOutputSchema>;
