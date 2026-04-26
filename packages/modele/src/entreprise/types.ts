@@ -4,24 +4,19 @@ import type {
   STATUT_ENTREPRISE,
 } from "./constants";
 
-type AnyStatutEntreprise =
-  | typeof STATUT_ENTREPRISE.microEntreprise.value
-  | typeof STATUT_ENTREPRISE.ei.value
-  | typeof STATUT_ENTREPRISE.sarl.value
-  | typeof STATUT_ENTREPRISE.sas.value;
-
-type AnyNatureActiviteEntreprise =
-  | typeof NATURE_ACTIVITE_ENTREPRISE.agricole.value
-  | typeof NATURE_ACTIVITE_ENTREPRISE.artisanale.value
-  | typeof NATURE_ACTIVITE_ENTREPRISE.commerciale.value
-  | typeof NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value
-  | typeof NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value
-  | typeof NATURE_ACTIVITE_ENTREPRISE.liberale.value;
-
 interface BaseEntreprise<
-  Statut extends AnyStatutEntreprise,
+  Statut extends
+    | typeof STATUT_ENTREPRISE.microEntreprise.value
+    | typeof STATUT_ENTREPRISE.ei.value
+    | typeof STATUT_ENTREPRISE.sarl.value
+    | typeof STATUT_ENTREPRISE.sas.value,
   NatureActivite extends
-    AnyNatureActiviteEntreprise = AnyNatureActiviteEntreprise,
+    | typeof NATURE_ACTIVITE_ENTREPRISE.agricole.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.artisanale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.commerciale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.liberale.value,
 > {
   statut: Statut;
   natureActivite: NatureActivite;
@@ -49,9 +44,19 @@ export interface EI
   > {}
 
 export interface Sarl
-  extends BaseEntreprise<typeof STATUT_ENTREPRISE.sarl.value> {}
+  extends BaseEntreprise<
+    typeof STATUT_ENTREPRISE.sarl.value,
+    | typeof NATURE_ACTIVITE_ENTREPRISE.artisanale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.commerciale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.liberale.value
+  > {}
 
 export interface SAS
-  extends BaseEntreprise<typeof STATUT_ENTREPRISE.sas.value> {}
+  extends BaseEntreprise<
+    typeof STATUT_ENTREPRISE.sas.value,
+    | typeof NATURE_ACTIVITE_ENTREPRISE.artisanale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.commerciale.value
+    | typeof NATURE_ACTIVITE_ENTREPRISE.liberale.value
+  > {}
 
 export type AnyEntreprise = MicroEntreprise | EI | Sarl | SAS;
