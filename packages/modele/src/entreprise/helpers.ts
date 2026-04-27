@@ -1,7 +1,9 @@
 import type { PartialDeep } from "type-fest";
 import defaultsDeep from "lodash.defaultsdeep";
 
-import type { EI, MicroEntreprise, Sarl, SAS } from "./types";
+import type { AnyEntreprise, EI, MicroEntreprise, Sarl, SAS } from "./types";
+import type { Revenu } from "~/revenu/types";
+import { NATURE_REVENU } from "~/revenu/constants";
 import { NATURE_ACTIVITE_ENTREPRISE, STATUT_ENTREPRISE } from "./constants";
 import {
   eiSchema,
@@ -55,4 +57,66 @@ export function creerSAS(sas: PartialDeep<SAS>): SAS {
       tva: true,
     } satisfies SAS),
   );
+}
+
+export function creerRevenuEntreprise(
+  entreprise: AnyEntreprise,
+  montantAnnuel: number,
+): Revenu {
+  if (entreprise.statut === STATUT_ENTREPRISE.sas.value) {
+    return {
+      nature: NATURE_REVENU.salaire.value,
+      montantAnnuel: montantAnnuel,
+    };
+  }
+
+  if (entreprise.statut === STATUT_ENTREPRISE.sarl.value) {
+    return {
+      nature: NATURE_REVENU.remuneration.value,
+      montantAnnuel: montantAnnuel,
+    };
+  }
+
+  if (entreprise.statut === STATUT_ENTREPRISE.microEntreprise.value) {
+    switch (entreprise.natureActivite) {
+      case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
+        return {
+          nature: NATURE_REVENU.microBICServices.value,
+          montantAnnuel: montantAnnuel,
+        };
+      case NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value:
+        return {
+          nature: NATURE_REVENU.microBICMarchandises.value,
+          montantAnnuel: montantAnnuel,
+        };
+      case NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value:
+        return {
+          nature: NATURE_REVENU.microBICServices.value,
+          montantAnnuel: montantAnnuel,
+        };
+      case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
+        return {
+          nature: NATURE_REVENU.microBNC.value,
+          montantAnnuel: montantAnnuel,
+        };
+    }
+  }
+
+  switch (entreprise.natureActivite) {
+    case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
+      return {
+        nature: NATURE_REVENU.bic.value,
+        montantAnnuel: montantAnnuel,
+      };
+    case NATURE_ACTIVITE_ENTREPRISE.commerciale.value:
+      return {
+        nature: NATURE_REVENU.bic.value,
+        montantAnnuel: montantAnnuel,
+      };
+    case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
+      return {
+        nature: NATURE_REVENU.bnc.value,
+        montantAnnuel: montantAnnuel,
+      };
+  }
 }
