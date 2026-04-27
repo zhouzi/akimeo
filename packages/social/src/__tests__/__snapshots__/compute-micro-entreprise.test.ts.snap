@@ -227,70 +227,70 @@ exports[`computeMicroEntreprise > #32 > Libérale, chiffre d'affaires 0, sans Ac
 exports[`computeMicroEntreprise > #33 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #34 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 3904,
+  "ir": 7011,
 }
 `;
 
 exports[`computeMicroEntreprise > #35 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #36 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 2097,
+  "ir": 5204,
 }
 `;
 
 exports[`computeMicroEntreprise > #37 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #38 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 562,
+  "ir": 2537,
 }
 `;
 
 exports[`computeMicroEntreprise > #39 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #40 > Libérale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 1940,
 }
 `;
 
 exports[`computeMicroEntreprise > #41 > Libérale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3900,
-  "ir": 0,
+  "ir": 413,
 }
 `;
 
 exports[`computeMicroEntreprise > #42 > Libérale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 7824,
+  "ir": 9844,
 }
 `;
 
@@ -304,7 +304,7 @@ exports[`computeMicroEntreprise > #43 > Libérale, chiffre d'affaires 30000, ave
 exports[`computeMicroEntreprise > #44 > Libérale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 6017,
+  "ir": 8037,
 }
 `;
 
@@ -318,7 +318,7 @@ exports[`computeMicroEntreprise > #45 > Libérale, chiffre d'affaires 30000, ave
 exports[`computeMicroEntreprise > #46 > Libérale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 2650,
+  "ir": 3586,
 }
 `;
 
@@ -332,77 +332,77 @@ exports[`computeMicroEntreprise > #47 > Libérale, chiffre d'affaires 30000, ave
 exports[`computeMicroEntreprise > #48 > Libérale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3900,
-  "ir": 1723,
+  "ir": 2799,
 }
 `;
 
 exports[`computeMicroEntreprise > #49 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #50 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 3904,
+  "ir": 7011,
 }
 `;
 
 exports[`computeMicroEntreprise > #51 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #52 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 2097,
+  "ir": 5204,
 }
 `;
 
 exports[`computeMicroEntreprise > #53 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #54 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 562,
+  "ir": 2537,
 }
 `;
 
 exports[`computeMicroEntreprise > #55 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 660,
 }
 `;
 
 exports[`computeMicroEntreprise > #56 > Libérale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 1940,
 }
 `;
 
 exports[`computeMicroEntreprise > #57 > Libérale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 7740,
-  "ir": 0,
+  "ir": 413,
 }
 `;
 
 exports[`computeMicroEntreprise > #58 > Libérale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 7824,
+  "ir": 9844,
 }
 `;
 
@@ -416,7 +416,7 @@ exports[`computeMicroEntreprise > #59 > Libérale, chiffre d'affaires 30000, san
 exports[`computeMicroEntreprise > #60 > Libérale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 6017,
+  "ir": 8037,
 }
 `;
 
@@ -430,7 +430,7 @@ exports[`computeMicroEntreprise > #61 > Libérale, chiffre d'affaires 30000, san
 exports[`computeMicroEntreprise > #62 > Libérale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 2650,
+  "ir": 3586,
 }
 `;
 
@@ -444,231 +444,231 @@ exports[`computeMicroEntreprise > #63 > Libérale, chiffre d'affaires 30000, san
 exports[`computeMicroEntreprise > #64 > Libérale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 7740,
-  "ir": 1723,
+  "ir": 2799,
 }
 `;
 
 exports[`computeMicroEntreprise > #65 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #66 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 3904,
+  "ir": 9953,
 }
 `;
 
 exports[`computeMicroEntreprise > #67 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #68 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 2097,
+  "ir": 8366,
 }
 `;
 
 exports[`computeMicroEntreprise > #69 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #70 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 562,
+  "ir": 6969,
 }
 `;
 
 exports[`computeMicroEntreprise > #71 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #72 > Libérale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 5571,
 }
 `;
 
 exports[`computeMicroEntreprise > #73 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 3558,
+  "ir": 8944,
 }
 `;
 
 exports[`computeMicroEntreprise > #74 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 14358,
+  "ir": 20209,
 }
 `;
 
 exports[`computeMicroEntreprise > #75 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 1891,
+  "ir": 7137,
 }
 `;
 
 exports[`computeMicroEntreprise > #76 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 12551,
+  "ir": 18402,
 }
 `;
 
 exports[`computeMicroEntreprise > #77 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 378,
+  "ir": 3256,
 }
 `;
 
 exports[`computeMicroEntreprise > #78 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 7462,
+  "ir": 12848,
 }
 `;
 
 exports[`computeMicroEntreprise > #79 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 10396,
-  "ir": 0,
+  "ir": 2320,
 }
 `;
 
 exports[`computeMicroEntreprise > #80 > Libérale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 10396,
-  "ir": 5655,
+  "ir": 11041,
 }
 `;
 
 exports[`computeMicroEntreprise > #81 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #82 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 3904,
+  "ir": 9953,
 }
 `;
 
 exports[`computeMicroEntreprise > #83 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #84 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 2097,
+  "ir": 8366,
 }
 `;
 
 exports[`computeMicroEntreprise > #85 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #86 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 562,
+  "ir": 6969,
 }
 `;
 
 exports[`computeMicroEntreprise > #87 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 1760,
 }
 `;
 
 exports[`computeMicroEntreprise > #88 > Libérale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 5571,
 }
 `;
 
 exports[`computeMicroEntreprise > #89 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 3558,
+  "ir": 8944,
 }
 `;
 
 exports[`computeMicroEntreprise > #90 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 14358,
+  "ir": 20209,
 }
 `;
 
 exports[`computeMicroEntreprise > #91 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 1891,
+  "ir": 7137,
 }
 `;
 
 exports[`computeMicroEntreprise > #92 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 12551,
+  "ir": 18402,
 }
 `;
 
 exports[`computeMicroEntreprise > #93 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 378,
+  "ir": 3256,
 }
 `;
 
 exports[`computeMicroEntreprise > #94 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 7462,
+  "ir": 12848,
 }
 `;
 
 exports[`computeMicroEntreprise > #95 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 20644,
-  "ir": 0,
+  "ir": 2320,
 }
 `;
 
 exports[`computeMicroEntreprise > #96 > Libérale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 20644,
-  "ir": 5655,
+  "ir": 11041,
 }
 `;
 
@@ -899,56 +899,56 @@ exports[`computeMicroEntreprise > #128 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #129 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 1890,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #130 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 3904,
+  "ir": 5546,
 }
 `;
 
 exports[`computeMicroEntreprise > #131 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 1890,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #132 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 2097,
+  "ir": 3739,
 }
 `;
 
 exports[`computeMicroEntreprise > #133 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 1890,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #134 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 562,
+  "ir": 1584,
 }
 `;
 
 exports[`computeMicroEntreprise > #135 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 1890,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #136 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 0,
+  "ir": 837,
 }
 `;
 
@@ -962,7 +962,7 @@ exports[`computeMicroEntreprise > #137 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #138 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 4661,
+  "ir": 6514,
 }
 `;
 
@@ -976,7 +976,7 @@ exports[`computeMicroEntreprise > #139 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #140 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 2854,
+  "ir": 4707,
 }
 `;
 
@@ -990,7 +990,7 @@ exports[`computeMicroEntreprise > #141 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #142 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 965,
+  "ir": 1952,
 }
 `;
 
@@ -1004,63 +1004,63 @@ exports[`computeMicroEntreprise > #143 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #144 > Commerciale - Marchandises, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 1890,
-  "ir": 39,
+  "ir": 1025,
 }
 `;
 
 exports[`computeMicroEntreprise > #145 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3726,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #146 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 3904,
+  "ir": 5546,
 }
 `;
 
 exports[`computeMicroEntreprise > #147 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3726,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #148 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 2097,
+  "ir": 3739,
 }
 `;
 
 exports[`computeMicroEntreprise > #149 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3726,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #150 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 562,
+  "ir": 1584,
 }
 `;
 
 exports[`computeMicroEntreprise > #151 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3726,
-  "ir": 0,
+  "ir": 300,
 }
 `;
 
 exports[`computeMicroEntreprise > #152 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 0,
+  "ir": 837,
 }
 `;
 
@@ -1074,7 +1074,7 @@ exports[`computeMicroEntreprise > #153 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #154 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 4661,
+  "ir": 6514,
 }
 `;
 
@@ -1088,7 +1088,7 @@ exports[`computeMicroEntreprise > #155 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #156 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 2854,
+  "ir": 4707,
 }
 `;
 
@@ -1102,7 +1102,7 @@ exports[`computeMicroEntreprise > #157 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #158 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 965,
+  "ir": 1952,
 }
 `;
 
@@ -1116,91 +1116,91 @@ exports[`computeMicroEntreprise > #159 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #160 > Commerciale - Marchandises, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3726,
-  "ir": 39,
+  "ir": 1025,
 }
 `;
 
 exports[`computeMicroEntreprise > #161 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #162 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 3904,
+  "ir": 7406,
 }
 `;
 
 exports[`computeMicroEntreprise > #163 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #164 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 2097,
+  "ir": 5599,
 }
 `;
 
 exports[`computeMicroEntreprise > #165 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #166 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 562,
+  "ir": 2822,
 }
 `;
 
 exports[`computeMicroEntreprise > #167 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #168 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 2251,
 }
 `;
 
 exports[`computeMicroEntreprise > #169 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 956,
 }
 `;
 
 exports[`computeMicroEntreprise > #170 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 5922,
+  "ir": 10864,
 }
 `;
 
 exports[`computeMicroEntreprise > #171 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 5048,
-  "ir": 0,
+  "ir": 30,
 }
 `;
 
 exports[`computeMicroEntreprise > #172 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 4115,
+  "ir": 9057,
 }
 `;
 
@@ -1214,7 +1214,7 @@ exports[`computeMicroEntreprise > #173 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #174 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 1637,
+  "ir": 3968,
 }
 `;
 
@@ -1228,91 +1228,91 @@ exports[`computeMicroEntreprise > #175 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #176 > Commerciale - Marchandises, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 5048,
-  "ir": 710,
+  "ir": 3322,
 }
 `;
 
 exports[`computeMicroEntreprise > #177 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #178 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 3904,
+  "ir": 7406,
 }
 `;
 
 exports[`computeMicroEntreprise > #179 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #180 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 2097,
+  "ir": 5599,
 }
 `;
 
 exports[`computeMicroEntreprise > #181 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #182 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 562,
+  "ir": 2822,
 }
 `;
 
 exports[`computeMicroEntreprise > #183 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 800,
 }
 `;
 
 exports[`computeMicroEntreprise > #184 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 2251,
 }
 `;
 
 exports[`computeMicroEntreprise > #185 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 956,
 }
 `;
 
 exports[`computeMicroEntreprise > #186 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 5922,
+  "ir": 10864,
 }
 `;
 
 exports[`computeMicroEntreprise > #187 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9932,
-  "ir": 0,
+  "ir": 30,
 }
 `;
 
 exports[`computeMicroEntreprise > #188 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 4115,
+  "ir": 9057,
 }
 `;
 
@@ -1326,7 +1326,7 @@ exports[`computeMicroEntreprise > #189 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #190 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 1637,
+  "ir": 3968,
 }
 `;
 
@@ -1340,7 +1340,7 @@ exports[`computeMicroEntreprise > #191 > Commerciale - Marchandises, chiffre d'a
 exports[`computeMicroEntreprise > #192 > Commerciale - Marchandises, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9932,
-  "ir": 710,
+  "ir": 3322,
 }
 `;
 
@@ -1571,56 +1571,56 @@ exports[`computeMicroEntreprise > #224 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #225 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3222,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #226 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 3904,
+  "ir": 6442,
 }
 `;
 
 exports[`computeMicroEntreprise > #227 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3222,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #228 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 2097,
+  "ir": 4635,
 }
 `;
 
 exports[`computeMicroEntreprise > #229 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3222,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #230 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 562,
+  "ir": 2162,
 }
 `;
 
 exports[`computeMicroEntreprise > #231 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3222,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #232 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 0,
+  "ir": 1508,
 }
 `;
 
@@ -1634,7 +1634,7 @@ exports[`computeMicroEntreprise > #233 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #234 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 6154,
+  "ir": 8404,
 }
 `;
 
@@ -1648,7 +1648,7 @@ exports[`computeMicroEntreprise > #235 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #236 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 4347,
+  "ir": 6597,
 }
 `;
 
@@ -1662,7 +1662,7 @@ exports[`computeMicroEntreprise > #237 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #238 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 1760,
+  "ir": 2959,
 }
 `;
 
@@ -1676,63 +1676,63 @@ exports[`computeMicroEntreprise > #239 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #240 > Commerciale - Services, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3222,
-  "ir": 834,
+  "ir": 2032,
 }
 `;
 
 exports[`computeMicroEntreprise > #241 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 6402,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #242 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 3904,
+  "ir": 6442,
 }
 `;
 
 exports[`computeMicroEntreprise > #243 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 6402,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #244 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 2097,
+  "ir": 4635,
 }
 `;
 
 exports[`computeMicroEntreprise > #245 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 6402,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #246 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 562,
+  "ir": 2162,
 }
 `;
 
 exports[`computeMicroEntreprise > #247 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 6402,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #248 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 0,
+  "ir": 1508,
 }
 `;
 
@@ -1746,7 +1746,7 @@ exports[`computeMicroEntreprise > #249 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #250 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 6154,
+  "ir": 8404,
 }
 `;
 
@@ -1760,7 +1760,7 @@ exports[`computeMicroEntreprise > #251 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #252 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 4347,
+  "ir": 6597,
 }
 `;
 
@@ -1774,7 +1774,7 @@ exports[`computeMicroEntreprise > #253 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #254 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 1760,
+  "ir": 2959,
 }
 `;
 
@@ -1788,231 +1788,231 @@ exports[`computeMicroEntreprise > #255 > Commerciale - Services, chiffre d'affai
 exports[`computeMicroEntreprise > #256 > Commerciale - Services, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6402,
-  "ir": 834,
+  "ir": 2032,
 }
 `;
 
 exports[`computeMicroEntreprise > #257 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #258 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 3904,
+  "ir": 8893,
 }
 `;
 
 exports[`computeMicroEntreprise > #259 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #260 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 2097,
+  "ir": 7260,
 }
 `;
 
 exports[`computeMicroEntreprise > #261 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #262 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 562,
+  "ir": 5627,
 }
 `;
 
 exports[`computeMicroEntreprise > #263 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #264 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 3820,
 }
 `;
 
 exports[`computeMicroEntreprise > #265 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 445,
+  "ir": 5104,
 }
 `;
 
 exports[`computeMicroEntreprise > #266 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 9904,
+  "ir": 15904,
 }
 `;
 
 exports[`computeMicroEntreprise > #267 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 3297,
 }
 `;
 
 exports[`computeMicroEntreprise > #268 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 8097,
+  "ir": 14097,
 }
 `;
 
 exports[`computeMicroEntreprise > #269 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 1201,
 }
 `;
 
 exports[`computeMicroEntreprise > #270 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 3608,
+  "ir": 9008,
 }
 `;
 
 exports[`computeMicroEntreprise > #271 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 8600,
-  "ir": 0,
+  "ir": 275,
 }
 `;
 
 exports[`computeMicroEntreprise > #272 > Commerciale - Services, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 8600,
-  "ir": 2831,
+  "ir": 7201,
 }
 `;
 
 exports[`computeMicroEntreprise > #273 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #274 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 3904,
+  "ir": 8893,
 }
 `;
 
 exports[`computeMicroEntreprise > #275 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #276 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 2097,
+  "ir": 7260,
 }
 `;
 
 exports[`computeMicroEntreprise > #277 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #278 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 562,
+  "ir": 5627,
 }
 `;
 
 exports[`computeMicroEntreprise > #279 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #280 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 3820,
 }
 `;
 
 exports[`computeMicroEntreprise > #281 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 445,
+  "ir": 5104,
 }
 `;
 
 exports[`computeMicroEntreprise > #282 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 9904,
+  "ir": 15904,
 }
 `;
 
 exports[`computeMicroEntreprise > #283 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 3297,
 }
 `;
 
 exports[`computeMicroEntreprise > #284 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 8097,
+  "ir": 14097,
 }
 `;
 
 exports[`computeMicroEntreprise > #285 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 1201,
 }
 `;
 
 exports[`computeMicroEntreprise > #286 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 3608,
+  "ir": 9008,
 }
 `;
 
 exports[`computeMicroEntreprise > #287 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17072,
-  "ir": 0,
+  "ir": 275,
 }
 `;
 
 exports[`computeMicroEntreprise > #288 > Commerciale - Services, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17072,
-  "ir": 2831,
+  "ir": 7201,
 }
 `;
 
@@ -2243,56 +2243,56 @@ exports[`computeMicroEntreprise > #320 > Artisanale, chiffre d'affaires 0, sans 
 exports[`computeMicroEntreprise > #321 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3414,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #322 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 3904,
+  "ir": 6442,
 }
 `;
 
 exports[`computeMicroEntreprise > #323 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3414,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #324 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 2097,
+  "ir": 4635,
 }
 `;
 
 exports[`computeMicroEntreprise > #325 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 3414,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #326 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 562,
+  "ir": 2162,
 }
 `;
 
 exports[`computeMicroEntreprise > #327 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 3414,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #328 > Artisanale, chiffre d'affaires 30000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 0,
+  "ir": 1508,
 }
 `;
 
@@ -2306,7 +2306,7 @@ exports[`computeMicroEntreprise > #329 > Artisanale, chiffre d'affaires 30000, a
 exports[`computeMicroEntreprise > #330 > Artisanale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 6154,
+  "ir": 8404,
 }
 `;
 
@@ -2320,7 +2320,7 @@ exports[`computeMicroEntreprise > #331 > Artisanale, chiffre d'affaires 30000, a
 exports[`computeMicroEntreprise > #332 > Artisanale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 4347,
+  "ir": 6597,
 }
 `;
 
@@ -2334,7 +2334,7 @@ exports[`computeMicroEntreprise > #333 > Artisanale, chiffre d'affaires 30000, a
 exports[`computeMicroEntreprise > #334 > Artisanale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 1760,
+  "ir": 2959,
 }
 `;
 
@@ -2348,63 +2348,63 @@ exports[`computeMicroEntreprise > #335 > Artisanale, chiffre d'affaires 30000, a
 exports[`computeMicroEntreprise > #336 > Artisanale, chiffre d'affaires 30000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 3414,
-  "ir": 834,
+  "ir": 2032,
 }
 `;
 
 exports[`computeMicroEntreprise > #337 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 6594,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #338 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 3904,
+  "ir": 6442,
 }
 `;
 
 exports[`computeMicroEntreprise > #339 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 6594,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #340 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 2097,
+  "ir": 4635,
 }
 `;
 
 exports[`computeMicroEntreprise > #341 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 6594,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #342 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 562,
+  "ir": 2162,
 }
 `;
 
 exports[`computeMicroEntreprise > #343 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 6594,
-  "ir": 0,
+  "ir": 510,
 }
 `;
 
 exports[`computeMicroEntreprise > #344 > Artisanale, chiffre d'affaires 30000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 0,
+  "ir": 1508,
 }
 `;
 
@@ -2418,7 +2418,7 @@ exports[`computeMicroEntreprise > #345 > Artisanale, chiffre d'affaires 30000, s
 exports[`computeMicroEntreprise > #346 > Artisanale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 6154,
+  "ir": 8404,
 }
 `;
 
@@ -2432,7 +2432,7 @@ exports[`computeMicroEntreprise > #347 > Artisanale, chiffre d'affaires 30000, s
 exports[`computeMicroEntreprise > #348 > Artisanale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 4347,
+  "ir": 6597,
 }
 `;
 
@@ -2446,7 +2446,7 @@ exports[`computeMicroEntreprise > #349 > Artisanale, chiffre d'affaires 30000, s
 exports[`computeMicroEntreprise > #350 > Artisanale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 1760,
+  "ir": 2959,
 }
 `;
 
@@ -2460,230 +2460,230 @@ exports[`computeMicroEntreprise > #351 > Artisanale, chiffre d'affaires 30000, s
 exports[`computeMicroEntreprise > #352 > Artisanale, chiffre d'affaires 30000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 6594,
-  "ir": 834,
+  "ir": 2032,
 }
 `;
 
 exports[`computeMicroEntreprise > #353 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #354 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 3904,
+  "ir": 8893,
 }
 `;
 
 exports[`computeMicroEntreprise > #355 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #356 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 2097,
+  "ir": 7260,
 }
 `;
 
 exports[`computeMicroEntreprise > #357 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #358 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 562,
+  "ir": 5627,
 }
 `;
 
 exports[`computeMicroEntreprise > #359 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #360 > Artisanale, chiffre d'affaires 80000, avec Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 3820,
 }
 `;
 
 exports[`computeMicroEntreprise > #361 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 445,
+  "ir": 5104,
 }
 `;
 
 exports[`computeMicroEntreprise > #362 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 9904,
+  "ir": 15904,
 }
 `;
 
 exports[`computeMicroEntreprise > #363 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 3297,
 }
 `;
 
 exports[`computeMicroEntreprise > #364 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 8097,
+  "ir": 14097,
 }
 `;
 
 exports[`computeMicroEntreprise > #365 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 1201,
 }
 `;
 
 exports[`computeMicroEntreprise > #366 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 3608,
+  "ir": 9008,
 }
 `;
 
 exports[`computeMicroEntreprise > #367 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 9108,
-  "ir": 0,
+  "ir": 275,
 }
 `;
 
 exports[`computeMicroEntreprise > #368 > Artisanale, chiffre d'affaires 80000, avec Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 9108,
-  "ir": 2831,
+  "ir": 7201,
 }
 `;
 
 exports[`computeMicroEntreprise > #369 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #370 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 3904,
+  "ir": 8893,
 }
 `;
 
 exports[`computeMicroEntreprise > #371 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #372 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 2097,
+  "ir": 7260,
 }
 `;
 
 exports[`computeMicroEntreprise > #373 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #374 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 562,
+  "ir": 5627,
 }
 `;
 
 exports[`computeMicroEntreprise > #375 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 1360,
 }
 `;
 
 exports[`computeMicroEntreprise > #376 > Artisanale, chiffre d'affaires 80000, sans Acre, avec versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 3820,
 }
 `;
 
 exports[`computeMicroEntreprise > #377 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 445,
+  "ir": 5104,
 }
 `;
 
 exports[`computeMicroEntreprise > #378 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 9904,
+  "ir": 15904,
 }
 `;
 
 exports[`computeMicroEntreprise > #379 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 3297,
 }
 `;
 
 exports[`computeMicroEntreprise > #380 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 8097,
+  "ir": 14097,
 }
 `;
 
 exports[`computeMicroEntreprise > #381 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 1201,
 }
 `;
 
 exports[`computeMicroEntreprise > #382 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 3608,
+  "ir": 9008,
 }
 `;
 
 exports[`computeMicroEntreprise > #383 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "cotisations": 17580,
-  "ir": 0,
+  "ir": 275,
 }
 `;
 
 exports[`computeMicroEntreprise > #384 > Artisanale, chiffre d'affaires 80000, sans Acre, sans versement libératoire, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "cotisations": 17580,
-  "ir": 2831,
+  "ir": 7201,
 }
 `;

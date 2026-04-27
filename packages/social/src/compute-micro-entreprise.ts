@@ -124,10 +124,13 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
                     microEntreprise,
                     evaluateEngine(
                       engine,
-                      "dirigeant . rémunération . net . imposable",
+                      "dirigeant . auto-entrepreneur . chiffre d'affaires",
                     ),
                   ),
                 ],
+                versementLiberatoire:
+                  microEntreprise.versementLiberatoire ||
+                  foyer.declarant1.versementLiberatoire,
               },
             }),
           });
