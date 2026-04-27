@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
     "test": "vitest",
-    "build": "tsc && tsc-alias",
+    "build": "tsc --project ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
     "lint": "eslint .",
     "ci:lint": "pnpm run lint --format compact",
     "typecheck": "tsc --noEmit",
