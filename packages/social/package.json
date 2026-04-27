@@ -22,8 +22,10 @@
     "@akimeo/donnees-reglementaires": "workspace:*",
     "@akimeo/fiscal": "workspace:*",
     "@akimeo/modele": "workspace:*",
-    "es-toolkit": "catalog:",
+    "@akimeo/modele-as": "catalog:",
     "@akimeo/modele-social": "catalog:",
+    "@akimeo/modele-ti": "catalog:",
+    "es-toolkit": "catalog:",
     "publicodes": "catalog:"
   },
   "devDependencies": {

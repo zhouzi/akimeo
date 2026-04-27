@@ -6,9 +6,15 @@ settings:
 
 catalogs:
   default:
+    '@akimeo/modele-as':
+      specifier: 0.0.1
+      version: 0.0.1
     '@akimeo/modele-social':
-      specifier: ^10.0.1
-      version: 10.0.1
+      specifier: 10.0.2-fork.0
+      version: 10.0.2-fork.0
+    '@akimeo/modele-ti':
+      specifier: 0.0.1
+      version: 0.0.1
     '@base-ui-components/react':
       specifier: 1.0.0-beta.1
       version: 1.0.0-beta.1
@@ -252,6 +258,9 @@ catalogs:
     zod:
       specifier: 4.0.5
       version: 4.0.5
+
+overrides:
+  std-env: ^4.0.0
 
 importers:
 
@@ -793,9 +802,15 @@ importers:
       '@akimeo/modele':
         specifier: workspace:*
         version: link:../modele
+      '@akimeo/modele-as':
+        specifier: 'catalog:'
+        version: 0.0.1(publicodes@1.9.1)
       '@akimeo/modele-social':
         specifier: 'catalog:'
-        version: 10.0.1(publicodes@1.9.1)
+        version: 10.0.2-fork.0(publicodes@1.9.1)
+      '@akimeo/modele-ti':
+        specifier: 'catalog:'
+        version: 0.0.1(publicodes@1.9.1)
       es-toolkit:
         specifier: 'catalog:'
         version: 1.44.0
@@ -921,8 +936,18 @@ importers:
 
 packages:
 
-  '@akimeo/modele-social@10.0.1':
-    resolution: {integrity: sha512-End+Hu/wkYwkiSk3sWfbA+luRCmZ60seWU0XBLQa4bkUw3a0NR5HohEl9vOEqJyxqDgMI0cZLNmgXiK3B6+7CA==}
+  '@akimeo/modele-as@0.0.1':
+    resolution: {integrity: sha512-TN5ow6vfrDMn9tOF6y0beqtFrklu+vZt2LcyMypy8o7ppeHpEc7xXmTOxbFFhPIx0emixUDTdNFYr7KqZP4R8Q==}
+    peerDependencies:
+      publicodes: ^1.0.4
+
+  '@akimeo/modele-social@10.0.2-fork.0':
+    resolution: {integrity: sha512-LzjKvTaxTnwDBjsDExb09eWMuxSlQMtHForjLqb7kN/irNMRmv+e8OQtSNEoHXT3Q343jWAH+JVfdVar08V7fg==}
+    peerDependencies:
+      publicodes: ^1.0.4
+
+  '@akimeo/modele-ti@0.0.1':
+    resolution: {integrity: sha512-7Vsndy9nXGZ7NiuYipKwBByfIOZm6g9tDTHXec1cxQksVxc7GnpKbgezhrAkUF1kSaP7rDSKccsMIUPrC43A+g==}
     peerDependencies:
       publicodes: ^1.0.4
 
@@ -7417,9 +7442,6 @@ packages:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
 
-  std-env@3.9.0:
-    resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
-
   std-env@4.1.0:
     resolution: {integrity: sha512-Rq7ybcX2RuC55r9oaPVEW7/xu3tj8u4GeBYHBWCychFtzMIr86A7e3PPEBPT37sHStKX3+TiX/Fr/ACmJLVlLQ==}
 
@@ -8297,7 +8319,15 @@ packages:
 
 snapshots:
 
-  '@akimeo/modele-social@10.0.1(publicodes@1.9.1)':
+  '@akimeo/modele-as@0.0.1(publicodes@1.9.1)':
+    dependencies:
+      publicodes: 1.9.1
+
+  '@akimeo/modele-social@10.0.2-fork.0(publicodes@1.9.1)':
+    dependencies:
+      publicodes: 1.9.1
+
+  '@akimeo/modele-ti@0.0.1(publicodes@1.9.1)':
     dependencies:
       publicodes: 1.9.1
 
@@ -16349,8 +16379,6 @@ snapshots:
 
   statuses@2.0.1: {}
 
-  std-env@3.9.0: {}
-
   std-env@4.1.0: {}
 
   stop-iteration-iterator@1.1.0:
@@ -17116,7 +17144,7 @@ snapshots:
       figures: 3.2.0
       markdown-table: 2.0.0
       pretty-time: 1.1.0
-      std-env: 3.9.0
+      std-env: 4.1.0
       webpack: 5.100.2
       wrap-ansi: 7.0.0
 

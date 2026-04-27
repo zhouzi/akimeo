@@ -1,0 +1,1681 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`computeSARL > #1 > Libérale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #2 > Libérale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #3 > Libérale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #4 > Libérale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #5 > Libérale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #6 > Libérale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #7 > Libérale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #8 > Libérale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #9 > Libérale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #10 > Libérale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #11 > Libérale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #12 > Libérale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #13 > Libérale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #14 > Libérale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #15 > Libérale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #16 > Libérale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #17 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 4635,
+}
+`;
+
+exports[`computeSARL > #18 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 15435,
+}
+`;
+
+exports[`computeSARL > #19 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 2828,
+}
+`;
+
+exports[`computeSARL > #20 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 13628,
+}
+`;
+
+exports[`computeSARL > #21 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 951,
+}
+`;
+
+exports[`computeSARL > #22 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 8539,
+}
+`;
+
+exports[`computeSARL > #23 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 25,
+}
+`;
+
+exports[`computeSARL > #24 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 6732,
+}
+`;
+
+exports[`computeSARL > #25 > Libérale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 4454,
+}
+`;
+
+exports[`computeSARL > #26 > Libérale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 15254,
+}
+`;
+
+exports[`computeSARL > #27 > Libérale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 2647,
+}
+`;
+
+exports[`computeSARL > #28 > Libérale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 13447,
+}
+`;
+
+exports[`computeSARL > #29 > Libérale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 855,
+}
+`;
+
+exports[`computeSARL > #30 > Libérale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 8358,
+}
+`;
+
+exports[`computeSARL > #31 > Libérale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #32 > Libérale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 6551,
+}
+`;
+
+exports[`computeSARL > #33 > Libérale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 16561,
+}
+`;
+
+exports[`computeSARL > #34 > Libérale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 30619,
+}
+`;
+
+exports[`computeSARL > #35 > Libérale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 14754,
+}
+`;
+
+exports[`computeSARL > #36 > Libérale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 28812,
+}
+`;
+
+exports[`computeSARL > #37 > Libérale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 9665,
+}
+`;
+
+exports[`computeSARL > #38 > Libérale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 20465,
+}
+`;
+
+exports[`computeSARL > #39 > Libérale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 7858,
+}
+`;
+
+exports[`computeSARL > #40 > Libérale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 18658,
+}
+`;
+
+exports[`computeSARL > #41 > Libérale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 16561,
+}
+`;
+
+exports[`computeSARL > #42 > Libérale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 30619,
+}
+`;
+
+exports[`computeSARL > #43 > Libérale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 14754,
+}
+`;
+
+exports[`computeSARL > #44 > Libérale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 28812,
+}
+`;
+
+exports[`computeSARL > #45 > Libérale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 9665,
+}
+`;
+
+exports[`computeSARL > #46 > Libérale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 20465,
+}
+`;
+
+exports[`computeSARL > #47 > Libérale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 7858,
+}
+`;
+
+exports[`computeSARL > #48 > Libérale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 18658,
+}
+`;
+
+exports[`computeSARL > #49 > Libérale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #50 > Libérale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #51 > Libérale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #52 > Libérale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #53 > Libérale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #54 > Libérale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #55 > Libérale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #56 > Libérale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #57 > Libérale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #58 > Libérale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #59 > Libérale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #60 > Libérale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #61 > Libérale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #62 > Libérale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #63 > Libérale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #64 > Libérale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #65 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 4236,
+}
+`;
+
+exports[`computeSARL > #66 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 15036,
+}
+`;
+
+exports[`computeSARL > #67 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 2429,
+}
+`;
+
+exports[`computeSARL > #68 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 13229,
+}
+`;
+
+exports[`computeSARL > #69 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 739,
+}
+`;
+
+exports[`computeSARL > #70 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 8140,
+}
+`;
+
+exports[`computeSARL > #71 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #72 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 6333,
+}
+`;
+
+exports[`computeSARL > #73 > Libérale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 4245,
+}
+`;
+
+exports[`computeSARL > #74 > Libérale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 15045,
+}
+`;
+
+exports[`computeSARL > #75 > Libérale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 2438,
+}
+`;
+
+exports[`computeSARL > #76 > Libérale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 13238,
+}
+`;
+
+exports[`computeSARL > #77 > Libérale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 744,
+}
+`;
+
+exports[`computeSARL > #78 > Libérale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 8149,
+}
+`;
+
+exports[`computeSARL > #79 > Libérale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #80 > Libérale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 6342,
+}
+`;
+
+exports[`computeSARL > #81 > Commerciale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #82 > Commerciale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #83 > Commerciale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #84 > Commerciale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #85 > Commerciale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #86 > Commerciale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #87 > Commerciale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #88 > Commerciale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #89 > Commerciale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #90 > Commerciale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #91 > Commerciale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #92 > Commerciale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #93 > Commerciale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #94 > Commerciale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #95 > Commerciale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #96 > Commerciale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #97 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 4635,
+}
+`;
+
+exports[`computeSARL > #98 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 15435,
+}
+`;
+
+exports[`computeSARL > #99 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 2828,
+}
+`;
+
+exports[`computeSARL > #100 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 13628,
+}
+`;
+
+exports[`computeSARL > #101 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 951,
+}
+`;
+
+exports[`computeSARL > #102 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 8539,
+}
+`;
+
+exports[`computeSARL > #103 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 25,
+}
+`;
+
+exports[`computeSARL > #104 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 6732,
+}
+`;
+
+exports[`computeSARL > #105 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 4454,
+}
+`;
+
+exports[`computeSARL > #106 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 15254,
+}
+`;
+
+exports[`computeSARL > #107 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 2647,
+}
+`;
+
+exports[`computeSARL > #108 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 13447,
+}
+`;
+
+exports[`computeSARL > #109 > Commerciale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 855,
+}
+`;
+
+exports[`computeSARL > #110 > Commerciale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 8358,
+}
+`;
+
+exports[`computeSARL > #111 > Commerciale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #112 > Commerciale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 6551,
+}
+`;
+
+exports[`computeSARL > #113 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 16561,
+}
+`;
+
+exports[`computeSARL > #114 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 30619,
+}
+`;
+
+exports[`computeSARL > #115 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 14754,
+}
+`;
+
+exports[`computeSARL > #116 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 28812,
+}
+`;
+
+exports[`computeSARL > #117 > Commerciale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 9665,
+}
+`;
+
+exports[`computeSARL > #118 > Commerciale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 20465,
+}
+`;
+
+exports[`computeSARL > #119 > Commerciale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 7858,
+}
+`;
+
+exports[`computeSARL > #120 > Commerciale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 18658,
+}
+`;
+
+exports[`computeSARL > #121 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 16561,
+}
+`;
+
+exports[`computeSARL > #122 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 30619,
+}
+`;
+
+exports[`computeSARL > #123 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 14754,
+}
+`;
+
+exports[`computeSARL > #124 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 28812,
+}
+`;
+
+exports[`computeSARL > #125 > Commerciale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 9665,
+}
+`;
+
+exports[`computeSARL > #126 > Commerciale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 20465,
+}
+`;
+
+exports[`computeSARL > #127 > Commerciale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 7858,
+}
+`;
+
+exports[`computeSARL > #128 > Commerciale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 18658,
+}
+`;
+
+exports[`computeSARL > #129 > Commerciale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #130 > Commerciale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #131 > Commerciale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #132 > Commerciale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #133 > Commerciale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #134 > Commerciale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #135 > Commerciale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #136 > Commerciale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #137 > Commerciale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #138 > Commerciale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #139 > Commerciale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #140 > Commerciale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #141 > Commerciale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #142 > Commerciale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #143 > Commerciale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #144 > Commerciale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #145 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 4236,
+}
+`;
+
+exports[`computeSARL > #146 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 15036,
+}
+`;
+
+exports[`computeSARL > #147 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 2429,
+}
+`;
+
+exports[`computeSARL > #148 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 13229,
+}
+`;
+
+exports[`computeSARL > #149 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 739,
+}
+`;
+
+exports[`computeSARL > #150 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 8140,
+}
+`;
+
+exports[`computeSARL > #151 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #152 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 6333,
+}
+`;
+
+exports[`computeSARL > #153 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 4245,
+}
+`;
+
+exports[`computeSARL > #154 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 15045,
+}
+`;
+
+exports[`computeSARL > #155 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 2438,
+}
+`;
+
+exports[`computeSARL > #156 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 13238,
+}
+`;
+
+exports[`computeSARL > #157 > Commerciale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 744,
+}
+`;
+
+exports[`computeSARL > #158 > Commerciale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 8149,
+}
+`;
+
+exports[`computeSARL > #159 > Commerciale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #160 > Commerciale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 6342,
+}
+`;
+
+exports[`computeSARL > #161 > Artisanale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #162 > Artisanale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #163 > Artisanale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #164 > Artisanale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #165 > Artisanale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #166 > Artisanale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #167 > Artisanale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #168 > Artisanale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #169 > Artisanale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #170 > Artisanale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #171 > Artisanale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #172 > Artisanale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #173 > Artisanale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #174 > Artisanale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #175 > Artisanale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #176 > Artisanale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #177 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 4630,
+}
+`;
+
+exports[`computeSARL > #178 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 15430,
+}
+`;
+
+exports[`computeSARL > #179 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 2823,
+}
+`;
+
+exports[`computeSARL > #180 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 13623,
+}
+`;
+
+exports[`computeSARL > #181 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 949,
+}
+`;
+
+exports[`computeSARL > #182 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 8534,
+}
+`;
+
+exports[`computeSARL > #183 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 22,
+}
+`;
+
+exports[`computeSARL > #184 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 6727,
+}
+`;
+
+exports[`computeSARL > #185 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 4449,
+}
+`;
+
+exports[`computeSARL > #186 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 15249,
+}
+`;
+
+exports[`computeSARL > #187 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 2642,
+}
+`;
+
+exports[`computeSARL > #188 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 13442,
+}
+`;
+
+exports[`computeSARL > #189 > Artisanale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 852,
+}
+`;
+
+exports[`computeSARL > #190 > Artisanale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 8353,
+}
+`;
+
+exports[`computeSARL > #191 > Artisanale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #192 > Artisanale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 6546,
+}
+`;
+
+exports[`computeSARL > #193 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 16556,
+}
+`;
+
+exports[`computeSARL > #194 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 30611,
+}
+`;
+
+exports[`computeSARL > #195 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 14749,
+}
+`;
+
+exports[`computeSARL > #196 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 28804,
+}
+`;
+
+exports[`computeSARL > #197 > Artisanale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 9660,
+}
+`;
+
+exports[`computeSARL > #198 > Artisanale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 20460,
+}
+`;
+
+exports[`computeSARL > #199 > Artisanale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 7853,
+}
+`;
+
+exports[`computeSARL > #200 > Artisanale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 18653,
+}
+`;
+
+exports[`computeSARL > #201 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 16556,
+}
+`;
+
+exports[`computeSARL > #202 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 30611,
+}
+`;
+
+exports[`computeSARL > #203 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 14749,
+}
+`;
+
+exports[`computeSARL > #204 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 28804,
+}
+`;
+
+exports[`computeSARL > #205 > Artisanale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 9660,
+}
+`;
+
+exports[`computeSARL > #206 > Artisanale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 20460,
+}
+`;
+
+exports[`computeSARL > #207 > Artisanale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 7853,
+}
+`;
+
+exports[`computeSARL > #208 > Artisanale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 18653,
+}
+`;
+
+exports[`computeSARL > #209 > Artisanale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #210 > Artisanale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #211 > Artisanale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #212 > Artisanale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #213 > Artisanale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #214 > Artisanale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #215 > Artisanale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #216 > Artisanale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #217 > Artisanale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #218 > Artisanale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeSARL > #219 > Artisanale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #220 > Artisanale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeSARL > #221 > Artisanale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #222 > Artisanale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeSARL > #223 > Artisanale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #224 > Artisanale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #225 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 4236,
+}
+`;
+
+exports[`computeSARL > #226 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 15036,
+}
+`;
+
+exports[`computeSARL > #227 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 2429,
+}
+`;
+
+exports[`computeSARL > #228 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 13229,
+}
+`;
+
+exports[`computeSARL > #229 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 739,
+}
+`;
+
+exports[`computeSARL > #230 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 8140,
+}
+`;
+
+exports[`computeSARL > #231 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #232 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 6333,
+}
+`;
+
+exports[`computeSARL > #233 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 4245,
+}
+`;
+
+exports[`computeSARL > #234 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 15045,
+}
+`;
+
+exports[`computeSARL > #235 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 2438,
+}
+`;
+
+exports[`computeSARL > #236 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 13238,
+}
+`;
+
+exports[`computeSARL > #237 > Artisanale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 744,
+}
+`;
+
+exports[`computeSARL > #238 > Artisanale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 8149,
+}
+`;
+
+exports[`computeSARL > #239 > Artisanale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 0,
+}
+`;
+
+exports[`computeSARL > #240 > Artisanale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 6342,
+}
+`;

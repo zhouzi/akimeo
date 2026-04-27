@@ -1,0 +1,1201 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`computeSalarie > #1 > CDI, salaire brut 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #2 > CDI, salaire brut 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #3 > CDI, salaire brut 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #4 > CDI, salaire brut 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #5 > CDI, salaire brut 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #6 > CDI, salaire brut 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #7 > CDI, salaire brut 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #8 > CDI, salaire brut 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #9 > CDI, salaire brut 24000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #10 > CDI, salaire brut 24000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #11 > CDI, salaire brut 24000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #12 > CDI, salaire brut 24000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #13 > CDI, salaire brut 24000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #14 > CDI, salaire brut 24000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #15 > CDI, salaire brut 24000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #16 > CDI, salaire brut 24000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #17 > CDI, salaire brut 60000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #18 > CDI, salaire brut 60000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #19 > CDI, salaire brut 60000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #20 > CDI, salaire brut 60000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #21 > CDI, salaire brut 60000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #22 > CDI, salaire brut 60000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #23 > CDI, salaire brut 60000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #24 > CDI, salaire brut 60000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #25 > CDI, rémunération nette 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #26 > CDI, rémunération nette 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #27 > CDI, rémunération nette 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #28 > CDI, rémunération nette 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #29 > CDI, rémunération nette 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #30 > CDI, rémunération nette 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #31 > CDI, rémunération nette 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #32 > CDI, rémunération nette 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #33 > CDI, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #34 > CDI, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #35 > CDI, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #36 > CDI, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #37 > CDI, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #38 > CDI, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #39 > CDI, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #40 > CDI, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #41 > CDD, salaire brut 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #42 > CDD, salaire brut 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #43 > CDD, salaire brut 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #44 > CDD, salaire brut 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #45 > CDD, salaire brut 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #46 > CDD, salaire brut 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #47 > CDD, salaire brut 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #48 > CDD, salaire brut 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #49 > CDD, salaire brut 24000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #50 > CDD, salaire brut 24000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #51 > CDD, salaire brut 24000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #52 > CDD, salaire brut 24000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #53 > CDD, salaire brut 24000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #54 > CDD, salaire brut 24000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #55 > CDD, salaire brut 24000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #56 > CDD, salaire brut 24000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 31765.82,
+}
+`;
+
+exports[`computeSalarie > #57 > CDD, salaire brut 60000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #58 > CDD, salaire brut 60000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #59 > CDD, salaire brut 60000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #60 > CDD, salaire brut 60000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #61 > CDD, salaire brut 60000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #62 > CDD, salaire brut 60000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #63 > CDD, salaire brut 60000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #64 > CDD, salaire brut 60000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 95333.81,
+}
+`;
+
+exports[`computeSalarie > #65 > CDD, rémunération nette 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #66 > CDD, rémunération nette 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #67 > CDD, rémunération nette 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #68 > CDD, rémunération nette 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #69 > CDD, rémunération nette 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #70 > CDD, rémunération nette 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #71 > CDD, rémunération nette 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #72 > CDD, rémunération nette 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #73 > CDD, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #74 > CDD, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #75 > CDD, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #76 > CDD, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #77 > CDD, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #78 > CDD, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #79 > CDD, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #80 > CDD, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 52090.69,
+}
+`;
+
+exports[`computeSalarie > #81 > Apprentissage, salaire brut 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #82 > Apprentissage, salaire brut 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #83 > Apprentissage, salaire brut 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #84 > Apprentissage, salaire brut 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #85 > Apprentissage, salaire brut 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #86 > Apprentissage, salaire brut 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #87 > Apprentissage, salaire brut 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #88 > Apprentissage, salaire brut 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #89 > Apprentissage, salaire brut 24000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #90 > Apprentissage, salaire brut 24000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #91 > Apprentissage, salaire brut 24000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #92 > Apprentissage, salaire brut 24000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #93 > Apprentissage, salaire brut 24000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #94 > Apprentissage, salaire brut 24000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #95 > Apprentissage, salaire brut 24000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #96 > Apprentissage, salaire brut 24000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 21687.04,
+}
+`;
+
+exports[`computeSalarie > #97 > Apprentissage, salaire brut 60000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #98 > Apprentissage, salaire brut 60000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #99 > Apprentissage, salaire brut 60000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #100 > Apprentissage, salaire brut 60000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #101 > Apprentissage, salaire brut 60000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #102 > Apprentissage, salaire brut 60000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #103 > Apprentissage, salaire brut 60000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #104 > Apprentissage, salaire brut 60000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 79046.85,
+}
+`;
+
+exports[`computeSalarie > #105 > Apprentissage, rémunération nette 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #106 > Apprentissage, rémunération nette 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #107 > Apprentissage, rémunération nette 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #108 > Apprentissage, rémunération nette 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #109 > Apprentissage, rémunération nette 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #110 > Apprentissage, rémunération nette 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #111 > Apprentissage, rémunération nette 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #112 > Apprentissage, rémunération nette 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #113 > Apprentissage, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #114 > Apprentissage, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #115 > Apprentissage, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #116 > Apprentissage, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #117 > Apprentissage, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #118 > Apprentissage, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #119 > Apprentissage, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #120 > Apprentissage, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 41583.69,
+}
+`;
+
+exports[`computeSalarie > #121 > Professionnalisation, salaire brut 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #122 > Professionnalisation, salaire brut 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #123 > Professionnalisation, salaire brut 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #124 > Professionnalisation, salaire brut 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #125 > Professionnalisation, salaire brut 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #126 > Professionnalisation, salaire brut 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #127 > Professionnalisation, salaire brut 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #128 > Professionnalisation, salaire brut 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #129 > Professionnalisation, salaire brut 24000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #130 > Professionnalisation, salaire brut 24000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #131 > Professionnalisation, salaire brut 24000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #132 > Professionnalisation, salaire brut 24000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #133 > Professionnalisation, salaire brut 24000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #134 > Professionnalisation, salaire brut 24000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #135 > Professionnalisation, salaire brut 24000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #136 > Professionnalisation, salaire brut 24000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 26982.24,
+}
+`;
+
+exports[`computeSalarie > #137 > Professionnalisation, salaire brut 60000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #138 > Professionnalisation, salaire brut 60000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #139 > Professionnalisation, salaire brut 60000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #140 > Professionnalisation, salaire brut 60000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #141 > Professionnalisation, salaire brut 60000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #142 > Professionnalisation, salaire brut 60000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #143 > Professionnalisation, salaire brut 60000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #144 > Professionnalisation, salaire brut 60000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 84784.85,
+}
+`;
+
+exports[`computeSalarie > #145 > Professionnalisation, rémunération nette 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #146 > Professionnalisation, rémunération nette 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #147 > Professionnalisation, rémunération nette 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #148 > Professionnalisation, rémunération nette 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #149 > Professionnalisation, rémunération nette 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #150 > Professionnalisation, rémunération nette 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #151 > Professionnalisation, rémunération nette 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #152 > Professionnalisation, rémunération nette 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 240,
+}
+`;
+
+exports[`computeSalarie > #153 > Professionnalisation, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #154 > Professionnalisation, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #155 > Professionnalisation, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #156 > Professionnalisation, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #157 > Professionnalisation, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #158 > Professionnalisation, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #159 > Professionnalisation, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #160 > Professionnalisation, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 51708.38,
+}
+`;
+
+exports[`computeSalarie > #161 > Stage, salaire brut 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #162 > Stage, salaire brut 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #163 > Stage, salaire brut 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #164 > Stage, salaire brut 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #165 > Stage, salaire brut 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #166 > Stage, salaire brut 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #167 > Stage, salaire brut 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #168 > Stage, salaire brut 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #169 > Stage, salaire brut 24000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #170 > Stage, salaire brut 24000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #171 > Stage, salaire brut 24000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #172 > Stage, salaire brut 24000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #173 > Stage, salaire brut 24000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #174 > Stage, salaire brut 24000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #175 > Stage, salaire brut 24000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #176 > Stage, salaire brut 24000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 29477.22,
+}
+`;
+
+exports[`computeSalarie > #177 > Stage, salaire brut 60000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #178 > Stage, salaire brut 60000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #179 > Stage, salaire brut 60000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #180 > Stage, salaire brut 60000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #181 > Stage, salaire brut 60000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #182 > Stage, salaire brut 60000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #183 > Stage, salaire brut 60000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #184 > Stage, salaire brut 60000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 76922.05,
+}
+`;
+
+exports[`computeSalarie > #185 > Stage, rémunération nette 0, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #186 > Stage, rémunération nette 0, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #187 > Stage, rémunération nette 0, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #188 > Stage, rémunération nette 0, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #189 > Stage, rémunération nette 0, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #190 > Stage, rémunération nette 0, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #191 > Stage, rémunération nette 0, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #192 > Stage, rémunération nette 0, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 0,
+}
+`;
+
+exports[`computeSalarie > #193 > Stage, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #194 > Stage, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #195 > Stage, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #196 > Stage, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #197 > Stage, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #198 > Stage, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #199 > Stage, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;
+
+exports[`computeSalarie > #200 > Stage, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "coutTotalEmployer": 43550.85,
+}
+`;

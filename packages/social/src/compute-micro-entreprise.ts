@@ -4,15 +4,12 @@ import type Engine from "publicodes";
 import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
-import { NATURE_REVENU } from "@akimeo/modele";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
+import { creerRevenuEntreprise } from "@akimeo/modele/entreprise/helpers";
 
-import type { SituationAcre } from "./create-situation-acre";
-import type { SituationImpot } from "./create-situation-impot";
-import { createSituationAcre } from "./create-situation-acre";
-import { createSituationImpot } from "./create-situation-impot";
-import { evaluateEngine } from "./evaluate-engine";
-import { setEngineSituation } from "./set-engine-situation";
+import { evaluateEngine } from "./helpers/evaluate-engine";
+import { setEngineSituation } from "./helpers/set-engine-situation";
+import { createSituationImpot } from "./modele-social/create-situation-modele-social";
 
 type SituationActivite =
   | {
@@ -57,22 +54,15 @@ function createSituationActivite(
   }
 }
 
-interface SituationVersementLiberatoire {
-  "dirigeant . auto-entrepreneur . impôt . versement libératoire":
-    | "oui"
-    | "non";
+interface SituationInput {
+  "dirigeant . auto-entrepreneur . chiffre d'affaires": number;
 }
 
-function createSituationVersementLiberatoire(
-  microEntreprise: MicroEntreprise,
-): SituationVersementLiberatoire {
-  if (microEntreprise.versementLiberatoire) {
-    return {
-      "dirigeant . auto-entrepreneur . impôt . versement libératoire": "oui",
-    };
-  }
+function createSituationMicroEntrepriseInput(
+  input: MicroEntrepriseInput,
+): SituationInput {
   return {
-    "dirigeant . auto-entrepreneur . impôt . versement libératoire": "non",
+    "dirigeant . auto-entrepreneur . chiffre d'affaires": input.chiffreAffaires,
   };
 }
 
@@ -80,68 +70,10 @@ export interface MicroEntrepriseInput {
   chiffreAffaires: number;
 }
 
-interface SituationMicroEntrepriseInput {
-  "dirigeant . auto-entrepreneur . chiffre d'affaires": number;
-}
-
-function createSituationMicroEntrepriseInput(
-  input: MicroEntrepriseInput,
-): SituationMicroEntrepriseInput {
-  return {
-    "dirigeant . auto-entrepreneur . chiffre d'affaires": input.chiffreAffaires,
-  };
-}
-
-type SituationMicroEntreprise = SituationImpot &
-  SituationActivite &
-  SituationVersementLiberatoire &
-  SituationAcre &
-  SituationMicroEntrepriseInput & {
-    "entreprise . date de création": string;
-    "entreprise . catégorie juridique": "'EI'";
-    "entreprise . catégorie juridique . EI . auto-entrepreneur": "oui";
-    "dirigeant . auto-entrepreneur": "oui";
-  };
-
-function createSituationMicroEntreprise(
-  foyer: Foyer,
-  microEntreprise: MicroEntreprise,
-  input: MicroEntrepriseInput,
-): SituationMicroEntreprise {
-  return {
-    ...createSituationImpot(foyer),
-    ...createSituationActivite(microEntreprise),
-    ...createSituationVersementLiberatoire(microEntreprise),
-    ...createSituationAcre(microEntreprise),
-    ...createSituationMicroEntrepriseInput(input),
-    "entreprise . date de création": `01/01/${new Date().getFullYear()}`,
-    "entreprise . catégorie juridique": "'EI'",
-    "entreprise . catégorie juridique . EI . auto-entrepreneur": "oui",
-    "dirigeant . auto-entrepreneur": "oui",
-  };
-}
-
-function getNatureRevenuFromNatureActivite(microEntreprise: MicroEntreprise) {
-  switch (microEntreprise.natureActivite) {
-    case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
-    case NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value:
-      return NATURE_REVENU.microBICMarchandises.value;
-    case NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value:
-      return NATURE_REVENU.microBICServices.value;
-    case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
-    default:
-      return NATURE_REVENU.microBNC.value;
-  }
-}
-
 export type MicroEntrepriseOutput = Partial<{
   cotisations: true;
-  ir: true;
   revenuNetAvantImpot: true;
-  trimestresRetraite: true;
-  cotisationsRetraite: true;
-  retraiteBase: true;
-  retraiteComplementaire: true;
+  ir: true;
 }>;
 
 export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
@@ -152,7 +84,16 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
   output: Output,
 ) {
   setEngineSituation(engine, {
-    ...createSituationMicroEntreprise(foyer, microEntreprise, input),
+    ...createSituationImpot(foyer),
+    ...createSituationActivite(microEntreprise),
+    ...createSituationMicroEntrepriseInput(input),
+    "dirigeant . auto-entrepreneur . impôt . versement libératoire":
+      microEntreprise.versementLiberatoire ? "oui" : "non",
+    "dirigeant . exonérations . ACRE": microEntreprise.acre ? "oui" : "non",
+    "entreprise . date de création": `01/01/${new Date().getFullYear()}`,
+    "entreprise . catégorie juridique": "'EI'",
+    "entreprise . catégorie juridique . EI . auto-entrepreneur": "oui",
+    "dirigeant . auto-entrepreneur": "oui",
   });
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
@@ -164,27 +105,6 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
               "dirigeant . auto-entrepreneur . cotisations et contributions",
             ),
           });
-        case "ir": {
-          return Object.assign(acc, {
-            [key]: calculerIR({
-              ...foyer,
-              declarant1: {
-                ...foyer.declarant1,
-                revenus: [
-                  ...foyer.declarant1.revenus,
-                  {
-                    nature: getNatureRevenuFromNatureActivite(microEntreprise),
-                    montantAnnuel: evaluateEngine(
-                      engine,
-                      "dirigeant . auto-entrepreneur . chiffre d'affaires",
-                    ),
-                  },
-                ],
-                versementLiberatoire: microEntreprise.versementLiberatoire,
-              },
-            }),
-          });
-        }
         case "revenuNetAvantImpot":
           return Object.assign(acc, {
             [key]: evaluateEngine(
@@ -192,33 +112,24 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
               "dirigeant . auto-entrepreneur . revenu net",
             ),
           });
-        case "trimestresRetraite":
+        case "ir":
           return Object.assign(acc, {
-            [key]: evaluateEngine(
-              engine,
-              "protection sociale . retraite . trimestres",
-            ),
-          });
-        case "cotisationsRetraite":
-          return Object.assign(acc, {
-            [key]: evaluateEngine(
-              engine,
-              "protection sociale . retraite . base . cotisée",
-            ),
-          });
-        case "retraiteBase":
-          return Object.assign(acc, {
-            [key]: evaluateEngine(
-              engine,
-              "protection sociale . retraite . base",
-            ),
-          });
-        case "retraiteComplementaire":
-          return Object.assign(acc, {
-            [key]: evaluateEngine(
-              engine,
-              "protection sociale . retraite . complémentaire",
-            ),
+            [key]: calculerIR({
+              ...foyer,
+              declarant1: {
+                ...foyer.declarant1,
+                revenus: [
+                  ...foyer.declarant1.revenus,
+                  creerRevenuEntreprise(
+                    microEntreprise,
+                    evaluateEngine(
+                      engine,
+                      "dirigeant . rémunération . net . imposable",
+                    ),
+                  ),
+                ],
+              },
+            }),
           });
       }
     },

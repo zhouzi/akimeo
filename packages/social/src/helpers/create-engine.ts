@@ -1,7 +1,9 @@
-import rules from "@akimeo/modele-social";
+import type { ParsedRules, RawPublicodes } from "publicodes";
 import Engine from "publicodes";
 
-export function createEngine(): Engine {
+export function createEngine<RuleNames extends string>(
+  rules: RawPublicodes<RuleNames> | ParsedRules<RuleNames>,
+): Engine<RuleNames> {
   return new Engine(rules, {
     logger: {
       log: () => {

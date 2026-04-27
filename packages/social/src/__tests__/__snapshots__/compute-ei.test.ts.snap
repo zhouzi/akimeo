@@ -1,0 +1,1681 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`computeEI > #1 > Libérale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #2 > Libérale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #3 > Libérale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #4 > Libérale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #5 > Libérale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #6 > Libérale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #7 > Libérale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #8 > Libérale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #9 > Libérale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #10 > Libérale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #11 > Libérale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #12 > Libérale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #13 > Libérale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #14 > Libérale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #15 > Libérale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #16 > Libérale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #17 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 5916,
+}
+`;
+
+exports[`computeEI > #18 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 16716,
+}
+`;
+
+exports[`computeEI > #19 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 4109,
+}
+`;
+
+exports[`computeEI > #20 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 14909,
+}
+`;
+
+exports[`computeEI > #21 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 1634,
+}
+`;
+
+exports[`computeEI > #22 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 9820,
+}
+`;
+
+exports[`computeEI > #23 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 707,
+}
+`;
+
+exports[`computeEI > #24 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 8013,
+}
+`;
+
+exports[`computeEI > #25 > Libérale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 5715,
+}
+`;
+
+exports[`computeEI > #26 > Libérale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 16515,
+}
+`;
+
+exports[`computeEI > #27 > Libérale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 3908,
+}
+`;
+
+exports[`computeEI > #28 > Libérale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 14708,
+}
+`;
+
+exports[`computeEI > #29 > Libérale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 1527,
+}
+`;
+
+exports[`computeEI > #30 > Libérale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 9619,
+}
+`;
+
+exports[`computeEI > #31 > Libérale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 600,
+}
+`;
+
+exports[`computeEI > #32 > Libérale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 7812,
+}
+`;
+
+exports[`computeEI > #33 > Libérale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 19420,
+}
+`;
+
+exports[`computeEI > #34 > Libérale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 34181,
+}
+`;
+
+exports[`computeEI > #35 > Libérale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 17613,
+}
+`;
+
+exports[`computeEI > #36 > Libérale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 32374,
+}
+`;
+
+exports[`computeEI > #37 > Libérale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 12271,
+}
+`;
+
+exports[`computeEI > #38 > Libérale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 23071,
+}
+`;
+
+exports[`computeEI > #39 > Libérale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 10464,
+}
+`;
+
+exports[`computeEI > #40 > Libérale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 21264,
+}
+`;
+
+exports[`computeEI > #41 > Libérale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 19420,
+}
+`;
+
+exports[`computeEI > #42 > Libérale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 34181,
+}
+`;
+
+exports[`computeEI > #43 > Libérale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 17613,
+}
+`;
+
+exports[`computeEI > #44 > Libérale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 32374,
+}
+`;
+
+exports[`computeEI > #45 > Libérale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 12271,
+}
+`;
+
+exports[`computeEI > #46 > Libérale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 23071,
+}
+`;
+
+exports[`computeEI > #47 > Libérale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 10464,
+}
+`;
+
+exports[`computeEI > #48 > Libérale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 21264,
+}
+`;
+
+exports[`computeEI > #49 > Libérale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #50 > Libérale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #51 > Libérale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #52 > Libérale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #53 > Libérale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #54 > Libérale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #55 > Libérale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #56 > Libérale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #57 > Libérale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #58 > Libérale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #59 > Libérale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #60 > Libérale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #61 > Libérale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #62 > Libérale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #63 > Libérale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #64 > Libérale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #65 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 5472,
+}
+`;
+
+exports[`computeEI > #66 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 16272,
+}
+`;
+
+exports[`computeEI > #67 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 3665,
+}
+`;
+
+exports[`computeEI > #68 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 14465,
+}
+`;
+
+exports[`computeEI > #69 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 1397,
+}
+`;
+
+exports[`computeEI > #70 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 9376,
+}
+`;
+
+exports[`computeEI > #71 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 471,
+}
+`;
+
+exports[`computeEI > #72 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 7569,
+}
+`;
+
+exports[`computeEI > #73 > Libérale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 5483,
+}
+`;
+
+exports[`computeEI > #74 > Libérale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 16283,
+}
+`;
+
+exports[`computeEI > #75 > Libérale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 3676,
+}
+`;
+
+exports[`computeEI > #76 > Libérale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 14476,
+}
+`;
+
+exports[`computeEI > #77 > Libérale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 1403,
+}
+`;
+
+exports[`computeEI > #78 > Libérale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 9387,
+}
+`;
+
+exports[`computeEI > #79 > Libérale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 476,
+}
+`;
+
+exports[`computeEI > #80 > Libérale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 7580,
+}
+`;
+
+exports[`computeEI > #81 > Commerciale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #82 > Commerciale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #83 > Commerciale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #84 > Commerciale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #85 > Commerciale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #86 > Commerciale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #87 > Commerciale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #88 > Commerciale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 971,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #89 > Commerciale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #90 > Commerciale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #91 > Commerciale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #92 > Commerciale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #93 > Commerciale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #94 > Commerciale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #95 > Commerciale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #96 > Commerciale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1255,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #97 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 5916,
+}
+`;
+
+exports[`computeEI > #98 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 16716,
+}
+`;
+
+exports[`computeEI > #99 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 4109,
+}
+`;
+
+exports[`computeEI > #100 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 14909,
+}
+`;
+
+exports[`computeEI > #101 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 1634,
+}
+`;
+
+exports[`computeEI > #102 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 9820,
+}
+`;
+
+exports[`computeEI > #103 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 707,
+}
+`;
+
+exports[`computeEI > #104 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18581,
+  "ir": 8013,
+}
+`;
+
+exports[`computeEI > #105 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 5715,
+}
+`;
+
+exports[`computeEI > #106 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 16515,
+}
+`;
+
+exports[`computeEI > #107 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 3908,
+}
+`;
+
+exports[`computeEI > #108 > Commerciale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 14708,
+}
+`;
+
+exports[`computeEI > #109 > Commerciale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 1527,
+}
+`;
+
+exports[`computeEI > #110 > Commerciale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 9619,
+}
+`;
+
+exports[`computeEI > #111 > Commerciale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 600,
+}
+`;
+
+exports[`computeEI > #112 > Commerciale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19251,
+  "ir": 7812,
+}
+`;
+
+exports[`computeEI > #113 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 19420,
+}
+`;
+
+exports[`computeEI > #114 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 34181,
+}
+`;
+
+exports[`computeEI > #115 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 17613,
+}
+`;
+
+exports[`computeEI > #116 > Commerciale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 32374,
+}
+`;
+
+exports[`computeEI > #117 > Commerciale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 12271,
+}
+`;
+
+exports[`computeEI > #118 > Commerciale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 23071,
+}
+`;
+
+exports[`computeEI > #119 > Commerciale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 10464,
+}
+`;
+
+exports[`computeEI > #120 > Commerciale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 21264,
+}
+`;
+
+exports[`computeEI > #121 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 19420,
+}
+`;
+
+exports[`computeEI > #122 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 34181,
+}
+`;
+
+exports[`computeEI > #123 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 17613,
+}
+`;
+
+exports[`computeEI > #124 > Commerciale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 32374,
+}
+`;
+
+exports[`computeEI > #125 > Commerciale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 12271,
+}
+`;
+
+exports[`computeEI > #126 > Commerciale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 23071,
+}
+`;
+
+exports[`computeEI > #127 > Commerciale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 10464,
+}
+`;
+
+exports[`computeEI > #128 > Commerciale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35697,
+  "ir": 21264,
+}
+`;
+
+exports[`computeEI > #129 > Commerciale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #130 > Commerciale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #131 > Commerciale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #132 > Commerciale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #133 > Commerciale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #134 > Commerciale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #135 > Commerciale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #136 > Commerciale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #137 > Commerciale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #138 > Commerciale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #139 > Commerciale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #140 > Commerciale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #141 > Commerciale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #142 > Commerciale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #143 > Commerciale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #144 > Commerciale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #145 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 5472,
+}
+`;
+
+exports[`computeEI > #146 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 16272,
+}
+`;
+
+exports[`computeEI > #147 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 3665,
+}
+`;
+
+exports[`computeEI > #148 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 14465,
+}
+`;
+
+exports[`computeEI > #149 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 1397,
+}
+`;
+
+exports[`computeEI > #150 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 9376,
+}
+`;
+
+exports[`computeEI > #151 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 471,
+}
+`;
+
+exports[`computeEI > #152 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17236,
+  "ir": 7569,
+}
+`;
+
+exports[`computeEI > #153 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 5483,
+}
+`;
+
+exports[`computeEI > #154 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 16283,
+}
+`;
+
+exports[`computeEI > #155 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 3676,
+}
+`;
+
+exports[`computeEI > #156 > Commerciale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 14476,
+}
+`;
+
+exports[`computeEI > #157 > Commerciale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 1403,
+}
+`;
+
+exports[`computeEI > #158 > Commerciale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 9387,
+}
+`;
+
+exports[`computeEI > #159 > Commerciale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 476,
+}
+`;
+
+exports[`computeEI > #160 > Commerciale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18844,
+  "ir": 7580,
+}
+`;
+
+exports[`computeEI > #161 > Artisanale, rémunération totale 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #162 > Artisanale, rémunération totale 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #163 > Artisanale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #164 > Artisanale, rémunération totale 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #165 > Artisanale, rémunération totale 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #166 > Artisanale, rémunération totale 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #167 > Artisanale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #168 > Artisanale, rémunération totale 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 990,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #169 > Artisanale, rémunération totale 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #170 > Artisanale, rémunération totale 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #171 > Artisanale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #172 > Artisanale, rémunération totale 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #173 > Artisanale, rémunération totale 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #174 > Artisanale, rémunération totale 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #175 > Artisanale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #176 > Artisanale, rémunération totale 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 1274,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #177 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 5910,
+}
+`;
+
+exports[`computeEI > #178 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 16710,
+}
+`;
+
+exports[`computeEI > #179 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 4103,
+}
+`;
+
+exports[`computeEI > #180 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 14903,
+}
+`;
+
+exports[`computeEI > #181 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 1631,
+}
+`;
+
+exports[`computeEI > #182 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 9814,
+}
+`;
+
+exports[`computeEI > #183 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 704,
+}
+`;
+
+exports[`computeEI > #184 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18600,
+  "ir": 8007,
+}
+`;
+
+exports[`computeEI > #185 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 5709,
+}
+`;
+
+exports[`computeEI > #186 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 16509,
+}
+`;
+
+exports[`computeEI > #187 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 3902,
+}
+`;
+
+exports[`computeEI > #188 > Artisanale, rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 14702,
+}
+`;
+
+exports[`computeEI > #189 > Artisanale, rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 1524,
+}
+`;
+
+exports[`computeEI > #190 > Artisanale, rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 9613,
+}
+`;
+
+exports[`computeEI > #191 > Artisanale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 597,
+}
+`;
+
+exports[`computeEI > #192 > Artisanale, rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 19270,
+  "ir": 7806,
+}
+`;
+
+exports[`computeEI > #193 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 19413,
+}
+`;
+
+exports[`computeEI > #194 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 34173,
+}
+`;
+
+exports[`computeEI > #195 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 17606,
+}
+`;
+
+exports[`computeEI > #196 > Artisanale, rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 32366,
+}
+`;
+
+exports[`computeEI > #197 > Artisanale, rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 12266,
+}
+`;
+
+exports[`computeEI > #198 > Artisanale, rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 23066,
+}
+`;
+
+exports[`computeEI > #199 > Artisanale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 10459,
+}
+`;
+
+exports[`computeEI > #200 > Artisanale, rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 21259,
+}
+`;
+
+exports[`computeEI > #201 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 19413,
+}
+`;
+
+exports[`computeEI > #202 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 34173,
+}
+`;
+
+exports[`computeEI > #203 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 17606,
+}
+`;
+
+exports[`computeEI > #204 > Artisanale, rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 32366,
+}
+`;
+
+exports[`computeEI > #205 > Artisanale, rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 12266,
+}
+`;
+
+exports[`computeEI > #206 > Artisanale, rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 23066,
+}
+`;
+
+exports[`computeEI > #207 > Artisanale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 10459,
+}
+`;
+
+exports[`computeEI > #208 > Artisanale, rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 35716,
+  "ir": 21259,
+}
+`;
+
+exports[`computeEI > #209 > Artisanale, rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #210 > Artisanale, rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #211 > Artisanale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #212 > Artisanale, rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #213 > Artisanale, rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #214 > Artisanale, rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #215 > Artisanale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #216 > Artisanale, rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #217 > Artisanale, rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #218 > Artisanale, rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 3904,
+}
+`;
+
+exports[`computeEI > #219 > Artisanale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #220 > Artisanale, rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 2097,
+}
+`;
+
+exports[`computeEI > #221 > Artisanale, rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #222 > Artisanale, rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 562,
+}
+`;
+
+exports[`computeEI > #223 > Artisanale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #224 > Artisanale, rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 0,
+  "ir": 0,
+}
+`;
+
+exports[`computeEI > #225 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 5473,
+}
+`;
+
+exports[`computeEI > #226 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 16273,
+}
+`;
+
+exports[`computeEI > #227 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 3666,
+}
+`;
+
+exports[`computeEI > #228 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 14466,
+}
+`;
+
+exports[`computeEI > #229 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 1398,
+}
+`;
+
+exports[`computeEI > #230 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 9377,
+}
+`;
+
+exports[`computeEI > #231 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 471,
+}
+`;
+
+exports[`computeEI > #232 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 17274,
+  "ir": 7570,
+}
+`;
+
+exports[`computeEI > #233 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 5483,
+}
+`;
+
+exports[`computeEI > #234 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 16283,
+}
+`;
+
+exports[`computeEI > #235 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 3676,
+}
+`;
+
+exports[`computeEI > #236 > Artisanale, rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 14476,
+}
+`;
+
+exports[`computeEI > #237 > Artisanale, rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 1403,
+}
+`;
+
+exports[`computeEI > #238 > Artisanale, rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 9387,
+}
+`;
+
+exports[`computeEI > #239 > Artisanale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 476,
+}
+`;
+
+exports[`computeEI > #240 > Artisanale, rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
+{
+  "cotisations": 18871,
+  "ir": 7580,
+}
+`;

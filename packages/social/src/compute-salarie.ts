@@ -5,39 +5,11 @@ import type { Entries } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { CONTRAT_POSTE } from "@akimeo/modele/poste/constants";
 
-import type { RegimeGeneralOutput } from "./compute-regime-general";
-import type { SituationImpot } from "./create-situation-impot";
-import { computeRegimeGeneral } from "./compute-regime-general";
-import { createSituationImpot } from "./create-situation-impot";
-import { evaluateEngine } from "./evaluate-engine";
-import { setEngineSituation } from "./set-engine-situation";
+import { evaluateEngine } from "./helpers/evaluate-engine";
+import { setEngineSituation } from "./helpers/set-engine-situation";
+import { createSituationImpot } from "./modele-social/create-situation-modele-social";
 
-interface SalarieInputSalaireBrut {
-  salaireBrut: number;
-}
-function isSalarieInputSalaireBrut(
-  input: SalarieInput,
-): input is SalarieInputSalaireBrut {
-  return typeof (input as SalarieInputSalaireBrut).salaireBrut === "number";
-}
-
-interface SalarieInputRemunerationNetAvantImpot {
-  remunerationNetAvantImpot: number;
-}
-function isSalarieInputRemunerationNetAvantImpot(
-  input: SalarieInput,
-): input is SalarieInputRemunerationNetAvantImpot {
-  return (
-    typeof (input as SalarieInputRemunerationNetAvantImpot)
-      .remunerationNetAvantImpot === "number"
-  );
-}
-
-export type SalarieInput =
-  | SalarieInputSalaireBrut
-  | SalarieInputRemunerationNetAvantImpot;
-
-type SituationSalarieInput =
+type SituationInput =
   | {
       "salarié . contrat . salaire brut": number;
     }
@@ -45,15 +17,13 @@ type SituationSalarieInput =
       "salarié . rémunération . net . à payer avant impôt": number;
     };
 
-function createSituationSalarieInput(
-  input: SalarieInput,
-): SituationSalarieInput {
+function createSituationInput(input: SalarieInput): SituationInput {
   switch (true) {
-    case isSalarieInputSalaireBrut(input):
+    case "salaireBrut" in input:
       return {
         "salarié . contrat . salaire brut": input.salaireBrut,
       };
-    case isSalarieInputRemunerationNetAvantImpot(input):
+    case "remunerationNetAvantImpot" in input:
     default:
       return {
         "salarié . rémunération . net . à payer avant impôt":
@@ -62,57 +32,42 @@ function createSituationSalarieInput(
   }
 }
 
-function getContratFromPosteContrat(salarie: AnyPoste) {
+function createSituationContrat(salarie: AnyPoste) {
   switch (salarie.contrat) {
     case CONTRAT_POSTE.cdi.value:
-      return "'CDI'";
+      return {
+        "salarié . contrat": "'CDI'",
+      };
     case CONTRAT_POSTE.cdd.value:
-      return "'CDD'";
+      return {
+        "salarié . contrat": "'CDD'",
+      };
     case CONTRAT_POSTE.apprentissage.value:
-      return "'apprentissage'";
+      return {
+        "salarié . contrat": "'apprentissage'",
+      };
     case CONTRAT_POSTE.professionnalisation.value:
-      return "'professionnalisation'";
+      return {
+        "salarié . contrat": "'professionnalisation'",
+      };
     case CONTRAT_POSTE.stage.value:
-      return "'stage'";
+      return {
+        "salarié . contrat": "'stage'",
+      };
   }
 }
 
-type SituationSalarie = SituationImpot &
-  SituationSalarieInput & {
-    "salarié . convention collective": "'droit commun'";
-    dirigeant: "non";
-    "salarié . activité partielle": "non";
-    "salarié . contrat":
-      | "'CDI'"
-      | "'CDD'"
-      | "'apprentissage'"
-      | "'professionnalisation'"
-      | "'stage'";
-    "salarié . contrat . temps de travail . temps partiel": "non";
-    "salarié . contrat . statut cadre": "non";
-  };
+export type SalarieInput =
+  | {
+      salaireBrut: number;
+    }
+  | {
+      remunerationNetAvantImpot: number;
+    };
 
-function createSituationSalarie(
-  foyer: Foyer,
-  salarie: AnyPoste,
-  input: SalarieInput,
-): SituationSalarie {
-  return {
-    ...createSituationImpot(foyer),
-    ...createSituationSalarieInput(input),
-    "salarié . convention collective": "'droit commun'",
-    dirigeant: "non",
-    "salarié . activité partielle": "non",
-    "salarié . contrat": getContratFromPosteContrat(salarie),
-    "salarié . contrat . temps de travail . temps partiel": "non",
-    "salarié . contrat . statut cadre": "non",
-  };
-}
-
-export type SalarieOutput = RegimeGeneralOutput &
-  Partial<{
-    coutTotalEmployer: true;
-  }>;
+export type SalarieOutput = Partial<{
+  coutTotalEmployer: true;
+}>;
 
 export function computeSalarie<Output extends SalarieOutput>(
   engine: Engine,
@@ -122,23 +77,23 @@ export function computeSalarie<Output extends SalarieOutput>(
   output: Output,
 ) {
   setEngineSituation(engine, {
-    ...createSituationSalarie(foyer, salarie, input),
+    ...createSituationImpot(foyer),
+    ...createSituationInput(input),
+    ...createSituationContrat(salarie),
+    "salarié . convention collective": "'droit commun'",
+    dirigeant: "non",
+    "salarié . activité partielle": "non",
+    "salarié . contrat . temps de travail . temps partiel": "non",
+    "salarié . contrat . statut cadre": "non",
   });
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
       switch (key) {
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         case "coutTotalEmployer":
           return Object.assign(acc, {
             [key]: evaluateEngine(engine, "salarié . coût total employeur"),
           });
-        case "trimestresRetraite":
-        case "cotisationsRetraite":
-        case "retraiteBase":
-        case "retraiteComplementaire":
-          return Object.assign(
-            acc,
-            computeRegimeGeneral(engine, { [key]: true }),
-          );
       }
     },
     {} as Record<
