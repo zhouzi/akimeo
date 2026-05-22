@@ -26,6 +26,30 @@ export function creerMicroEntreprise(
   );
 }
 
+function convertToNatureActiviteMicroEntreprise(
+  natureActivite: AnyEntreprise["natureActivite"],
+) {
+  switch (natureActivite) {
+    case NATURE_ACTIVITE_ENTREPRISE.commerciale.value:
+      return NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value;
+    case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value:
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value:
+    case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
+      return natureActivite;
+  }
+}
+
+export function convertToMicroEntreprise(entreprise: AnyEntreprise) {
+  return creerMicroEntreprise({
+    ...entreprise,
+    statut: STATUT_ENTREPRISE.microEntreprise.value,
+    natureActivite: convertToNatureActiviteMicroEntreprise(
+      entreprise.natureActivite,
+    ),
+  });
+}
+
 export function creerEI(ei: PartialDeep<EI>): EI {
   return eiSchema.parse(
     defaultsDeep({}, ei, {
@@ -35,6 +59,28 @@ export function creerEI(ei: PartialDeep<EI>): EI {
       tva: true,
     } satisfies EI),
   );
+}
+
+function convertToNatureActiviteSociete(
+  natureActivite: AnyEntreprise["natureActivite"],
+) {
+  switch (natureActivite) {
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value:
+    case NATURE_ACTIVITE_ENTREPRISE.commercialeServices.value:
+      return NATURE_ACTIVITE_ENTREPRISE.commerciale.value;
+    case NATURE_ACTIVITE_ENTREPRISE.commerciale.value:
+    case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
+    case NATURE_ACTIVITE_ENTREPRISE.liberale.value:
+      return natureActivite;
+  }
+}
+
+export function convertToEI(entreprise: AnyEntreprise) {
+  return creerEI({
+    ...entreprise,
+    statut: STATUT_ENTREPRISE.ei.value,
+    natureActivite: convertToNatureActiviteSociete(entreprise.natureActivite),
+  });
 }
 
 export function creerSARL(sarl: PartialDeep<Sarl>): Sarl {
@@ -48,6 +94,14 @@ export function creerSARL(sarl: PartialDeep<Sarl>): Sarl {
   );
 }
 
+export function convertToSARL(entreprise: AnyEntreprise) {
+  return creerSARL({
+    ...entreprise,
+    statut: STATUT_ENTREPRISE.sarl.value,
+    natureActivite: convertToNatureActiviteSociete(entreprise.natureActivite),
+  });
+}
+
 export function creerSAS(sas: PartialDeep<SAS>): SAS {
   return sasSchema.parse(
     defaultsDeep({}, sas, {
@@ -57,6 +111,14 @@ export function creerSAS(sas: PartialDeep<SAS>): SAS {
       tva: true,
     } satisfies SAS),
   );
+}
+
+export function convertToSAS(entreprise: AnyEntreprise) {
+  return creerSAS({
+    ...entreprise,
+    statut: STATUT_ENTREPRISE.sas.value,
+    natureActivite: convertToNatureActiviteSociete(entreprise.natureActivite),
+  });
 }
 
 export function creerRevenuEntreprise(

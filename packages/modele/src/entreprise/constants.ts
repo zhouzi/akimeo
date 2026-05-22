@@ -39,10 +39,6 @@ export const NATURE_ACTIVITE_ENTREPRISE = {
     label: "Libérale",
     value: "liberale" as const,
   },
-  agricole: {
-    label: "Agricole",
-    value: "agricole" as const,
-  },
 };
 export const NATURE_ACTIVITE_ENTREPRISE_OPTIONS = Object.values(
   NATURE_ACTIVITE_ENTREPRISE,

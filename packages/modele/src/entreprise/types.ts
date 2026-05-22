@@ -11,7 +11,6 @@ interface BaseEntreprise<
     | typeof STATUT_ENTREPRISE.sarl.value
     | typeof STATUT_ENTREPRISE.sas.value,
   NatureActivite extends
-    | typeof NATURE_ACTIVITE_ENTREPRISE.agricole.value
     | typeof NATURE_ACTIVITE_ENTREPRISE.artisanale.value
     | typeof NATURE_ACTIVITE_ENTREPRISE.commerciale.value
     | typeof NATURE_ACTIVITE_ENTREPRISE.commercialeMarchandises.value
