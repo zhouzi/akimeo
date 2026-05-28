@@ -490,6 +490,9 @@ importers:
 
   packages/comptable:
     devDependencies:
+      '@akimeo/donnees-reglementaires':
+        specifier: workspace:*
+        version: link:../donnees-reglementaires
       '@akimeo/eslint-config':
         specifier: workspace:*
         version: link:../../config/eslint-config
