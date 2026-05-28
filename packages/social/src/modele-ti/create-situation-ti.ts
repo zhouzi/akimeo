@@ -40,6 +40,9 @@ type SituationInput =
     }
   | {
       "indépendant . rémunération . nette": number;
+    }
+  | {
+      "indépendant . rémunération . nette . après impôt": number;
     };
 
 function createSituationInput(input: TIInput): SituationInput {
@@ -49,9 +52,14 @@ function createSituationInput(input: TIInput): SituationInput {
         "entreprise . chiffre d'affaires": input.chiffreAffaires,
       };
     case "remunerationNetteAvantImpot" in input:
-    default:
       return {
         "indépendant . rémunération . nette": input.remunerationNetteAvantImpot,
+      };
+    case "remunerationNetteApresImpot" in input:
+    default:
+      return {
+        "indépendant . rémunération . nette . après impôt":
+          input.remunerationNetteApresImpot,
       };
   }
 }
@@ -76,6 +84,9 @@ export type TIInput =
     }
   | {
       remunerationNetteAvantImpot: number;
+    }
+  | {
+      remunerationNetteApresImpot: number;
     };
 
 export function createSituationTI(

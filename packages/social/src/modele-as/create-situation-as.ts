@@ -23,6 +23,9 @@ type SituationInput =
     }
   | {
       "assimilé salarié . rémunération . nette . à payer avant impôt": number;
+    }
+  | {
+      "assimilé salarié . rémunération . nette . après impôt": number;
     };
 
 function createSituationInput(input: ASInput): SituationInput {
@@ -32,10 +35,15 @@ function createSituationInput(input: ASInput): SituationInput {
         "assimilé salarié . rémunération . totale": input.remunerationTotale,
       };
     case "remunerationNetteAvantImpot" in input:
-    default:
       return {
         "assimilé salarié . rémunération . nette . à payer avant impôt":
           input.remunerationNetteAvantImpot,
+      };
+    case "remunerationNetteApresImpot" in input:
+    default:
+      return {
+        "assimilé salarié . rémunération . nette . après impôt":
+          input.remunerationNetteApresImpot,
       };
   }
 }
@@ -46,6 +54,9 @@ export type ASInput =
     }
   | {
       remunerationNetteAvantImpot: number;
+    }
+  | {
+      remunerationNetteApresImpot: number;
     };
 
 export function createSituationAS(
