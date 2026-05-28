@@ -19,6 +19,7 @@
     }
   },
   "devDependencies": {
+    "@akimeo/donnees-reglementaires": "workspace:*",
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
