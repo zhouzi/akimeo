@@ -11,6 +11,7 @@ import { evaluateEngine } from "../helpers/evaluate-engine";
 export type ASOutput = Partial<{
   remunerationTotale: true;
   cotisations: true;
+  remunerationNetteImposable: true;
   remunerationNetteAvantImpot: true;
   ir: true;
 }>;
@@ -34,6 +35,13 @@ export function evaluateAS<Output extends ASOutput>(
         case "cotisations":
           return Object.assign(acc, {
             [key]: evaluateEngine(engine, "assimilé salarié . cotisations"),
+          });
+        case "remunerationNetteImposable":
+          return Object.assign(acc, {
+            [key]: evaluateEngine(
+              engine,
+              "assimilé salarié . rémunération . nette . imposable",
+            ),
           });
         case "remunerationNetteAvantImpot":
           return Object.assign(acc, {

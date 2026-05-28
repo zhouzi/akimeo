@@ -54,23 +54,42 @@ function createSituationActivite(
   }
 }
 
-interface SituationInput {
-  "dirigeant . auto-entrepreneur . chiffre d'affaires": number;
-}
+type SituationInput =
+  | {
+      "dirigeant . auto-entrepreneur . chiffre d'affaires": number;
+    }
+  | {
+      "dirigeant . auto-entrepreneur . revenu net . après impôt": number;
+    };
 
 function createSituationMicroEntrepriseInput(
   input: MicroEntrepriseInput,
 ): SituationInput {
-  return {
-    "dirigeant . auto-entrepreneur . chiffre d'affaires": input.chiffreAffaires,
-  };
+  switch (true) {
+    case "chiffreAffaires" in input:
+      return {
+        "dirigeant . auto-entrepreneur . chiffre d'affaires":
+          input.chiffreAffaires,
+      };
+    case "revenuNetApresImpot" in input:
+    default:
+      return {
+        "dirigeant . auto-entrepreneur . revenu net . après impôt":
+          input.revenuNetApresImpot,
+      };
+  }
 }
 
-export interface MicroEntrepriseInput {
-  chiffreAffaires: number;
-}
+export type MicroEntrepriseInput =
+  | {
+      chiffreAffaires: number;
+    }
+  | {
+      revenuNetApresImpot: number;
+    };
 
 export type MicroEntrepriseOutput = Partial<{
+  chiffreAffaires: true;
   cotisations: true;
   revenuNetAvantImpot: true;
   ir: true;
@@ -98,6 +117,13 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
       switch (key) {
+        case "chiffreAffaires":
+          return Object.assign(acc, {
+            [key]: evaluateEngine(
+              engine,
+              "dirigeant . auto-entrepreneur . chiffre d'affaires",
+            ),
+          });
         case "cotisations":
           return Object.assign(acc, {
             [key]: evaluateEngine(

@@ -10,6 +10,7 @@ import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
 import type { EngineTI } from "../modele-ti/create-engine-ti";
+import type { SARLOutput } from "~/compute-sarl";
 import { computeSARL } from "~/compute-sarl";
 import { createEngineTI } from "../modele-ti/create-engine-ti";
 import { cartesian } from "./helpers";
@@ -87,7 +88,13 @@ describe("computeSARL", () => {
     ),
   )("#%$", ({ description, foyer, sarl, input }) => {
     expect(
-      computeSARL(engine, foyer, sarl, input, { cotisations: true, ir: true }),
+      computeSARL(engine, foyer, sarl, input, {
+        chiffreAffaires: true,
+        cotisations: true,
+        ir: true,
+        remunerationNetteAvantImpot: true,
+        remunerationNetteImposable: true,
+      } satisfies Required<SARLOutput>),
     ).toMatchSnapshot(description);
   });
 });

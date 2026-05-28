@@ -8,6 +8,7 @@ import { creerSAS } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
+import type { SASOutput } from "~/compute-sas";
 import type { EngineAS } from "~/modele-as/create-engine-as";
 import { computeSAS } from "~/compute-sas";
 import { createEngineAS } from "~/modele-as/create-engine-as";
@@ -72,7 +73,13 @@ describe("computeSAS", () => {
     ),
   )("#%$", ({ description, foyer, sas, input }) => {
     expect(
-      computeSAS(engine, foyer, sas, input, { cotisations: true, ir: true }),
+      computeSAS(engine, foyer, sas, input, {
+        cotisations: true,
+        ir: true,
+        remunerationNetteAvantImpot: true,
+        remunerationTotale: true,
+        remunerationNetteImposable: true,
+      } satisfies Required<SASOutput>),
     ).toMatchSnapshot(description);
   });
 });

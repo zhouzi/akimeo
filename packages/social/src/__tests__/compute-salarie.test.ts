@@ -9,6 +9,7 @@ import { CONTRAT_POSTE } from "@akimeo/modele/poste/constants";
 import { creerAnyPoste } from "@akimeo/modele/poste/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
+import type { SalarieOutput } from "~/compute-salarie";
 import type { EngineSocial } from "~/modele-social/create-engine-social";
 import { computeSalarie } from "~/compute-salarie";
 import { createEngineSocial } from "~/modele-social/create-engine-social";
@@ -85,7 +86,7 @@ describe("computeSalarie", () => {
     expect(
       computeSalarie(engine, foyer, salarie, input, {
         coutTotalEmployer: true,
-      }),
+      } satisfies Required<SalarieOutput>),
     ).toMatchSnapshot(description);
   });
 });

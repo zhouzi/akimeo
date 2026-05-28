@@ -11,6 +11,7 @@ import { evaluateEngine } from "../helpers/evaluate-engine";
 export type TIOutput = Partial<{
   chiffreAffaires: true;
   cotisations: true;
+  remunerationNetteImposable: true;
   remunerationNetteAvantImpot: true;
   ir: true;
 }>;
@@ -33,6 +34,13 @@ export function evaluateTI<Output extends TIOutput>(
             [key]: evaluateEngine(
               engine,
               "indépendant . cotisations et contributions",
+            ),
+          });
+        case "remunerationNetteImposable":
+          return Object.assign(acc, {
+            [key]: evaluateEngine(
+              engine,
+              "indépendant . rémunération . nette . imposable",
             ),
           });
         case "remunerationNetteAvantImpot":

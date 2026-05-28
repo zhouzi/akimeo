@@ -9,6 +9,7 @@ import { creerMicroEntreprise } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
+import type { MicroEntrepriseOutput } from "~/compute-micro-entreprise";
 import type { EngineSocial } from "~/modele-social/create-engine-social";
 import { computeMicroEntreprise } from "~/compute-micro-entreprise";
 import { createEngineSocial } from "~/modele-social/create-engine-social";
@@ -33,6 +34,9 @@ describe("computeMicroEntreprise", () => {
         { chiffreAffaires: 0 },
         { chiffreAffaires: 30_000 },
         { chiffreAffaires: 80_000 },
+        { revenuNetApresImpot: 0 },
+        { revenuNetApresImpot: 30_000 },
+        { revenuNetApresImpot: 80_000 },
       ],
       acre: [true, false],
       versementLiberatoire: [true, false],
@@ -91,9 +95,11 @@ describe("computeMicroEntreprise", () => {
   )("#%$", ({ description, foyer, microEntreprise, input }) => {
     expect(
       computeMicroEntreprise(engine, foyer, microEntreprise, input, {
+        chiffreAffaires: true,
         cotisations: true,
         ir: true,
-      }),
+        revenuNetAvantImpot: true,
+      } satisfies Required<MicroEntrepriseOutput>),
     ).toMatchSnapshot(description);
   });
 });

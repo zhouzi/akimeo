@@ -9,6 +9,7 @@ import { creerEI } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
+import type { EIOutput } from "../compute-ei";
 import type { EngineTI } from "../modele-ti/create-engine-ti";
 import { computeEI } from "../compute-ei";
 import { createEngineTI } from "../modele-ti/create-engine-ti";
@@ -87,7 +88,13 @@ describe("computeEI", () => {
     ),
   )("#%$", ({ description, foyer, ei, input }) => {
     expect(
-      computeEI(engine, foyer, ei, input, { cotisations: true, ir: true }),
+      computeEI(engine, foyer, ei, input, {
+        chiffreAffaires: true,
+        cotisations: true,
+        ir: true,
+        remunerationNetteAvantImpot: true,
+        remunerationNetteImposable: true,
+      } satisfies Required<EIOutput>),
     ).toMatchSnapshot(description);
   });
 });
