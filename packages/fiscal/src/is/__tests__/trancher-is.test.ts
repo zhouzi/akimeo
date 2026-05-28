@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 
-import { computeIS } from "~/is/compute-is";
+import { trancherIS } from "../trancher-is";
 
-describe("computeIS", () => {
+describe("trancherIS", () => {
   it.each([
     {
       description: "retourne 0 impôt pour un bénéfice de 0",
@@ -86,6 +86,6 @@ describe("computeIS", () => {
       ],
     },
   ])("$description", ({ benefice, expected }) => {
-    expect(computeIS(benefice)).toEqual(expected);
+    expect(trancherIS(benefice)).toEqual(expected);
   });
 });
