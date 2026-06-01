@@ -43,7 +43,6 @@ export async function fetchOpenFiscaFrance() {
     "impot_revenu/calcul_impot_revenu/plaf_qf/quotient_familial/cas_general/enf3_et_sup",
     "impot_revenu/calcul_impot_revenu/plaf_qf/plafond_avantages_procures_par_demi_part/general",
     "impot_revenu/calcul_revenus_imposables/rvcm/revenus_capitaux_mobiliers_dividendes/taux_abattement",
-    "taxation_capital/prelevement_forfaitaire/partir_2018/taux_prelevement_forfaitaire_rev_capital_eligibles_pfu_interets_dividendes_etc",
     "impot_revenu/calcul_reductions_impots/dons/dons_coluche/plafond",
     "impot_revenu/calcul_reductions_impots/dons/dons_coluche/taux",
     "impot_revenu/calcul_reductions_impots/dons/dons_aux_partis_politiques/plafond_seul",
@@ -61,14 +60,24 @@ export async function fetchOpenFiscaFrance() {
     "impot_revenu/calcul_revenus_imposables/rpns/microsocial/bnc",
     "impot_revenu/credits_impots/gardenf/taux",
     "impot_revenu/credits_impots/gardenf/plafond",
+
+    "taxation_capital/prelevements_sociaux/csg/taux_global/produits_de_placement",
+    "taxation_capital/prelevements_sociaux/prelevements_solidarite/produits_de_placement",
+    "taxation_capital/prelevement_forfaitaire/partir_2018/taux_prelevement_forfaitaire_rev_capital_eligibles_pfu_interets_dividendes_etc",
+    "taxation_capital/epargne/livret_a/taux",
+
     "taxation_societes/impot_societe/seuil_superieur_benefices_taux_reduit",
     "taxation_societes/impot_societe/taux_normal",
     "taxation_societes/impot_societe/taux_reduit",
+
     "taxation_indirecte/tva/taux_reduit",
     "taxation_indirecte/tva/taux_intermediaire",
     "taxation_indirecte/tva/taux_normal",
     "taxation_indirecte/tva/taux_particulier_super_reduit",
+
     "marche_travail/salaire_minimum/smic/smic_b_mensuel",
+
+    "prelevements_sociaux/contributions_sociales/crds",
     "prelevements_sociaux/pss/plafond_securite_sociale_annuel",
     "prelevements_sociaux/pss/plafond_securite_sociale_mensuel",
   ];

@@ -5,6 +5,7 @@ import merge from "lodash.merge";
 import type { Branch } from "./fetchers/types";
 import { fetchHarcoded } from "./fetchers/hardcoded";
 import { fetchOpenFiscaFrance } from "./fetchers/openfisca-france";
+import { fetchOpenFiscaFrancePatches } from "./fetchers/openfisca-france-patches";
 import { isLeaf } from "./fetchers/types";
 
 function stringify(parent: Branch): string {
@@ -43,7 +44,11 @@ async function main() {
   const output: Branch = {};
   const warnings: string[] = [];
 
-  for (const fetch of [fetchOpenFiscaFrance, fetchHarcoded]) {
+  for (const fetch of [
+    fetchOpenFiscaFrance,
+    fetchOpenFiscaFrancePatches,
+    fetchHarcoded,
+  ]) {
     const res = await fetch();
 
     merge(output, res.output);

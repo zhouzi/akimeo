@@ -310,6 +310,24 @@ export default {
     },
   },
   taxation_capital: {
+    prelevements_sociaux: {
+      csg: {
+        taux_global: {
+          /**
+           * @description Taux de la contribution sociale généralisée (CSG) sur sur les produits de placement
+           * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_capital/prelevements_sociaux/csg/taux_global/produits_de_placement.yaml Source}
+           */
+          produits_de_placement: 0.106,
+        },
+      },
+      prelevements_solidarite: {
+        /**
+         * @description Prélèvements de solidarité sur les produits de placement
+         * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_capital/prelevements_sociaux/prelevements_solidarite/produits_de_placement.yaml Source}
+         */
+        produits_de_placement: 0.075,
+      },
+    },
     prelevement_forfaitaire: {
       partir_2018: {
         /**
@@ -318,6 +336,56 @@ export default {
          */
         taux_prelevement_forfaitaire_rev_capital_eligibles_pfu_interets_dividendes_etc: 0.128,
       },
+    },
+    epargne: {
+      livret_a: {
+        /**
+         * @description Taux d'intérêt annuel du livret A
+         * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_capital/epargne/livret_a/taux.yaml Source}
+         */
+        taux: 0.015,
+
+        /**
+         * @description Plafond des dépôts sur un livret A
+         * {@link https://www.service-public.gouv.fr/particuliers/vosdroits/F2365 Source}
+         */
+        plafond: 22950,
+      },
+      ldds: {
+        /**
+         * @description Taux de rémunération du LDDS
+         * {@link https://www.service-public.gouv.fr/particuliers/vosdroits/F2368 Source}
+         */
+        taux: 0.015,
+
+        /**
+         * @description Plafond du LDDS
+         * {@link https://www.service-public.gouv.fr/particuliers/vosdroits/F2368 Source}
+         */
+        plafond: 12000,
+      },
+    },
+  },
+  prelevements_sociaux: {
+    contributions_sociales: {
+      /**
+       * @description Taux de la contribution au remboursement de la dette sociale (CRDS)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/contributions_sociales/crds.yaml Source}
+       */
+      crds: 0.005,
+    },
+    pss: {
+      /**
+       * @description Plafond annuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_annuel.yaml Source}
+       */
+      plafond_securite_sociale_annuel: 48060,
+
+      /**
+       * @description Plafond mensuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_mensuel.yaml Source}
+       */
+      plafond_securite_sociale_mensuel: 4005,
     },
   },
   taxation_societes: {
@@ -377,21 +445,6 @@ export default {
          */
         smic_b_mensuel: 1823.03,
       },
-    },
-  },
-  prelevements_sociaux: {
-    pss: {
-      /**
-       * @description Plafond annuel de la Sécurité sociale
-       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_annuel.yaml Source}
-       */
-      plafond_securite_sociale_annuel: 48060,
-
-      /**
-       * @description Plafond mensuel de la Sécurité sociale
-       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_mensuel.yaml Source}
-       */
-      plafond_securite_sociale_mensuel: 4005,
     },
   },
 } as const;
