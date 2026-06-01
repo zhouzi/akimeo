@@ -696,15 +696,19 @@ describe("calculerIRDu", () => {
         ],
       }),
     ],
-  ])("%s", async (_description, foyer) => {
-    const simulation = await client.createSimulation(
-      convertirFoyerEnAlias(foyer),
-    );
-    const expected =
-      simulation.resultat!.impotSurLeRevenuNet -
-      simulation.resultat!.montantQuiVousSeraRembourse;
-    const actual = calculerIRDu(foyer);
+  ])(
+    "%s",
+    async (_description, foyer) => {
+      const simulation = await client.createSimulation(
+        convertirFoyerEnAlias(foyer),
+      );
+      const expected =
+        simulation.resultat!.impotSurLeRevenuNet -
+        simulation.resultat!.montantQuiVousSeraRembourse;
+      const actual = calculerIRDu(foyer);
 
-    expect(actual).toBeApproximatelyEqual(expected);
-  });
+      expect(actual).toBeApproximatelyEqual(expected);
+    },
+    10_000,
+  );
 });
