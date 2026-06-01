@@ -1,6 +1,6 @@
 import type { Foyer } from "@akimeo/modele";
 import type { SAS } from "@akimeo/modele/entreprise/types";
-import type { Entries } from "type-fest";
+import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
 import { creerRevenuEntreprise } from "@akimeo/modele/entreprise/helpers";
@@ -20,7 +20,7 @@ export function evaluateAS<Output extends ASOutput>(
   engine: EngineAS,
   foyer: Foyer,
   entreprise: SAS,
-  output: Output,
+  output: Exact<ASOutput, Output>,
 ) {
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
@@ -69,6 +69,10 @@ export function evaluateAS<Output extends ASOutput>(
               },
             }),
           });
+        default:
+          // eslint-disable-next-line no-console
+          console.warn(`Unsupported output: "${String(key)}"`);
+          return acc;
       }
     },
     {} as Record<

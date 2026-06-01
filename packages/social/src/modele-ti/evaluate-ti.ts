@@ -1,6 +1,6 @@
 import type { EI, Sarl } from "@akimeo/modele/entreprise/types";
 import type { Foyer } from "@akimeo/modele/foyer/types";
-import type { Entries } from "type-fest";
+import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
 import { creerRevenuEntreprise } from "@akimeo/modele/entreprise/helpers";
@@ -20,7 +20,7 @@ export function evaluateTI<Output extends TIOutput>(
   engine: EngineTI,
   foyer: Foyer,
   entreprise: EI | Sarl,
-  output: Output,
+  output: Exact<TIOutput, Output>,
 ) {
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
@@ -66,6 +66,10 @@ export function evaluateTI<Output extends TIOutput>(
               },
             }),
           });
+        default:
+          // eslint-disable-next-line no-console
+          console.warn(`Unsupported output: "${String(key)}"`);
+          return acc;
       }
     },
     {} as Record<

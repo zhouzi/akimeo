@@ -1,7 +1,7 @@
 import type { Foyer } from "@akimeo/modele";
 import type { MicroEntreprise } from "@akimeo/modele/entreprise/types";
 import type Engine from "publicodes";
-import type { Entries } from "type-fest";
+import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { calculerIR } from "@akimeo/fiscal";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
@@ -100,7 +100,7 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
   foyer: Foyer,
   microEntreprise: MicroEntreprise,
   input: MicroEntrepriseInput,
-  output: Output,
+  output: Exact<MicroEntrepriseOutput, Output>,
 ) {
   setEngineSituation(engine, {
     ...createSituationImpot(foyer),
@@ -160,6 +160,10 @@ export function computeMicroEntreprise<Output extends MicroEntrepriseOutput>(
               },
             }),
           });
+        default:
+          // eslint-disable-next-line no-console
+          console.warn(`Unsupported output: "${String(key)}"`);
+          return acc;
       }
     },
     {} as Record<

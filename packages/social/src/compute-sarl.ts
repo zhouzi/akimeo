@@ -1,5 +1,6 @@
 import type { Foyer } from "@akimeo/modele";
 import type { Sarl } from "@akimeo/modele/entreprise/types";
+import type { Exact } from "type-fest";
 
 import type { EngineTI } from "./modele-ti/create-engine-ti";
 import type { TIInput } from "./modele-ti/create-situation-ti";
@@ -17,7 +18,7 @@ export function computeSARL<Output extends SARLOutput>(
   foyer: Foyer,
   sarl: Sarl,
   input: SARLInput,
-  output: Output,
+  output: Exact<SARLOutput, Output>,
 ) {
   setEngineSituation(engine, {
     ...createSituationTI(foyer, sarl, input),

@@ -1,5 +1,6 @@
 import type { Foyer } from "@akimeo/modele";
 import type { EI } from "@akimeo/modele/entreprise/types";
+import type { Exact } from "type-fest";
 
 import type { EngineTI } from "./modele-ti/create-engine-ti";
 import type { TIInput } from "./modele-ti/create-situation-ti";
@@ -17,7 +18,7 @@ export function computeEI<Output extends EIOutput>(
   foyer: Foyer,
   ei: EI,
   input: EIInput,
-  output: Output,
+  output: Exact<EIOutput, Output>,
 ) {
   setEngineSituation(engine, {
     ...createSituationTI(foyer, ei, input),

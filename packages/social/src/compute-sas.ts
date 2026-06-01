@@ -1,5 +1,6 @@
 import type { Foyer } from "@akimeo/modele";
 import type { SAS } from "@akimeo/modele/entreprise/types";
+import type { Exact } from "type-fest";
 
 import type { EngineAS } from "./modele-as/create-engine-as";
 import type { ASInput } from "./modele-as/create-situation-as";
@@ -17,7 +18,7 @@ export function computeSAS<Output extends SASOutput>(
   foyer: Foyer,
   sas: SAS,
   input: SASInput,
-  output: Output,
+  output: Exact<SASOutput, Output>,
 ) {
   setEngineSituation(engine, {
     ...createSituationAS(foyer, sas, input),

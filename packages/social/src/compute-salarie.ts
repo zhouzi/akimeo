@@ -1,7 +1,7 @@
 import type { Foyer } from "@akimeo/modele/foyer/types";
 import type { AnyPoste } from "@akimeo/modele/poste/types";
 import type Engine from "publicodes";
-import type { Entries } from "type-fest";
+import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
 import { CONTRAT_POSTE } from "@akimeo/modele/poste/constants";
 
@@ -74,7 +74,7 @@ export function computeSalarie<Output extends SalarieOutput>(
   foyer: Foyer,
   salarie: AnyPoste,
   input: SalarieInput,
-  output: Output,
+  output: Exact<SalarieOutput, Output>,
 ) {
   setEngineSituation(engine, {
     ...createSituationImpot(foyer),
@@ -89,11 +89,14 @@ export function computeSalarie<Output extends SalarieOutput>(
   return (Object.entries(output) as Entries<typeof output>).reduce(
     (acc, [key]) => {
       switch (key) {
-        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         case "coutTotalEmployer":
           return Object.assign(acc, {
             [key]: evaluateEngine(engine, "salarié . coût total employeur"),
           });
+        default:
+          // eslint-disable-next-line no-console
+          console.warn(`Unsupported output: "${String(key)}"`);
+          return acc;
       }
     },
     {} as Record<
