@@ -366,28 +366,6 @@ export default {
       },
     },
   },
-  prelevements_sociaux: {
-    contributions_sociales: {
-      /**
-       * @description Taux de la contribution au remboursement de la dette sociale (CRDS)
-       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/contributions_sociales/crds.yaml Source}
-       */
-      crds: 0.005,
-    },
-    pss: {
-      /**
-       * @description Plafond annuel de la Sécurité sociale
-       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_annuel.yaml Source}
-       */
-      plafond_securite_sociale_annuel: 48060,
-
-      /**
-       * @description Plafond mensuel de la Sécurité sociale
-       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_mensuel.yaml Source}
-       */
-      plafond_securite_sociale_mensuel: 4005,
-    },
-  },
   taxation_societes: {
     impot_societe: {
       /**
@@ -443,8 +421,30 @@ export default {
          * @description Smic brut mensuel
          * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/marche_travail/salaire_minimum/smic/smic_b_mensuel.yaml Source}
          */
-        smic_b_mensuel: 1823.03,
+        smic_b_mensuel: 1867.02,
       },
+    },
+  },
+  prelevements_sociaux: {
+    contributions_sociales: {
+      /**
+       * @description Taux de la contribution au remboursement de la dette sociale (CRDS)
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/contributions_sociales/crds.yaml Source}
+       */
+      crds: 0.005,
+    },
+    pss: {
+      /**
+       * @description Plafond annuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_annuel.yaml Source}
+       */
+      plafond_securite_sociale_annuel: 48060,
+
+      /**
+       * @description Plafond mensuel de la Sécurité sociale
+       * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/prelevements_sociaux/pss/plafond_securite_sociale_mensuel.yaml Source}
+       */
+      plafond_securite_sociale_mensuel: 4005,
     },
   },
 } as const;
