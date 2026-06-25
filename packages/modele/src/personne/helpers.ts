@@ -1,4 +1,5 @@
 import type { PartialDeep } from "type-fest";
+import { startOfYear } from "date-fns/startOfYear";
 import { subYears } from "date-fns/subYears";
 import defaultsDeep from "lodash.defaultsdeep";
 
@@ -8,7 +9,7 @@ import { adulteSchema, enfantSchema } from "./schemas";
 export function creerEnfant(enfant: PartialDeep<Enfant>): Enfant {
   return enfantSchema.parse(
     defaultsDeep({}, enfant, {
-      dateNaissance: subYears(new Date(), 12),
+      dateNaissance: startOfYear(subYears(new Date(), 12)),
       scolarite: null,
       fraisDeGarde: null,
     } satisfies Enfant),
@@ -18,7 +19,7 @@ export function creerEnfant(enfant: PartialDeep<Enfant>): Enfant {
 export function creerAdulte(adulte: PartialDeep<Adulte>): Adulte {
   return adulteSchema.parse(
     defaultsDeep({}, adulte, {
-      dateNaissance: subYears(new Date(), 40),
+      dateNaissance: startOfYear(subYears(new Date(), 40)),
       revenus: [],
       placements: [],
       dons: [],
