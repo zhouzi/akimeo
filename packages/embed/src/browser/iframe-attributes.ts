@@ -1,3 +1,7 @@
+/**
+ * Attributs par défaut pour les iframes de simulateurs Akimeo.
+ * @public
+ */
 export const IFRAME_ATTRIBUTES = {
   style: {
     display: "block",
