@@ -509,7 +509,7 @@ Attendu :
 - arbre propre
 - **aucune des deux branches n'a d'upstream** — c'est la contrainte principale du plan, la colonne de tracking de `git branch -vv` doit être vide pour `lts` et pour `zhouzi/remove-apps-simulateurs-docs`
 
-Puis rappeler à Gabin que le runbook de la spec (push de `lts`, Cloudflare Pages, environnement `github-pages`, puis PR) reste entièrement à sa main, dans cet ordre.
+Puis rappeler à Gabin que le runbook de la spec — section « Runbook », seule source de vérité pour l'ordre des étapes — reste entièrement à sa main.
 
 ---
 

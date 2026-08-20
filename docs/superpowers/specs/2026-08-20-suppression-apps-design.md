@@ -59,8 +59,10 @@ consommateur externe à gérer.
 main (d45a7e2, état de la production)
  │
  ├─→ lts                       ← part de d45a7e2
- │     └─ commit « Deploy docs from lts »
- │        deploy-docs.yml : on.push.branches  main → lts
+ │     ├─ 8d68bf8 « Deploy docs from lts »
+ │     │  deploy-docs.yml : on.push.branches  main → lts
+ │     └─ f249e84 « Allow manually triggering the docs deploy »
+ │        deploy-docs.yml : ajout de workflow_dispatch
  │     Monorepo complet, par ailleurs inchangé.
  │
  └─→ zhouzi/remove-apps-simulateurs-docs   ← part de d45a7e2
@@ -164,14 +166,24 @@ L'ordre est critique : il évite toute coupure de production.
 2. `git push origin lts`
 3. Protéger `lts` contre la suppression
 4. Cloudflare Pages → projet simulateurs → branche de production `main` →
-   `lts` ; restreindre les branches qui déclenchent un build (« preview
-   deployments ») à `lts` uniquement, ou désactiver les previews — sinon,
-   après le merge, chaque push sur `main` déclenchera un build de preview
-   pour `apps/simulateurs`, qui n'y existera plus, et ce build échouera en
-   continu → redéployer → **vérifier l'URL de production**
-5. Déclencher le workflow `Deploy docs` (bouton « Run workflow », disponible
-   grâce au `workflow_dispatch` ajouté sur `lts`) → **vérifier
+   `lts` ; désactiver les « preview deployments » (une fois `lts` branche de
+   production, elle n'est plus jamais une branche de preview : restreindre la
+   liste des branches qui déclenchent un build à `lts` reviendrait au même) →
+   redéployer → **vérifier l'URL de production**. Sans cette désactivation,
+   après le merge, chaque push sur `main` déclenchera un build de preview pour
+   `apps/simulateurs`, qui n'y existera plus, et ce build échouera en continu.
+5. Le `git push origin lts` de l'étape 2 a déjà déclenché automatiquement le
+   workflow `Deploy docs` (le trigger `on: push: branches: [lts]` est resté
+   intact), et l'environnement autorisé à l'étape 1 permet à ce run
+   d'aboutir. Vérifier ce run dans l'onglet Actions ; s'il a échoué ou doit
+   être rejoué, utiliser « Re-run all jobs » depuis cet onglet, qui fonctionne
+   quelle que soit la branche par défaut du dépôt → **vérifier
    akimeo.xyz/docs**
+
+   Le `workflow_dispatch` ajouté sur `lts` reste inerte tant que `main` — la
+   branche par défaut — n'en possède pas de copie ; il ne redevient utile que
+   si `lts` devient un jour la branche par défaut, ou que la branche est
+   extraite en dépôt séparé (cf. alternative écartée ci-dessus).
 6. **Seulement une fois les deux productions vérifiées** : pousser la branche de
    suppression, ouvrir la PR, merger dans `main`
 7. Après le merge : confirmer qu'aucun déploiement ne se déclenche depuis `main`
