@@ -12,8 +12,6 @@ Tu y trouveras tout le socle technique utilisé pour développer les simulateurs
 
 Ce dépôt regroupe plusieurs packages publiés sous le nom `@akimeo/*`, organisés par domaine (modele, fiscal, social, données réglementaires, etc.), dans le répertoire `packages/`.
 
-Les solutions finales sont elles dans le répertoire `apps/`.
-
 ## Contribuer
 
 Tu veux proposer une amélioration, corriger un bug ou poser une question ? Consulte le guide de contribution :
