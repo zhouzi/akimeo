@@ -6,7 +6,7 @@ Tu y trouveras tout le socle technique utilisé pour développer les simulateurs
 
 ## Documentation complète
 
-- [akimeo.xyz/docs/librairies](https://akimeo.xyz/docs/librairies)
+- [akimeo.xyz/docs/librairies](https://akimeo.xyz/docs/librairies) (générée depuis la branche `lts`, figée au 2026-08-20)
 
 ## Librairies incluses
 

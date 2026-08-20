@@ -19,4 +19,8 @@ Les applications qui les consomment — le site de documentation et les simulate
 3. Clone le dépôt
 4. Utilise la bonne version de Node avec `nvm use`
 5. Installe les dépendances avec `pnpm i`
-6. Lance les tests avec `pnpm test`
+6. Lance le build puis les tests avec `pnpm run build && pnpm run ci:test`
+   (`PILOTE_IR_API_KEY` est requise pour les tests impôt sur le revenu de
+   `packages/fiscal` ; elle est fournie en CI comme secret du dépôt, donc ces
+   tests échoueront en local sans elle — c'est attendu)
+7. Lance le développement avec `pnpm dev`

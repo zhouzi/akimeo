@@ -18,7 +18,7 @@
 - **Nom de la branche de sauvegarde : `lts`** (exactement, en minuscules, sans préfixe).
 - **Packages conservés sur `main`** : `donnees-reglementaires`, `fiscal`, `modele`, `pilote-ir`, `comptable`, `finance`, `social`, `embed`, `format-number`, `config/*`. `embed` et `format-number` deviennent orphelins mais sont conservés délibérément — ne pas les supprimer par zèle.
 - **Pas de tests unitaires nouveaux à écrire.** Cette opération ne crée aucun comportement : c'est une suppression. La suite de régression, c'est la CI existante du dépôt — `pnpm run build`, `pnpm run typecheck`, `pnpm run ci:lint`, `pnpm run ci:test`. Chaque tâche s'y adosse. Ne pas fabriquer de tests factices pour respecter la forme du TDD.
-- **`pnpm run ci:test` a besoin de `PILOTE_IR_API_KEY`.** Si la variable est absente de l'environnement local, les tests de `pilote-ir` seront sautés ou échoueront. Le signaler explicitement dans le rapport de tâche ; ne jamais déclarer la vérification complète si elle ne l'était pas.
+- **`pnpm run ci:test` a besoin de `PILOTE_IR_API_KEY`.** Si la variable est absente de l'environnement local, les tests de `packages/fiscal` échoueront. Le signaler explicitement dans le rapport de tâche ; ne jamais déclarer la vérification complète si elle ne l'était pas.
 
 ---
 
@@ -469,7 +469,7 @@ pnpm run ci:test
 
 Attendu : les cinq commandes passent.
 
-Sur `ci:test` : si `PILOTE_IR_API_KEY` est absent de l'environnement, les tests de `packages/pilote-ir` seront sautés ou échoueront. Vérifier avec `[ -n "$PILOTE_IR_API_KEY" ] && echo présent || echo absent` et **rapporter le résultat tel quel**. Une vérification partielle rapportée comme partielle est correcte ; une vérification partielle rapportée comme complète ne l'est pas.
+Sur `ci:test` : si `PILOTE_IR_API_KEY` est absent de l'environnement, les tests de `packages/fiscal` échoueront. Vérifier avec `[ -n "$PILOTE_IR_API_KEY" ] && echo présent || echo absent` et **rapporter le résultat tel quel**. Une vérification partielle rapportée comme partielle est correcte ; une vérification partielle rapportée comme complète ne l'est pas.
 
 - [ ] **Step 9: Vérification finale des références pendantes**
 
