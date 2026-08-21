@@ -8,10 +8,9 @@ Hésite pas à ouvrir la discussion en [créant une issue](https://github.com/zh
 
 Ce dépôt est un monorepo [Turbo](https://turborepo.com/) qui utilise [pnpm](https://pnpm.io/) comme package manager.
 
-Le code dans ./packages constitue les librairies utilisées dans les ./apps. Il y a pour l'instant deux applications principales :
+Le code dans ./packages constitue les librairies publiées sous le nom `@akimeo/*`.
 
-1. Le site, qui est une application [Docusaurus](https://docusaurus.io/).
-2. Les simulateurs à imbriquer en iframe, qui est une application [Vite](https://vite.dev/) avec [TanStack Router](https://tanstack.com/router/latest).
+Les applications qui les consomment — le site de documentation et les simulateurs — vivent désormais sur la branche `lts`, d'où elles sont déployées.
 
 ## Installation
 
@@ -20,11 +19,8 @@ Le code dans ./packages constitue les librairies utilisées dans les ./apps. Il 
 3. Clone le dépôt
 4. Utilise la bonne version de Node avec `nvm use`
 5. Installe les dépendances avec `pnpm i`
-6. Lance le développement avec `pnpm dev`
-
-Ce qui va démarrer deux applications :
-
-- [docs](./apps/docs) sur http://localhost:3000
-- [simulateurs](./apps/simulateurs/) sur http://localhost:3001
-
-Simulateurs est une application React purement statique avec les simulateurs qui sont imbriqués dans la documentation. Donc le point d'entrée principale, c'est http://localhost:3000
+6. Lance le build puis les tests avec `pnpm run build && pnpm run ci:test`
+   (`PILOTE_IR_API_KEY` est requise pour les tests impôt sur le revenu de
+   `packages/fiscal` ; elle est fournie en CI comme secret du dépôt, donc ces
+   tests échoueront en local sans elle — c'est attendu)
+7. Lance le développement avec `pnpm dev`

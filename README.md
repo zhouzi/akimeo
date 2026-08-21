@@ -6,13 +6,11 @@ Tu y trouveras tout le socle technique utilisé pour développer les simulateurs
 
 ## Documentation complète
 
-- [akimeo.xyz/docs/librairies](https://akimeo.xyz/docs/librairies)
+- [akimeo.xyz/docs/librairies](https://akimeo.xyz/docs/librairies) (générée depuis la branche `lts`, figée au 2026-08-20)
 
 ## Librairies incluses
 
 Ce dépôt regroupe plusieurs packages publiés sous le nom `@akimeo/*`, organisés par domaine (modele, fiscal, social, données réglementaires, etc.), dans le répertoire `packages/`.
-
-Les solutions finales sont elles dans le répertoire `apps/`.
 
 ## Contribuer
 

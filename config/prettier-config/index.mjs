@@ -1,5 +1,3 @@
-import { fileURLToPath } from "node:url";
-
 /** @typedef {import("prettier").Config} PrettierConfig */
 /** @typedef {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig */
 /** @typedef {import('prettier-plugin-tailwindcss').PluginOptions} TailwindConfig */
@@ -10,9 +8,6 @@ const config = {
     "@ianvs/prettier-plugin-sort-imports",
     "prettier-plugin-tailwindcss",
   ],
-  tailwindStylesheet: fileURLToPath(
-    new URL("../../apps/simulateurs/src/styles.css", import.meta.url)
-  ),
   tailwindFunctions: ["cn", "cva"],
   importOrder: [
     "<TYPES>",
