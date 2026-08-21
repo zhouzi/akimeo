@@ -1,6 +1,6 @@
 import { differenceInYears } from "date-fns/differenceInYears";
 import { subYears } from "date-fns/subYears";
-import set from "lodash.set";
+import { set } from "es-toolkit/compat";
 import { parse } from "yaml";
 
 import type { Branch, LeafValue } from "./types";

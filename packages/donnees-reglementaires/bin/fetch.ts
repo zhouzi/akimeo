@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import merge from "lodash.merge";
+import { merge } from "es-toolkit/compat";
 
 import type { Branch } from "./fetchers/types";
 import { fetchHarcoded } from "./fetchers/hardcoded";

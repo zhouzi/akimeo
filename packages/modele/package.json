@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "date-fns": "catalog:",
-    "lodash.defaultsdeep": "catalog:",
+    "es-toolkit": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
@@ -32,7 +32,6 @@
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
-    "@types/lodash.defaultsdeep": "catalog:",
     "concurrently": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",

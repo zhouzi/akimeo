@@ -1,5 +1,5 @@
 import type { PartialDeep } from "type-fest";
-import defaultsDeep from "lodash.defaultsdeep";
+import { defaultsDeep } from "es-toolkit/compat";
 
 import type { Don } from "./types";
 import { NATURE_DON } from "./constants";

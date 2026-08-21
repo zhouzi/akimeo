@@ -1,7 +1,7 @@
 import type { PartialDeep } from "type-fest";
 import { startOfYear } from "date-fns/startOfYear";
 import { subYears } from "date-fns/subYears";
-import defaultsDeep from "lodash.defaultsdeep";
+import { defaultsDeep } from "es-toolkit/compat";
 
 import type { Adulte, Enfant } from "./types";
 import { adulteSchema, enfantSchema } from "./schemas";

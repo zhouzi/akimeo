@@ -1,5 +1,5 @@
 import type { PartialDeep } from "type-fest";
-import defaultsDeep from "lodash.defaultsdeep";
+import { defaultsDeep } from "es-toolkit/compat";
 
 import type { EmploiADomicile } from "./types";
 import { TYPE_EMPLOI_A_DOMICILE } from "./constants";
