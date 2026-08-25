@@ -12,7 +12,6 @@ catalog:
   '@orpc/contract': ^1.13.5
   '@orpc/openapi-client': ^1.13.5
   '@types/node': 24.0.13
-  '@types/react': 19.1.8
   concurrently: 9.2.0
   date-fns: 4.1.0
   es-toolkit: ^1.44.0
@@ -27,7 +26,6 @@ catalog:
   prettier: 3.6.2
   prettier-plugin-tailwindcss: ^0.6.14
   publicodes: ^1.9.1
-  react: 19.1.0
   tsc-alias: 1.8.16
   tsx: ^4.20.3
   type-fest: 4.41.0
