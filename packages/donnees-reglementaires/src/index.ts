@@ -343,7 +343,7 @@ export default {
          * @description Taux d'intérêt annuel du livret A
          * {@link https://raw.githubusercontent.com/openfisca/openfisca-france/refs/heads/master/openfisca_france/parameters/taxation_capital/epargne/livret_a/taux.yaml Source}
          */
-        taux: 0.015,
+        taux: 0.017,
 
         /**
          * @description Plafond des dépôts sur un livret A
