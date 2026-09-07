@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        check: ["typecheck", "ci:lint", "ci:test"]
+        check: ["typecheck", "ci:lint", "ci:test", "ci:test:integration"]
     steps:
       - uses: actions/checkout@v4
         with:

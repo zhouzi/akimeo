@@ -8,6 +8,8 @@
     "ci:lint": "turbo run ci:lint",
     "test": "turbo run test",
     "ci:test": "turbo run ci:test",
+    "test:integration": "turbo run test:integration",
+    "ci:test:integration": "turbo run ci:test:integration",
     "typecheck": "turbo run typecheck",
     "format": "turbo run format"
   },

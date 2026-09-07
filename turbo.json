@@ -13,7 +13,11 @@
     "lint": {},
     "ci:lint": {},
     "test": {},
-    "ci:test": {
+    "ci:test": {},
+    "test:integration": {
+      "env": ["PILOTE_IR_API_KEY"]
+    },
+    "ci:test:integration": {
       "env": ["PILOTE_IR_API_KEY"]
     },
     "format": {},

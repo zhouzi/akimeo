@@ -8,6 +8,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "ci:test": "pnpm run test",
+    "test:integration": "vitest run --config ./vitest.integration.config.mts",
+    "ci:test:integration": "pnpm run test:integration",
     "lint": "eslint",
     "ci:lint": "pnpm run lint --format compact",
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
