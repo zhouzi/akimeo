@@ -6,15 +6,6 @@ settings:
 
 catalogs:
   default:
-    '@akimeo/modele-as':
-      specifier: 0.0.1
-      version: 0.0.1
-    '@akimeo/modele-social':
-      specifier: 10.0.2-fork.0
-      version: 10.0.2-fork.0
-    '@akimeo/modele-ti':
-      specifier: 0.0.1
-      version: 0.0.1
     '@eslint/js':
       specifier: ^9.31.0
       version: 9.31.0
@@ -33,9 +24,6 @@ catalogs:
     '@types/node':
       specifier: 24.0.13
       version: 24.0.13
-    '@types/react':
-      specifier: 19.1.8
-      version: 19.1.8
     concurrently:
       specifier: 9.2.0
       version: 9.2.0
@@ -75,12 +63,6 @@ catalogs:
     prettier-plugin-tailwindcss:
       specifier: ^0.6.14
       version: 0.6.14
-    publicodes:
-      specifier: ^1.9.1
-      version: 1.9.1
-    react:
-      specifier: 19.1.0
-      version: 19.1.0
     tsc-alias:
       specifier: 1.8.16
       version: 1.8.16
@@ -111,6 +93,10 @@ catalogs:
 
 overrides:
   std-env: ^4.0.0
+  modele-as: npm:@akimeo/modele-as@0.1.1-fork.0
+  modele-social: npm:@akimeo/modele-social@11.1.1-fork.0
+  modele-ti: npm:@akimeo/modele-ti@0.1.1-fork.0
+  publicodes: npm:@akimeo/publicodes@1.10.2-fork.0
 
 importers:
 
@@ -242,39 +228,6 @@ importers:
       yaml:
         specifier: 'catalog:'
         version: 2.8.0
-
-  packages/embed:
-    devDependencies:
-      '@akimeo/eslint-config':
-        specifier: workspace:*
-        version: link:../../config/eslint-config
-      '@akimeo/prettier-config':
-        specifier: workspace:*
-        version: link:../../config/prettier-config
-      '@akimeo/typescript-config':
-        specifier: workspace:*
-        version: link:../../config/typescript-config
-      '@types/react':
-        specifier: 'catalog:'
-        version: 19.1.8
-      concurrently:
-        specifier: 'catalog:'
-        version: 9.2.0
-      eslint:
-        specifier: 'catalog:'
-        version: 9.31.0(jiti@2.4.2)
-      prettier:
-        specifier: 'catalog:'
-        version: 3.6.2
-      react:
-        specifier: 'catalog:'
-        version: 19.1.0
-      tsc-alias:
-        specifier: 'catalog:'
-        version: 1.8.16
-      typescript:
-        specifier: 'catalog:'
-        version: 5.8.3
 
   packages/finance:
     devDependencies:
@@ -476,21 +429,21 @@ importers:
       '@akimeo/modele':
         specifier: workspace:*
         version: link:../modele
-      '@akimeo/modele-as':
-        specifier: 'catalog:'
-        version: 0.0.1(publicodes@1.9.1)
-      '@akimeo/modele-social':
-        specifier: 'catalog:'
-        version: 10.0.2-fork.0(publicodes@1.9.1)
-      '@akimeo/modele-ti':
-        specifier: 'catalog:'
-        version: 0.0.1(publicodes@1.9.1)
       es-toolkit:
         specifier: 'catalog:'
         version: 1.44.0
+      modele-as:
+        specifier: npm:@akimeo/modele-as@0.1.1-fork.0
+        version: '@akimeo/modele-as@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
+      modele-social:
+        specifier: npm:@akimeo/modele-social@11.1.1-fork.0
+        version: '@akimeo/modele-social@11.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
+      modele-ti:
+        specifier: npm:@akimeo/modele-ti@0.1.1-fork.0
+        version: '@akimeo/modele-ti@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
       publicodes:
-        specifier: 'catalog:'
-        version: 1.9.1
+        specifier: npm:@akimeo/publicodes@1.10.2-fork.0
+        version: '@akimeo/publicodes@1.10.2-fork.0'
     devDependencies:
       '@akimeo/eslint-config':
         specifier: workspace:*
@@ -528,20 +481,23 @@ importers:
 
 packages:
 
-  '@akimeo/modele-as@0.0.1':
-    resolution: {integrity: sha512-TN5ow6vfrDMn9tOF6y0beqtFrklu+vZt2LcyMypy8o7ppeHpEc7xXmTOxbFFhPIx0emixUDTdNFYr7KqZP4R8Q==}
+  '@akimeo/modele-as@0.1.1-fork.0':
+    resolution: {integrity: sha512-i8RoaruZRxKhg1CUAu9wYOTBr3GRhmVz2hirkuqN5JVqlMt2n2gGiSSwl0GU5xMtEeP33y9aMzuY8GdHdFTvhA==}
     peerDependencies:
       publicodes: ^1.0.4
 
-  '@akimeo/modele-social@10.0.2-fork.0':
-    resolution: {integrity: sha512-LzjKvTaxTnwDBjsDExb09eWMuxSlQMtHForjLqb7kN/irNMRmv+e8OQtSNEoHXT3Q343jWAH+JVfdVar08V7fg==}
+  '@akimeo/modele-social@11.1.1-fork.0':
+    resolution: {integrity: sha512-kSUQvKaxBAX+tNqwRgLPqEYhdpw5s1BCrgaYJJMTNtrtqHpYtJo+sm8DBtxB0au5V1J1IEzGsyGFFWJ3kW9tqA==}
     peerDependencies:
       publicodes: ^1.0.4
 
-  '@akimeo/modele-ti@0.0.1':
-    resolution: {integrity: sha512-7Vsndy9nXGZ7NiuYipKwBByfIOZm6g9tDTHXec1cxQksVxc7GnpKbgezhrAkUF1kSaP7rDSKccsMIUPrC43A+g==}
+  '@akimeo/modele-ti@0.1.1-fork.0':
+    resolution: {integrity: sha512-oxi3nZcRXVcZK5MwvpTPl8aMUO+zyhj8vYYQ0ePmKxTz0+hwtuYpBD5gx2w/q6Usxxpa7HT0CKMP35Vk2qwUmA==}
     peerDependencies:
       publicodes: ^1.0.4
+
+  '@akimeo/publicodes@1.10.2-fork.0':
+    resolution: {integrity: sha512-0N/f4yYH446PNR3F2glaGxkyTjQWkOyLk7W6jzN9nrUae+kWJumj8uM1rd9387xO2cz4pTxH4IQ6muJq32i/LQ==}
 
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
@@ -1012,9 +968,6 @@ packages:
   '@types/node@24.0.13':
     resolution: {integrity: sha512-Qm9OYVOFHFYg3wJoTSrz80hoec5Lia/dPp84do3X7dZvLikQvM1YpmvTBEdIr/e+U8HTkFjLHLnl78K/qjf+jQ==}
 
-  '@types/react@19.1.8':
-    resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
-
   '@typescript-eslint/eslint-plugin@8.36.0':
     resolution: {integrity: sha512-lZNihHUVB6ZZiPBNgOQGSxUASI7UJWhT8nHyUGCnaQ28XFCw98IfrMCG3rUl1uwUWoAvodJQby2KTs79UTcrAg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1260,9 +1213,6 @@ packages:
     resolution: {integrity: sha512-2z+rWdzbbSZv6/rhtvzvqeZQHrBaqgogqt85sqFNbabZOuFbCVFb8kPeEtZjiKkbrm395irpNKiYeFeLiQnFPg==}
     engines: {node: '>=18'}
 
-  csstype@3.1.3:
-    resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-
   data-urls@5.0.0:
     resolution: {integrity: sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==}
     engines: {node: '>=18'}
@@ -1435,6 +1385,7 @@ packages:
   eslint@9.31.0:
     resolution: {integrity: sha512-QldCVh/ztyKJJZLr4jXNUByx3gR+TDYZCRXEktiZoUR3PGy4qCmSbkxcIle8GEwGpb5JBZazlaJ/CxLidXdEbQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
     peerDependencies:
       jiti: '*'
@@ -2110,9 +2061,6 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
-  publicodes@1.9.1:
-    resolution: {integrity: sha512-sXBgGuAH/bIehF8waXm4Pp/EnqjFmxZJb6FNSAZ9FRO1neACHRYKv34lxFM3qZNyJ2RaI5jwtOupGlozMW0fcA==}
-
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2130,10 +2078,6 @@ packages:
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-
-  react@19.1.0:
-    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
-    engines: {node: '>=0.10.0'}
 
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
@@ -2671,17 +2615,19 @@ packages:
 
 snapshots:
 
-  '@akimeo/modele-as@0.0.1(publicodes@1.9.1)':
+  '@akimeo/modele-as@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
     dependencies:
-      publicodes: 1.9.1
+      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
 
-  '@akimeo/modele-social@10.0.2-fork.0(publicodes@1.9.1)':
+  '@akimeo/modele-social@11.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
     dependencies:
-      publicodes: 1.9.1
+      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
 
-  '@akimeo/modele-ti@0.0.1(publicodes@1.9.1)':
+  '@akimeo/modele-ti@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
     dependencies:
-      publicodes: 1.9.1
+      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
+
+  '@akimeo/publicodes@1.10.2-fork.0': {}
 
   '@asamuzakjp/css-color@3.2.0':
     dependencies:
@@ -3072,10 +3018,6 @@ snapshots:
     dependencies:
       undici-types: 7.8.0
 
-  '@types/react@19.1.8':
-    dependencies:
-      csstype: 3.1.3
-
   '@typescript-eslint/eslint-plugin@8.36.0(@typescript-eslint/parser@8.36.0(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3))(eslint@9.31.0(jiti@2.4.2))(typescript@5.8.3)':
     dependencies:
       '@eslint-community/regexpp': 4.12.1
@@ -3403,8 +3345,6 @@ snapshots:
       '@asamuzakjp/css-color': 3.2.0
       rrweb-cssom: 0.8.0
     optional: true
-
-  csstype@3.1.3: {}
 
   data-urls@5.0.0:
     dependencies:
@@ -4324,8 +4264,6 @@ snapshots:
       object-assign: 4.1.1
       react-is: 16.13.1
 
-  publicodes@1.9.1: {}
-
   punycode@2.3.1: {}
 
   queue-lit@1.5.2: {}
@@ -4335,8 +4273,6 @@ snapshots:
   radash@12.1.1: {}
 
   react-is@16.13.1: {}
-
-  react@19.1.0: {}
 
   readdirp@3.6.0:
     dependencies:

@@ -1,4 +1,4 @@
-import rules from "@akimeo/modele-social";
+import rules from "modele-social";
 
 import { createEngine } from "../helpers/create-engine";
 

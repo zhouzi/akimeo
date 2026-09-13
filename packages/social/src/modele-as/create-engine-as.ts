@@ -1,4 +1,4 @@
-import rules from "@akimeo/modele-as";
+import rules from "modele-as";
 
 import { createEngine } from "../helpers/create-engine";
 

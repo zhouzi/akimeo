@@ -26,6 +26,7 @@ type SituationActivite =
     }
   | {
       "entreprise . activité . nature": "'artisanale'";
+      "entreprise . activités . service ou vente": "'service'";
     };
 
 function createSituationActivite(
@@ -50,6 +51,7 @@ function createSituationActivite(
     case NATURE_ACTIVITE_ENTREPRISE.artisanale.value:
       return {
         "entreprise . activité . nature": "'artisanale'",
+        "entreprise . activités . service ou vente": "'service'",
       };
   }
 }

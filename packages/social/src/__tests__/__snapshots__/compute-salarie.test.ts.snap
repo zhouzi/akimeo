@@ -674,49 +674,49 @@ exports[`computeSalarie > #112 > Apprentissage, rémunération nette 0, Marié, 
 
 exports[`computeSalarie > #113 > Apprentissage, rémunération nette 30000, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #114 > Apprentissage, rémunération nette 30000, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #115 > Apprentissage, rémunération nette 30000, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #116 > Apprentissage, rémunération nette 30000, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #117 > Apprentissage, rémunération nette 30000, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #118 > Apprentissage, rémunération nette 30000, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #119 > Apprentissage, rémunération nette 30000, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 
 exports[`computeSalarie > #120 > Apprentissage, rémunération nette 30000, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "coutTotalEmployer": 41583.69,
+  "coutTotalEmployer": 41467.92,
 }
 `;
 

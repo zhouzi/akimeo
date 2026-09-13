@@ -163,7 +163,7 @@ exports[`computeEI > #16 > Libérale, rémunération totale 0, sans Acre, Marié
 exports[`computeEI > #17 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 5916,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -173,7 +173,7 @@ exports[`computeEI > #17 > Libérale, rémunération totale 60000, avec Acre, C�
 exports[`computeEI > #18 > Libérale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 16716,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -183,7 +183,7 @@ exports[`computeEI > #18 > Libérale, rémunération totale 60000, avec Acre, C�
 exports[`computeEI > #19 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 4109,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -193,7 +193,7 @@ exports[`computeEI > #19 > Libérale, rémunération totale 60000, avec Acre, C�
 exports[`computeEI > #20 > Libérale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 14909,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -203,7 +203,7 @@ exports[`computeEI > #20 > Libérale, rémunération totale 60000, avec Acre, C�
 exports[`computeEI > #21 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 1634,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -213,7 +213,7 @@ exports[`computeEI > #21 > Libérale, rémunération totale 60000, avec Acre, Ma
 exports[`computeEI > #22 > Libérale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 9820,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -223,7 +223,7 @@ exports[`computeEI > #22 > Libérale, rémunération totale 60000, avec Acre, Ma
 exports[`computeEI > #23 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 707,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -233,7 +233,7 @@ exports[`computeEI > #23 > Libérale, rémunération totale 60000, avec Acre, Ma
 exports[`computeEI > #24 > Libérale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 8013,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -643,7 +643,7 @@ exports[`computeEI > #64 > Libérale, rémunération nette 0, sans Acre, Marié,
 exports[`computeEI > #65 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 5472,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -653,7 +653,7 @@ exports[`computeEI > #65 > Libérale, rémunération nette 40000, avec Acre, Cé
 exports[`computeEI > #66 > Libérale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 16272,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -663,7 +663,7 @@ exports[`computeEI > #66 > Libérale, rémunération nette 40000, avec Acre, Cé
 exports[`computeEI > #67 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 3665,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -673,7 +673,7 @@ exports[`computeEI > #67 > Libérale, rémunération nette 40000, avec Acre, Cé
 exports[`computeEI > #68 > Libérale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 14465,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -683,7 +683,7 @@ exports[`computeEI > #68 > Libérale, rémunération nette 40000, avec Acre, Cé
 exports[`computeEI > #69 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 1397,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -693,7 +693,7 @@ exports[`computeEI > #69 > Libérale, rémunération nette 40000, avec Acre, Mar
 exports[`computeEI > #70 > Libérale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 9376,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -703,7 +703,7 @@ exports[`computeEI > #70 > Libérale, rémunération nette 40000, avec Acre, Mar
 exports[`computeEI > #71 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 471,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -713,7 +713,7 @@ exports[`computeEI > #71 > Libérale, rémunération nette 40000, avec Acre, Mar
 exports[`computeEI > #72 > Libérale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 7569,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -963,7 +963,7 @@ exports[`computeEI > #96 > Commerciale, rémunération totale 0, sans Acre, Mari
 exports[`computeEI > #97 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 5916,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -973,7 +973,7 @@ exports[`computeEI > #97 > Commerciale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #98 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 16716,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -983,7 +983,7 @@ exports[`computeEI > #98 > Commerciale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #99 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 4109,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -993,7 +993,7 @@ exports[`computeEI > #99 > Commerciale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #100 > Commerciale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 14909,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -1003,7 +1003,7 @@ exports[`computeEI > #100 > Commerciale, rémunération totale 60000, avec Acre,
 exports[`computeEI > #101 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 1634,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -1013,7 +1013,7 @@ exports[`computeEI > #101 > Commerciale, rémunération totale 60000, avec Acre,
 exports[`computeEI > #102 > Commerciale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 9820,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -1023,7 +1023,7 @@ exports[`computeEI > #102 > Commerciale, rémunération totale 60000, avec Acre,
 exports[`computeEI > #103 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 707,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -1033,7 +1033,7 @@ exports[`computeEI > #103 > Commerciale, rémunération totale 60000, avec Acre,
 exports[`computeEI > #104 > Commerciale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18581,
+  "cotisations": 18581.33,
   "ir": 8013,
   "remunerationNetteAvantImpot": 41419,
   "remunerationNetteImposable": 42707,
@@ -1443,7 +1443,7 @@ exports[`computeEI > #144 > Commerciale, rémunération nette 0, sans Acre, Mari
 exports[`computeEI > #145 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 5472,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1453,7 +1453,7 @@ exports[`computeEI > #145 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #146 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 16272,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1463,7 +1463,7 @@ exports[`computeEI > #146 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #147 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 3665,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1473,7 +1473,7 @@ exports[`computeEI > #147 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #148 > Commerciale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 14465,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1483,7 +1483,7 @@ exports[`computeEI > #148 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #149 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 1397,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1493,7 +1493,7 @@ exports[`computeEI > #149 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #150 > Commerciale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 9376,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1503,7 +1503,7 @@ exports[`computeEI > #150 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #151 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 471,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1513,7 +1513,7 @@ exports[`computeEI > #151 > Commerciale, rémunération nette 40000, avec Acre, 
 exports[`computeEI > #152 > Commerciale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57236,
-  "cotisations": 17236,
+  "cotisations": 17236.34,
   "ir": 7569,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41228,
@@ -1763,7 +1763,7 @@ exports[`computeEI > #176 > Artisanale, rémunération totale 0, sans Acre, Mari
 exports[`computeEI > #177 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 5910,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1773,7 +1773,7 @@ exports[`computeEI > #177 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #178 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 16710,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1783,7 +1783,7 @@ exports[`computeEI > #178 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #179 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 4103,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1793,7 +1793,7 @@ exports[`computeEI > #179 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #180 > Artisanale, rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 14903,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1803,7 +1803,7 @@ exports[`computeEI > #180 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #181 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 1631,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1813,7 +1813,7 @@ exports[`computeEI > #181 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #182 > Artisanale, rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 9814,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1823,7 +1823,7 @@ exports[`computeEI > #182 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #183 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 704,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -1833,7 +1833,7 @@ exports[`computeEI > #183 > Artisanale, rémunération totale 60000, avec Acre, 
 exports[`computeEI > #184 > Artisanale, rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 60000,
-  "cotisations": 18600,
+  "cotisations": 18600.33,
   "ir": 8007,
   "remunerationNetteAvantImpot": 41400,
   "remunerationNetteImposable": 42688,
@@ -2243,7 +2243,7 @@ exports[`computeEI > #224 > Artisanale, rémunération nette 0, sans Acre, Mari�
 exports[`computeEI > #225 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 5473,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2253,7 +2253,7 @@ exports[`computeEI > #225 > Artisanale, rémunération nette 40000, avec Acre, C
 exports[`computeEI > #226 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 16273,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2263,7 +2263,7 @@ exports[`computeEI > #226 > Artisanale, rémunération nette 40000, avec Acre, C
 exports[`computeEI > #227 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 3666,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2273,7 +2273,7 @@ exports[`computeEI > #227 > Artisanale, rémunération nette 40000, avec Acre, C
 exports[`computeEI > #228 > Artisanale, rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 14466,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2283,7 +2283,7 @@ exports[`computeEI > #228 > Artisanale, rémunération nette 40000, avec Acre, C
 exports[`computeEI > #229 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 1398,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2293,7 +2293,7 @@ exports[`computeEI > #229 > Artisanale, rémunération nette 40000, avec Acre, M
 exports[`computeEI > #230 > Artisanale, rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 9377,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2303,7 +2303,7 @@ exports[`computeEI > #230 > Artisanale, rémunération nette 40000, avec Acre, M
 exports[`computeEI > #231 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 471,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,
@@ -2313,7 +2313,7 @@ exports[`computeEI > #231 > Artisanale, rémunération nette 40000, avec Acre, M
 exports[`computeEI > #232 > Artisanale, rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
   "chiffreAffaires": 57274,
-  "cotisations": 17274,
+  "cotisations": 17273.65,
   "ir": 7570,
   "remunerationNetteAvantImpot": 40000,
   "remunerationNetteImposable": 41229,

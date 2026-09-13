@@ -162,640 +162,640 @@ exports[`computeSAS > #16 > rémunération totale 0, sans Acre, Marié, 1 enfant
 
 exports[`computeSAS > #17 > rémunération totale 60000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 2936,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 2931,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #18 > rémunération totale 60000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 13736,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 13731,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #19 > rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 1559,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 1557,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #20 > rémunération totale 60000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 11929,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 11924,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #21 > rémunération totale 60000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 47,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 44,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #22 > rémunération totale 60000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 6840,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 6835,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #23 > rémunération totale 60000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 25736.87,
+  "cotisations": 25754.37,
   "ir": 0,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #24 > rémunération totale 60000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 25736.87,
-  "ir": 5033,
-  "remunerationNetteAvantImpot": 34263.13,
-  "remunerationNetteImposable": 36415.29,
+  "cotisations": 25754.37,
+  "ir": 5028,
+  "remunerationNetteAvantImpot": 34245.63,
+  "remunerationNetteImposable": 36397.37,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #25 > rémunération totale 60000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 2703,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 2698,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #26 > rémunération totale 60000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 13503,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 13498,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #27 > rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 1435,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 1433,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #28 > rémunération totale 60000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 11696,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 11691,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #29 > rémunération totale 60000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 26566.77,
+  "cotisations": 26585.66,
   "ir": 0,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #30 > rémunération totale 60000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 6607,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 6602,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #31 > rémunération totale 60000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 26566.77,
+  "cotisations": 26585.66,
   "ir": 0,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #32 > rémunération totale 60000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 26566.77,
-  "ir": 4800,
-  "remunerationNetteAvantImpot": 33433.23,
-  "remunerationNetteImposable": 35553.52,
+  "cotisations": 26585.66,
+  "ir": 4795,
+  "remunerationNetteAvantImpot": 33414.34,
+  "remunerationNetteImposable": 35534.16,
   "remunerationTotale": 60000,
 }
 `;
 
 exports[`computeSAS > #33 > rémunération totale 120000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 12360,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 12349,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #34 > rémunération totale 120000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 24877,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 24862,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #35 > rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 10553,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 10542,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #36 > rémunération totale 120000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 23070,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 23055,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #37 > rémunération totale 120000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 5464,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 5453,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #38 > rémunération totale 120000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 16264,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 16253,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #39 > rémunération totale 120000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 3870,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 3867,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #40 > rémunération totale 120000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 14457,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 14446,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #41 > rémunération totale 120000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 12360,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 12349,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #42 > rémunération totale 120000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 24877,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 24862,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #43 > rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 10553,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 10542,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #44 > rémunération totale 120000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 23070,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 23055,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #45 > rémunération totale 120000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 5464,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 5453,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #46 > rémunération totale 120000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 16264,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 16253,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #47 > rémunération totale 120000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 3870,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 3867,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #48 > rémunération totale 120000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 52115.02,
-  "ir": 14457,
-  "remunerationNetteAvantImpot": 67884.98,
-  "remunerationNetteImposable": 71317.35,
+  "cotisations": 52153.44,
+  "ir": 14446,
+  "remunerationNetteAvantImpot": 67846.56,
+  "remunerationNetteImposable": 71278.29,
   "remunerationTotale": 120000,
 }
 `;
 
 exports[`computeSAS > #49 > rémunération nette 0, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #50 > rémunération nette 0, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 3904,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #51 > rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #52 > rémunération nette 0, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 2097,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #53 > rémunération nette 0, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #54 > rémunération nette 0, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 562,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #55 > rémunération nette 0, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #56 > rémunération nette 0, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 645.39,
+  "cotisations": 673.09,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
-  "remunerationNetteImposable": 260.37,
-  "remunerationTotale": 645.4,
+  "remunerationNetteImposable": 261.27,
+  "remunerationTotale": 673.09,
 }
 `;
 
 exports[`computeSAS > #57 > rémunération nette 0, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #58 > rémunération nette 0, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 3904,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #59 > rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #60 > rémunération nette 0, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 2097,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #61 > rémunération nette 0, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #62 > rémunération nette 0, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 562,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #63 > rémunération nette 0, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #64 > rémunération nette 0, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 706.95,
+  "cotisations": 707.21,
   "ir": 0,
   "remunerationNetteAvantImpot": 0,
   "remunerationNetteImposable": 261.64,
-  "remunerationTotale": 706.99,
+  "remunerationTotale": 707.25,
 }
 `;
 
 exports[`computeSAS > #65 > rémunération nette 40000, avec Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 4563,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #66 > rémunération nette 40000, avec Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 15363,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #67 > rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 2756,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #68 > rémunération nette 40000, avec Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 13556,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #69 > rémunération nette 40000, avec Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 913,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #70 > rémunération nette 40000, avec Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 8467,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #71 > rémunération nette 40000, avec Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 0,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #72 > rémunération nette 40000, avec Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 6660,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #73 > rémunération nette 40000, sans Acre, Célibataire, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 4563,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #74 > rémunération nette 40000, sans Acre, Célibataire, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 15363,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #75 > rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 2756,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #76 > rémunération nette 40000, sans Acre, Célibataire, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 13556,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #77 > rémunération nette 40000, sans Acre, Marié, sans enfant, sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 913,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #78 > rémunération nette 40000, sans Acre, Marié, sans enfant, revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 8467,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #79 > rémunération nette 40000, sans Acre, Marié, 1 enfant(s), sans revenu additionnel 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 0,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
 
 exports[`computeSAS > #80 > rémunération nette 40000, sans Acre, Marié, 1 enfant(s), revenus additionnels 40000 1`] = `
 {
-  "cotisations": 31763.45,
+  "cotisations": 31803,
   "ir": 6660,
   "remunerationNetteAvantImpot": 40000,
-  "remunerationNetteImposable": 42441.82,
-  "remunerationTotale": 71763.45,
+  "remunerationNetteImposable": 42442.25,
+  "remunerationTotale": 71803,
 }
 `;
