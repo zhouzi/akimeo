@@ -1,20 +1,19 @@
-import type { Adulte, Don, Foyer } from "@akimeo/modele";
+import type { Don } from "@akimeo/modele/don/types";
+import type { Foyer } from "@akimeo/modele/foyer/types";
+import type { Adulte } from "@akimeo/modele/personne/types";
 import type { Alias } from "@akimeo/pilote-ir/schemas/alias";
-import {
-  calculerContributionPlacement,
-  ENVELOPPE_PLACEMENT,
-  IMPOSITION_RCM,
-  isFoyerCouple,
-  isNatureRevenuMicroEntreprise,
-  NATURE_DON,
-  NATURE_REVENU,
-  SCOLARTIE_ENFANT,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { NATURE_DON } from "@akimeo/modele/don/constants";
+import { IMPOSITION_RCM, SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
+import { SCOLARTIE_ENFANT } from "@akimeo/modele/personne/constants";
+import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement/constants";
+import { calculerContributionPlacement } from "@akimeo/modele/placement/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
+import { isNatureRevenuMicroEntreprise } from "@akimeo/modele/revenu/helpers";
 import { differenceInYears } from "date-fns/differenceInYears";
 
-import { calculerRemunerationAnnuelleDeductibleEmploiADomicile } from "~/ir/calculer-remuneration-annuelle-deductible-emploi-a-domicile";
-import { dedupeRevenus } from "~/ir/dedupe-revenus";
+import { calculerRemunerationAnnuelleDeductibleEmploiADomicile } from "./calculer-remuneration-annuelle-deductible-emploi-a-domicile";
+import { dedupeRevenus } from "./dedupe-revenus";
 
 const SITUATION_FAMILIALE_TO_ALIAS = {
   [SITUATION_FAMILIALE.marie.value]: "M",

@@ -29,7 +29,6 @@ jobs:
           cache: "pnpm"
           cache-dependency-path: pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run build
       - run: pnpm run ${{ matrix.check }}
     env:
       PILOTE_IR_API_KEY: ${{ secrets.PILOTE_IR_API_KEY }}

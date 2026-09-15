@@ -1,23 +1,20 @@
-import type { Foyer } from "@akimeo/modele";
-import {
-  creerDon,
-  creerEmploiADomicile,
-  creerEnfant,
-  creerFoyer,
-  creerPlacement,
-  ENVELOPPE_PLACEMENT,
-  IMPOSITION_RCM,
-  NATURE_DON,
-  NATURE_REVENU,
-  SCOLARTIE_ENFANT,
-  SITUATION_FAMILIALE,
-  TYPE_EMPLOI_A_DOMICILE,
-} from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
+import { NATURE_DON } from "@akimeo/modele/don/constants";
+import { creerDon } from "@akimeo/modele/don/helpers";
+import { TYPE_EMPLOI_A_DOMICILE } from "@akimeo/modele/emploi-a-domicile/constants";
+import { creerEmploiADomicile } from "@akimeo/modele/emploi-a-domicile/helpers";
+import { IMPOSITION_RCM, SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerFoyer } from "@akimeo/modele/foyer/helpers";
+import { SCOLARTIE_ENFANT } from "@akimeo/modele/personne/constants";
+import { creerEnfant } from "@akimeo/modele/personne/helpers";
+import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement/constants";
+import { creerPlacement } from "@akimeo/modele/placement/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { createClient } from "@akimeo/pilote-ir/client";
 import { subYears } from "date-fns";
 import { describe, expect, it } from "vitest";
 
-import { calculerIRDu } from "~/ir/calculer-ir-du";
+import { calculerIRDu } from "../calculer-ir-du";
 import { convertirFoyerEnAlias } from "../convertir-foyer-en-alias";
 
 const client = createClient({

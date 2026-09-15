@@ -1,10 +1,8 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import {
-  isFoyerCouple,
-  isNatureRevenuMicroEntreprise,
-  NATURE_REVENU,
-} from "@akimeo/modele";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
+import { isNatureRevenuMicroEntreprise } from "@akimeo/modele/revenu/helpers";
 
 import { dedupeRevenus } from "./dedupe-revenus";
 

@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "build": "tsc --project ./tsconfig.build.json && tsc-alias -p ./tsconfig.build.json",
-    "dev": "concurrently \"tsc -w\" \"tsc-alias -w\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "ci:test": "pnpm run test",
@@ -13,14 +11,7 @@
     "format": "pnpm run lint --fix && prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache"
   },
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    },
-    "./*": {
-      "types": "./dist/*.d.ts",
-      "default": "./dist/*.js"
-    }
+    "./*": "./src/*.ts"
   },
   "dependencies": {
     "date-fns": "catalog:",
@@ -32,10 +23,8 @@
     "@akimeo/eslint-config": "workspace:*",
     "@akimeo/prettier-config": "workspace:*",
     "@akimeo/typescript-config": "workspace:*",
-    "concurrently": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",
-    "tsc-alias": "catalog:",
     "type-fest": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:"

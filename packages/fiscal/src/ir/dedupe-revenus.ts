@@ -1,4 +1,4 @@
-import type { Revenu } from "@akimeo/modele";
+import type { Revenu } from "@akimeo/modele/revenu/types";
 
 export function dedupeRevenus(revenus: Revenu[]) {
   return Object.values(

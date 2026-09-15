@@ -7,7 +7,7 @@ import type {
   FoyerConcubinage,
   FoyerCouple,
 } from "./types";
-import { creerAdulte } from "~/personne/helpers";
+import { creerAdulte } from "../personne/helpers";
 import { IMPOSITION_RCM, SITUATION_FAMILIALE } from "./constants";
 import { foyerSchema } from "./schemas";
 

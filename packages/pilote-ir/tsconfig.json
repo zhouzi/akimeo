@@ -1,16 +1,6 @@
 {
   "extends": "@akimeo/typescript-config/base.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "src",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    }
-  },
-  "tsc-alias": {
-    "resolveFullPaths": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "src"
+  ]
 }

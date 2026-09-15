@@ -1,7 +1,8 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import type { EI, Sarl } from "@akimeo/modele/entreprise/types";
 import { calculerRevenuNetImposable } from "@akimeo/fiscal/ir/calculer-revenu-net-imposable";
-import { isFoyerCouple, SITUATION_FAMILIALE } from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 
 type SituationActivite =

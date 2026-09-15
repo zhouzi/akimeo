@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   calculerPFU,
   calculerPrelevementsSociaux,
-} from "~/ir/calculer-pfu";
+} from "../calculer-pfu";
 
 describe("calculerPFU", () => {
   it.each([

@@ -11,8 +11,8 @@ import type {
   FoyerPacse,
   FoyerVeuf,
 } from "./types";
-import { emploiADomicileSchema } from "~/emploi-a-domicile/schemas";
-import { adulteSchema, enfantSchema } from "~/personne/schemas";
+import { emploiADomicileSchema } from "../emploi-a-domicile/schemas";
+import { adulteSchema, enfantSchema } from "../personne/schemas";
 import { IMPOSITION_RCM, SITUATION_FAMILIALE } from "./constants";
 
 export const baseFoyerSchema = z.object({

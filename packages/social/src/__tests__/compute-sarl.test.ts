@@ -1,17 +1,14 @@
-import {
-  creerAdulte,
-  creerEnfant,
-  NATURE_REVENU,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerAdulte, creerEnfant } from "@akimeo/modele/personne/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { creerSARL } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
 import type { EngineTI } from "../modele-ti/create-engine-ti";
-import type { SARLOutput } from "~/compute-sarl";
-import { computeSARL } from "~/compute-sarl";
+import type { SARLOutput } from "../compute-sarl";
+import { computeSARL } from "../compute-sarl";
 import { createEngineTI } from "../modele-ti/create-engine-ti";
 import { cartesian } from "./helpers";
 

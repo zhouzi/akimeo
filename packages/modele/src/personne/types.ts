@@ -1,7 +1,7 @@
 import type { SCOLARTIE_ENFANT } from "./constants";
-import type { Don } from "~/don/types";
-import type { Placement } from "~/placement/types";
-import type { Revenu } from "~/revenu/types";
+import type { Don } from "../don/types";
+import type { Placement } from "../placement/types";
+import type { Revenu } from "../revenu/types";
 
 export interface Personne {
   dateNaissance: Date;

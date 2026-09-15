@@ -1,11 +1,9 @@
-import {
-  creerFoyer,
-  setNombreEnfants,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerFoyer } from "@akimeo/modele/foyer/helpers";
+import { setNombreEnfants } from "@akimeo/modele/personne/helpers";
 import { describe, expect, it } from "vitest";
 
-import { calculerPartsFiscales } from "~/ir/calculer-parts-fiscales";
+import { calculerPartsFiscales } from "../calculer-parts-fiscales";
 
 describe("calculerPartsFiscales", () => {
   // https://www.economie.gouv.fr/particuliers/quotient-familial

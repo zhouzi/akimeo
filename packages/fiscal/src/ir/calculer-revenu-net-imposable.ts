@@ -1,12 +1,10 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import {
-  calculerContributionPlacement,
-  ENVELOPPE_PLACEMENT,
-  IMPOSITION_RCM,
-  isFoyerCouple,
-  NATURE_REVENU,
-} from "@akimeo/modele";
+import { IMPOSITION_RCM } from "@akimeo/modele/foyer/constants";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
+import { ENVELOPPE_PLACEMENT } from "@akimeo/modele/placement/constants";
+import { calculerContributionPlacement } from "@akimeo/modele/placement/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 
 import { dedupeRevenus } from "./dedupe-revenus";
 import { getRevenus } from "./get-revenus";

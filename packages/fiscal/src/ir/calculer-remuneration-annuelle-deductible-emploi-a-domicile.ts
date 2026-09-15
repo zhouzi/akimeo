@@ -1,9 +1,7 @@
-import type { EmploiADomicile, Foyer } from "@akimeo/modele";
+import type { EmploiADomicile } from "@akimeo/modele/emploi-a-domicile/types";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import {
-  TYPE_EMPLOI_A_DOMICILE,
-  TYPE_EMPLOI_A_DOMICILE_OPTIONS,
-} from "@akimeo/modele";
+import { TYPE_EMPLOI_A_DOMICILE, TYPE_EMPLOI_A_DOMICILE_OPTIONS } from "@akimeo/modele/emploi-a-domicile/constants";
 
 // https://simulateur-ir-ifi.impots.gouv.fr/calcul_impot/2025/aides/reductions.htm#DF
 export function calculerRemunerationAnnuelleDeductibleEmploiADomicile(

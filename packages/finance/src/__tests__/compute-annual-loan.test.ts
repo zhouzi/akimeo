@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { computeAnnualLoan } from "~/compute-annual-loan";
+import { computeAnnualLoan } from "../compute-annual-loan";
 
 describe("computeAnnualLoan", () => {
   it.each([

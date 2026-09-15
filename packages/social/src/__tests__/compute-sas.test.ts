@@ -1,17 +1,14 @@
-import {
-  creerAdulte,
-  creerEnfant,
-  NATURE_REVENU,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerAdulte, creerEnfant } from "@akimeo/modele/personne/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { creerSAS } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
-import type { SASOutput } from "~/compute-sas";
-import type { EngineAS } from "~/modele-as/create-engine-as";
-import { computeSAS } from "~/compute-sas";
-import { createEngineAS } from "~/modele-as/create-engine-as";
+import type { SASOutput } from "../compute-sas";
+import type { EngineAS } from "../modele-as/create-engine-as";
+import { computeSAS } from "../compute-sas";
+import { createEngineAS } from "../modele-as/create-engine-as";
 import { cartesian } from "./helpers";
 
 describe("computeSAS", () => {

@@ -1,14 +1,12 @@
-import type { Foyer, Revenu } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
+import type { Revenu } from "@akimeo/modele/revenu/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import {
-  IMPOSITION_RCM,
-  isFoyerCouple,
-  isNatureRevenuMicroEntreprise,
-  NATURE_DON,
-  NATURE_REVENU,
-  SCOLARTIE_ENFANT,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { NATURE_DON } from "@akimeo/modele/don/constants";
+import { IMPOSITION_RCM, SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
+import { SCOLARTIE_ENFANT } from "@akimeo/modele/personne/constants";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
+import { isNatureRevenuMicroEntreprise } from "@akimeo/modele/revenu/helpers";
 import { differenceInYears } from "date-fns/differenceInYears";
 
 import { calculerPartsFiscales } from "./calculer-parts-fiscales";

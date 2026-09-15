@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { computeAmortissementLineaire } from "~/compute-amortissement-lineaire";
+import { computeAmortissementLineaire } from "../compute-amortissement-lineaire";
 
 describe("computeAmortissementLineaire", () => {
   it.each([

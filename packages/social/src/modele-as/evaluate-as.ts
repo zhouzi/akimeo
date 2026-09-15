@@ -1,8 +1,8 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import type { SAS } from "@akimeo/modele/entreprise/types";
 import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
-import { calculerIR } from "@akimeo/fiscal";
+import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { creerRevenuEntreprise } from "@akimeo/modele/entreprise/helpers";
 
 import type { EngineAS } from "./create-engine-as";

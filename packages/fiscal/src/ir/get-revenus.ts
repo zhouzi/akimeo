@@ -1,5 +1,5 @@
-import type { Foyer } from "@akimeo/modele";
-import { isFoyerCouple } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
 
 export function getRevenus(foyer: Foyer) {
   return [

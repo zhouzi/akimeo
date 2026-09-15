@@ -2,8 +2,8 @@ import type { PartialDeep } from "type-fest";
 import { defaultsDeep } from "es-toolkit/compat";
 
 import type { AnyEntreprise, EI, MicroEntreprise, Sarl, SAS } from "./types";
-import type { Revenu } from "~/revenu/types";
-import { NATURE_REVENU } from "~/revenu/constants";
+import type { Revenu } from "../revenu/types";
+import { NATURE_REVENU } from "../revenu/constants";
 import { NATURE_ACTIVITE_ENTREPRISE, STATUT_ENTREPRISE } from "./constants";
 import {
   eiSchema,

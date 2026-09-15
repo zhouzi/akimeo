@@ -1,9 +1,6 @@
-import {
-  creerAdulte,
-  creerEnfant,
-  NATURE_REVENU,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerAdulte, creerEnfant } from "@akimeo/modele/personne/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { creerEI } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";

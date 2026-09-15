@@ -1,4 +1,4 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 
 import { calculerIRDu } from "./calculer-ir-du";
 import { getRevenus } from "./get-revenus";

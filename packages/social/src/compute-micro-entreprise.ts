@@ -1,9 +1,9 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import type { MicroEntreprise } from "@akimeo/modele/entreprise/types";
 import type Engine from "publicodes";
 import type { Entries, Exact } from "type-fest";
 import type { Filter } from "type-fest/source/except";
-import { calculerIR } from "@akimeo/fiscal";
+import { calculerIR } from "@akimeo/fiscal/ir/calculer-ir";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { creerRevenuEntreprise } from "@akimeo/modele/entreprise/helpers";
 

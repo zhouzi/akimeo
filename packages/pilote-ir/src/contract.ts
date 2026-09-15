@@ -1,9 +1,9 @@
 import { oc } from "@orpc/contract";
 import z from "zod";
 
-import { aliasSchema } from "~/schemas/alias";
-import { declarationSchema } from "~/schemas/declaration";
-import { simulationOutputSchema } from "~/schemas/simulation-output";
+import { aliasSchema } from "./schemas/alias";
+import { declarationSchema } from "./schemas/declaration";
+import { simulationOutputSchema } from "./schemas/simulation-output";
 
 export const contract = {
   createSimulation: oc

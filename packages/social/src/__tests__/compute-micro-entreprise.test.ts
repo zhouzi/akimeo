@@ -1,18 +1,15 @@
-import {
-  creerAdulte,
-  creerEnfant,
-  NATURE_REVENU,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerAdulte, creerEnfant } from "@akimeo/modele/personne/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { NATURE_ACTIVITE_ENTREPRISE } from "@akimeo/modele/entreprise/constants";
 import { creerMicroEntreprise } from "@akimeo/modele/entreprise/helpers";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
-import type { MicroEntrepriseOutput } from "~/compute-micro-entreprise";
-import type { EngineSocial } from "~/modele-social/create-engine-social";
-import { computeMicroEntreprise } from "~/compute-micro-entreprise";
-import { createEngineSocial } from "~/modele-social/create-engine-social";
+import type { MicroEntrepriseOutput } from "../compute-micro-entreprise";
+import type { EngineSocial } from "../modele-social/create-engine-social";
+import { computeMicroEntreprise } from "../compute-micro-entreprise";
+import { createEngineSocial } from "../modele-social/create-engine-social";
 import { cartesian } from "./helpers";
 
 describe("computeMicroEntreprise", () => {

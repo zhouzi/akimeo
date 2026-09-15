@@ -1,6 +1,7 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
-import { isFoyerCouple, SITUATION_FAMILIALE } from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { isFoyerCouple } from "@akimeo/modele/foyer/helpers";
 
 export function calculerPartsFiscales(foyer: Foyer) {
   let parts =

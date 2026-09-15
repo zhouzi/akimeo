@@ -1,4 +1,4 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import type { Sarl } from "@akimeo/modele/entreprise/types";
 import type { Exact } from "type-fest";
 

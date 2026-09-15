@@ -1,4 +1,4 @@
-import type { Foyer } from "@akimeo/modele";
+import type { Foyer } from "@akimeo/modele/foyer/types";
 import donneesReglementaires from "@akimeo/donnees-reglementaires";
 
 import { calculerPartsFiscales } from "./calculer-parts-fiscales";

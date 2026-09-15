@@ -1,18 +1,15 @@
-import {
-  creerAdulte,
-  creerEnfant,
-  NATURE_REVENU,
-  SITUATION_FAMILIALE,
-} from "@akimeo/modele";
+import { SITUATION_FAMILIALE } from "@akimeo/modele/foyer/constants";
+import { creerAdulte, creerEnfant } from "@akimeo/modele/personne/helpers";
+import { NATURE_REVENU } from "@akimeo/modele/revenu/constants";
 import { creerFoyer } from "@akimeo/modele/foyer/helpers";
 import { CONTRAT_POSTE } from "@akimeo/modele/poste/constants";
 import { creerAnyPoste } from "@akimeo/modele/poste/helpers";
 import { beforeAll, describe, expect, it } from "vitest";
 
-import type { SalarieOutput } from "~/compute-salarie";
-import type { EngineSocial } from "~/modele-social/create-engine-social";
-import { computeSalarie } from "~/compute-salarie";
-import { createEngineSocial } from "~/modele-social/create-engine-social";
+import type { SalarieOutput } from "../compute-salarie";
+import type { EngineSocial } from "../modele-social/create-engine-social";
+import { computeSalarie } from "../compute-salarie";
+import { createEngineSocial } from "../modele-social/create-engine-social";
 import { cartesian } from "./helpers";
 
 describe("computeSalarie", () => {

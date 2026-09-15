@@ -2,25 +2,33 @@
   "$schema": "https://turborepo.com/schema.json",
   "ui": "tui",
   "tasks": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
-    },
     "dev": {
       "persistent": true,
       "cache": false
     },
-    "lint": {},
-    "ci:lint": {},
-    "test": {},
-    "ci:test": {},
+    "lint": {
+      "dependsOn": ["^typecheck"]
+    },
+    "ci:lint": {
+      "dependsOn": ["^typecheck"]
+    },
+    "test": {
+      "dependsOn": ["^typecheck"]
+    },
+    "ci:test": {
+      "dependsOn": ["^typecheck"]
+    },
     "test:integration": {
+      "dependsOn": ["^typecheck"],
       "env": ["PILOTE_IR_API_KEY"]
     },
     "ci:test:integration": {
+      "dependsOn": ["^typecheck"],
       "env": ["PILOTE_IR_API_KEY"]
     },
     "format": {},
-    "typecheck": {}
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    }
   }
 }

@@ -1,6 +1,6 @@
 import type { IMPOSITION_RCM, SITUATION_FAMILIALE } from "./constants";
-import type { EmploiADomicile } from "~/emploi-a-domicile/types";
-import type { Adulte, Enfant } from "~/personne/types";
+import type { EmploiADomicile } from "../emploi-a-domicile/types";
+import type { Adulte, Enfant } from "../personne/types";
 
 export interface BaseFoyer<
   SituationFamiliale extends

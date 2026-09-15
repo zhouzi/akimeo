@@ -1,9 +1,9 @@
 import z from "zod";
 
 import type { Adulte, Enfant, Personne } from "./types";
-import { donSchema } from "~/don/schemas";
-import { placementSchema } from "~/placement/schemas";
-import { revenuSchema } from "~/revenu/schemas";
+import { donSchema } from "../don/schemas";
+import { placementSchema } from "../placement/schemas";
+import { revenuSchema } from "../revenu/schemas";
 import { SCOLARTIE_ENFANT } from "./constants";
 
 export const personneSchema = z.object({

@@ -3,7 +3,7 @@ import type { JsonifiedClient } from "@orpc/openapi-client";
 import { createORPCClient } from "@orpc/client";
 import { OpenAPILink } from "@orpc/openapi-client/fetch";
 
-import { contract } from "~/contract";
+import { contract } from "./contract";
 
 export type PiloteIRClient = JsonifiedClient<
   ContractRouterClient<typeof contract>
