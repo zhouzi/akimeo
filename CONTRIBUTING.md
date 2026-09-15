@@ -19,8 +19,12 @@ Les applications qui les consomment — le site de documentation et les simulate
 3. Clone le dépôt
 4. Utilise la bonne version de Node avec `nvm use`
 5. Installe les dépendances avec `pnpm i`
-6. Lance le build puis les tests avec `pnpm run build && pnpm run ci:test`
+6. Lance les tests avec `pnpm run ci:test` — il n'y a rien à construire avant,
+   les paquets se consomment directement depuis leurs sources
    (`PILOTE_IR_API_KEY` est requise pour les tests impôt sur le revenu de
    `packages/fiscal` ; elle est fournie en CI comme secret du dépôt, donc ces
    tests échoueront en local sans elle — c'est attendu)
-7. Lance le développement avec `pnpm dev`
+7. Pour développer, laisse les tests tourner en continu avec `pnpm run test` :
+   `vitest` se met en mode watch dès qu'il détecte un terminal. Il n'y a pas de
+   commande `dev` — les paquets se consomment depuis leurs sources, donc il n'y a
+   aucune reconstruction à surveiller
