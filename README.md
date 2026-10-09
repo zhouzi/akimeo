@@ -1,23 +1,29 @@
 # Akimeo
 
-Bienvenue dans le dépôt principal d'**Akimeo** : un ensemble de librairies open-source conçues pour créer des simulateurs clairs, fiables et agréables à utiliser sur les sujets fiscaux, sociaux, juridiques et financiers.
+Les briques de calcul d'**Akimeo** : des calculs fiscaux, sociaux et financiers
+de base (impôt sur le revenu, cotisations sociales, placements…), et les données
+réglementaires qui les alimentent.
 
-Tu y trouveras tout le socle technique utilisé pour développer les simulateurs : impôt sur le revenu, cotisations sociales, placements financiers, statuts juridiques, etc.
+Ce code est ouvert par souci de transparence — un chiffre doit pouvoir s'auditer
+jusqu'à la règle qui l'établit — et pour être partagé. Il est fourni tel quel :
+pas de support, pas de stabilité d'API garantie.
 
-## Documentation complète
+## Contenu
 
-- [akimeo.xyz/docs/librairies](https://akimeo.xyz/docs/librairies) (générée depuis la branche `lts`, figée au 2026-08-20)
+Un monorepo [Turbo](https://turborepo.com/) géré avec [pnpm](https://pnpm.io/).
+Les paquets `@akimeo/*`, organisés par domaine, vivent dans `packages/` et se
+consomment directement depuis leurs sources : il n'y a rien à construire.
 
-## Librairies incluses
+```sh
+nvm use
+pnpm i
+pnpm run test
+```
 
-Ce dépôt regroupe plusieurs packages publiés sous le nom `@akimeo/*`, organisés par domaine (modele, fiscal, social, données réglementaires, etc.), dans le répertoire `packages/`.
-
-## Contribuer
-
-Tu veux proposer une amélioration, corriger un bug ou poser une question ? Consulte le guide de contribution :
-
-- [CONTRIBUTING.md](./CONTRIBUTING.md)
+Les tests d'impôt sur le revenu de `packages/fiscal` demandent
+`PILOTE_IR_API_KEY` ; sans elle, ils échouent en local.
 
 ---
 
-Fais moi signe si tu utilises ces librairies dans un projet. En ouvrant une issue sur ce dépôt ou en me contactant directement sur [LinkedIn](https://go.gabin.app/linkedin).
+Si tu utilises ces briques dans un projet, fais-moi signe sur
+[LinkedIn](https://go.gabin.app/linkedin).
