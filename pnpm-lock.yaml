@@ -60,6 +60,9 @@ catalogs:
     prettier-plugin-tailwindcss:
       specifier: ^0.6.14
       version: 0.6.14
+    publicodes:
+      specifier: ^1.10.3
+      version: 1.10.4
     tsx:
       specifier: ^4.20.3
       version: 4.20.3
@@ -87,7 +90,6 @@ overrides:
   modele-as: npm:@akimeo/modele-as@0.1.1-fork.0
   modele-social: npm:@akimeo/modele-social@11.1.1-fork.0
   modele-ti: npm:@akimeo/modele-ti@0.1.1-fork.0
-  publicodes: npm:@akimeo/publicodes@1.10.2-fork.0
 
 importers:
 
@@ -386,16 +388,16 @@ importers:
         version: 1.44.0
       modele-as:
         specifier: npm:@akimeo/modele-as@0.1.1-fork.0
-        version: '@akimeo/modele-as@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
+        version: '@akimeo/modele-as@0.1.1-fork.0(publicodes@1.10.4)'
       modele-social:
         specifier: npm:@akimeo/modele-social@11.1.1-fork.0
-        version: '@akimeo/modele-social@11.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
+        version: '@akimeo/modele-social@11.1.1-fork.0(publicodes@1.10.4)'
       modele-ti:
         specifier: npm:@akimeo/modele-ti@0.1.1-fork.0
-        version: '@akimeo/modele-ti@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)'
+        version: '@akimeo/modele-ti@0.1.1-fork.0(publicodes@1.10.4)'
       publicodes:
-        specifier: npm:@akimeo/publicodes@1.10.2-fork.0
-        version: '@akimeo/publicodes@1.10.2-fork.0'
+        specifier: 'catalog:'
+        version: 1.10.4
     devDependencies:
       '@akimeo/eslint-config':
         specifier: workspace:*
@@ -438,9 +440,6 @@ packages:
     resolution: {integrity: sha512-oxi3nZcRXVcZK5MwvpTPl8aMUO+zyhj8vYYQ0ePmKxTz0+hwtuYpBD5gx2w/q6Usxxpa7HT0CKMP35Vk2qwUmA==}
     peerDependencies:
       publicodes: ^1.0.4
-
-  '@akimeo/publicodes@1.10.2-fork.0':
-    resolution: {integrity: sha512-0N/f4yYH446PNR3F2glaGxkyTjQWkOyLk7W6jzN9nrUae+kWJumj8uM1rd9387xO2cz4pTxH4IQ6muJq32i/LQ==}
 
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
@@ -1922,6 +1921,9 @@ packages:
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
 
+  publicodes@1.10.4:
+    resolution: {integrity: sha512-twj6iKNSYY4a03RqkYJ7q0TKOWZQVUraF715FTLLadgmX/nboPzB4Rdn2IuT3b5tFJnCrhQdh5rKYyS3lWp+vQ==}
+
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
@@ -2395,19 +2397,17 @@ packages:
 
 snapshots:
 
-  '@akimeo/modele-as@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
+  '@akimeo/modele-as@0.1.1-fork.0(publicodes@1.10.4)':
     dependencies:
-      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
+      publicodes: 1.10.4
 
-  '@akimeo/modele-social@11.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
+  '@akimeo/modele-social@11.1.1-fork.0(publicodes@1.10.4)':
     dependencies:
-      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
+      publicodes: 1.10.4
 
-  '@akimeo/modele-ti@0.1.1-fork.0(@akimeo/publicodes@1.10.2-fork.0)':
+  '@akimeo/modele-ti@0.1.1-fork.0(publicodes@1.10.4)':
     dependencies:
-      publicodes: '@akimeo/publicodes@1.10.2-fork.0'
-
-  '@akimeo/publicodes@1.10.2-fork.0': {}
+      publicodes: 1.10.4
 
   '@asamuzakjp/css-color@3.2.0':
     dependencies:
@@ -3963,6 +3963,8 @@ snapshots:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       react-is: 16.13.1
+
+  publicodes@1.10.4: {}
 
   punycode@2.3.1: {}
 
